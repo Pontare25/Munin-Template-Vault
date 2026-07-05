@@ -12,6 +12,7 @@ Periodic health check of the knowledge graph. Lint finds problems and proposes f
    - **Missing topic pages:** subjects referenced in `topics:` fields with no page in `Atlas/Topics/`.
    - **Schema drift:** notes missing required frontmatter for their type (see [[note-schema]]), or `#type/` mirror tags disagreeing with the `type:` field.
    - **Stale index lines:** folder README indexes listing notes that moved or no longer exist, or missing recent notes.
+   - **Oversized indexes:** a folder README index that has grown far past a quick scan (roughly 100 lines). Propose letting a Base serve as the index (see the growth path in the AI-OS README).
    - **Contradictions and stale claims:** notes that state conflicting things without a `challenges:` link between them; claims that time has overtaken.
 2. **Write the report:** group findings by category, one line each (`path: problem`). State counts. Propose a fix per finding.
 3. **Wait for approval.** The human picks which fixes to apply (all, some, none).
