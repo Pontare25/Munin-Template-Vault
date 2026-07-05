@@ -1,0 +1,13 @@
+filters:
+  and:
+    - file.inFolder("Raw")
+    - 'file.ext == "md"'
+    - '!file.name.contains("README")'
+views:
+  - type: table
+    name: "Inbox"
+    order:
+      - file.name
+      - type
+      - created-date
+      - file.mtime

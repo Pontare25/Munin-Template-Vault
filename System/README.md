@@ -11,7 +11,7 @@ Vault plumbing: files that make the vault work but are not knowledge themselves.
 
 ## What belongs here
 
-- Templates, attachments, Bases files shared across notes.
+- Templates and attachments. (The three starter Bases live next to the READMEs that embed them: `Efforts/Efforts.base`, `Atlas/Topics/Topics.base`, `Raw/Inbox.base`.)
 
 ## What does not belong here
 

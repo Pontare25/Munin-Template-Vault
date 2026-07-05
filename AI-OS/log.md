@@ -15,3 +15,10 @@ Where `operation` is one of: `ingest`, `daily-review`, `lint`, `new-note`, `setu
 Newest entries go at the bottom.
 
 ---
+
+## [2026-01-15] ingest | How spaced repetition works
+
+- Created [[Spaced practice beats cramming]] and [[Cramming feels productive but fades fast]] in Atlas/Notes
+- Created topic [[Spaced Repetition]] with full compass
+- Added both notes and the topic to [[Learning MOC]]
+- (Example entry demonstrating the format; delete with the `#example` set)

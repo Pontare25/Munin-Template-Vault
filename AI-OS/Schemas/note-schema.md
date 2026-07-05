@@ -63,6 +63,7 @@ All four take lists of wikilinks. How much compass a note needs depends on its t
 | `topic` | All four compass keys | |
 | `note` | `up:` + `created-date:` | `topics:`, `related:`, `down:`, `challenges:` |
 | `source` | `up:` + `topics:` | `related:` |
+| `moc` | `created-date:` | `up:` when the map sits inside a larger map (top-level maps have no up) |
 | everything else | `up:` + `created-date:` | whatever earns its place |
 
 A complete topic frontmatter looks like this:

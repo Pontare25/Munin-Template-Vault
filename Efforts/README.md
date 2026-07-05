@@ -29,7 +29,11 @@ The action layer: everything you are trying to do, as opposed to everything you 
 
 ## Example
 
-The worked example set includes one project note, tagged `#example` (see the index below).
+[[Learn Spanish]] is a worked example project, tagged `#example`: status field, goal, next actions, and an `up:` link to its MOC.
+
+## Dashboard
+
+![[Efforts.base]]
 
 ## Governing SOPs
 
@@ -38,3 +42,4 @@ The worked example set includes one project note, tagged `#example` (see the ind
 ## Index
 
 <!-- The ingest SOP appends one line per note: - [[Effort Name]]: status, one-line summary -->
+- [[Learn Spanish]]: active, example project applying spaced repetition (`#example`, delete freely)

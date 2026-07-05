@@ -1,0 +1,27 @@
+filters:
+  and:
+    - 'type == "project" || type == "area"'
+views:
+  - type: table
+    name: "Active"
+    filters:
+      and:
+        - 'status == "active" || status == "simmering"'
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - status
+      - created-date
+  - type: table
+    name: "All efforts"
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - status
+      - created-date

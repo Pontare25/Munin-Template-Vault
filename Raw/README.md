@@ -22,7 +22,11 @@ The capture inbox. Material lands here on its way into the vault: articles, vide
 
 ## Example
 
-The worked example set includes one processed source, tagged `#example` (see the index below).
+[[How spaced repetition works]] is a worked example of a **processed** source, tagged `#example`: capture at the top, links to the extracted Atlas notes below.
+
+## Inbox view
+
+![[Inbox.base]]
 
 ## Governing SOPs
 
@@ -31,3 +35,4 @@ The worked example set includes one processed source, tagged `#example` (see the
 ## Index
 
 <!-- The ingest SOP appends one line per processed source: - [[Source Name]]: one-line summary -->
+- [[How spaced repetition works]]: example article on review intervals and the forgetting curve (`#example`, delete freely)

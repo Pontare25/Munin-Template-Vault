@@ -16,7 +16,7 @@ Atomic notes: one idea per note, stated in your own words (or the AI's), linked 
 
 ## Example
 
-The worked example set includes two atomic notes tagged `#example` (added with the example set; see the index below).
+[[Spaced practice beats cramming]] and [[Cramming feels productive but fades fast]] are worked example atomic notes, tagged `#example`. Note the claim-as-title style and the `challenges:` link putting them in explicit tension.
 
 ## Governing SOPs
 
@@ -25,3 +25,5 @@ The worked example set includes two atomic notes tagged `#example` (added with t
 ## Index
 
 <!-- The ingest SOP appends one line per note: - [[Note Name]]: one-line summary -->
+- [[Spaced practice beats cramming]]: spacing builds durable memory, extend gaps not sessions (`#example`, delete freely)
+- [[Cramming feels productive but fades fast]]: why massed practice persists despite the evidence (`#example`, delete freely)

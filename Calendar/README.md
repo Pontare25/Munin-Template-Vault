@@ -22,7 +22,7 @@ The time layer: notes anchored to a date rather than a subject. The daily note i
 
 ## Example
 
-The worked example set includes one daily note showing a capture and its sweep, tagged `#example` (see the index below).
+[[2026-01-15]] is a worked example daily note, tagged `#example`: it shows the state after a daily-review sweep, with raw captures replaced by links to where each item went.
 
 ## Governing SOPs
 

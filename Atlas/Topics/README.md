@@ -22,7 +22,11 @@ Topics carry the **full idea compass** in frontmatter:
 
 ## Example
 
-The worked example set includes one Topic with a complete compass, tagged `#example` (see the index below).
+[[Spaced Repetition]] is a worked example Topic with a complete compass, tagged `#example`: all four directions filled and every link resolving to another example note.
+
+## Topics index
+
+![[Topics.base]]
 
 ## Governing SOPs
 
@@ -31,3 +35,4 @@ The worked example set includes one Topic with a complete compass, tagged `#exam
 ## Index
 
 <!-- The ingest SOP appends one line per note: - [[Topic Name]]: one-line summary -->
+- [[Spaced Repetition]]: reviewing at increasing intervals to beat the forgetting curve (`#example`, delete freely)

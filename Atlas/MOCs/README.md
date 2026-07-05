@@ -16,7 +16,7 @@ The AI may **add** links to a MOC during ingest but should not restructure one w
 
 ## Example
 
-The worked example set includes one MOC, tagged `#example` (see the index below).
+[[Learning MOC]] is a worked example, tagged `#example`: a topic, two notes in tension, and a project, arranged with editorial intent.
 
 ## Governing SOPs
 
@@ -25,3 +25,4 @@ The worked example set includes one MOC, tagged `#example` (see the index below)
 ## Index
 
 <!-- The ingest SOP appends one line per note: - [[MOC Name]]: one-line summary -->
+- [[Learning MOC]]: example map of the learning-to-learn cluster (`#example`, delete freely)

@@ -1,0 +1,15 @@
+filters:
+  and:
+    - 'type == "topic"'
+formulas:
+  notes_linking_in: 'file.backlinks.length'
+properties:
+  formula.notes_linking_in:
+    displayName: "Linked from"
+views:
+  - type: table
+    name: "All topics"
+    order:
+      - file.name
+      - formula.notes_linking_in
+      - created-date
