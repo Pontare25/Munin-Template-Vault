@@ -28,9 +28,18 @@ All four SOPs live in `SOPs/`. Changes to AI-OS itself are proposed by the AI an
 
 ## Growth path
 
-The growth path (when to add state files, weekly logs, more SOPs, more bases) is documented at the bottom of this file once the AI-OS core lands.
+AI-OS starts lean on purpose: every file here loads as AI context, and unused machinery is worse than none. Add pieces only when you feel a specific pain. The signals:
 
-<!-- TODO(L2): growth path section -->
+| Pain | Add | How |
+|---|---|---|
+| Every session starts with re-explaining where things stand | A `state.md` snapshot: active efforts, recent decisions, open threads. AI updates it at session end, reads it at session start | One file next to this README; add "read state.md first" to `Me.md` rules |
+| `log.md` is getting long and slow to scan | Weekly log files (`log-YYYY-wWW.md`) with `log.md` kept as a short index | Roll over when it hurts, not before |
+| You correct the AI the same way for the third time | A rule in `Me.md` under "My additions", or a new SOP in `SOPs/` if it is a whole procedure | Ask the AI to draft it from the corrections |
+| You repeat the same multi-step request | A skill (see `Skills/README.md`) | Ask the AI to turn the last run into a skill |
+| A folder README index stops scaling or you want richer views | Another Base (dashboard) with filters on frontmatter fields | Obsidian: new Base, filter by `type:` or `status:` |
+| Multiple AI tools disagree about conventions | Tighten `Me.md` and the schema; both are tool-agnostic on purpose | Keep tool-specific notes inline and rare |
+
+The order most vaults grow: rules in `Me.md`, then a first skill, then `state.md`, then everything else. Some vaults never need more than what ships here.
 
 ## Index
 
