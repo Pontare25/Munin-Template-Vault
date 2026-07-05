@@ -56,7 +56,9 @@ Four frontmatter keys place a note in the landscape of ideas, like compass direc
 | `down:` | South | What follows from this? Where could it lead or apply? |
 | `challenges:` | East | What competes with this? What tension or opposite does it face? |
 
-All four take lists of wikilinks. How much compass a note needs depends on its type:
+All four take lists of wikilinks. When a compass link is not self-explanatory, say why it is there in one clause in the note body; a link whose reason is forgotten is half a link.
+
+How much compass a note needs depends on its type:
 
 | Type | Required | Encouraged |
 |---|---|---|
