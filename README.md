@@ -42,4 +42,4 @@ This template borrows ideas from all of the above; mistakes in the synthesis are
 
 ## License and contributing
 
-See [CONTRIBUTING](CONTRIBUTING.md) if you want to improve the template itself.
+[MIT licensed](LICENSE): use it, fork it, build on it. See [CONTRIBUTING](CONTRIBUTING.md) if you want to improve the template itself.
