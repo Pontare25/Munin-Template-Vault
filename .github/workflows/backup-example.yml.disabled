@@ -1,0 +1,41 @@
+# EXAMPLE WORKFLOW, DISABLED BY DEFAULT.
+#
+# What it does when enabled: once a week, tags the current state of the
+# repository as a dated restore point (snapshot-YYYY-MM-DD). Combined with
+# regular pushes (manual, or via the obsidian-git plugin), this gives you
+# named states you can always roll back to.
+#
+# What it does NOT do: reach into your computer. GitHub Actions only sees
+# what you push. Your local vault is backed up by pushing, not by this file.
+# See AI-OS/Guides/github-and-backup.md for the full picture.
+#
+# To enable: rename this file to remove the ".disabled" suffix, commit, push.
+
+name: Weekly snapshot tag
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'   # Sundays 03:00 UTC
+  workflow_dispatch: {}    # allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create dated snapshot tag
+        run: |
+          TAG="snapshot-$(date -u +%Y-%m-%d)"
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists, nothing to do."
+            exit 0
+          fi
+          git config user.name "vault-snapshot[bot]"
+          git config user.email "vault-snapshot[bot]@users.noreply.github.com"
+          git tag -a "$TAG" -m "Weekly vault snapshot"
+          git push origin "$TAG"

@@ -19,14 +19,14 @@ Claude Code discovers skills in `~/.claude/skills`. Instead of copying files the
 
 **Windows** (Command Prompt as administrator, or a normal prompt on recent Windows):
 
-```
+```bat
 mkdir "%USERPROFILE%\.claude" 2>nul
 mklink /J "%USERPROFILE%\.claude\skills" "C:\path\to\your\vault\AI-OS\Skills"
 ```
 
 **macOS / Linux:**
 
-```
+```sh
 mkdir -p ~/.claude
 ln -s "/path/to/your/vault/AI-OS/Skills" ~/.claude/skills
 ```

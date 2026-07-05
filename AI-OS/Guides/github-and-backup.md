@@ -25,7 +25,7 @@ Three levels, pick one:
 
 1. **Manual (recommended to start):** GitHub Desktop, commit and push when you feel like it. Weekly is plenty.
 2. **The obsidian-git plugin:** a community plugin that commits and pushes on a timer from inside Obsidian. Works well once git itself is set up.
-3. **GitHub Actions:** this template ships a disabled example workflow (`.github/workflows/backup-example.yml.disabled`). It is for advanced setups where the vault lives on a server. Most people should use option 1 or 2 and skip this. To enable anyway: remove the `.disabled` suffix, read the comments inside the file, commit.
+3. **GitHub Actions:** this template ships a disabled example workflow (`.github/workflows/backup-example.yml.disabled`) that tags a dated restore point of your repository once a week. It cannot see your computer; it only snapshots what you have pushed, so it complements option 1 or 2 rather than replacing them. To enable: remove the `.disabled` suffix, read the comments inside the file, commit and push.
 
 ## Asking the AI to do it
 

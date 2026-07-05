@@ -1,0 +1,9 @@
+{
+  // Options for markdownlint-cli2 (rules live in .markdownlint.jsonc).
+  // Templater templates start with a <%* tag, which breaks standard
+  // markdown parsing; they are code, not prose, so they are not linted.
+  "ignores": [
+    "System/Templates/**",
+    "node_modules/**"
+  ]
+}

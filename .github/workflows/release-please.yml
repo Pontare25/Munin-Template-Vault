@@ -1,0 +1,36 @@
+name: Release
+
+# One release process at a time; a second push queues behind the first.
+concurrency:
+  group: ${{ github.workflow }}
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write       # create release branches, tags, and releases
+  pull-requests: write  # create and update the release PR
+  issues: write         # create labels used by release-please
+
+jobs:
+  release-please:
+    name: Release Please
+    runs-on: ubuntu-latest
+    # Skip runs triggered by the bot's own commits
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      # Runs on every push to main:
+      # - after feat/fix/docs commits: creates or updates the release PR
+      # - after the release PR merges: tags the release and publishes it
+      - name: Create Release
+        uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-file: .github/release-please-config.json
+          manifest-file: .github/.release-please-manifest.json
+
+# Note for template users: this workflow versions the TEMPLATE repository.
+# In your own vault clone it does nothing useful; delete this file
+# (see AI-OS/Guides/github-and-backup.md).

@@ -1,0 +1,28 @@
+{
+  // Markdown lint rules, tuned for an Obsidian vault rather than a code repo.
+  "default": true,
+
+  // Prose lines run long; hard-wrapping notes hurts Obsidian editing.
+  "MD013": false,
+
+  // Obsidian uses inline HTML comments as index-append markers.
+  "MD033": false,
+
+  // Frontmatter or a Templater tag is often the first line, not a heading.
+  "MD041": false,
+
+  // Templates and notes legitimately repeat heading structures.
+  "MD024": { "siblings_only": true },
+
+  // Some notes (daily, examples) use a single H1 after frontmatter markers.
+  "MD025": false,
+
+  // Trailing punctuation in headings like "Week 3, 2026" is fine.
+  "MD026": false,
+
+  // Bare URLs appear in frontmatter-adjacent contexts; Obsidian renders them.
+  "MD034": false,
+
+  // Compact |---| separator rows with padded cells are the Obsidian norm.
+  "MD060": false
+}

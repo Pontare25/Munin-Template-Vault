@@ -21,7 +21,7 @@ Claude Code looks for skills in `~/.claude/skills`. Create a link from there int
 
 **Windows** uses a junction (works without administrator rights on recent Windows):
 
-```
+```bat
 mklink /J "%USERPROFILE%\.claude\skills" "C:\path\to\vault\AI-OS\Skills"
 ```
 
@@ -29,7 +29,7 @@ Run in Command Prompt (not PowerShell; in PowerShell use `New-Item -ItemType Jun
 
 **macOS / Linux** uses a symlink:
 
-```
+```sh
 ln -s "/path/to/vault/AI-OS/Skills" ~/.claude/skills
 ```
 
@@ -39,7 +39,7 @@ If the link cannot be created (permissions, corporate machines), the fallback wo
 
 ## Anatomy of a skill
 
-```
+```text
 AI-OS/Skills/
   video-summarizer/
     SKILL.md        # the instructions
