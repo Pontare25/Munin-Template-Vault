@@ -46,7 +46,7 @@ People and organizations have no template; use the frontmatter pattern in [[note
 
 ## Folder indexes
 
-Every top folder (and each Atlas subfolder) has a `README.md` stating its purpose and holding an index: one line per note, appended by the SOPs. When looking for something, read the relevant README index first; fall back to search only when the index does not answer.
+Every top folder (and each Atlas subfolder) has a `README.md` stating its purpose and holding an index: one line per note, appended by the SOPs. When looking for something, follow the retrieval ladder in [[query]]; the README indexes are one of its rungs, and full search is the last resort.
 
 ## Dashboards (Bases)
 
@@ -65,5 +65,5 @@ Bases read frontmatter fields, which is one more reason the schema matters: note
 - **Capture** (human): dump into today's daily note or `Raw/Inbox/`. No filing decisions at capture time.
 - **Ingest** (AI, [[ingest]]): process a capture into Atlas.
 - **Review** (both, [[daily-review]]): sweep the daily note and inbox.
-- **Query** (human asks, AI searches Atlas and synthesizes; good answers get filed back).
+- **Query** (human asks, AI, [[query]]): climb the retrieval ladder, synthesize, file good answers back.
 - **Lint** (AI, [[lint]]): periodic health check of the knowledge graph.

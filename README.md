@@ -8,7 +8,7 @@ Named after Munin, one of Odin's two ravens: the one that remembers.
 
 - A folder structure that separates **capture** (Raw), **knowledge** (Atlas), and **configuration** (AI-OS), with Calendar and Efforts alongside.
 - A note schema built on wikilinks, a small set of frontmatter fields, and an extended idea compass (`up`, `related`, `down`, `challenges`).
-- Standard Operating Procedures (SOPs) the AI follows for ingesting sources, creating notes, reviewing your daily note, and linting the wiki.
+- Standard Operating Procedures (SOPs) the AI follows for ingesting sources, creating notes, answering questions from the wiki, reviewing your daily note, and linting the wiki.
 - Minimal Templater templates, three Bases dashboards, and a small worked example you can explore and then delete.
 - An AI-led onboarding: paste one prompt and the AI interviews you, fills in your profile, and runs a guided first ingest.
 

@@ -8,7 +8,7 @@ The schema layer: everything the AI needs to operate this vault. Where `Atlas/` 
 |---|---|
 | `Me.md` | Your profile: who you are, how you want the AI to work. The entry point every AI tool reads first |
 | `Vault-Map.md` | Navigation manual: what goes where and why |
-| `SOPs/` | Step-by-step procedures: [[ingest]], [[new-note]], [[daily-review]], [[lint]] |
+| `SOPs/` | Step-by-step procedures: [[ingest]], [[new-note]], [[query]], [[daily-review]], [[lint]] |
 | `Schemas/note-schema.md` | The note format: types, fields, the idea compass |
 | `Skills/` | Optional reusable AI instructions; ships empty with a setup guide |
 | `Guides/` | Human-facing explainers: Obsidian basics, working with AI, skills, backup |
@@ -24,7 +24,7 @@ The schema layer: everything the AI needs to operate this vault. Where `Atlas/` 
 
 ## Governing SOPs
 
-All four SOPs live in `SOPs/`. Changes to AI-OS itself are proposed by the AI and approved by you.
+All five SOPs live in `SOPs/`. Changes to AI-OS itself are proposed by the AI and approved by you.
 
 ## Growth path
 

@@ -8,7 +8,7 @@ Four operations, endlessly repeated:
 
 1. **Capture** (you): dump thoughts, links, and tasks into today's daily note or `Raw/Inbox/`. Zero filing effort; that is the AI's job.
 2. **Ingest** (AI): "process this article" turns a capture into atomic notes, entity pages, and topic links in `Atlas/`. The [[ingest]] SOP defines every step.
-3. **Query** (you ask, AI answers): "what do I know about X?" The AI reads the relevant Topic page, its backlinks, and the folder indexes, then synthesizes. **File good answers:** when an answer is worth keeping, say "file that" and the AI saves it as an Atlas note. Chat history evaporates; the vault compounds.
+3. **Query** (you ask, AI answers): "what do I know about X?" The AI climbs the retrieval ladder in the [[query]] SOP: the relevant Topic page, then its backlinks, then indexes, with full search as the last resort. **File good answers:** when an answer is worth keeping, say "file that" and the AI saves it as an Atlas note. Chat history evaporates; the vault compounds.
 4. **Review and lint** (both): [[daily-review]] sweeps captures regularly; [[lint]] checks graph health occasionally.
 
 ## Why this works better than chat
