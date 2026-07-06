@@ -23,7 +23,7 @@ Munin-Template-Vault). Work through the phases below in order, one at a
 time, and wait for my answers before moving on. Keep it conversational.
 
 1. ORIENT. Read AI-OS/Me.md, AI-OS/Vault-Map.md, and
-   AI-OS/Schemas/note-schema.md, and skim the five SOPs in AI-OS/SOPs/.
+   AI-OS/Schemas/note-schema.md, and skim every SOP in AI-OS/SOPs/.
    Then tell me, in two or three sentences, what this vault is and what
    your job in it will be, so I know you understood.
 
