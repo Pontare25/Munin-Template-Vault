@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.1.0...v1.1.1) (2026-07-06)
+
+
+### Documentation
+
+* drop hardcoded SOP count from onboarding prompt ([0e87da6](https://github.com/Pontare25/Munin-Template-Vault/commit/0e87da68026104f031332d8e5f23e9f8b820ca86))
+
 ## [1.1.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.0.0...v1.1.0) (2026-07-06)
 
 
