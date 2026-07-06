@@ -5,7 +5,7 @@ Maps of Content: curated navigation pages that arrange links to notes the way a 
 ## What belongs here
 
 - Curated link collections with your own structure and commentary.
-- Frontmatter: `type: moc`, `up:`, `created-date:`.
+- Frontmatter: `type: moc` and `created-date:`. Add `up:` only when the map nests inside a larger map; top-level maps have no `up:` (see [[note-schema]]).
 
 ## What does not belong here
 

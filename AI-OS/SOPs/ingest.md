@@ -14,7 +14,7 @@ Turn a capture in `Raw/` into compounding knowledge in `Atlas/`. This is the cor
 6. **Assign `topics:`.** For each topic that does not exist yet, create a stub in `Atlas/Topics/`: one-line definition plus an empty compass skeleton (`up:`, `related:`, `down:`, `challenges:`).
 7. **Fill compass keys where you can.** On new notes, at least `up:`. On touched topics, add obvious compass entries; leave uncertain directions empty rather than guessing.
 8. **Enrich the capture itself.** Add a short summary and links to the notes you created to the source note in `Raw/Sources/`, so the source records where its content went. Move it from `Inbox/` to `Sources/` if needed.
-9. **Update indexes.** Append one line per new note to the README index of the folder it landed in.
+9. **Update indexes and maps.** Append one line per new note to the README index of the folder it landed in. If the new notes or topics belong to an existing MOC in `Atlas/MOCs/`, add links to that map too (add only; do not restructure a MOC without asking).
 10. **Log it.** Append an entry to [[log]] (`## [YYYY-MM-DD] ingest | Source title`, with bullets for notes created or updated).
 11. **Report.** Tell the human what was created, what was updated, and anything you chose not to extract and why.
 

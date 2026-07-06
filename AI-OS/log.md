@@ -1,6 +1,6 @@
 # AI Activity Log
 
-Append-only record of AI work in this vault. The AI adds an entry after every ingest, review, lint, or other work session. Never edit or delete old entries; corrections get their own entry.
+Append-only record of AI work in this vault. The AI adds an entry after every ingest, review, lint, or other work session. Never edit or delete old entries; corrections get their own entry. The one exception is the `#example` entry below, which you remove during setup when you clear the worked example.
 
 Entry format (grep-friendly):
 
