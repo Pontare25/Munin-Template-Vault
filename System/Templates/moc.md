@@ -2,6 +2,7 @@
 ---
 type: moc
 created-date: <% tp.date.now("YYYY-MM-DD") %>
+description:
 up:
 ---
 # <% tp.file.title %>

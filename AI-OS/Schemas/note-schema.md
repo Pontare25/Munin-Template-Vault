@@ -30,6 +30,10 @@ created-date: 2026-01-15
 
 - **`created-date:`** in `YYYY-MM-DD` format. Templates fill it automatically.
 
+Strongly recommended on knowledge notes (everything outside `Calendar/`):
+
+- **`description:`** one line stating what the note holds. Indexes, Bases, and retrieval use it to pick the right note without opening it, which matters more the larger the vault grows. An OKF SHOULD field. Templates include it empty; fill it as soon as the note's point is clear.
+
 Optionally, a note may mirror its type as a tag (`#type/note`) for tag-pane browsing. The field stays canonical: if tag and field ever disagree, the field wins and the tag should be fixed. If you do not care about the tag pane, skip the mirror entirely.
 
 ## Topics
@@ -103,6 +107,7 @@ Entities have no template; use this pattern directly:
 ---
 type: person
 created-date: 2026-01-15
+description: Who they are, in one line
 up:
   - "[[Topic they matter to]]"
 related:
@@ -114,6 +119,7 @@ related:
 ---
 type: organization
 created-date: 2026-01-15
+description: What they are, in one line
 up:
   - "[[Industry or Topic]]"
 related:
@@ -135,4 +141,4 @@ Optional refinement if you want more nuance: `%% #AI-Assisted/Drafted %%` (AI wr
 
 - No tag namespaces beyond the optional `#type/` mirror. The `#example` tag exists only on the deletable worked-example notes.
 - No status fields outside Efforts.
-- No mandatory fields beyond `type:` and `created-date:`. Everything else earns its place by being useful.
+- No mandatory fields beyond `type:` and `created-date:`. Everything else, `description:` included, earns its place by being useful.

@@ -1,6 +1,7 @@
 ---
 type: note
 created-date: 2026-01-15
+description: Reviews spread over days build more durable memory than one long session
 up:
   - "[[Spaced Repetition]]"
 topics:

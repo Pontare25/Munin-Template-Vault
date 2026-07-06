@@ -1,6 +1,7 @@
 ---
 type: topic
 created-date: 2026-01-15
+description: Reviewing at increasing intervals, timed to just before forgetting
 up:
   - "[[Learning MOC]]"
 related:

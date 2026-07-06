@@ -1,6 +1,7 @@
 ---
 type: note
 created-date: 2026-01-15
+description: Massed practice gives strong short-term recall and a false sense of mastery
 up:
   - "[[Spaced Repetition]]"
 topics:

@@ -1,6 +1,7 @@
 ---
 type: moc
 created-date: 2026-01-15
+description: Curated map of everything in this vault about learning how to learn
 tags:
   - example
 ---

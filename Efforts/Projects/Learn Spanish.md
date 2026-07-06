@@ -2,6 +2,7 @@
 type: project
 status: active
 created-date: 2026-01-15
+description: Hold a fifteen-minute Spanish conversation by summer, via daily flashcards
 up:
   - "[[Learning MOC]]"
 tags:

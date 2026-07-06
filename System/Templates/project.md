@@ -3,6 +3,7 @@
 type: project
 status: active
 created-date: <% tp.date.now("YYYY-MM-DD") %>
+description:
 up:
 ---
 # <% tp.file.title %>
