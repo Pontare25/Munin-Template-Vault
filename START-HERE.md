@@ -62,13 +62,19 @@ time, and wait for my answers before moving on. Keep it conversational.
    AI-OS/Guides/github-and-backup.md for backing this up.
 ```
 
-## 4. Manual setup (no AI, or if you prefer doing it yourself)
+## 4. Manual setup (if you prefer doing it yourself)
 
 1. Open `AI-OS/Me.md` and fill in every placeholder section by hand.
 2. Read `AI-OS/Vault-Map.md` to learn where things go.
 3. Read `AI-OS/Schemas/note-schema.md` to learn the note format.
 4. Explore the example notes (search for the `#example` tag), then delete them when you no longer need them.
 5. Open today's daily note and write something in it. That is the core habit.
+
+## 5. Skills (optional, recommended once the basics run)
+
+Skills are reusable instruction files that teach your AI tool specific capabilities. They can live in this vault (`AI-OS/Skills/`, recommended: versioned and portable) or in your AI tool's own default location if you prefer to keep the vault free of them. [AI-OS/Skills/README](AI-OS/Skills/README.md) explains the choice and the setup.
+
+Recommended first install: [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills), official Obsidian skills that teach an AI correct Obsidian markdown, Bases, Templater, and the Obsidian CLI. The full list lives in [AI-OS/Skills/README](AI-OS/Skills/README.md).
 
 ## The one habit that matters
 

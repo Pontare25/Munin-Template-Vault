@@ -35,14 +35,20 @@ If `~/.claude/skills` already exists with content, move that content into this f
 
 **Other AI tools:** most tools that support instruction files can be pointed at a folder, or the relevant skill can be referenced by path in the prompt. The generic fallback that always works: tell the AI "read `AI-OS/Skills/<skill-name>/SKILL.md` and follow it."
 
-## Recommended starting points
+## Recommended skills
 
-Add skills only when you feel the need; each one costs context. Worth considering once the basics run smoothly:
+Add skills only when you feel the need; each one costs context.
 
-- A web-content extraction skill, so ingest can fetch articles cleanly.
+**Start here:**
+
+- [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills): official Obsidian skills covering Obsidian-flavored markdown, Bases, Templater, and the Obsidian CLI. The closest thing to required: they teach an AI to write notes this vault's tooling understands.
+
+**Worth considering once the basics run smoothly:**
+
+- A web-content extraction skill (for example [Defuddle](https://github.com/kepano/defuddle)), so ingest can fetch articles cleanly.
 - A video/transcript summarizer for ingesting talks and lectures.
-- A skill-writing skill (community versions exist) so new skills follow good structure.
+- A skill-writing skill (community versions exist, for example [Anthropic's skill-creator](https://github.com/anthropics/skills)) so new skills follow good structure.
 
-Community catalogs to browse: search GitHub for "claude skills" or "agent skills"; Obsidian-specific skills exist for CLI access, Bases, and Templater.
+Community catalogs to browse: search GitHub for "claude skills" or "agent skills".
 
 Deep dive with worked examples: [[skills-setup]].
