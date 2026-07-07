@@ -13,5 +13,6 @@ Create a single note by hand (as opposed to ingest, which creates notes in bulk 
 5. **Fill the minimum frontmatter** for the type (see the compass table in [[note-schema]]). At minimum: `type:`, `created-date:`, and `up:` for knowledge notes, plus a one-line `description:` so indexes and retrieval can pick the note without opening it.
 6. **Write the body.** One idea per atomic note. Start with `%% #AI-Assisted %%` if you wrote it.
 7. **Link it in:** make sure at least one existing note links to the new note or is linked from it. Orphan notes are lint findings waiting to happen.
-8. **Update the folder README index** with one line for the new note.
-9. **Log it** in [[log]] if the note was created as part of a work session (a single quick note for the human does not need its own log entry).
+8. **Update the folder `index.md`** with one line for the new note.
+9. **Log it** in [[AI-OS/log|log]] if the note was created as part of a work session (a single quick note for the human does not need its own log entry).
+10. **Record it in the bundle changelog.** If the note lives in `Atlas/`, append a `**Creation**` line under today's date in [[Atlas/log]] (OKF §7).

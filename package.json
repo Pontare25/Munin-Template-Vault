@@ -1,0 +1,15 @@
+{
+  "name": "munin-template-vault",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "okf:validate": "node .github/scripts/okf-validate.mjs",
+    "okf:export": "node .github/scripts/okf-export.mjs",
+    "test": "node --test \".github/scripts/**/*.test.mjs\""
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0"
+  }
+}

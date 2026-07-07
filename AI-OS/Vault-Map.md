@@ -55,7 +55,7 @@ Three Obsidian Bases ship embedded in folder READMEs:
 | Base | Lives in | Shows |
 |---|---|---|
 | Efforts dashboard | `Efforts/README.md` | All efforts grouped by `status` |
-| Topics index | `Atlas/Topics/README.md` | All topic pages |
+| Topics index | `Atlas/Topics/index.md` | All topic pages |
 | Inbox view | `Raw/README.md` | Unprocessed captures |
 
 Bases read frontmatter fields, which is one more reason the schema matters: notes with correct `type:` and `status:` fields appear in the right dashboards automatically.

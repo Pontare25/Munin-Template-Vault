@@ -137,6 +137,29 @@ When the AI writes a note or a section, it marks the top of what it wrote with a
 
 Optional refinement if you want more nuance: `%% #AI-Assisted/Drafted %%` (AI wrote, human approved), `%% #AI-Assisted/Collaborative %%` (written together), `%% #AI-Assisted/Reviewed %%` (human wrote, AI checked). The plain marker is enough for most vaults.
 
+## OKF alignment
+
+This vault targets [Open Knowledge Format (OKF) v0.1](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) conformance for the `Atlas/` bundle. Full details, the native-vs-export split, and the exporter live in [[okf-conformance]].
+
+Frontmatter maps to OKF's canonical fields:
+
+| OKF field | OKF status | In this vault |
+|---|---|---|
+| `type` | REQUIRED | `type` (already required on every note) |
+| `title` | recommended | the filename; add an explicit `title:` only when the display name must differ |
+| `description` | recommended | `description` |
+| `resource` | recommended | `resource:` — canonical URI of the underlying asset (source URL, entity homepage). Replaces the old `url:` field |
+| `tags` | optional | `tags` |
+| `timestamp` | optional | authored as `created-date:` (creation); the exporter emits OKF `timestamp` |
+
+Compass keys (`up`, `related`, `down`, `challenges`), `topics`, and `status` are Munin extensions. OKF consumers preserve unknown keys, so they travel with the note unchanged.
+
+Reserved filenames follow OKF: folder listings are `index.md` (§6), the Atlas changelog is `Atlas/log.md` (§7). Wikilinks stay native on disk; the exporter rewrites them to bundle-relative `/path.md` links in the exported bundle.
+
+### Citations
+
+When a note makes claims backed by external sources, list them under a `# Citations` heading at the foot of the body (OKF §8): a numbered list of absolute URLs or bundle-relative paths. Use this for source-backed notes instead of an ad-hoc Sources section.
+
 ## What this schema deliberately leaves out
 
 - No tag namespaces beyond the optional `#type/` mirror. The `#example` tag exists only on the deletable worked-example notes.

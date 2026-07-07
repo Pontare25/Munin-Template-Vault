@@ -6,7 +6,7 @@ up:
   - "[[Spaced Repetition]]"
 topics:
   - "[[Spaced Repetition]]"
-url: https://example.com/spaced-repetition
+resource: https://example.com/spaced-repetition
 tags:
   - example
 ---

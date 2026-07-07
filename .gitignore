@@ -9,3 +9,7 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Node + OKF export
+node_modules/
+dist/

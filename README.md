@@ -37,7 +37,7 @@ No git knowledge required to use the vault. When you are ready to back it up, [A
 - **Nick Milo's** AI-OS, File-over-AI, and ACE folder philosophy (Atlas, Calendar, Efforts). https://www.youtube.com/watch?v=jbHB-rzKBAs&t=2s
 - **Construct by Dee's** Daily note first principle and logging system. https://www.youtube.com/watch?v=Mt8mNIcoxYM
 - **Zettelkasten** atomic notes and the **idea compass** (extended here with `challenges`). https://medium.com/a-voice-in-the-conversation/the-idea-compass-expanding-ideas-5259b43ac874
-- **Google's Open Knowledge Format (OKF)**: folder index files and a single required `type` attribute. https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
+- **Google's Open Knowledge Format (OKF)**: the `Atlas/` knowledge layer targets [OKF v0.1](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) conformance (reserved `index.md`/`log.md`, a single required `type` attribute, OKF frontmatter) and exports a conformant bundle on demand. See [AI-OS/Schemas/okf-conformance](AI-OS/Schemas/okf-conformance.md). Background: https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
 
 This template borrows ideas from all of the above; mistakes in the synthesis are its own.
 

@@ -29,3 +29,8 @@ jobs:
 
       - name: Wikilink check
         run: node .github/scripts/check-wikilinks.mjs
+
+      - name: OKF conformance
+        run: |
+          npm ci
+          npm run okf:validate
