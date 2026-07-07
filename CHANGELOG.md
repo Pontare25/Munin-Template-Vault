@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.1.1...v1.2.0) (2026-07-07)
+
+
+### Features
+
+* OKF v0.1 conformance for the Atlas bundle ([d9c5747](https://github.com/Pontare25/Munin-Template-Vault/commit/d9c5747fe919adf046912f5b44019675d8980a75))
+
 ## [1.1.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.1.0...v1.1.1) (2026-07-06)
 
 
