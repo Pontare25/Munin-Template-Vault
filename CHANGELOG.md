@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.2](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.3.1...v1.3.2) (2026-07-08)
+
+
+### Documentation
+
+* add shared-active-efforts epic and federation dry-run prompts ([446226f](https://github.com/Pontare25/Munin-Template-Vault/commit/446226fb4308588fdb975d2ff75d99833d4dfb66))
+* fix garbled setup step, document single-account and private-invite paths ([861a3c0](https://github.com/Pontare25/Munin-Template-Vault/commit/861a3c0c2afc5824c1341dd40cadfc74b2a5040e))
+
 ## [1.3.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.3.0...v1.3.1) (2026-07-08)
 
 
