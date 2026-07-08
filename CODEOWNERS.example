@@ -1,0 +1,29 @@
+# CODEOWNERS.example
+#
+# Copy this file to .github/CODEOWNERS in your company brain repo, then
+# replace the placeholder handles below with your real reviewers.
+#
+# What this does: GitHub reads CODEOWNERS to decide who must review changes
+# to which paths. Combined with the "Require review from Code Owners" branch
+# protection setting on main (see AI-OS/Guides/federation-admin-setup.md,
+# step 5), it means a pull request touching a protected path cannot merge
+# until a named owner approves it. This is how the schema and the shared
+# SOPs are held to a higher bar than ordinary knowledge notes.
+#
+# Syntax: a path pattern, then one or more owners (@handle or @org/team).
+# Later matches win, so put the most specific rules last.
+# Handles must be users or teams with at least read access to the repo.
+
+# Default owner for everything not matched by a more specific rule below.
+# This owner reviews ordinary Atlas/ knowledge contributions.
+*                     @org/company-brain-maintainers
+
+# The shared standard: schema and shared SOPs. Governance changes land here
+# and deserve the strictest review. Point this at the people who own the
+# rules for the whole company, not just any maintainer.
+/AI-OS/Schemas/       @org/standards-owners
+/AI-OS/SOPs/          @org/standards-owners
+
+# The federation and OKF tooling. Changes here affect every vault's sync
+# and validation, so route them to whoever maintains the scripts.
+/.github/             @org/company-brain-maintainers

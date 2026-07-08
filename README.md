@@ -33,7 +33,9 @@ No git knowledge required to use the vault. When you are ready to back it up, [A
 
 ## Federation (optional): a shared company knowledge base
 
-Many personal vaults built from this template can share one company knowledge base, without anyone hand-running git. A vault can pull shared knowledge into a read-only `Company/` mirror and contribute selected notes back as GitHub pull requests. Privacy is default-deny: a note is shared only when you explicitly mark it `share: company` and it passes a risk check, and the agent confirms before anything is pushed. See the plain-language [federation guide](AI-OS/Guides/federation-for-non-git-users.md) and the `federation-*` SOPs in `AI-OS/SOPs/`. Commands: `npm run fed:pull`, `fed:suggest`, `fed:contribute`, `fed:govern`.
+Many personal vaults built from this template can share one company knowledge base, without anyone hand-running git. A vault can pull shared knowledge into a read-only `Company/` mirror and contribute selected notes back as GitHub pull requests. Privacy is default-deny: a note is shared only when you explicitly mark it `share: company` and it passes a risk check, and the agent confirms before anything is pushed.
+
+Start at the [federation overview](AI-OS/Guides/federation-overview.md); it routes each reader to their guide. By role: admins setting up the shared brain read [federation-admin-setup](AI-OS/Guides/federation-admin-setup.md) and [federation-rollout](AI-OS/Guides/federation-rollout.md); employees read the plain-language [federation guide](AI-OS/Guides/federation-for-non-git-users.md). The agent-facing procedures are the `federation-*` SOPs in `AI-OS/SOPs/`. Commands: `npm run fed:pull`, `fed:suggest`, `fed:contribute`, `fed:govern`.
 
 ## Credits and inspirations
 
