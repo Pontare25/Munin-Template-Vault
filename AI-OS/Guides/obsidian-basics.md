@@ -39,8 +39,12 @@ Ctrl/Cmd-G opens the graph view: every note a dot, every link a line. Pretty, oc
 
 ## Templates (Templater)
 
-Templater is the one community plugin this vault requires. When you create a note from a template (via the Templater icon or hotkey), it fills in dates and prompts for values automatically. Template selection table lives in [[Vault-Map]].
+Templater powers the note templates and is the one plugin the vault truly needs. When you create a note from a template (via the Templater icon or hotkey), it fills in dates and prompts for values automatically. Template selection table lives in [[Vault-Map]]. The vault also bundles two optional helpers, already installed: Omnisearch (fast full-text search) and Text Extractor (OCR and text extraction from PDFs and images).
 
 ## Search
 
-Ctrl/Cmd-Shift-F searches all note text. Before searching, though, check the folder README indexes: every folder lists its notes with one-line summaries, which is usually faster.
+Ctrl/Cmd-Shift-F searches all note text. Before searching, though, check the folder README indexes: every folder lists its notes with one-line summaries, which is usually faster. The bundled Omnisearch plugin adds a faster, fuzzy search with its own command and ribbon icon.
+
+## Text extraction and OCR languages
+
+Text Extractor pulls text out of PDFs and images, including scanned pages, via OCR. It ships configured for English and Swedish (`eng`, `swe`); Swedish is included because the template's author works in a Swedish context, and it is harmless to keep even if you never scan Swedish. To change the languages, open Settings, Text Extractor, and edit the OCR languages. Each entry is a Tesseract language code (for example `deu` for German, `fra` for French). Removing `swe` is fine if you do not need it.

@@ -16,7 +16,7 @@ Named after Munin, one of Odin's two ravens: the one that remembers.
 
 1. Click **Use this template** on GitHub (or download this repo as a ZIP).
 2. Open the folder as a vault in Obsidian.
-3. Install and enable the **Templater** community plugin (the only plugin required).
+3. When Obsidian asks, trust the vault and enable community plugins. It bundles three, already installed: **Templater** (required; runs the note templates), **Omnisearch** (fast full-text search), and **Text Extractor** (OCR and text extraction from PDFs and images).
 4. Open [START-HERE](START-HERE.md) and follow it.
 
 No git knowledge required to use the vault. When you are ready to back it up, [AI-OS/Guides/github-and-backup](AI-OS/Guides/github-and-backup.md) explains git for people who write notes, not code.

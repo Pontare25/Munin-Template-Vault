@@ -6,8 +6,8 @@ Welcome. This vault is a personal wiki that an AI assistant maintains with you. 
 
 1. Install [Obsidian](https://obsidian.md) if you have not already.
 2. Open this folder as a vault (**Open folder as vault**).
-3. When asked, trust the vault and enable plugins.
-4. Install the **Templater** community plugin: Settings, Community plugins, Browse, search "Templater", install, enable. It is the only plugin this vault requires.
+3. When asked, trust the vault and enable community plugins.
+4. The vault bundles three community plugins, already installed: **Templater** (required; runs the note templates), **Omnisearch** (full-text search), and **Text Extractor** (OCR and text from PDFs and images). Enabling community plugins in step 3 turns them on. If Templater is not active, enable it under Settings, Community plugins.
 
 ## 2. Open your AI tool in this folder
 
@@ -39,8 +39,10 @@ time, and wait for my answers before moving on. Keep it conversational.
    the result and revise until I approve it.
 
 4. CHECK SETTINGS. Verify .obsidian/daily-notes.json points at
-   "Calendar/Daily Notes" with the "System/Templates/daily" template,
-   and ask me to confirm the Templater plugin is installed and enabled.
+   "Calendar/Daily Notes" with the
+   "System/Templates/Templater/Calendar-templates/daily-template" template,
+   and ask me to confirm the bundled plugins (Templater, Omnisearch, Text
+   Extractor) are enabled, Templater above all.
    If anything is off, tell me exactly what to click.
 
 5. EXAMPLE CONTENT. This vault ships a small worked example (notes
