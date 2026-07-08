@@ -31,6 +31,10 @@ No git knowledge required to use the vault. When you are ready to back it up, [A
 
 `Calendar/` (daily notes, the main capture surface) and `Efforts/` (projects and areas) orbit these three.
 
+## Federation (optional): a shared company knowledge base
+
+Many personal vaults built from this template can share one company knowledge base, without anyone hand-running git. A vault can pull shared knowledge into a read-only `Company/` mirror and contribute selected notes back as GitHub pull requests. Privacy is default-deny: a note is shared only when you explicitly mark it `share: company` and it passes a risk check, and the agent confirms before anything is pushed. See the plain-language [federation guide](AI-OS/Guides/federation-for-non-git-users.md) and the `federation-*` SOPs in `AI-OS/SOPs/`. Commands: `npm run fed:pull`, `fed:suggest`, `fed:contribute`, `fed:govern`.
+
 ## Credits and inspirations
 
 - **Andrej Karpathy's LLM Wiki** idea: a personal wiki curated by a language model. https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
