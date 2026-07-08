@@ -6,6 +6,10 @@
   "scripts": {
     "okf:validate": "node .github/scripts/okf-validate.mjs",
     "okf:export": "node .github/scripts/okf-export.mjs",
+    "fed:pull": "node .github/scripts/federation/fed-pull.mjs",
+    "fed:suggest": "node .github/scripts/federation/fed-suggest.mjs",
+    "fed:contribute": "node .github/scripts/federation/fed-contribute.mjs",
+    "fed:govern": "node .github/scripts/federation/fed-govern.mjs",
     "test": "node --test \".github/scripts/**/*.test.mjs\""
   },
   "dependencies": {

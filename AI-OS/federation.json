@@ -1,0 +1,21 @@
+{
+  "companyRepo": "",
+  "fork": "",
+  "clonePath": ".federation/company-knowledge",
+  "identity": { "name": "", "handle": "" },
+  "mirror": {
+    "folder": "Company",
+    "include": ["Atlas", "AI-OS/SOPs", "AI-OS/Schemas"]
+  },
+  "share": {
+    "marker": "share",
+    "value": "company",
+    "suggestFrom": ["Atlas", "Efforts"],
+    "neverSuggestFrom": ["Raw", "Calendar", "AI-OS", "Company", ".federation"],
+    "riskSignals": {
+      "tags": ["private", "confidential"],
+      "patterns": ["\\b[\\w.+-]+@[\\w-]+\\.[\\w.-]+\\b"],
+      "denylist": []
+    }
+  }
+}
