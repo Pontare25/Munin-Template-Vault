@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.3.0...v1.3.1) (2026-07-08)
+
+
+### Documentation
+
+* add company-admin and rollout federation guides ([6791f1a](https://github.com/Pontare25/Munin-Template-Vault/commit/6791f1a79b60abdf3ee8c2a0ca4af15355f76444))
+* document private-repo access for federation rollout ([afefb05](https://github.com/Pontare25/Munin-Template-Vault/commit/afefb05c420de8a5c35d4eedbda2c605373e86f1))
+
 ## [1.3.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.2.0...v1.3.0) (2026-07-08)
 
 
