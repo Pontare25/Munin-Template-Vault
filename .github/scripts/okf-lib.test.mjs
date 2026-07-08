@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { resolveWikilinks, stripObsidian, toOkf } from './okf-lib.mjs';
+import { resolveWikilinks, stripObsidian, toOkf, sanitizeContent } from './okf-lib.mjs';
 
 const map = new Map([
   ['Spaced Repetition', '/Topics/Spaced Repetition.md'],
@@ -29,4 +29,10 @@ test('toOkf emits timestamp from created-date and defaults title to stem', () =>
   assert.equal(out.type, 'note');
   assert.equal(out.title, 'My Note');
   assert.equal(out.timestamp, '2026-01-15T00:00:00.000Z');
+});
+
+test('sanitizeContent strips comments, rewrites links, trims leading blank lines', () => {
+  const r = sanitizeContent('%% AI %%\n\nSee [[Spaced Repetition]] and [[Missing]].', map);
+  assert.equal(r.content, 'See [Spaced Repetition](/Topics/Spaced Repetition.md) and Missing.');
+  assert.equal(r.warnings.length, 1);
 });

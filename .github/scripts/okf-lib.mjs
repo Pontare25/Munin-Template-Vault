@@ -52,6 +52,16 @@ export function stripObsidian(content) {
     .replace(/\n{3,}/g, '\n\n');
 }
 
+// Shared body sanitizer: strip Obsidian-only syntax, rewrite wikilinks to
+// bundle-relative links, and trim leading blank lines. Both the OKF exporter
+// and the federation contribution flow call this so the two can never sanitize
+// a note differently.
+export function sanitizeContent(content, titleMap) {
+  const stripped = stripObsidian(content);
+  const linked = resolveWikilinks(stripped, titleMap);
+  return { content: linked.content.replace(/^\n+/, ''), warnings: linked.warnings };
+}
+
 export function toOkf(data, { stem, gitTime }) {
   const out = { ...data };
   delete out['created-date'];
