@@ -11,6 +11,18 @@ The guiding principle is **consumption first, contribution later**. Get everyone
 
 You do not need to teach contribution on day one. Point people at the consume steps, let them get value from reading, and introduce contribution when they ask "how do I add something?"
 
+## Granting access (private company brain)
+
+If your company brain is a private repo (the usual choice), an employee cannot fork it until they have read access. Grant it before you send them the starter message, or their setup stalls at the fork step.
+
+The secure model is to grant access and let each person sign in as themselves. Do not create or share access tokens; a shared secret is hard to revoke and impossible to trace to a person.
+
+1. **One-time, admin:** confirm the org allows private forking (see [[federation-admin-setup]], step 3) and create a read-access team, for example `@org/brain-readers`, with **Read** on `org/company-brain`.
+2. **Per employee:** add the person to that team. Read access is all they need; they fork and propose, they never push to `main`.
+3. **The employee signs in themselves.** Their agent has them run a one-time browser sign-in (`gh auth login`) during setup. Nothing is pasted, no token is handed over, and their fork of the private repo stays private.
+
+To offboard someone, remove them from the team; their access is revoked at once. A per-person, repo-scoped token is a fallback only where browser sign-in cannot run; it is never a shared token. Details are in [[federation-admin-setup]].
+
 ## The two values you hand out
 
 Every employee needs the same one value written into their vault's `AI-OS/federation.json`:
@@ -56,6 +68,11 @@ It will walk you through a one-time sign-in (the only step a computer cannot
 do for you) and then pull the latest shared knowledge into a read-only
 Company/ folder in your vault. From then on, whenever you want the newest
 shared knowledge, just say: "Get the latest company knowledge."
+
+The sign-in opens your web browser; you approve it there and you are done for
+good on this machine. There is no token or password to copy anywhere. You may
+first get an email inviting you to the company knowledge base or its team;
+accept that, then run the setup above.
 
 There is a plain-language guide with everything explained and nothing
 assumed. Read it if you want the why before the how; it is short.

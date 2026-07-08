@@ -37,12 +37,27 @@ The template ships with example personal content. The company brain should hold 
 
 Why: the company brain is the destination that employee contributions route into, always under `Atlas/`. Shipping personal example content would pollute the shared knowledge and confuse the first pull.
 
-### 3. Enable forking (GitHub UI only)
+### 3. Enable forking, and set up private access (GitHub UI only)
 
 1. In `org/company-brain`, open **Settings**, then the **General** tab.
-2. Under **Features** (or, for an organization repo, sometimes under member privileges at the org level), make sure **Allow forking** is checked.
+2. Under **Features**, make sure **Allow forking** is checked.
+3. **If the repo is private, this is not enough.** Forking a private repo also requires an organization owner to turn on the org-level setting: open the organization's **Settings**, then **Member privileges**, and enable **Allow forking of private repositories**. The repo-level checkbox in step 2 is greyed out or ineffective until this org setting is on.
 
-Why: the entire topology is fork-per-employee. Each employee forks the company brain to their own account and opens pull requests from that fork. If forking is off, no employee can contribute. For a private repo this also requires that your organization permits forking of private repositories; if the checkbox is greyed out, an organization owner has to enable private forking in the org settings first.
+Why: the entire topology is fork-per-employee. Each employee forks the company brain to their own account and opens pull requests from that fork. If forking is off, no employee can contribute.
+
+#### How access works for a private repo
+
+Employees need read access to the company brain before they can fork it, and each one authenticates as themselves. Do not create or hand out shared tokens: a shared secret is hard to revoke, impossible to attribute to a person, and one leak exposes the whole brain.
+
+The recommended model is grant access, then let each person sign in:
+
+1. **Grant read access through a team.** Create an organization team (for example `@org/brain-readers`), give it **Read** on `org/company-brain`, and add employees to that team. Read is enough: they fork and open pull requests, they never push to `main`. A team beats per-person collaborator invites because you add and remove people in one place, and removal instantly revokes access.
+2. **Each employee signs in themselves.** During their setup, the employee's agent has them run `gh auth login` (browser sign-in, one time per machine). No secret changes hands; `gh` stores the credential in its own keychain. Every fork and pull request is then attributable to a real GitHub account.
+3. **Forks of a private repo stay private.** An employee's fork inherits the private visibility, so nothing about the brain becomes public by forking.
+
+You grant the access here (or per new hire in [[federation-rollout]]); the employee does the sign-in. That split is the point: you control who is in the team, they hold their own credentials.
+
+> Fallback only where browser sign-in cannot run (a locked-down machine, some SAML setups): a per-person fine-grained personal access token, scoped to just this repo, rotated on a schedule, and never committed to any vault. It is still one token per human, never a shared one. Reach for this only if `gh auth login` genuinely cannot complete; the team-plus-sign-in path above is the default.
 
 ### 4. Add CODEOWNERS (file edit)
 
