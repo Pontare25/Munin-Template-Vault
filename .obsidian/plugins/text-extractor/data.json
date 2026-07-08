@@ -1,0 +1,8 @@
+{
+  "ocrLanguages": [
+    "eng",
+    "swe"
+  ],
+  "rightClickMenu": true,
+  "useSystemOCR": false
+}
