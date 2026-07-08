@@ -1,5 +1,5 @@
 {
   "folder": "Calendar/Daily Notes",
   "format": "YYYY-MM-DD",
-  "template": "System/Templates/daily"
+  "template": "System/Templates/Templater/Calendar-templates/daily-template"
 }
