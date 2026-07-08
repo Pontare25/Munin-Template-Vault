@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.2.0...v1.3.0) (2026-07-08)
+
+
+### Features
+
+* add vault federation (pull, suggest, contribute, govern) ([9a1b6c5](https://github.com/Pontare25/Munin-Template-Vault/commit/9a1b6c5fb78803dae898be4bb9985d6715ab52a8))
+
+
+### Documentation
+
+* add federation design spec, plan, SOPs, and non-git user guide ([8e25e22](https://github.com/Pontare25/Munin-Template-Vault/commit/8e25e220f1b25364e3d91a89efa029aba6648934))
+
 ## [1.2.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.1.1...v1.2.0) (2026-07-07)
 
 
