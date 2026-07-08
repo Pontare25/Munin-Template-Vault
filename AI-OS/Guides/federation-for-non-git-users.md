@@ -14,7 +14,7 @@ That is the whole model. You keep your own copy, you propose, a human accepts.
 
 ## One-time setup
 
-The first time only, someone helps you connect. There is exactly one step a computer cannot do for you: signing in to GitHub. The agent will ask you to run one sign-in command that opens your web browser; you click approve, and you are done forever on that machine. The agent handles the rest.
+The first time only, someone helps you connect. If the company knowledge base is private (the usual case), you may first get an email inviting you to it or to a team; accept that invite so you have permission to connect. There is then exactly one step a computer cannot do for you: signing in to GitHub. The agent will ask you to run one sign-in command that opens your web browser; you click approve, and you are done forever on that machine. There is no token or password to copy anywhere; the agent handles the rest.
 
 Just say: **"Set up federation."**
 
