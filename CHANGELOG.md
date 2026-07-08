@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.4.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.3.2...v1.4.0) (2026-07-08)
+
+
+### Features
+
+* bundle omnisearch and text-extractor plugins with the vault ([c99c311](https://github.com/Pontare25/Munin-Template-Vault/commit/c99c311cda0d63b6d0c3d8bc257a9133e4d4cf2b))
+
+
+### Bug Fixes
+
+* point daily-notes at the relocated daily template ([5ed6e1a](https://github.com/Pontare25/Munin-Template-Vault/commit/5ed6e1ac293b05030128edd357c333674a59049d))
+
+
+### Documentation
+
+* document bundled plugins and text-extractor OCR languages ([040628e](https://github.com/Pontare25/Munin-Template-Vault/commit/040628e19b74b1745e97241c35f6ba43af93298f))
+
 ## [1.3.2](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.3.1...v1.3.2) (2026-07-08)
 
 
