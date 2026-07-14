@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.4.0...v1.4.1) (2026-07-14)
+
+
+### Documentation
+
+* cross-link Munin-System-Individual sibling template ([d48d776](https://github.com/Pontare25/Munin-Template-Vault/commit/d48d776d85225e1a8bdc261f60e94590a2734387))
+
 ## [1.4.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.3.2...v1.4.0) (2026-07-08)
 
 
