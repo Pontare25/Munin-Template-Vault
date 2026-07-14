@@ -37,6 +37,10 @@ Many personal vaults built from this template can share one company knowledge ba
 
 Start at the [federation overview](AI-OS/Guides/federation-overview.md); it routes each reader to their guide. By role: admins setting up the shared brain read [federation-admin-setup](AI-OS/Guides/federation-admin-setup.md) and [federation-rollout](AI-OS/Guides/federation-rollout.md); employees read the plain-language [federation guide](AI-OS/Guides/federation-for-non-git-users.md). The agent-facing procedures are the `federation-*` SOPs in `AI-OS/SOPs/`. Commands: `npm run fed:pull`, `fed:suggest`, `fed:contribute`, `fed:govern`.
 
+## Sibling template: Munin-System-Individual
+
+Want a purely personal, single-user vault without the federation and company layer? Use the sibling template [Munin-System-Individual](https://github.com/Pontare25/Munin-System-Individual). It shares the same schema and operating loop, ships Obsidian skills with weekly upstream sync, and treats the feedback loop (correct the AI once, it sticks) as its headline feature. Forward work on the individual template is tracked in that repo.
+
 ## Credits and inspirations
 
 - **Andrej Karpathy's LLM Wiki** idea: a personal wiki curated by a language model. https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
