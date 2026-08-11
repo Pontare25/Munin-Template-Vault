@@ -10,10 +10,6 @@
 Thumbs.db
 desktop.ini
 
-# Node + OKF export
+# Node + OKF export (all OKF tooling lives under System/OKF/)
 node_modules/
-dist/
-
-# Federation: read-only company mirror + managed fork clone (never committed to the personal vault)
-Company/
-.federation/
+System/OKF/dist/

@@ -33,7 +33,7 @@ export function exportBundle(atlasDir, outDir) {
 const invokedDirectly = process.argv[1] === fileURLToPath(import.meta.url);
 if (invokedDirectly) {
   const atlas = path.resolve('Atlas');
-  const out = path.resolve('dist/okf');
+  const out = path.resolve('System/OKF/dist/okf');
   const { warnings } = exportBundle(atlas, out);
   for (const w of warnings) console.warn(`warn: ${w}`);
   console.log(`Exported OKF bundle to ${out} (${warnings.length} link warning(s)).`);

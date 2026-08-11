@@ -17,7 +17,7 @@ Every other `Atlas/**/*.md` is a concept document and must carry non-empty `type
 
 ## Native vs export
 
-| Aspect | On disk (Obsidian) | In the exported bundle (`dist/okf/`) |
+| Aspect | On disk (Obsidian) | In the exported bundle (`System/OKF/dist/okf/`) |
 |---|---|---|
 | Links | `[[wikilinks]]` | bundle-relative `/path.md` links |
 | Timestamp | `created-date:` (creation) | OKF `timestamp` (ISO 8601) |
@@ -37,12 +37,12 @@ From the vault root:
 ```bash
 npm install            # first time only
 npm run okf:validate   # assert every Atlas concept has a non-empty type
-npm run okf:export     # write a conformant bundle to dist/okf/ (gitignored)
+npm run okf:export     # write a conformant bundle to System/OKF/dist/okf/ (gitignored)
 npm test               # run the exporter/validator unit tests
 ```
 
-`okf:validate` runs in CI (`.github/workflows/lint.yml`) and fails the build on a type-less note. The exporter and validator live in `.github/scripts/` (`okf-lib.mjs`, `okf-validate.mjs`, `okf-export.mjs`).
+`okf:validate` runs in CI (`.github/workflows/lint.yml`) and fails the build on a type-less note. The exporter and validator live in `System/OKF/scripts/` (`okf-lib.mjs`, `okf-validate.mjs`, `okf-export.mjs`).
 
 ## Conformance claim
 
-After `npm run okf:export`, `dist/okf/` is a conformant OKF v0.1 bundle: every non-reserved `.md` has parseable YAML frontmatter with a non-empty `type`, reserved files follow OKF structure, and all links are bundle-relative or plain text.
+After `npm run okf:export`, `System/OKF/dist/okf/` is a conformant OKF v0.1 bundle: every non-reserved `.md` has parseable YAML frontmatter with a non-empty `type`, reserved files follow OKF structure, and all links are bundle-relative or plain text.
