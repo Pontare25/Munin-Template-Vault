@@ -60,8 +60,10 @@ time, and wait for my answers before moving on. Keep it conversational.
 7. CLOSE. Append a setup entry to AI-OS/log.md (format is documented in
    that file). Then remind me of the one habit that matters (dump
    everything into today's daily note) and point me to
-   AI-OS/Guides/working-with-ai.md for daily use and
-   AI-OS/Guides/github-and-backup.md for backing this up.
+   AI-OS/Guides/working-with-ai.md for daily use,
+   AI-OS/Guides/tasks-and-logs.md and
+   AI-OS/Guides/working-with-projects.md for the task/log and project
+   system, and AI-OS/Guides/github-and-backup.md for backing this up.
 ```
 
 ## 4. Manual setup (if you prefer doing it yourself)

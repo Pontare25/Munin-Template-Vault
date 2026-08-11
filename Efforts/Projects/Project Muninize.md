@@ -1,42 +1,38 @@
-<%* await tp.file.move("Efforts/Projects/" + tp.file.title) -%>
 ---
 type: project
 status: active
-created-date: <% tp.date.now("YYYY-MM-DD[T]HH:mm:ss") %>
-description:
+created-date: 2026-08-11
+description: Example project, part of the logging-system worked example. Safe to delete.
 up:
-related:
+related: "[[Product Development]]"
 members:
 start-date:
 due-date:
 end-date:
 ---
-# <% tp.file.title %>
+# Project Muninize
 
 ## Goal
 
-<% tp.file.cursor() %>
+Ship the first Munin integration MVP.
 
 ## Next actions
 
-- [ ] #task 
+- [ ] #task Define MVP scope ➕ 2026-08-11
+- [/] #task Set up the repository ➕ 2026-08-11
 
 ## Meetings
 
 ![[Meetings.base#Project meetings]]
-
 ## Tasks from meetings & logs
-
 ```dataview
 TASK
 WHERE contains(text, "#task")
 WHERE contains(list(" ", "/", "!", ">", "?"), status)
-WHERE contains(outlinks, [[]]) or contains(up, [[]])
+WHERE contains(this.file.inlinks, file.link)
 SORT file.mtime DESC
 ```
-
 ## Log
-
 ```dataview
 TASK
 WHERE contains(list("b", "i", "p", "c", "*"), status)

@@ -1,0 +1,60 @@
+filters:
+  and:
+    - type == "meeting"
+views:
+  - type: table
+    name: Project meetings
+    filters:
+      and:
+        - file.links.contains(this.file)
+    order:
+      - file.name
+      - summary
+      - date
+      - up
+      - attendees
+    sort:
+      - property: date
+        direction: DESC
+    columnSize:
+      file.name: 235
+      note.summary: 303
+      note.up: 250
+    rowHeight: medium
+  - type: table
+    name: Daily meeting rollup
+    filters:
+      and:
+        - date == this.date
+    order:
+      - file.name
+      - up
+      - summary
+      - attendees
+    sort:
+      - property: date
+        direction: DESC
+    columnSize:
+      file.name: 235
+      note.up: 155
+      note.summary: 500
+    rowHeight: medium
+  - type: table
+    name: Attendee meetings
+    filters:
+      and:
+        - attendees.contains(this.file)
+    order:
+      - file.name
+      - summary
+      - date
+      - up
+      - attendees
+    sort:
+      - property: date
+        direction: DESC
+    columnSize:
+      file.name: 235
+      note.summary: 303
+      note.up: 250
+    rowHeight: medium
