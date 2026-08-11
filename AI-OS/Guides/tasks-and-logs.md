@@ -40,21 +40,42 @@ Write tasks wherever the work surfaces: a daily note, a meeting note, or directl
 
 ## Writing logs
 
+Logs record what happened or what is true, not what to do. They live mostly in daily and meeting notes, and carry no `#task` tag. The five markers split into two groups:
+
+**Record** — the factual layer:
+
+| Marker | Meaning | Feeds |
+|---|---|---|
+| `[i]` | information / state (a standing fact, present tense) | the knowledge graph — what is true |
+| `[b]` | log / event (something that happened, past tense) | the timeline — what happened |
+
+```markdown
+- [i] [[Application A]] uses a REST API
+- [i] [[Anna Berg]] plays [[Golf]]
+- [b] Decided to use REST for [[Application A]]
+- [b] Played [[Golf]] with [[Anna Berg]]
+```
+
+**Sentiment / emphasis** — how you read something:
+
 | Marker | Meaning |
 |---|---|
-| `[b]` | log / bookmark (a thing that happened, often a linked note) |
-| `[i]` | information / fact |
 | `[p]` | positive |
 | `[c]` | negative |
 | `[*]` | highlight |
 
-Logs record what happened or what you learned, not what to do. They live mostly in daily and meeting notes. Decisions are usually logged as `[p]` / `[c]`. No `#task` tag — logs are not tasks.
+## Typed logs: the `#log/*` taxonomy
 
-```markdown
-- [b] [[2026-08-11 Muninize kickoff]] — kickoff with [[Anna Berg]]
-- [i] Client prefers a phased rollout [[Project Muninize]]
-- [c] The legacy SOAP endpoint may block the timeline [[Project Muninize]]
-```
+Some log kinds are worth querying as a class across the whole vault. Give those a nested tag under `#log/`, in addition to their marker. The tag is **opt-in** — an ordinary log needs only its marker; add a tag only when the kind forms a class you want to pull together.
+
+| Kind | Marker + tag | Why that marker |
+|---|---|---|
+| Decision | `- [b] #log/decision Go REST-first [[Project Muninize]]` | a decision is an event |
+| Risk | `- [c] #log/risk Legacy SOAP endpoint may block the timeline [[Project Muninize]]` | a risk is a flagged concern |
+
+The marker and the tag do different jobs: the **marker** sets the family, behavior (`NON_TASK`), and visual; the **tag** sets the semantic class for cross-cutting queries. They are orthogonal, which is why decision and risk draw from different markers but share the `#log/` namespace. Query all decisions with `#log/decision`, everything typed with `#log/*`.
+
+Major decisions can be promoted to their own `type: decision` note (context, rationale, date), ADR-style — the same capture-cheap, promote-what-matters move as the rest of the vault.
 
 ## The linking rule (why any of this rolls up)
 

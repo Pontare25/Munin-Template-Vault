@@ -16,7 +16,7 @@ summary:
 
 ## Decisions
 
-%% Log decisions as [p] positive / [c] negative, link what they affect: - [p] Go REST-first [[Project]] %%
+%% Record a decision as an event log tagged for query: - [b] #log/decision Go REST-first [[Project]] %%
 
 ## Tasks
 
