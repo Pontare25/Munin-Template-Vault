@@ -35,10 +35,6 @@ No git knowledge required to use the vault. When you are ready to back it up, [A
 
 Your `Atlas/` knowledge layer can be exported as a clean, tool-agnostic [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) bundle: plain markdown any tool or AI can read, with the Obsidian-specific syntax stripped out. All of this is optional and self-contained under [System/OKF](System/OKF/README.md); ignore that folder entirely if you don't need it.
 
-## Sibling template: Munin-System-Individual
-
-Want a purely personal, single-user vault without the federation and company layer? Use the sibling template [Munin-System-Individual](https://github.com/Pontare25/Munin-System-Individual). It shares the same schema and operating loop, ships Obsidian skills with weekly upstream sync, and treats the feedback loop (correct the AI once, it sticks) as its headline feature. Forward work on the individual template is tracked in that repo.
-
 ## Credits and inspirations
 
 - **Andrej Karpathy's LLM Wiki** idea: a personal wiki curated by a language model. https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
