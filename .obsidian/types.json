@@ -24,6 +24,14 @@
     "TQ_show_task_count": "checkbox",
     "TQ_show_toolbar": "checkbox",
     "TQ_show_tree": "checkbox",
-    "TQ_show_urgency": "checkbox"
+    "TQ_show_urgency": "checkbox",
+    "members": "multitext",
+    "start-date": "date",
+    "end-date": "date",
+    "due-date": "date",
+    "related": "multitext",
+    "up": "multitext",
+    "date": "date",
+    "created-date": "datetime"
   }
 }

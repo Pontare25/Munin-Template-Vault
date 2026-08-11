@@ -4,5 +4,6 @@
   "text-extractor",
   "dataview",
   "obsidian-tasks-plugin",
-  "tag-wrangler"
+  "tag-wrangler",
+  "obsidian-minimal-settings"
 ]
