@@ -24,7 +24,9 @@ Ship the first Munin integration MVP.
 ## Meetings
 
 ![[Meetings.base#Project meetings]]
+
 ## Tasks from meetings & logs
+
 ```dataview
 TASK
 WHERE contains(text, "#task")
@@ -32,7 +34,9 @@ WHERE contains(list(" ", "/", "!", ">", "?"), status)
 WHERE contains(this.file.inlinks, file.link)
 SORT file.mtime DESC
 ```
+
 ## Log
+
 ```dataview
 TASK
 WHERE contains(list("b", "i", "p", "c", "*"), status)

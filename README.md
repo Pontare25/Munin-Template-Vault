@@ -1,12 +1,14 @@
 # Munin-Template-Vault
 
+> **⚠️ Work in progress.** This template is under active development — folder structure, templates, and conventions are still changing and may break between updates. Explore the ideas and kick the tires; don't yet rely on it as a stable base for irreplaceable notes.
+
 A ready-to-use [Obsidian](https://obsidian.md) vault that works as an **AI-maintained personal wiki**. You capture thoughts and sources; an AI assistant (Claude Code, Codex, or any tool that can read files) files, links, and maintains the knowledge base with you.
 
 Named after Munin, one of Odin's two ravens: the one that remembers.
 
 ## What you get
 
-- A folder structure that separates **capture** (Raw), **knowledge** (Atlas), and **configuration** (AI-OS), with Calendar and Efforts alongside.
+- A folder structure that separates **capture** (Fleeting + Raw), **knowledge** (Atlas), and **configuration** (AI-OS), with Calendar and Efforts alongside.
 - A note schema built on wikilinks, a small set of frontmatter fields, and an extended idea compass (`up`, `related`, `down`, `challenges`).
 - Standard Operating Procedures (SOPs) the AI follows for ingesting sources, creating notes, answering questions from the wiki, reviewing your daily note, and linting the wiki.
 - Minimal Templater templates, three Bases dashboards, and a small worked example you can explore and then delete.
@@ -25,7 +27,7 @@ No git knowledge required to use the vault. When you are ready to back it up, [A
 
 | Layer | Folder | Role |
 |---|---|---|
-| Capture | `Raw/` | Inbox for sources and fleeting ideas, in transit, not an archive |
+| Capture | `Fleeting/` + `Raw/` | `Fleeting/` = your own quick notes and ideas; `Raw/` = source material awaiting processing. In transit, not an archive |
 | Knowledge | `Atlas/` | Permanent notes, topics, maps, entities. AI-maintained, compounding |
 | Schema | `AI-OS/` | How the vault works: your profile, the rules, the SOPs |
 
