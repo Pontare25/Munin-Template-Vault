@@ -1,5 +1,8 @@
 [
   "templater-obsidian",
   "omnisearch",
-  "text-extractor"
+  "text-extractor",
+  "dataview",
+  "obsidian-tasks-plugin",
+  "tag-wrangler"
 ]

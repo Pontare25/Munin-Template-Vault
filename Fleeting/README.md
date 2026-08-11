@@ -1,0 +1,1 @@
+This is where all new notes go. Focusing too much on organization is going to cause a lot of friction. 
