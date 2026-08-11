@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.5.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.4.0...v1.5.0) (2026-08-11)
+
+
+### Features
+
+* decisions and #log/* taxonomy ([6e10316](https://github.com/Pontare25/Munin-Template-Vault/commit/6e1031662ba414d9e471db548543bbaa9b452351)), closes [#53](https://github.com/Pontare25/Munin-Template-Vault/issues/53)
+* task/log logging system with project rollups, guides, and worked example ([71af313](https://github.com/Pontare25/Munin-Template-Vault/commit/71af31315709531429408056af20802510d62279))
+
+
+### Documentation
+
+* cross-link Munin-System-Individual sibling template ([d48d776](https://github.com/Pontare25/Munin-Template-Vault/commit/d48d776d85225e1a8bdc261f60e94590a2734387))
+* drop stale Munin-System-Individual cross-link ([69a3195](https://github.com/Pontare25/Munin-Template-Vault/commit/69a319514bc921288c2a5d9fec78f04d677f095e))
+* mark WIP, document Fleeting capture layer, fix example-note lint ([c3e7fa4](https://github.com/Pontare25/Munin-Template-Vault/commit/c3e7fa4892b55dfaa48fe4965283926c51673272))
+
 ## [1.4.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.3.2...v1.4.0) (2026-07-08)
 
 
