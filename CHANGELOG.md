@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.6.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.5.0...v1.6.0) (2026-08-14)
+
+
+### Features
+
+* finalize daily note template ([43fb066](https://github.com/Pontare25/Munin-Template-Vault/commit/43fb0660ad6f530df519f554081f8e2269564177))
+* Fleeting folder template for frictionless capture ([d9a1a8b](https://github.com/Pontare25/Munin-Template-Vault/commit/d9a1a8b15eff315f942bad4094bff7b56a6ca0b8))
+* periodic notes via Journals plugin ([ddbf0a5](https://github.com/Pontare25/Munin-Template-Vault/commit/ddbf0a576080f0b6b3a286db9faa36777dfa2d54))
+* redesign daily note template ([df4979a](https://github.com/Pontare25/Munin-Template-Vault/commit/df4979a6762d7aa3ef0e0d5676727898d98f707c))
+
+
+### Documentation
+
+* add doc-on-ship, frontmatter governance, and minimal-tags rules ([441b025](https://github.com/Pontare25/Munin-Template-Vault/commit/441b02541e9dbccb73b5fa314fb83d7df292d9fd))
+* refine daily task-capture hint ([928c7c0](https://github.com/Pontare25/Munin-Template-Vault/commit/928c7c09bd663d23e2f34dbdb6c5eaaca8df34e4))
+
 ## [1.5.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.4.0...v1.5.0) (2026-08-11)
 
 
