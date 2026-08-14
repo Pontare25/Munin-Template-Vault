@@ -36,7 +36,7 @@ The periods below double as your time-box. %%
 
 ---
 ## Tasks
-%% new task `Ctrl+Shift+L` to open the tasks window which autotag the task with  `#task` . It is recommended to create tasks in the log section above or in meeting notes %%
+%% new task `Ctrl+Shift+L` to open the create new tasks window which autotag the task with  `#task` . It is recommended to create tasks in the log section above or in meeting notes %%
 ```tasks
 not done
 happens on or before <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
