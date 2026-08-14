@@ -1,4 +1,3 @@
-<%* await tp.file.move("Efforts/Areas/" + tp.file.title) -%>
 ---
 type: area
 status: active
@@ -7,6 +6,7 @@ description:
 up:
 ---
 # <% tp.file.title %>
+<%* await tp.file.move("Efforts/Areas/" + tp.file.title) -%>
 
 ## Standard of care
 

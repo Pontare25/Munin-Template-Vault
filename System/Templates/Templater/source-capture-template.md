@@ -1,4 +1,3 @@
-<%* await tp.file.move("Raw/Sources/" + tp.file.title) -%>
 ---
 type: source
 created-date: <% tp.date.now("YYYY-MM-DD") %>
@@ -8,6 +7,7 @@ topics:
 resource:
 ---
 ## Capture
+<%* await tp.file.move("Raw/Sources/" + tp.file.title) -%>
 
 <% tp.file.cursor() %>
 

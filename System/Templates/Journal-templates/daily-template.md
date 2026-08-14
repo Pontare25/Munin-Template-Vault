@@ -18,14 +18,19 @@ summary:
 2. 
 3. 
 ---
-## Log
-%% `Ctrl+L` for an empty checkbox, then select log type `[b]` standard log / event · `[i]` fact · `[p]` + · `[c]` − · `[*]` highlight. 
-Link `[[entities]]` such as projects and people so items are traceable using dataview queries. 
-The periods below double as your time-box. %%
+## Logs
+> [!info]- Creating traceable logs
+> `Ctrl+L` for an empty checkbox, then select log type `[b]` standard log / event · `[i]` fact · `[p]` + · `[c]` − · `[*]` highlight. 
+> Link `[[entities]]` such as projects and people so items are traceable using dataview queries. 
+> The periods below double as your time-box. 
+
+
 **Morning**
 - 
+
 **Afternoon**
 - 
+
 **Evening**
 - 
 
@@ -36,7 +41,10 @@ The periods below double as your time-box. %%
 
 ---
 ## Tasks
-%% new task `Ctrl+Shift+L` to open the create new tasks window which autotag the task with  `#task` . It is recommended to create tasks in the log section above or in meeting notes %%
+> [!info]- Creating new tasks
+> Create a new task by clicking `Ctrl+Shift+L` to open the create new tasks window which auto tag the task with  `#task` . It is recommended to create tasks in the log section above or in meeting notes 
+
+**Due**
 ```tasks
 not done
 happens on or before <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
@@ -46,6 +54,7 @@ hide task count
 short
 ```
 
+**Upcoming tasks**
 > [!todo]- Upcoming 2 weeks
 > ```tasks
 > not done

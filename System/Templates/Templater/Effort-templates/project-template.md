@@ -1,4 +1,3 @@
-<%* await tp.file.move("Efforts/Projects/" + tp.file.title) -%>
 ---
 type: project
 status: active
@@ -12,6 +11,7 @@ due-date:
 end-date:
 ---
 # <% tp.file.title %>
+<%* await tp.file.move("Efforts/Projects/" + tp.file.title) -%>
 
 ## Goal
 
@@ -21,11 +21,7 @@ end-date:
 
 - [ ] #task 
 
-## Meetings
-
-![[Meetings.base#Project meetings]]
-
-## Tasks from meetings & logs
+### Tasks from meetings & logs
 
 ```dataview
 TASK
@@ -34,6 +30,10 @@ WHERE contains(list(" ", "/", "!", ">", "?"), status)
 WHERE contains(outlinks, [[]]) or contains(up, [[]])
 SORT file.mtime DESC
 ```
+
+## Meetings
+
+![[Meetings.base#Project meetings]]
 
 ## Log
 
