@@ -15,6 +15,7 @@ created-date: 2026-01-15
 
   | Value | Lives in | Meaning |
   |---|---|---|
+  | `fleeting` | `Fleeting/` | Quick capture in transit, not yet filed. Promoted to another type or deleted |
   | `note` | `Atlas/Notes/` | Atomic note, one idea |
   | `topic` | `Atlas/Topics/` | Topic hub with full compass |
   | `moc` | `Atlas/MOCs/` | Curated map of content |

@@ -8,3 +8,7 @@ Quick capture for **your own notes and ideas** — a place to write something do
 - **`Raw/`** — source material you bring in (articles, PDFs, links, clippings) awaiting processing.
 
 Both are in transit, not an archive. The AI develops fleeting notes and promotes the ones worth keeping into `Atlas/` (the permanent, compounding knowledge layer); sources in `Raw/` get processed the same way. Nothing here needs to be filed by hand.
+
+## How capture works
+
+New notes default to this folder, and a Templater **folder template** applies automatically to anything created here: you get `type: fleeting` and a timestamp for free, then just type. No template picking, no filing decision at the moment of thought. `Fleeting/` is the only auto-templated folder — everywhere else you choose a template when you promote the note.
