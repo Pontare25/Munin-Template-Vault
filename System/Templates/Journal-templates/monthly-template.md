@@ -26,8 +26,11 @@ summary:
 ---
 
 ## Monthly Rollup
+### Weeks this month
 ![[Journals.base#Monthly-rollup]]
 
+### Days this month
+![[Journals.base#Monthly-daily-rollup]]
 
 ### Tasks
 
@@ -58,8 +61,27 @@ summary:
 > ```
 
 ### Logs & decisions this month
-> [!note]- Log & decision rollup
-> *Placeholder — month-scoped log/decision rollup TODO. See the weekly template for the daily-grained Dataview pattern to adapt.*
+> [!note]- All logs this month (grouped by week)
+> ```dataview
+> TASK
+> FROM "Calendar"
+> WHERE file.day >= date("<% moment(tp.file.title, "YYYY-MM").startOf("month").format("YYYY-MM-DD") %>") AND file.day <= date("<% moment(tp.file.title, "YYYY-MM").endOf("month").format("YYYY-MM-DD") %>")
+> WHERE contains(list("b", "i", "p", "c", "*"), status)
+> GROUP BY dateformat(file.day, "'W'WW") AS "Week"
+> SORT file.day ASC
+> ```
+
+**Decisions**
+```dataview
+TASK
+FROM "Calendar"
+WHERE file.day >= date("<% moment(tp.file.title, "YYYY-MM").startOf("month").format("YYYY-MM-DD") %>") AND file.day <= date("<% moment(tp.file.title, "YYYY-MM").endOf("month").format("YYYY-MM-DD") %>")
+WHERE contains(text, "#log/decision")
+SORT file.day ASC
+```
+
+### Meetings this month
+![[Meetings.base#Monthly meeting rollup]]
 
 ---
 ## Next month

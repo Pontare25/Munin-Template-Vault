@@ -39,3 +39,23 @@ views:
       file.name: 235
       note.summary: 616
     rowHeight: medium
+  - type: table
+    name: Monthly-daily-rollup
+    filters:
+      and:
+        - type == "daily"
+        - date >= this.date
+        - date < this.date + "1 month"
+    groupBy:
+      property: formula.week
+      direction: ASC
+    order:
+      - file.name
+      - summary
+    sort:
+      - property: date
+        direction: ASC
+    columnSize:
+      file.name: 93
+      note.summary: 920
+    rowHeight: medium

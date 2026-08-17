@@ -41,9 +41,9 @@ The rollups only surface what you linked and tagged during the week (see [[tasks
 
 ## Monthly notes
 
-Open the month's note via the **Calendar** panel or the "Open monthly note" command. Journals files it under `Calendar/Monthly Notes/YYYY/` from the monthly template. Same idea as the weekly note, one altitude up: it rolls up the month's weekly notes (the Journals base's "Monthly-rollup" view — the week-into-month hierarchy) and the month's tasks (completed, created, still open by month's end), and gives you a review surface for wins, misses, decisions, and themes plus next-month priorities.
+Open the month's note via the **Calendar** panel or the "Open monthly note" command. Journals files it under `Calendar/Monthly Notes/YYYY/` from the monthly template. Same idea as the weekly note, one altitude up: it rolls up the month's weekly notes (the Journals base's "Monthly-rollup" view — the week-into-month hierarchy), the month's tasks (completed, created, still open by month's end), the month's logs (grouped by week) and `#log/decision` items, and the month's meetings (the Meetings base's week-grouped "Monthly meeting rollup" view) — and gives you a review surface for wins, misses, decisions, and themes plus next-month priorities.
 
-The rollup follows the journal hierarchy — days roll into the week note, weeks roll into the month note — so the monthly note is where you step back and summarize the weeks rather than re-reading every day. The month-scoped log and decision rollup is a placeholder for now.
+The rollup follows the journal hierarchy — days roll into the week note, weeks roll into the month note — so the monthly note is where you step back and summarize the weeks rather than re-reading every day.
 
 ## Tags
 
