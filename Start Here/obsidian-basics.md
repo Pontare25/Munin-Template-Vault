@@ -33,11 +33,17 @@ Open today's note from the **Calendar** panel (right sidebar, opens on startup) 
 
 Open the week's note via the **Calendar** panel or the "Open weekly note" command. Journals files it under `Calendar/Weekly Notes/YYYY/` from the weekly template. The weekly note is a review surface, not a capture surface: it rolls up the week automatically and gives you room to close the week out.
 
-- **Rollup** pulls the week together with no manual work: tasks completed and created this week, tasks still open by week's end (Tasks plugin, date-scoped); the week's logs and any `#log/decision` items grouped by day (Dataview over the week's daily and meeting notes); and every meeting held that week (the Meetings base's "Weekly meeting rollup" view). The date range comes from the note title.
+- **Rollup** pulls the week together with no manual work: the week's daily notes (the Journals base's "Weekly-rollup" view — the day-into-week hierarchy); tasks completed and created this week, tasks still open by week's end (Tasks plugin, date-scoped); the week's logs and any `#log/decision` items grouped by day (Dataview over the week's daily and meeting notes); and every meeting held that week (the Meetings base's "Weekly meeting rollup" view). The date range comes from the note title.
 - **Weekly Review** — prompts for wins, misses, and decisions worth promoting to a `type: decision` note.
 - **Next week** — a top-3 priorities block, so planning flows forward.
 
 The rollups only surface what you linked and tagged during the week (see [[tasks-and-logs]]); an empty section usually means nothing was captured, not a broken query.
+
+## Monthly notes
+
+Open the month's note via the **Calendar** panel or the "Open monthly note" command. Journals files it under `Calendar/Monthly Notes/YYYY/` from the monthly template. Same idea as the weekly note, one altitude up: it rolls up the month's weekly notes (the Journals base's "Monthly-rollup" view — the week-into-month hierarchy) and the month's tasks (completed, created, still open by month's end), and gives you a review surface for wins, misses, decisions, and themes plus next-month priorities.
+
+The rollup follows the journal hierarchy — days roll into the week note, weeks roll into the month note — so the monthly note is where you step back and summarize the weeks rather than re-reading every day. The month-scoped log and decision rollup is a placeholder for now.
 
 ## Tags
 

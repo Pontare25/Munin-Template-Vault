@@ -21,7 +21,7 @@ Named after Munin, one of Odin's two ravens: the one that remembers.
 3. When Obsidian asks, trust the vault and enable community plugins. It bundles three, already installed: **Templater** (required; runs the note templates), **Omnisearch** (fast full-text search), and **Text Extractor** (OCR and text extraction from PDFs and images).
 4. Open [START-HERE](START-HERE.md) and follow it.
 
-No git knowledge required to use the vault. When you are ready to back it up, [AI-OS/Guides/github-and-backup](AI-OS/Guides/github-and-backup.md) explains git for people who write notes, not code.
+No git knowledge required to use the vault. When you are ready to back it up, [github-and-backup](Start%20Here/github-and-backup.md) explains git for people who write notes, not code.
 
 ## The three layers
 

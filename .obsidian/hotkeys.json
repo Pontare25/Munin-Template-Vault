@@ -5,6 +5,15 @@
         "Mod",
         "Shift"
       ],
+      "key": "T"
+    }
+  ],
+  "templater-obsidian:System/Templates/Templater/Commands/log-bullet.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
       "key": "L"
     }
   ]

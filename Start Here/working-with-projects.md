@@ -23,7 +23,7 @@ Fill in what you know; leave the rest empty. `status: active` while the project 
 
 ## Link meetings to the project
 
-Make a meeting note from the **meeting template** (it lands in `Calendar/Meetings/`). Set three links:
+Make a meeting note from the **meeting template**. On creation it prompts for the meeting's date and time (pre-filled with now); it then prefixes the filename with the date (`2026-08-11 Kickoff`) and files it under `Calendar/Meetings/YYYY/wWW/` (year and ISO week, matching the weekly note). The full datetime is stored in `date:`, so the daily/weekly/monthly rollups pick the meeting up by day. Set three links:
 
 ```yaml
 ---

@@ -31,7 +31,7 @@
     "due-date": "date",
     "related": "multitext",
     "up": "multitext",
-    "date": "date",
+    "date": "datetime",
     "created-date": "datetime"
   }
 }

@@ -1,0 +1,41 @@
+filters:
+  and:
+    - file.path.startsWith("Calendar")
+formulas:
+  week: date(date).format("[W]WW")
+  day: date(date).format("ddd")
+views:
+  - type: table
+    name: Weekly-rollup
+    filters:
+      and:
+        - type == "daily"
+        - date >= this.date
+        - date < this.date + "7d"
+    order:
+      - file.name
+      - summary
+    sort:
+      - property: date
+        direction: ASC
+    columnSize:
+      file.name: 235
+      note.summary: 616
+    rowHeight: tall
+  - type: table
+    name: Monthly-rollup
+    filters:
+      and:
+        - type == "weekly"
+        - date >= this.date
+        - date < this.date + "1 month"
+    order:
+      - file.name
+      - summary
+    sort:
+      - property: date
+        direction: ASC
+    columnSize:
+      file.name: 235
+      note.summary: 616
+    rowHeight: medium

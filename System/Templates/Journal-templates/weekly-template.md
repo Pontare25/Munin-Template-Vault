@@ -13,10 +13,21 @@ summary:
 
 ## Weekly Summary
 `INPUT[textArea:summary]`
+## Weekly Review
+**Wins**
+- <% tp.file.cursor() %>
+
+**Misses**
+- 
+
+**Decisions** (Anything worth promoting to a `type: decision` note?)
+- 
 
 ---
-## Rollup
-Week <% moment(tp.file.title, "GGGG-[W]WW").startOf("isoWeek").format("MMM D") %> – <% moment(tp.file.title, "GGGG-[W]WW").endOf("isoWeek").format("MMM D") %>
+
+## Weekly Rollup
+![[Journals.base#Weekly-rollup]]
+
 
 ### Tasks
 
@@ -68,20 +79,6 @@ SORT file.name ASC
 
 ### Meetings this week
 ![[Meetings.base#Weekly meeting rollup]]
-
----
-## Weekly Review
-
-<% tp.file.cursor() %>
-
-**Wins**
-- 
-
-**Misses**
-- 
-
-**Decisions** (Anything worth promoting to a `type: decision` note?)
-- 
 
 ---
 ## Next week

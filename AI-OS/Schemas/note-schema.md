@@ -30,6 +30,7 @@ created-date: 2026-01-15
   | `meeting` | `Calendar/Meetings/` | Meeting note |
 
 - **`created-date:`** in `YYYY-MM-DD` format. Templates fill it automatically.
+- **`date:`** on calendar notes marks the day the note covers. Daily/weekly/monthly notes carry a `YYYY-MM-DD` date; **meeting notes carry a full `YYYY-MM-DD HH:mm` datetime** (the meeting template prompts for it), and the meeting's filename is prefixed with the date. Rollups key off the day, so the time on a meeting is informational.
 
 Strongly recommended on knowledge notes (everything outside `Calendar/`):
 

@@ -333,6 +333,121 @@
         "rows": [],
         "decorateWholeBlock": false
       }
+    },
+    "monthly": {
+      "name": "monthly",
+      "write": {
+        "type": "month"
+      },
+      "timeline": {
+        "start": "",
+        "end": {
+          "kind": "never"
+        }
+      },
+      "dateFormat": "YYYY-MM",
+      "frontmatter": {
+        "dateField": "journal-date",
+        "startDateField": "journal-start-date",
+        "endDateField": "journal-end-date",
+        "addStartDate": false,
+        "addEndDate": false
+      },
+      "numbering": {
+        "enabled": false,
+        "anchorDate": "",
+        "allowBefore": false,
+        "sources": []
+      },
+      "nameTemplate": "{{date}}",
+      "folder": "Calendar/Monthly Notes/{{date:YYYY}}",
+      "templates": [
+        "System/Templates/Journal-templates/monthly-template"
+      ],
+      "confirmCreation": false,
+      "autoCreate": false,
+      "decorations": [
+        {
+          "mode": "and",
+          "conditions": [
+            {
+              "type": "has-note"
+            }
+          ],
+          "styles": [
+            {
+              "type": "shape",
+              "size": 0.4,
+              "shape": "circle",
+              "color": {
+                "type": "theme",
+                "name": "interactive-accent"
+              },
+              "placement_x": "center",
+              "placement_y": "bottom"
+            }
+          ]
+        }
+      ],
+      "navBlock": {
+        "type": "create",
+        "decorateWholeBlock": false,
+        "rows": [
+          {
+            "template": "{{date:MMMM}}",
+            "fontSize": 3,
+            "bold": true,
+            "italic": false,
+            "link": "self",
+            "journal": "",
+            "color": {
+              "type": "theme",
+              "name": "text-normal"
+            },
+            "background": {
+              "type": "transparent"
+            },
+            "addDecorations": true
+          },
+          {
+            "template": "{{relative_date}}",
+            "fontSize": 0.7,
+            "bold": false,
+            "italic": false,
+            "link": "none",
+            "journal": "",
+            "color": {
+              "type": "theme",
+              "name": "text-normal"
+            },
+            "background": {
+              "type": "transparent"
+            },
+            "addDecorations": false
+          },
+          {
+            "template": "{{date:YYYY}}",
+            "fontSize": 1,
+            "bold": false,
+            "italic": false,
+            "link": "year",
+            "journal": "",
+            "color": {
+              "type": "theme",
+              "name": "text-normal"
+            },
+            "background": {
+              "type": "transparent"
+            },
+            "addDecorations": false
+          }
+        ]
+      },
+      "intervalBlock": {
+        "type": "create",
+        "rows": [],
+        "decorateWholeBlock": false
+      }
     }
   },
   "shelves": {},

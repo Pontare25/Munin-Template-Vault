@@ -16,6 +16,9 @@ summary:
 `INPUT[textArea:summary]`
 
 ---
+## Brain dump
+- 
+
 ## Today's top 3
 1. 
 2. 
@@ -23,29 +26,22 @@ summary:
 ---
 ## Logs
 > [!info]- Creating traceable logs
-> `Ctrl+L` for an empty checkbox, then select log type `[b]` standard log / event · `[i]` fact · `[p]` + · `[c]` − · `[*]` highlight. 
+> ![[Hotkeys#Logs]]
 > Link `[[entities]]` such as projects and people so items are traceable using dataview queries. 
 > The periods below double as your time-box. 
 
-
 **Morning**
-- 
 
-**Afternoon**
-- 
+
+**Afternoon** 
+
 
 **Evening**
-- 
-
----
-## Brain dump
-- 
-
-
----
+ 
 ## Tasks
 > [!info]- Creating new tasks
-> Create a new task by clicking `Ctrl+Shift+L` to open the create new tasks window which auto tag the task with  `#task` . It is recommended to create tasks in the log section above or in meeting notes 
+> ![[Hotkeys#Tasks]]
+> It is recommended to create tasks in the log section above or in meeting notes 
 
 ---
 > [!todo]- Tasks created today
