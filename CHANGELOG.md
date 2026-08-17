@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.7.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.6.0...v1.7.0) (2026-08-17)
+
+
+### Features
+
+* monthly digest rollup and day-to-month base view (F5) ([29b7a1f](https://github.com/Pontare25/Munin-Template-Vault/commit/29b7a1fdd57b6fe18e13f17b78add1006d458ee9))
+* monthly notes, journal rollup hierarchy, hotkeys, Start Here guides ([9da6c93](https://github.com/Pontare25/Munin-Template-Vault/commit/9da6c9347f5729c7a94f3dca6c2ef101e2d7e381))
+* weekly note template — week rollup, review, and meetings (F3) ([4677e65](https://github.com/Pontare25/Munin-Template-Vault/commit/4677e656b5f3e007ec4c175c3c6b84a0c7b695ca))
+
 ## [1.6.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.5.0...v1.6.0) (2026-08-14)
 
 
