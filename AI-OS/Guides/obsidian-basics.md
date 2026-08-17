@@ -27,7 +27,17 @@ Obsidian shows these as "properties" above the note. This vault leans on frontma
 
 ## Daily notes
 
-Open today's note from the **Calendar** panel (right sidebar, opens on startup) or the "Open today's note" command (Ctrl/Cmd-P opens the command palette). The Journals plugin creates it under `Calendar/Daily Notes/YYYY/MM-MMM/` from the daily template, building the folders as needed; weekly notes work the same way via "Open weekly note". This vault's core habit: dump everything into today's daily note; the [[daily-review]] SOP sorts it later. The summary box at the top is a Meta Bind field that writes straight to the note's `summary:` property. Journals and Meta Bind are preconfigured; the onboarding session verifies them.
+Open today's note from the **Calendar** panel (right sidebar, opens on startup) or the "Open today's note" command (Ctrl/Cmd-P opens the command palette). The Journals plugin creates it under `Calendar/Daily Notes/YYYY/MM-MMM/` from the daily template, building the folders as needed. This vault's core habit: dump everything into today's daily note; the [[daily-review]] SOP sorts it later. The summary box at the top is a Meta Bind field that writes straight to the note's `summary:` property. Journals and Meta Bind are preconfigured; the onboarding session verifies them.
+
+## Weekly notes
+
+Open the week's note via the **Calendar** panel or the "Open weekly note" command. Journals files it under `Calendar/Weekly Notes/YYYY/` from the weekly template. The weekly note is a review surface, not a capture surface: it rolls up the week automatically and gives you room to close the week out.
+
+- **Rollup** pulls the week together with no manual work: tasks completed and created this week, tasks still open by week's end (Tasks plugin, date-scoped); the week's logs and any `#log/decision` items grouped by day (Dataview over the week's daily and meeting notes); and every meeting held that week (the Meetings base's "Weekly meeting rollup" view). The date range comes from the note title.
+- **Weekly Review** — prompts for wins, misses, and decisions worth promoting to a `type: decision` note.
+- **Next week** — a top-3 priorities block, so planning flows forward.
+
+The rollups only surface what you linked and tagged during the week (see [[tasks-and-logs]]); an empty section usually means nothing was captured, not a broken query.
 
 ## Tags
 

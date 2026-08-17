@@ -1,7 +1,10 @@
 {
   "pendingNoteMigration": [],
   "calendar": {
-    "mode": "locale"
+    "mode": "custom",
+    "dow": 1,
+    "doy": 4,
+    "global": false
   },
   "calendarDisplay": {
     "weekPlacement": "left"
@@ -94,15 +97,12 @@
       ],
       "navBlock": {
         "type": "create",
-        "decorateWholeBlock": false,
         "rows": [
           {
             "template": "{{date:ddd}}",
             "fontSize": 1,
             "bold": false,
             "italic": false,
-            "link": "none",
-            "journal": "",
             "color": {
               "type": "theme",
               "name": "text-normal"
@@ -110,6 +110,8 @@
             "background": {
               "type": "transparent"
             },
+            "link": "none",
+            "journal": "",
             "addDecorations": false
           },
           {
@@ -117,8 +119,6 @@
             "fontSize": 3,
             "bold": true,
             "italic": false,
-            "link": "self",
-            "journal": "",
             "color": {
               "type": "theme",
               "name": "text-normal"
@@ -126,6 +126,8 @@
             "background": {
               "type": "transparent"
             },
+            "link": "self",
+            "journal": "",
             "addDecorations": true
           },
           {
@@ -133,8 +135,6 @@
             "fontSize": 0.7,
             "bold": false,
             "italic": false,
-            "link": "none",
-            "journal": "",
             "color": {
               "type": "theme",
               "name": "text-normal"
@@ -142,6 +142,8 @@
             "background": {
               "type": "transparent"
             },
+            "link": "none",
+            "journal": "",
             "addDecorations": false
           },
           {
@@ -149,8 +151,6 @@
             "fontSize": 1,
             "bold": false,
             "italic": false,
-            "link": "week",
-            "journal": "",
             "color": {
               "type": "theme",
               "name": "text-normal"
@@ -158,6 +158,8 @@
             "background": {
               "type": "transparent"
             },
+            "link": "week",
+            "journal": "",
             "addDecorations": false
           },
           {
@@ -165,8 +167,6 @@
             "fontSize": 1,
             "bold": false,
             "italic": false,
-            "link": "month",
-            "journal": "",
             "color": {
               "type": "theme",
               "name": "text-normal"
@@ -174,6 +174,8 @@
             "background": {
               "type": "transparent"
             },
+            "link": "month",
+            "journal": "",
             "addDecorations": false
           },
           {
@@ -181,8 +183,6 @@
             "fontSize": 1,
             "bold": false,
             "italic": false,
-            "link": "year",
-            "journal": "",
             "color": {
               "type": "theme",
               "name": "text-normal"
@@ -190,9 +190,12 @@
             "background": {
               "type": "transparent"
             },
+            "link": "year",
+            "journal": "",
             "addDecorations": false
           }
-        ]
+        ],
+        "decorateWholeBlock": false
       },
       "intervalBlock": {
         "type": "create",
@@ -257,15 +260,12 @@
       ],
       "navBlock": {
         "type": "create",
-        "decorateWholeBlock": false,
         "rows": [
           {
             "template": "{{date:[W]w}}",
             "fontSize": 3,
             "bold": true,
             "italic": false,
-            "link": "self",
-            "journal": "",
             "color": {
               "type": "theme",
               "name": "text-normal"
@@ -273,6 +273,8 @@
             "background": {
               "type": "transparent"
             },
+            "link": "self",
+            "journal": "",
             "addDecorations": true
           },
           {
@@ -280,8 +282,6 @@
             "fontSize": 0.7,
             "bold": false,
             "italic": false,
-            "link": "none",
-            "journal": "",
             "color": {
               "type": "theme",
               "name": "text-normal"
@@ -289,6 +289,8 @@
             "background": {
               "type": "transparent"
             },
+            "link": "none",
+            "journal": "",
             "addDecorations": false
           },
           {
@@ -296,8 +298,6 @@
             "fontSize": 1,
             "bold": false,
             "italic": false,
-            "link": "month",
-            "journal": "",
             "color": {
               "type": "theme",
               "name": "text-normal"
@@ -305,6 +305,8 @@
             "background": {
               "type": "transparent"
             },
+            "link": "month",
+            "journal": "",
             "addDecorations": false
           },
           {
@@ -312,8 +314,6 @@
             "fontSize": 1,
             "bold": false,
             "italic": false,
-            "link": "year",
-            "journal": "",
             "color": {
               "type": "theme",
               "name": "text-normal"
@@ -321,9 +321,12 @@
             "background": {
               "type": "transparent"
             },
+            "link": "year",
+            "journal": "",
             "addDecorations": false
           }
-        ]
+        ],
+        "decorateWholeBlock": false
       },
       "intervalBlock": {
         "type": "create",

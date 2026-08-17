@@ -1,7 +1,10 @@
 ---
 type: daily
+journal: daily
+journal-date: <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
 created-date: <% tp.date.now("YYYY-MM-DD HH:mm") %>
 date: <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
+tags:
 summary:
 ---
 # <% moment(tp.file.title, "YYYY-MM-DD").format("dddd, MMMM D YYYY") %>
@@ -9,7 +12,7 @@ summary:
 
 ```calendar-nav 
 ```
-## Summary
+## Daily Summary
 `INPUT[textArea:summary]`
 
 ---
@@ -44,14 +47,28 @@ summary:
 > [!info]- Creating new tasks
 > Create a new task by clicking `Ctrl+Shift+L` to open the create new tasks window which auto tag the task with  `#task` . It is recommended to create tasks in the log section above or in meeting notes 
 
+---
+> [!todo]- Tasks created today
+> ```tasks
+> created <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD")%>
+> short
+> hide tags
+> ```
+
+> [!done]- Tasks completed today
+> ```tasks
+> done <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD")%>
+> short
+> ```
+
 **Due**
 ```tasks
 not done
 happens on or before <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
 sort by urgency
 group by due
-hide task count
 short
+hide tags
 ```
 
 **Upcoming tasks**
@@ -62,10 +79,9 @@ short
 > happens before <% moment(tp.file.title, "YYYY-MM-DD").add(14, "days").format("YYYY-MM-DD") %>
 > sort by due
 > group by due
-> hide task count
 > short
+> hide tags
 > ```
-
 
 ---
 ## Meetings

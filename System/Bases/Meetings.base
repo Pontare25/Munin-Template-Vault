@@ -38,7 +38,7 @@ views:
       file.name: 235
       note.up: 155
       note.summary: 500
-    rowHeight: medium
+    rowHeight: tall
   - type: table
     name: Attendee meetings
     filters:
@@ -58,3 +58,25 @@ views:
       note.summary: 303
       note.up: 250
     rowHeight: medium
+  - type: table
+    name: Weekly meeting rollup
+    filters:
+      and:
+        - date >= this.date
+        - date < this.date + "7d"
+    groupBy:
+      property: date
+      direction: ASC
+    order:
+      - file.name
+      - up
+      - summary
+      - attendees
+    sort:
+      - property: date
+        direction: ASC
+    columnSize:
+      file.name: 235
+      note.up: 155
+      note.summary: 616
+    rowHeight: extra
