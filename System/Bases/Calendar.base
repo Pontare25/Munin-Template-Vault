@@ -3,6 +3,7 @@ filters:
     - file.path.startsWith("Calendar/")
 formulas:
   week: date(date).format("[W]WW")
+  day: date(date).format("dddd")
 views:
   - type: table
     name: Daily rollup
@@ -18,6 +19,7 @@ views:
       - file.name
       - up
       - summary
+      - people
     sort:
       - property: date
         direction: ASC
@@ -37,7 +39,7 @@ views:
         - date >= this.date
         - date < this.date + "7d"
     groupBy:
-      property: date
+      property: formula.day
       direction: ASC
     order:
       - type
