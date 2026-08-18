@@ -1,9 +1,26 @@
+<%*
+// Sub-project support: pick a parent to nest under (folder is cosmetic; the
+// parent's Sub Projects table matches on `up`, which we fill from the pick).
+const projectFolders = app.vault.getAllLoadedFiles()
+  .filter(f => f.children && f.path.startsWith("Efforts/Projects/"))
+  .map(f => f.path.slice("Efforts/Projects/".length));
+const parent = await tp.system.suggester(
+  ["(top-level project)"].concat(projectFolders),
+  [""].concat(projectFolders),
+  false,
+  "Parent project? Pick one to nest this as a sub-project, or choose top-level."
+);
+const parentName = parent ? parent.split("/").pop() : "";
+const root = "Efforts/Projects/";
+const dest = parent ? root + parent + "/" + tp.file.title : root + tp.file.title;
+await tp.file.move(dest + "/" + tp.file.title);
+-%>
 ---
 type: project
 status: active
 created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
 updated:
-up:
+up:<% parentName ? "\n  - \"[[Project - " + parentName + "]]\"" : "" %>
 related:
 people:
 start-date: <% tp.date.now("YYYY-MM-DD") %>
@@ -14,26 +31,7 @@ aliases:
 summary:
 ---
 # <% tp.file.title %>
-<%*
-// Optional: nest under a parent project's folder to make it a sub-project.
-// Folder location is cosmetic; the parent's Sub Projects table matches on `up`,
-// so set up: to the parent (list form) as well.
-const projectFolders = app.vault.getAllLoadedFiles()
-  .filter(f => f.children && f.path.startsWith("Efforts/Projects/"))
-  .map(f => f.path.slice("Efforts/Projects/".length));
-const parent = await tp.system.suggester(
-  ["(top-level project)"].concat(projectFolders),
-  [""].concat(projectFolders),
-  false,
-  "Parent project? Pick one to nest this as a sub-project, or choose top-level."
-);
-const root = "Efforts/Projects/";
-const dest = parent
-  ? root + parent + "/" + tp.file.title + "/" + tp.file.title
-  : root + tp.file.title + "/" + tp.file.title;
-await tp.file.move(dest);
-await tp.file.rename("Project - " + tp.file.title);
--%>
+<%* await tp.file.rename("Project - " + tp.file.title) -%>
 
 ## Last update
 ```dataview

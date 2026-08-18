@@ -21,7 +21,7 @@ end-date:
 
 Fill in what you know; leave the rest empty. `status: active` while the project runs; `done` or `archived` when it closes.
 
-**Sub-projects.** When you create a project, the template asks for an optional parent. Pick one and the note is filed under that parent's folder (`Efforts/Projects/Aurora/Aurora Auth/…`); choose top-level and it sits on its own. The folder nesting is cosmetic: set `up:` to the parent (list form) and the parent note's **Sub Projects** table lists it. The `up` link, not the folder, is what wires the rollup.
+**Sub-projects.** When you create a project, the template asks for an optional parent. Pick one and the note is filed under that parent's folder (`Efforts/Projects/Aurora/Aurora Auth/…`) and its `up:` is filled with the parent link automatically; choose top-level and it sits on its own with an empty `up:`. The folder nesting is cosmetic: the `up` link, not the folder, is what wires the rollup, so the parent note's **Sub Projects** table lists it.
 
 ## Link meetings to the project
 
