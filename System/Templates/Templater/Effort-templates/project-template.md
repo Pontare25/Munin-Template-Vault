@@ -14,8 +14,26 @@ aliases:
 summary:
 ---
 # <% tp.file.title %>
-<%* await tp.file.move("Efforts/Projects/" + tp.file.title + "/" + tp.file.title) -%>
-<%* await tp.file.rename("Project - "+ tp.file.title) -%>
+<%*
+// Optional: nest under a parent project's folder to make it a sub-project.
+// Folder location is cosmetic; the parent's Sub Projects table matches on `up`,
+// so set up: to the parent (list form) as well.
+const projectFolders = app.vault.getAllLoadedFiles()
+  .filter(f => f.children && f.path.startsWith("Efforts/Projects/"))
+  .map(f => f.path.slice("Efforts/Projects/".length));
+const parent = await tp.system.suggester(
+  ["(top-level project)"].concat(projectFolders),
+  [""].concat(projectFolders),
+  false,
+  "Parent project? Pick one to nest this as a sub-project, or choose top-level."
+);
+const root = "Efforts/Projects/";
+const dest = parent
+  ? root + parent + "/" + tp.file.title + "/" + tp.file.title
+  : root + tp.file.title + "/" + tp.file.title;
+await tp.file.move(dest);
+await tp.file.rename("Project - " + tp.file.title);
+-%>
 
 ## Last update
 ```dataview
