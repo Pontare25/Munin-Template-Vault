@@ -1,37 +1,22 @@
-<%*
-// Sub-project support: pick a parent to nest under (folder is cosmetic; the
-// parent's Sub Projects table matches on `up`, which we fill from the pick).
-const projectFolders = app.vault.getAllLoadedFiles()
-  .filter(f => f.children && f.path.startsWith("Efforts/Projects/"))
-  .map(f => f.path.slice("Efforts/Projects/".length));
-const parent = await tp.system.suggester(
-  ["(top-level project)"].concat(projectFolders),
-  [""].concat(projectFolders),
-  false,
-  "Parent project? Pick one to nest this as a sub-project, or choose top-level."
-);
-const parentName = parent ? parent.split("/").pop() : "";
-const root = "Efforts/Projects/";
-const dest = parent ? root + parent + "/" + tp.file.title : root + tp.file.title;
-await tp.file.move(dest + "/" + tp.file.title);
--%>
 ---
 type: project
 status: active
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
-updated:
-up:<% parentName ? "\n  - \"[[Project - " + parentName + "]]\"" : "" %>
+created-date: 2026-08-17T09:00
+updated: 2026-08-19
+up:
+  - "[[Project - Aurora]]"
 related:
 people:
-start-date: <% tp.date.now("YYYY-MM-DD") %>
-due-date:
+  - "[[Erik Lund]]"
+  - "[[Mia Karlsson]]"
+start-date: 2026-08-17
+due-date: 2026-09-15
 end-date:
 aliases:
-  - <% tp.file.title %>
-summary:
+  - Aurora Auth
+summary: Auth module for the Aurora portal (SSO + token handling). Sub-project of Aurora.
 ---
-# <% tp.file.title %>
-<%* await tp.file.rename("Project - " + tp.file.title) -%>
+# Aurora Auth
 
 ## Last update
 ```dataview
@@ -64,7 +49,7 @@ LIMIT 1
 > SORT Source Desc 
 > ```
 ### Next actions
-- [ ] #task Kick-off the project
+- [ ] #task Pick the SSO provider [[Project - Aurora Auth]] ➕ 2026-08-17 📅 2026-08-20
 
 ## Related
 ### Logs
@@ -90,4 +75,4 @@ SORT Source DESC
 
 ## Goal
 
-<% tp.file.cursor() %>
+Deliver SSO login and secure token refresh for the Aurora portal.

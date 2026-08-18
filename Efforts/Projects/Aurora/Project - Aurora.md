@@ -1,37 +1,23 @@
-<%*
-// Sub-project support: pick a parent to nest under (folder is cosmetic; the
-// parent's Sub Projects table matches on `up`, which we fill from the pick).
-const projectFolders = app.vault.getAllLoadedFiles()
-  .filter(f => f.children && f.path.startsWith("Efforts/Projects/"))
-  .map(f => f.path.slice("Efforts/Projects/".length));
-const parent = await tp.system.suggester(
-  ["(top-level project)"].concat(projectFolders),
-  [""].concat(projectFolders),
-  false,
-  "Parent project? Pick one to nest this as a sub-project, or choose top-level."
-);
-const parentName = parent ? parent.split("/").pop() : "";
-const root = "Efforts/Projects/";
-const dest = parent ? root + parent + "/" + tp.file.title : root + tp.file.title;
-await tp.file.move(dest + "/" + tp.file.title);
--%>
 ---
 type: project
 status: active
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
-updated:
-up:<% parentName ? "\n  - \"[[Project - " + parentName + "]]\"" : "" %>
+created-date: 2026-08-17T09:00
+updated: 2026-08-19
+up:
 related:
+  - "[[Product Development]]"
 people:
-start-date: <% tp.date.now("YYYY-MM-DD") %>
-due-date:
+  - "[[Erik Lund]]"
+  - "[[Johan Nyberg]]"
+  - "[[Mia Karlsson]]"
+start-date: 2026-08-17
+due-date: 2026-09-30
 end-date:
 aliases:
-  - <% tp.file.title %>
-summary:
+  - Aurora
+summary: Rebuild of the customer portal. Worked example for the daily-note workflow test.
 ---
-# <% tp.file.title %>
-<%* await tp.file.rename("Project - " + tp.file.title) -%>
+# Aurora
 
 ## Last update
 ```dataview
@@ -64,7 +50,8 @@ LIMIT 1
 > SORT Source Desc 
 > ```
 ### Next actions
-- [ ] #task Kick-off the project
+- [ ] #task Lock the portal information architecture [[Project - Aurora]] ➕ 2026-08-17 📅 2026-08-21
+- [/] #task Stand up the staging environment [[Project - Aurora]] ➕ 2026-08-17
 
 ## Related
 ### Logs
@@ -90,4 +77,4 @@ SORT Source DESC
 
 ## Goal
 
-<% tp.file.cursor() %>
+Ship a rebuilt customer portal with a modern auth stack and a faster page load budget.

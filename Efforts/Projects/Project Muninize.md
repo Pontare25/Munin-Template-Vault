@@ -4,7 +4,8 @@ status: active
 created-date: 2026-08-11
 summary: Example project, part of the logging-system worked example. Safe to delete.
 up:
-related: "[[Product Development]]"
+related:
+  - "[[Product Development]]"
 start-date:
 due-date:
 end-date:

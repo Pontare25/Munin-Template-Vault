@@ -75,6 +75,14 @@ Four frontmatter keys place a note in the landscape of ideas, like compass direc
 
 All four take lists of wikilinks. When a compass link is not self-explanatory, say why it is there in one clause in the note body; a link whose reason is forgotten is half a link.
 
+> [!warning] Relationship fields are always lists, even with one value
+> `up`, `related`, `down`, `challenges`, `people`, `skills`, and `interests` must be written as a YAML **list**, even for a single link:
+> ```yaml
+> up:
+>   - "[[Parent]]"
+> ```
+> A single value written inline (`up: "[[Parent]]"`) is read by Bases as a scalar `Link`, not a list, so every `.contains(...)` / `.filter(...)` view filter silently returns nothing (the parent's Sub projects table, a meeting's Project/People rollups, Child/Related notes, all go blank). Obsidian's property editor writes the list form automatically; only hand-edited or imported notes get this wrong.
+
 How much compass a note needs depends on its type:
 
 | Type | Required | Encouraged |

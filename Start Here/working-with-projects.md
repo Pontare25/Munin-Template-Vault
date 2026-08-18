@@ -21,6 +21,8 @@ end-date:
 
 Fill in what you know; leave the rest empty. `status: active` while the project runs; `done` or `archived` when it closes.
 
+**Sub-projects.** When you create a project, the template asks for an optional parent. Pick one and the note is filed under that parent's folder (`Efforts/Projects/Aurora/Aurora Auth/…`) and its `up:` is filled with the parent link automatically; choose top-level and it sits on its own with an empty `up:`. The folder nesting is cosmetic: the `up` link, not the folder, is what wires the rollup, so the parent note's **Sub Projects** table lists it.
+
 ## Link meetings to the project
 
 Make a meeting note from the **meeting template**. On creation it prompts for the meeting's date and time (pre-filled with now); it then prefixes the filename with the date (`2026-08-11 Kickoff`) and files it under `Calendar/Meetings/YYYY/wWW/` (year and ISO week, matching the weekly note). The full datetime is stored in `date:`, so the daily/weekly/monthly rollups pick the meeting up by day. Set three links:
@@ -28,10 +30,12 @@ Make a meeting note from the **meeting template**. On creation it prompts for th
 ```yaml
 ---
 type: meeting
-up: "[[Project Muninize]]"        # the project this meeting belongs to
+up:
+  - "[[Project Muninize]]"        # the project this meeting belongs to
 people:
   - "[[Anna Berg]]"               # people who were there
-related: "[[Product Development]]"  # area or context
+related:
+  - "[[Product Development]]"     # area or context
 summary: One line on what the meeting was about.
 date: 2026-08-11
 ---
@@ -46,7 +50,8 @@ A meeting is a conversation; a **work session** is a block of focused work you d
 ```yaml
 ---
 type: work-session
-up: "[[Project Muninize]]"   # the project you worked on
+up:
+  - "[[Project Muninize]]"   # the project you worked on
 date: 2026-08-18
 summary: One line on what you did.
 ---
