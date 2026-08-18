@@ -14,7 +14,7 @@ The log markers are registered as type `NON_TASK` in the Tasks plugin. They are 
 ## Writing tasks
 
 - **`Ctrl+L`** inserts an empty checkbox `- [ ]` (Obsidian default).
-- **`Ctrl+Shift+T`** opens the Tasks create/edit window and tags the line `#task`.
+- **`Ctrl+Alt+T`** opens the Tasks create/edit window and tags the line `#task`.
 
 Only lines tagged `#task` are tracked by the Tasks plugin — this is the plugin's global filter. A checkbox **without** `#task` is ignored by every task query, which is useful for throwaway sub-steps you don't want cluttering rollups. The `#task` tag is hidden in rendered task queries, so it stays out of your way.
 
@@ -42,7 +42,7 @@ Write tasks wherever the work surfaces: a daily note, a meeting note, or directl
 
 Logs record what happened or what is true, not what to do. They live mostly in daily and meeting notes, and carry no `#task` tag.
 
-**`Ctrl+Shift+L`** inserts a `- [b]` log bullet; press it again on the same line to cycle the marker `[b] → [i] → [p] → [c]`. The five markers split into two groups:
+**`Ctrl+Alt+L`** inserts a `- [b]` log bullet; press it again on the same line to cycle the marker `[b] → [i] → [p] → [c]`. The five markers split into two groups:
 
 **Record** — the factual layer:
 

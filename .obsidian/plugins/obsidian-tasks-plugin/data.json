@@ -119,9 +119,9 @@
       {
         "symbol": "*",
         "name": "star",
-        "nextStatusSymbol": "x",
+        "nextStatusSymbol": "*",
         "availableAsCommand": false,
-        "type": "TODO"
+        "type": "NON_TASK"
       },
       {
         "symbol": "\"",
@@ -140,16 +140,16 @@
       {
         "symbol": "b",
         "name": "bookmark",
-        "nextStatusSymbol": "x",
+        "nextStatusSymbol": "b",
         "availableAsCommand": false,
-        "type": "TODO"
+        "type": "NON_TASK"
       },
       {
         "symbol": "i",
         "name": "information",
-        "nextStatusSymbol": "x",
+        "nextStatusSymbol": "i",
         "availableAsCommand": false,
-        "type": "TODO"
+        "type": "NON_TASK"
       },
       {
         "symbol": "S",
@@ -168,16 +168,16 @@
       {
         "symbol": "p",
         "name": "pros",
-        "nextStatusSymbol": "x",
+        "nextStatusSymbol": "p",
         "availableAsCommand": false,
-        "type": "TODO"
+        "type": "NON_TASK"
       },
       {
         "symbol": "c",
         "name": "cons",
-        "nextStatusSymbol": "x",
+        "nextStatusSymbol": "c",
         "availableAsCommand": false,
-        "type": "TODO"
+        "type": "NON_TASK"
       },
       {
         "symbol": "f",

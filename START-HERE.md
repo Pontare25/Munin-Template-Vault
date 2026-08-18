@@ -10,6 +10,7 @@ Welcome. This vault is a personal wiki that an AI assistant maintains with you. 
 4. The vault bundles three community plugins, already installed: **Templater** (required; runs the note templates), **Omnisearch** (full-text search), and **Text Extractor** (OCR and text from PDFs and images). Enabling community plugins in step 3 turns them on. If Templater is not active, enable it under Settings, Community plugins.
 
 ## 2. Open your AI tool in this folder
+> The system is built to work without AI but it makes the onboarding process easier. 
 
 Any AI assistant that can read and write files works: Claude Code, Codex, or similar. Open it with this vault folder as its working directory. The entry files `CLAUDE.md` and `AGENTS.md` point the AI to its operating manual automatically.
 
@@ -78,8 +79,26 @@ time, and wait for my answers before moving on. Keep it conversational.
 
 Skills are reusable instruction files that teach your AI tool specific capabilities. They can live in this vault (`AI-OS/Skills/`, recommended: versioned and portable) or in your AI tool's own default location if you prefer to keep the vault free of them. [AI-OS/Skills/README](AI-OS/Skills/README.md) explains the choice and the setup.
 
-Recommended first install: [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills), official Obsidian skills that teach an AI correct Obsidian markdown, Bases, Templater, and the Obsidian CLI. The full list lives in [AI-OS/Skills/README](AI-OS/Skills/README.md).
+Recommended first install: [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills), official Obsidian CEO's skills that teach an AI correct Obsidian markdown, Bases (Obsidian native databases), defuddle (fetch webpages into markdown), json-canvas, and the Obsidian CLI (the best way for AI to interact with Obsidian). The full list lives in [AI-OS/Skills/README](AI-OS/Skills/README.md).
+
+## Your guides
+
+The `Start Here/` folder holds the full set. Read them roughly in this order; each stands alone if you need to jump.
+
+1. [[obsidian-basics]] — just enough Obsidian to operate the vault: links, frontmatter, the daily/weekly/monthly notes, search.
+2. [[Guide to writing daily notes]] — the daily note, the one surface you write into every day.
+3. [[tasks-and-logs]] — the checkbox system: tasks vs logs, the markers, and how the rollups work.
+4. [[working-with-projects]] — how a project ties meetings, people, tasks, and logs together.
+5. [[working-with-ai]] — the capture → ingest → query → review loop, day to day.
+6. [[skills-setup]] — teach your AI repeatable capabilities that live in the vault.
+7. [[github-and-backup]] — make the vault survive your computer.
+8. [[Hotkeys]] — the custom keyboard shortcuts.
+9. [[Recommended Obsidian Tutorials]] — external videos if you want to go deeper.
 
 ## The one habit that matters
 
 Open today's daily note and dump everything there: thoughts, links, tasks, half-ideas. The daily-review SOP sweeps it into the right places. You never need to decide where something goes at capture time.
+
+This vault uses the [Journals](obsidian://show-plugin?id=journals) community plugin for managing periodic notes such as Daily, Weekly, Monthly, Quarterly and Yearly. Do not get overwhelmed, start with daily notes, once you feel like you want to aggregate information from multiple daily notes for a better overview and reflection over time start using the others, each builds the base for the next level (`Daily-> Weekly-> Monthly -> etc.` but it all starts with the daily note. 
+
+Think of the daily note as your launchpad and tracker. This is where you write your ideas and link information together. This is also what sets Obsidian apart from most note taking applications; the ability to link and aggregate information. This is what allows information to crystallize into knowledge over time. 

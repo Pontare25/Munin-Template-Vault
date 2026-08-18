@@ -3,7 +3,7 @@
     {
       "modifiers": [
         "Mod",
-        "Shift"
+        "Alt"
       ],
       "key": "T"
     }
@@ -12,9 +12,18 @@
     {
       "modifiers": [
         "Mod",
-        "Shift"
+        "Alt"
       ],
       "key": "L"
+    }
+  ],
+  "omnisearch:show-modal": [
+    {
+      "modifiers": [
+        "Mod",
+        "Alt"
+      ],
+      "key": "F"
     }
   ]
 }
