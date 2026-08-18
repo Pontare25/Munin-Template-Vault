@@ -2,7 +2,7 @@
 type: daily
 journal: daily
 journal-date: <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
-created-date: <% tp.date.now("YYYY-MM-DD HH:mm") %>
+created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
 date: <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
 tags:
 summary:
@@ -81,4 +81,13 @@ hide tags
 
 ---
 ## Meetings
+> [!Summary]+ Logs and tasks from today's meetings
+> ```dataview
+> task
+> From "Calendar/Meetings"
+> where dateformat(date, "yyyy-MM-dd") = dateformat(this.date, "yyyy-MM-dd")
+> group by file.name as source
+> sort date asc
+> ```
+
 ![[Meetings.base#Daily meeting rollup]]

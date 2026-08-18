@@ -2,7 +2,7 @@
 type: weekly
 journal: weekly
 journal-date: <% moment(tp.file.title, "GGGG-[W]WW").startOf("isoWeek").format("YYYY-MM-DD") %>
-created-date: <% tp.date.now("YYYY-MM-DD HH:mm") %>
+created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
 date: <% moment(tp.file.title, "GGGG-[W]WW").startOf("isoWeek").format("YYYY-MM-DD") %>
 tags:
 summary:

@@ -7,8 +7,8 @@ await tp.file.move(`${folder}/${newTitle}`);
 -%>
 ---
 type: meeting
-created-date: <% tp.date.now("YYYY-MM-DD HH:mm") %>
-date: <% dt %>
+created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date: <% m.format("YYYY-MM-DDTHH:mm") %>
 up:
 attendees:
 related:
