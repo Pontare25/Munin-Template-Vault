@@ -1,10 +1,12 @@
 ---
 type: meeting
 created-date: 2026-08-11T10:00
-up: "[[Project Muninize]]"
+up:
+  - "[[Project Muninize]]"
 people:
   - "[[Anna Berg]]"
-related: "[[Product Development]]"
+related:
+  - "[[Product Development]]"
 summary: This was the kickoff meeting to start the Munitization of the company
 date: 2026-08-11T10:00
 ---
