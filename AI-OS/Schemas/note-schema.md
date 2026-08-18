@@ -112,6 +112,8 @@ status: active   # active | simmering | done | dropped
 
 Efforts change status, not folder. `done` and `dropped` notes stay where they are as the record of what happened.
 
+Projects also carry three optional date fields (all `YYYY-MM-DD`): **`start-date:`** when work began, **`due-date:`** the target date, and **`end-date:`** when the project actually closed. Fill what you know; the project template seeds `start-date` with today.
+
 ## People and organizations
 
 People use the person template, which files them in `Atlas/Entities/People/`. Organizations have no template yet; use this pattern directly and file them in `Atlas/Entities/Organizations/`:
