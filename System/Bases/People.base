@@ -7,6 +7,8 @@ views:
     order:
       - file.name
       - summary
+      - skills
+      - interests
       - location
       - birthday
     sort:
@@ -14,9 +16,30 @@ views:
         direction: ASC
     columnSize:
       file.name: 200
-      note.summary: 560
+      note.summary: 420
+      note.skills: 200
+      note.interests: 200
       note.location: 150
       note.birthday: 120
+  - type: table
+    name: People with this skill or interest
+    filters:
+      or:
+        - skills.contains(link(this.file))
+        - interests.contains(link(this.file))
+    order:
+      - file.name
+      - summary
+      - skills
+      - interests
+    sort:
+      - property: file.name
+        direction: ASC
+    columnSize:
+      file.name: 200
+      note.summary: 460
+      note.skills: 200
+      note.interests: 200
   - type: cards
     name: Cards
     order:

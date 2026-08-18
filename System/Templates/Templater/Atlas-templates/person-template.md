@@ -4,6 +4,8 @@ created-date: <% tp.date.now("YYYY-MM-DD[T]HH:mm") %>
 birthday:
 up:
 related:
+skills:
+interests:
 summary:
 aliases:
 location:
@@ -50,13 +52,13 @@ WHERE contains(outlinks, [[]]) or contains(up, [[]])
 GROUP BY file.name as Source
 SORT Source DESC
 ```
-
 ## Meetings
 ![[Meetings.base#People meetings]]
 
 ## Related notes
 ![[Notes.base#Related notes]]
 
-## How we met
+## About
+`INPUT[textArea:summary]`
 
 <% tp.file.cursor() %>

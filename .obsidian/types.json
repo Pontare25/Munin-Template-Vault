@@ -26,6 +26,8 @@
     "TQ_show_tree": "checkbox",
     "TQ_show_urgency": "checkbox",
     "people": "multitext",
+    "skills": "multitext",
+    "interests": "multitext",
     "start-date": "date",
     "end-date": "date",
     "due-date": "date",

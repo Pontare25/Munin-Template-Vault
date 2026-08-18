@@ -125,6 +125,10 @@ up:
   - "[[Topic they matter to]]"
 related:
   - "[[Their Organization]]"
+skills:
+  - "[[Python]]"
+interests:
+  - "[[Golf]]"
 ---
 ```
 
@@ -139,6 +143,8 @@ related:
   - "[[Person you know there]]"
 ---
 ```
+
+Person notes may also carry **`skills:`** and **`interests:`** — lists of wikilinks to Topic notes (`Atlas/Topics/`) for professional competencies and hobbies. The targets are Topics, not new entities: `[[Python]]`, `[[Golf]]`. Dedicated fields (rather than `related:`) keep them queryable — a base or Dataview answers "who knows Python" with `skills.contains(link("Python"))`, and each Topic's backlinks list everyone who has it.
 
 ## AI provenance
 
