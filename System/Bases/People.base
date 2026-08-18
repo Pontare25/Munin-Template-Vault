@@ -1,0 +1,25 @@
+filters:
+  and:
+    - type == "person"
+views:
+  - type: table
+    name: All People
+    order:
+      - file.name
+      - summary
+      - location
+      - birthday
+    sort:
+      - property: file.name
+        direction: ASC
+    columnSize:
+      file.name: 200
+      note.summary: 560
+      note.location: 150
+      note.birthday: 120
+  - type: cards
+    name: Cards
+    order:
+      - file.name
+      - summary
+      - location

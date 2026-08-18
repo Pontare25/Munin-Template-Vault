@@ -1,7 +1,7 @@
 ---
 type: organization
 created-date: 2026-08-11
-description: Example organization, part of the logging-system worked example. Safe to delete.
+summary: Example organization, part of the logging-system worked example. Safe to delete.
 up:
 related:
 ---

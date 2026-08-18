@@ -1,0 +1,23 @@
+filters:
+  and:
+    - type == "project"
+views:
+  - type: table
+    name: All Projects
+  - type: table
+    name: Sub projects
+    filters:
+      and:
+        - up.contains(link(this.file))
+    order:
+      - file.name
+      - status
+      - summary
+      - due-date
+    sort:
+      - property: due-date
+        direction: DESC
+    columnSize:
+      file.name: 189
+      note.status: 97
+      note.summary: 629

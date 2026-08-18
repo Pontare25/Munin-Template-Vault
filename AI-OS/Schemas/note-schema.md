@@ -20,8 +20,8 @@ created-date: 2026-01-15
   | `topic` | `Atlas/Topics/` | Topic hub with full compass |
   | `moc` | `Atlas/MOCs/` | Curated map of content |
   | `source` | `Raw/Sources/` | Captured external material |
-  | `person` | `Atlas/Entities/` | A person |
-  | `organization` | `Atlas/Entities/` | An organization |
+  | `person` | `Atlas/Entities/People/` | A person |
+  | `organization` | `Atlas/Entities/Organizations/` | An organization |
   | `framework` | `Atlas/Frameworks/` | Named method or model |
   | `project` | `Efforts/Projects/` | Effort with an end |
   | `area` | `Efforts/Areas/` | Ongoing responsibility |
@@ -34,7 +34,7 @@ created-date: 2026-01-15
 
 Strongly recommended on knowledge notes (everything outside `Calendar/`):
 
-- **`description:`** one line stating what the note holds. Indexes, Bases, and retrieval use it to pick the right note without opening it, which matters more the larger the vault grows. An OKF SHOULD field. Templates include it empty; fill it as soon as the note's point is clear.
+- **`summary:`** one line stating what the note holds. Indexes, Bases, and retrieval use it to pick the right note without opening it, which matters more the larger the vault grows. This is the vault-native field; the OKF exporter emits it as OKF's recommended `description` field. Templates include it empty; fill it as soon as the note's point is clear.
 
 Optionally, a note may mirror its type as a tag (`#type/note`) for tag-pane browsing. The field stays canonical: if tag and field ever disagree, the field wins and the tag should be fixed. If you do not care about the tag pane, skip the mirror entirely.
 
@@ -50,6 +50,17 @@ Optionally, a note may mirror its type as a tag (`#type/note`) for tag-pane brow
 
 - Topics replace category tags completely. There is no `#on/...` namespace, no keyword tags. If a note is "about" something, that something is a Topic page and the note links to it.
 - **First reference rule:** when an ingest assigns a topic that does not exist yet, the AI creates a stub Topic page (one-line definition plus an empty compass skeleton) in `Atlas/Topics/` and links to it. Stubs grow into real pages as more notes reference them.
+
+## People on notes
+
+- **`people:`** is a list of wikilinks to person notes (`Atlas/Entities/People/`) tied to this note: meeting participants, project members, anyone involved in the effort or event.
+
+  ```yaml
+  people:
+    - "[[Anna Berg]]"
+  ```
+
+- One field across every type. Meetings, projects, and anything else use `people:` rather than per-type fields; it replaces the earlier `attendees:` (meetings) and `members:` (projects). The `Meetings.base` "People meetings" view keys off it to surface every meeting a person was in.
 
 ## The idea compass
 
@@ -103,13 +114,13 @@ Efforts change status, not folder. `done` and `dropped` notes stay where they ar
 
 ## People and organizations
 
-Entities have no template; use this pattern directly:
+People use the person template, which files them in `Atlas/Entities/People/`. Organizations have no template yet; use this pattern directly and file them in `Atlas/Entities/Organizations/`:
 
 ```yaml
 ---
 type: person
 created-date: 2026-01-15
-description: Who they are, in one line
+summary: Who they are, in one line
 up:
   - "[[Topic they matter to]]"
 related:
@@ -121,7 +132,7 @@ related:
 ---
 type: organization
 created-date: 2026-01-15
-description: What they are, in one line
+summary: What they are, in one line
 up:
   - "[[Industry or Topic]]"
 related:
@@ -149,7 +160,7 @@ Frontmatter maps to OKF's canonical fields:
 |---|---|---|
 | `type` | REQUIRED | `type` (already required on every note) |
 | `title` | recommended | the filename; add an explicit `title:` only when the display name must differ |
-| `description` | recommended | `description` |
+| `description` | recommended | `summary:` (native); the exporter emits it as OKF `description` |
 | `resource` | recommended | `resource:` — canonical URI of the underlying asset (source URL, entity homepage). Replaces the old `url:` field |
 | `tags` | optional | `tags` |
 | `timestamp` | optional | authored as `created-date:` (creation); the exporter emits OKF `timestamp` |
@@ -166,4 +177,4 @@ When a note makes claims backed by external sources, list them under a `# Citati
 
 - No tag namespaces beyond the optional `#type/` mirror. The `#example` tag exists only on the deletable worked-example notes.
 - No status fields outside Efforts.
-- No mandatory fields beyond `type:` and `created-date:`. Everything else, `description:` included, earns its place by being useful.
+- No mandatory fields beyond `type:` and `created-date:`. Everything else, `summary:` included, earns its place by being useful.

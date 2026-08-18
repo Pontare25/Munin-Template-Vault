@@ -1,5 +1,5 @@
 filters:
-  and:
+  or:
     - type == "meeting"
 formulas:
   week: date(date).format("[W]WW")
@@ -9,23 +9,24 @@ views:
     name: Project meetings
     filters:
       and:
-        - file.links.contains(this.file)
+        - up.contains(link(this.file))
     groupBy:
       property: formula.week
       direction: DESC
     order:
+      - type
       - file.name
       - summary
-      - date
       - up
-      - attendees
+      - people
     sort:
       - property: date
         direction: DESC
     columnSize:
-      file.name: 235
-      note.summary: 303
-      note.up: 250
+      file.name: 153
+      note.type: 89
+      note.summary: 440
+      note.up: 154
     rowHeight: medium
   - type: table
     name: Daily meeting rollup
@@ -37,7 +38,7 @@ views:
       - file.name
       - up
       - summary
-      - attendees
+      - people
     sort:
       - property: date
         direction: ASC
@@ -47,25 +48,24 @@ views:
       note.summary: 500
     rowHeight: tall
   - type: table
-    name: Attendee meetings
+    name: People meetings
     filters:
       and:
-        - attendees.contains(this.file)
+        - people.contains(link(this.file))
     groupBy:
       property: formula.week
       direction: DESC
     order:
       - file.name
       - summary
-      - date
       - up
-      - attendees
+      - people
     sort:
       - property: date
         direction: DESC
     columnSize:
-      file.name: 235
-      note.summary: 303
+      file.name: 173
+      note.summary: 458
       note.up: 250
     rowHeight: medium
   - type: table
@@ -81,7 +81,7 @@ views:
       - file.name
       - up
       - summary
-      - attendees
+      - people
     sort:
       - property: date
         direction: ASC
@@ -103,7 +103,7 @@ views:
       - file.name
       - up
       - summary
-      - attendees
+      - people
     sort:
       - property: date
         direction: ASC

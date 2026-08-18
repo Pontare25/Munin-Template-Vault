@@ -10,12 +10,13 @@ type: meeting
 created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
 date: <% m.format("YYYY-MM-DDTHH:mm") %>
 up:
-attendees:
+people:
 related:
+tags:
 summary:
 ---
 # <% newTitle %>
-**Attendees:**`VIEW[{attendees}][link]`
+**Attendees:**`VIEW[{people}][link]`
 ## Agenda
 
 
@@ -24,12 +25,15 @@ summary:
 <% tp.file.cursor() %>
 
 ## Decision log
-%% `Ctrl+Shift+L` inserts a `- [b]` log bullet; press again to cycle `[b] → [i] → [p] → [c]`. Markers: `[b]` log / event · `[i]` fact · `[p]` + · `[c]` − · `[*]` highlight. 
-Link `[[entities]]` such as projects and people so items are traceable using dataview queries. 
-Record a decision as an event log tagged for query: - [b] #log/decision Go REST-first `[[Project]]` %%
-
+> [!info]- Creating traceable logs
+> ![[Hotkeys#Logs]]
+> Link `[[entities]]` such as projects and people so items are traceable using dataview queries. 
+> The periods below double as your time-box. 
+> For decisions use `#log/decision`
 
 ## Tasks
-%% new task `Ctrl+Shift+T` to open the create new tasks window which auto tag the task with  `#task` . It is recommended to create tasks in the log section above or in meeting notes %%
+> [!info]- Creating new tasks
+> ![[Hotkeys#Tasks]]
+
 
 

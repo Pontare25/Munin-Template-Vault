@@ -1,12 +1,13 @@
 ---
 type: person
 created-date: 2026-08-11
-description: Example contact, part of the logging-system worked example. Safe to delete.
+summary: Example contact, part of the logging-system worked example. Safe to delete.
 up:
 related:
   - "[[Product Development]]"
   - "[[Acme industries]]"
   - "[[Golf]]"
+tags:
 ---
 # Anna Berg
 
@@ -16,10 +17,9 @@ Client product owner on [[Project Muninize]].
 
 ## Meetings
 
-![[Meetings.base#Attendee meetings]]
+![[Meetings.base#People meetings]]
 
 ## Tasks involving them
-
 ```dataview
 TASK
 WHERE contains(list(" ", "/", "!", ">", "?"), status)
@@ -28,7 +28,6 @@ SORT date DESC
 ```
 
 ## Log
-
 ```dataview
 TASK
 WHERE contains(list("b", "i", "p", "c", "*"), status)

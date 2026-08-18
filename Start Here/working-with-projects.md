@@ -12,7 +12,7 @@ type: project
 status: active
 up:            # parent, e.g. a broader area
 related:       # area, client, or organization
-members:       # people on the project
+people:        # people on the project
 start-date:
 due-date:
 end-date:
@@ -29,7 +29,7 @@ Make a meeting note from the **meeting template**. On creation it prompts for th
 ---
 type: meeting
 up: "[[Project Muninize]]"        # the project this meeting belongs to
-attendees:
+people:
   - "[[Anna Berg]]"               # people who were there
 related: "[[Product Development]]"  # area or context
 summary: One line on what the meeting was about.
@@ -37,7 +37,7 @@ date: 2026-08-11
 ---
 ```
 
-`up` is what pulls the meeting (and everything in it) onto the project. `attendees` does the same for each person. `summary` and `date` feed the rollup tables below. Any task or log you write in the meeting reaches the project automatically — see [[tasks-and-logs]] for the mechanism.
+`up` is what pulls the meeting (and everything in it) onto the project. `people` does the same for each person. `summary` and `date` feed the rollup tables below. Any task or log you write in the meeting reaches the project automatically — see [[tasks-and-logs]] for the mechanism.
 
 ## What the project note shows
 
@@ -57,7 +57,7 @@ The rule: **one base per note `type`**, and differentiate by adding views, not n
 | View | Shows | Embed on |
 |---|---|---|
 | Project meetings | meetings linking the embedding project | a project note |
-| Attendee meetings | meetings linking the embedding person | a person note |
+| People meetings | meetings linking the embedding person | a person note |
 | Daily meeting rollup | meetings whose `date` matches the embedding daily | a daily note |
 
 Embed a specific view with `![[Meetings.base#View Name]]`. When you need to roll up a different note type (projects under an area, say), create a new base for that type and follow the same pattern.

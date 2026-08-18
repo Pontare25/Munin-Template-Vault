@@ -25,13 +25,15 @@
     "TQ_show_toolbar": "checkbox",
     "TQ_show_tree": "checkbox",
     "TQ_show_urgency": "checkbox",
-    "members": "multitext",
+    "people": "multitext",
     "start-date": "date",
     "end-date": "date",
     "due-date": "date",
     "related": "multitext",
     "up": "multitext",
     "date": "datetime",
-    "created-date": "datetime"
+    "created-date": "datetime",
+    "updated": "datetime",
+    "birthday": "date"
   }
 }

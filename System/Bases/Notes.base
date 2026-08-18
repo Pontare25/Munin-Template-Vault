@@ -1,0 +1,31 @@
+views:
+  - type: table
+    name: All notes
+  - type: table
+    name: Child notes
+    filters:
+      and:
+        - up.contains(link(this.file))
+        - '!type.containsAny("project", "meeting")'
+    order:
+      - file.name
+      - summary
+      - type
+    sort:
+      - property: summary
+        direction: ASC
+    columnSize:
+      file.name: 195
+      note.summary: 807
+  - type: table
+    name: Related notes
+    filters:
+      and:
+        - related.contains(link(this.file))
+    order:
+      - file.name
+      - summary
+      - type
+    columnSize:
+      file.name: 184
+      note.summary: 811
