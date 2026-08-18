@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.8.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.7.0...v1.8.0) (2026-08-18)
+
+
+### Features
+
+* add skills and interests fields to person notes ([46d576d](https://github.com/Pontare25/Munin-Template-Vault/commit/46d576d7cfa5a6f0ac473952017b2807bb6c302d))
+* unify people field across templates, bases, and schema ([30eae63](https://github.com/Pontare25/Munin-Template-Vault/commit/30eae63ef9b9b9a854bcfc490688316c3d81de80))
+
+
+### Documentation
+
+* document effort date fields in note schema ([b2bab0a](https://github.com/Pontare25/Munin-Template-Vault/commit/b2bab0a0f81c7f762fc708320053fe1a0e7dfcb0))
+
 ## [1.7.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.6.0...v1.7.0) (2026-08-17)
 
 
