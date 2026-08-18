@@ -1,7 +1,7 @@
 ---
 type: source
 created-date: 2026-01-15
-description: Article on the forgetting curve, review intervals, and why cramming persists
+summary: Article on the forgetting curve, review intervals, and why cramming persists
 up:
   - "[[Spaced Repetition]]"
 topics:

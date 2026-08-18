@@ -31,6 +31,17 @@ test('toOkf emits timestamp from created-date and defaults title to stem', () =>
   assert.equal(out.timestamp, '2026-01-15T00:00:00.000Z');
 });
 
+test('toOkf maps native summary to OKF description and drops summary', () => {
+  const out = toOkf({ type: 'note', summary: 'one line', 'created-date': '2026-01-15' }, { stem: 'N', gitTime: '2026-07-07T00:00:00Z' });
+  assert.equal(out.description, 'one line');
+  assert.equal(out.summary, undefined);
+});
+
+test('toOkf falls back to legacy description when summary absent', () => {
+  const out = toOkf({ type: 'note', description: 'legacy', 'created-date': '2026-01-15' }, { stem: 'N', gitTime: '2026-07-07T00:00:00Z' });
+  assert.equal(out.description, 'legacy');
+});
+
 test('sanitizeContent strips comments, rewrites links, trims leading blank lines', () => {
   const r = sanitizeContent('%% AI %%\n\nSee [[Spaced Repetition]] and [[Missing]].', map);
   assert.equal(r.content, 'See [Spaced Repetition](/Topics/Spaced Repetition.md) and Missing.');

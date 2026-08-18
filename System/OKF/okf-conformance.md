@@ -28,7 +28,7 @@ Unresolved wikilinks are downgraded to plain text with a warning rather than exp
 
 ## Field mapping
 
-See the table in [[note-schema]] under "OKF alignment". In short: `type` (required), `title` (defaults to filename), `description`, `resource` (canonical URI, formerly `url`), `tags`, and `timestamp` (from `created-date`).
+See the table in [[note-schema]] under "OKF alignment". In short: `type` (required), `title` (defaults to filename), `description` (emitted from the note's native `summary:` field), `resource` (canonical URI, formerly `url`), `tags`, and `timestamp` (from `created-date`).
 
 ## Running it
 

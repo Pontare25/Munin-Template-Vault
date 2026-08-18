@@ -67,7 +67,12 @@ export function toOkf(data, { stem, gitTime }) {
   delete out['created-date'];
   out.type = data.type;
   out.title = data.title || stem;
-  if (data.description) out.description = data.description;
+  // Native vault field is `summary`; OKF's recommended field is `description`.
+  // Map summary -> description (falling back to a legacy `description`) and
+  // don't leak the native `summary` key into the bundle.
+  const summary = data.summary ?? data.description;
+  if (summary) out.description = summary;
+  delete out.summary;
   const created = data['created-date'];
   if (created instanceof Date) out.timestamp = created.toISOString();
   else if (typeof created === 'string' && created.trim()) out.timestamp = new Date(`${created}T00:00:00Z`).toISOString();

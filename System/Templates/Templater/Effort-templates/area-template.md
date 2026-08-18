@@ -1,8 +1,8 @@
 ---
 type: area
 status: active
-created-date: <% tp.date.now("YYYY-MM-DD") %>
-description:
+created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+summary:
 up:
 ---
 # <% tp.file.title %>

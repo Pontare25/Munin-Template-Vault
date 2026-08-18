@@ -2,10 +2,9 @@
 type: project
 status: active
 created-date: 2026-08-11
-description: Example project, part of the logging-system worked example. Safe to delete.
+summary: Example project, part of the logging-system worked example. Safe to delete.
 up:
 related: "[[Product Development]]"
-members:
 start-date:
 due-date:
 end-date:
