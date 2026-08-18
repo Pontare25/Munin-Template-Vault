@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.9.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.8.0...v1.9.0) (2026-08-18)
+
+
+### Features
+
+* **bases:** group weekly rollup by weekday, add people/day to calendar ([31e859a](https://github.com/Pontare25/Munin-Template-Vault/commit/31e859a8ba0a856e387cee62cad8a3856a79bcf6))
+* **template:** auto-fill up: when nesting a sub-project ([a37a3ef](https://github.com/Pontare25/Munin-Template-Vault/commit/a37a3efc98eb5edb1e59384f7c4b686a872e953f))
+* **template:** optional parent-folder nesting for sub-projects ([8267ee1](https://github.com/Pontare25/Munin-Template-Vault/commit/8267ee19e597de2c01b74a8373385a50470612ec))
+
+
+### Bug Fixes
+
+* **bases:** exclude work-sessions from Notes child-notes view ([7399827](https://github.com/Pontare25/Munin-Template-Vault/commit/73998275540093617c0ff76e0f3f25eac9537b1b))
+* **bases:** relationship fields must be list-form to roll up ([134ee9f](https://github.com/Pontare25/Munin-Template-Vault/commit/134ee9ffc624580bf0d36826751c2e8e2d83cfa2))
+
 ## [1.8.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.7.0...v1.8.0) (2026-08-18)
 
 
