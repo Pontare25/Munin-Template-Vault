@@ -1,0 +1,27 @@
+filters:
+  or:
+    - type == "work-session"
+formulas:
+  week: date(date).format("[W]WW")
+views:
+  - type: table
+    name: Project sessions
+    filters:
+      and:
+        - up.contains(link(this.file))
+    groupBy:
+      property: formula.week
+      direction: DESC
+    order:
+      - file.name
+      - summary
+      - up
+      - people
+    sort:
+      - property: date
+        direction: DESC
+    columnSize:
+      file.name: 210
+      note.summary: 460
+      note.up: 154
+    rowHeight: medium

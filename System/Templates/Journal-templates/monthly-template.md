@@ -80,8 +80,8 @@ WHERE contains(text, "#log/decision")
 SORT file.day ASC
 ```
 
-### Meetings this month
-![[Meetings.base#Monthly meeting rollup]]
+### Meetings & sessions this month
+![[Calendar.base#Monthly rollup]]
 
 ---
 ## Next month

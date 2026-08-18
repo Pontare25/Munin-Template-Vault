@@ -1,0 +1,81 @@
+filters:
+  and:
+    - file.path.startsWith("Calendar/")
+formulas:
+  week: date(date).format("[W]WW")
+views:
+  - type: table
+    name: Daily rollup
+    filters:
+      and:
+        - or:
+            - type == "meeting"
+            - type == "work-session"
+        - date >= this.date
+        - date < this.date + "1d"
+    order:
+      - type
+      - file.name
+      - up
+      - summary
+    sort:
+      - property: date
+        direction: ASC
+    columnSize:
+      note.type: 110
+      file.name: 220
+      note.up: 155
+      note.summary: 460
+    rowHeight: tall
+  - type: table
+    name: Weekly rollup
+    filters:
+      and:
+        - or:
+            - type == "meeting"
+            - type == "work-session"
+        - date >= this.date
+        - date < this.date + "7d"
+    groupBy:
+      property: date
+      direction: ASC
+    order:
+      - type
+      - file.name
+      - up
+      - summary
+    sort:
+      - property: date
+        direction: ASC
+    columnSize:
+      note.type: 110
+      file.name: 220
+      note.up: 155
+      note.summary: 560
+    rowHeight: medium
+  - type: table
+    name: Monthly rollup
+    filters:
+      and:
+        - or:
+            - type == "meeting"
+            - type == "work-session"
+        - date >= this.date
+        - date < this.date + "1 month"
+    groupBy:
+      property: formula.week
+      direction: ASC
+    order:
+      - type
+      - file.name
+      - up
+      - summary
+    sort:
+      - property: date
+        direction: ASC
+    columnSize:
+      note.type: 110
+      file.name: 220
+      note.up: 155
+      note.summary: 560
+    rowHeight: medium

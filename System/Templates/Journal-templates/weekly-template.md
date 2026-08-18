@@ -77,8 +77,8 @@ WHERE contains(text, "#log/decision")
 SORT file.name ASC
 ```
 
-### Meetings this week
-![[Meetings.base#Weekly meeting rollup]]
+### Meetings & sessions this week
+![[Calendar.base#Weekly rollup]]
 
 ---
 ## Next week

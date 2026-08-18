@@ -17,6 +17,18 @@ summary:
 <%* await tp.file.move("Efforts/Projects/" + tp.file.title + "/" + tp.file.title) -%>
 <%* await tp.file.rename("Project - "+ tp.file.title) -%>
 
+## Last update
+```dataview
+TABLE WITHOUT ID
+file.link AS "Last touched in",
+dateformat(file.day, "yyyy-MM-dd") + ": **" + round(T) + " days ago**" AS "Last update"
+FROM [[]]
+WHERE file.day
+FLATTEN (date(today) - file.day).days as T
+SORT file.day desc
+LIMIT 1
+```
+
 ## Tasks and Questions
 > [!todo]+ Open
 > ```dataview
@@ -49,6 +61,8 @@ SORT Source DESC
 ```
 ### Meetings
 ![[Meetings.base#Project meetings]]
+### Work sessions
+![[Sessions.base#Project sessions]]
 ### Sub Projects
 ![[Projects.base#Sub projects]]
 

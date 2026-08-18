@@ -80,14 +80,14 @@ hide tags
 > ```
 
 ---
-## Meetings
-> [!Summary]+ Logs and tasks from today's meetings
+## Meetings & sessions
+> [!Summary]+ Logs and tasks from today's meetings and work sessions
 > ```dataview
 > task
-> From "Calendar/Meetings"
+> From "Calendar/Meetings" or "Calendar/Work Sessions"
 > where dateformat(date, "yyyy-MM-dd") = dateformat(this.date, "yyyy-MM-dd")
 > group by file.name as source
 > sort date asc
 > ```
 
-![[Meetings.base#Daily meeting rollup]]
+![[Calendar.base#Daily rollup]]
