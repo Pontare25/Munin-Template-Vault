@@ -13,10 +13,10 @@ Periodic health check of the knowledge graph. Lint finds problems and proposes f
    - **Schema drift:** notes missing required frontmatter for their type (see [[note-schema]]), or `#type/` mirror tags disagreeing with the `type:` field. For `Atlas/`, `npm run okf:validate` flags any note missing a `type:` (OKF conformance).
    - **Stale index lines:** folder `index.md` listings referencing notes that moved or no longer exist, or missing recent notes.
    - **Oversized indexes:** a folder `index.md` listing that has grown far past a quick scan (roughly 100 lines). Propose letting a Base serve as the index (see the growth path in the AI-OS README).
-   - **Contradictions and stale claims:** notes that state conflicting things without a `challenges:` link between them; claims that time has overtaken.
+   - **Contradictions and stale claims:** notes that state conflicting things without an `opposes:` link between them; claims that time has overtaken.
 2. **Write the report:** group findings by category, one line each (`path: problem`). State counts. Propose a fix per finding.
 3. **Wait for approval.** The human picks which fixes to apply (all, some, none).
-4. **Apply approved fixes** only. For contradictions, prefer linking both notes via `challenges:` over deleting either.
+4. **Apply approved fixes** only. For contradictions, prefer linking both notes via `opposes:` over deleting either.
 5. **Log it:** one [[AI-OS/log|log]] entry (`## [YYYY-MM-DD] lint | N findings, M fixed`).
 
 ## Judgment calls

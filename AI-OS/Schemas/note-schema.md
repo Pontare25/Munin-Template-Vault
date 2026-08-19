@@ -71,12 +71,12 @@ Four frontmatter keys place a note in the landscape of ideas, like compass direc
 | `up:` | North | Where does this come from? What broader theme or principle sits above it? |
 | `related:` | West | What is similar? What reinforces or parallels this? |
 | `down:` | South | What follows from this? Where could it lead or apply? |
-| `challenges:` | East | What competes with this? What tension or opposite does it face? |
+| `opposes:` | East | What competes with this? What tension or opposite does it face? |
 
 All four take lists of wikilinks. When a compass link is not self-explanatory, say why it is there in one clause in the note body; a link whose reason is forgotten is half a link.
 
 > [!warning] Relationship fields are always lists, even with one value
-> `up`, `related`, `down`, `challenges`, `people`, `skills`, and `interests` must be written as a YAML **list**, even for a single link:
+> `up`, `related`, `down`, `opposes`, `people`, `skills`, and `interests` must be written as a YAML **list**, even for a single link:
 > ```yaml
 > up:
 >   - "[[Parent]]"
@@ -88,7 +88,7 @@ How much compass a note needs depends on its type:
 | Type | Required | Encouraged |
 |---|---|---|
 | `topic` | All four compass keys | |
-| `note` | `up:` + `created-date:` | `topics:`, `related:`, `down:`, `challenges:` |
+| `note` | `up:` + `created-date:` | `topics:`, `related:`, `down:`, `opposes:` |
 | `source` | `up:` + `topics:` | `related:` |
 | `moc` | `created-date:` | `up:` when the map sits inside a larger map (top-level maps have no up) |
 | everything else | `up:` + `created-date:` | whatever earns its place |
@@ -105,7 +105,7 @@ related:
   - "[[Active Recall]]"
 down:
   - "[[Flashcard Practice]]"
-challenges:
+opposes:
   - "[[Massed Practice]]"
 ---
 ```
@@ -181,7 +181,7 @@ Frontmatter maps to OKF's canonical fields:
 | `tags` | optional | `tags` |
 | `timestamp` | optional | authored as `created-date:` (creation); the exporter emits OKF `timestamp` |
 
-Compass keys (`up`, `related`, `down`, `challenges`), `topics`, and `status` are Munin extensions. OKF consumers preserve unknown keys, so they travel with the note unchanged.
+Compass keys (`up`, `related`, `down`, `opposes`), `topics`, and `status` are Munin extensions. OKF consumers preserve unknown keys, so they travel with the note unchanged.
 
 Reserved filenames follow OKF: folder listings are `index.md` (§6), the Atlas changelog is `Atlas/log.md` (§7). Wikilinks stay native on disk; the exporter rewrites them to bundle-relative `/path.md` links in the exported bundle.
 

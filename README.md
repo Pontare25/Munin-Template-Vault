@@ -9,7 +9,7 @@ Named after Munin, one of Odin's two ravens: the one that remembers.
 ## What you get
 
 - A folder structure that separates **capture** (Fleeting + Raw), **knowledge** (Atlas), and **configuration** (AI-OS), with Calendar and Efforts alongside.
-- A note schema built on wikilinks, a small set of frontmatter fields, and an extended idea compass (`up`, `related`, `down`, `challenges`).
+- A note schema built on wikilinks, a small set of frontmatter fields, and an extended idea compass (`up`, `related`, `down`, `opposes`).
 - Standard Operating Procedures (SOPs) the AI follows for ingesting sources, creating notes, answering questions from the wiki, reviewing your daily note, and linting the wiki.
 - Minimal Templater templates, three Bases dashboards, and a small worked example you can explore and then delete.
 - An AI-led onboarding: paste one prompt and the AI interviews you, fills in your profile, and runs a guided first ingest.
@@ -43,7 +43,7 @@ Your `Atlas/` knowledge layer can be exported as a clean, tool-agnostic [Open Kn
 - **Nick Milo's** AI-OS, File-over-AI, and ACE folder philosophy (Atlas, Calendar, Efforts). https://www.youtube.com/watch?v=jbHB-rzKBAs&t=2s
 - **Google's Open Knowledge Format (OKF)**: the `Atlas/` knowledge layer targets [OKF v0.1](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) conformance (reserved `index.md`/`log.md`, a single required `type` attribute, OKF frontmatter) and exports a conformant bundle on demand. See [System/OKF](System/OKF/README.md). Background: https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
 - **Construct by Dee's** Daily note first principle and logging system. https://www.youtube.com/watch?v=Mt8mNIcoxYM
-- **Zettelkasten** atomic notes and the **idea compass** (extended here with `challenges`). https://medium.com/a-voice-in-the-conversation/the-idea-compass-expanding-ideas-5259b43ac874
+- **Zettelkasten** atomic notes and the **idea compass** (extended here with `opposes`). https://medium.com/a-voice-in-the-conversation/the-idea-compass-expanding-ideas-5259b43ac874
 
 This template borrows ideas from all of the above; mistakes in the synthesis are its own.
 

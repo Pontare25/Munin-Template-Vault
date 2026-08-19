@@ -5,7 +5,7 @@ Atomic notes: one idea per note, stated in your own words (or the AI's), linked 
 ## What belongs here
 
 - One idea, claim, argument, or observation per note.
-- Frontmatter: `type: note`, `up:` (at least one link to a Topic or parent idea), `created-date:`. `topics:`, `related:`, `down:`, `challenges:` encouraged.
+- Frontmatter: `type: note`, `up:` (at least one link to a Topic or parent idea), `created-date:`. `topics:`, `related:`, `down:`, `opposes:` encouraged.
 - A `%% #AI-Assisted %%` marker at the top when the AI wrote it.
 
 ## What does not belong here
@@ -16,7 +16,7 @@ Atomic notes: one idea per note, stated in your own words (or the AI's), linked 
 
 ## Example
 
-[[Spaced practice beats cramming]] and [[Cramming feels productive but fades fast]] are worked example atomic notes, tagged `#example`. Note the claim-as-title style and the `challenges:` link putting them in explicit tension.
+[[Spaced practice beats cramming]] and [[Cramming feels productive but fades fast]] are worked example atomic notes, tagged `#example`. Note the claim-as-title style and the `opposes:` link putting them in explicit tension.
 
 ## Governing SOPs
 

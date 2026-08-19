@@ -28,7 +28,7 @@ Climb one rung at a time. Stop as soon as the question is answered.
 |---|---|
 | "What do I know about X?" | Rungs 1-2: topic page plus its backlinks |
 | "What connects X and Y?" | Both compasses and backlink sets; the overlap is the answer |
-| "What contradicts X?" | The note's `challenges:` links first, then `challenges:` entries across its topic's notes |
+| "What contradicts X?" | The note's `opposes:` links first, then `opposes:` entries across its topic's notes |
 | A specific fact | Topic page if one fits, otherwise rung 3, then search |
 
 ## Judgment calls

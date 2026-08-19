@@ -6,7 +6,7 @@ summary:
 up:
 related:
 down:
-challenges:
+opposes:
 ---
 <% tp.file.cursor() %>
 

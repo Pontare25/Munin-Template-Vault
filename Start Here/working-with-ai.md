@@ -27,9 +27,9 @@ A chat assistant starts every conversation knowing nothing about you. This vault
 Beyond the loop operations, useful requests:
 
 - "What connects X and Y?" (the AI walks the link graph)
-- "What in the vault contradicts this note?" (challenges hunting)
+- "What in the vault contradicts this note?" (finding what it opposes)
 - "Summarize what changed in the vault this month" (reads [[log]])
-- "Propose compass entries for topic X" (fills `up/related/down/challenges`)
+- "Propose compass entries for topic X" (fills `up/related/down/opposes`)
 
 ## Privacy note
 

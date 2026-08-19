@@ -7,7 +7,7 @@ Topics carry the **full idea compass** in frontmatter:
 - `up:` origins, upstream themes, underlying principles
 - `related:` similar concepts, parallels, reinforcing ideas
 - `down:` downstream consequences, applications, implications
-- `challenges:` competing ideas, opposites, tensions
+- `opposes:` competing ideas, opposites, tensions
 
 ## What belongs here
 
