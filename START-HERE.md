@@ -89,11 +89,12 @@ The `Start Here/` folder holds the full set. Read them roughly in this order; ea
 2. [[Guide to writing daily notes]] — the daily note, the one surface you write into every day.
 3. [[tasks-and-logs]] — the checkbox system: tasks vs logs, the markers, and how the rollups work.
 4. [[working-with-projects]] — how a project ties meetings, people, tasks, and logs together.
-5. [[working-with-ai]] — the capture → ingest → query → review loop, day to day.
-6. [[skills-setup]] — teach your AI repeatable capabilities that live in the vault.
-7. [[github-and-backup]] — make the vault survive your computer.
-8. [[Hotkeys]] — the custom keyboard shortcuts.
-9. [[Recommended Obsidian Tutorials]] — external videos if you want to go deeper.
+5. [[linking-notes-and-maps]] — how notes connect: inline links, the idea compass, topics, and Maps of Content.
+6. [[working-with-ai]] — the capture → ingest → query → review loop, day to day.
+7. [[skills-setup]] — teach your AI repeatable capabilities that live in the vault.
+8. [[github-and-backup]] — make the vault survive your computer.
+9. [[Hotkeys]] — the custom keyboard shortcuts.
+10. [[Recommended Obsidian Tutorials]] — external videos if you want to go deeper.
 
 ## The one habit that matters
 
