@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.9.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.9.0...v1.9.1) (2026-08-20)
+
+
+### Documentation
+
+* **guide:** add linking-notes-and-maps guide + list in START-HERE ([94a36e5](https://github.com/Pontare25/Munin-Template-Vault/commit/94a36e56f786b0a72eb414f9a061597127eb9c42))
+* **research:** knowledge-layer research + signed-off decisions ([2858369](https://github.com/Pontare25/Munin-Template-Vault/commit/28583694e92b094742ddf9d4e0baef26922eb416))
+
 ## [1.9.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.8.0...v1.9.0) (2026-08-18)
 
 
