@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.10.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.9.1...v1.10.0) (2026-08-26)
+
+
+### Features
+
+* **dashboards:** add vault-wide task dashboard ([ab935d8](https://github.com/Pontare25/Munin-Template-Vault/commit/ab935d8d383a737ed026029592b7f66e09381695))
+* **periodic:** add quarterly and yearly journal notes ([2936e59](https://github.com/Pontare25/Munin-Template-Vault/commit/2936e5980239af0a4049c53777a40f6d70de116e))
+
+
+### Documentation
+
+* **okf:** remove references to the deleted export tooling ([#118](https://github.com/Pontare25/Munin-Template-Vault/issues/118)) ([35cfbed](https://github.com/Pontare25/Munin-Template-Vault/commit/35cfbed9be054ac5660070ee6fab7013c95ca772))
+
 ## [1.9.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.9.0...v1.9.1) (2026-08-20)
 
 
