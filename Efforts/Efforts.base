@@ -1,12 +1,12 @@
 filters:
   and:
-    - 'type == "project" || type == "area"'
+    - type == "project" || type == "area"
 views:
   - type: table
-    name: "Active"
+    name: Active
     filters:
       and:
-        - 'status == "active" || status == "simmering"'
+        - status == "active" || status == "simmering"
     groupBy:
       property: status
       direction: ASC
@@ -16,7 +16,7 @@ views:
       - status
       - created-date
   - type: table
-    name: "All efforts"
+    name: All efforts
     groupBy:
       property: status
       direction: ASC

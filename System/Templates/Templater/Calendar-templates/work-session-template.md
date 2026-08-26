@@ -17,7 +17,7 @@ summary:
 ---
 # <% newTitle %>
 ## Focus
-What this session is for. Link the project so it rolls up: `[[Project ...]]`
+
 
 ## Notes
 

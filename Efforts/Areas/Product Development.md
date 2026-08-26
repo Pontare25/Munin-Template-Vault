@@ -4,6 +4,8 @@ status: active
 created-date: 2026-08-11
 summary: Example area, part of the logging-system worked example. Safe to delete.
 up:
+tags:
+  - example
 ---
 # Product Development
 
