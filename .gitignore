@@ -13,3 +13,9 @@ desktop.ini
 # Node + OKF export (all OKF tooling lives under System/OKF/)
 node_modules/
 System/OKF/dist/
+
+# Firecrawl scrape cache
+.firecrawl/
+
+# Journals plugin auto-backups
+.obsidian/plugins/journals/backup-*.json

@@ -1,6 +1,7 @@
 {
   "cssTheme": "Minimal",
   "enabledCssSnippets": [
-    "Unstrike-tasks"
+    "Unstrike-tasks",
+    "MCL Multi Column"
   ]
 }

@@ -1,25 +1,19 @@
 {
+  "data_version": 2,
   "command_timeout": 5,
   "templates_folder": "System/Templates/Templater",
-  "templates_pairs": [
-    [
-      "",
-      ""
-    ]
-  ],
-  "trigger_on_file_creation": true,
+  "templates_pairs": [],
+  "trigger_on_file_creation_mode": "folder",
   "auto_jump_to_cursor": true,
-  "enable_system_commands": false,
+  "jump_to_cursor_after_file_name": false,
   "shell_path": "",
   "user_scripts_folder": "",
-  "enable_folder_templates": true,
   "folder_templates": [
     {
       "folder": "Fleeting",
       "template": "System/Templates/Templater/fleeting-template.md"
     }
   ],
-  "enable_file_templates": false,
   "file_templates": [
     {
       "regex": ".*",
@@ -31,14 +25,8 @@
   "enabled_templates_hotkeys": [
     "System/Templates/Templater/Commands/log-bullet.md"
   ],
-  "startup_templates": [
-    ""
-  ],
-  "intellisense_render": 1,
-  "ignore_folders_on_creation": [
-    {
-      "folder": ""
-    }
-  ],
+  "startup_templates": [],
+  "intellisense_render": "1",
+  "ignore_folders_on_creation": [],
   "template_folder": "System/Templates"
 }
