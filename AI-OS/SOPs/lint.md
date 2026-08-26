@@ -10,7 +10,7 @@ Periodic health check of the knowledge graph. Lint finds problems and proposes f
    - **Broken links:** wikilinks pointing at notes that do not exist (excluding topic stubs the ingest SOP is expected to create).
    - **Orphans:** notes in `Atlas/` with no inbound links and no `topics:` pointing at them.
    - **Missing topic pages:** subjects referenced in `topics:` fields with no page in `Atlas/Topics/`.
-   - **Schema drift:** notes missing required frontmatter for their type (see [[note-schema]]), or `#type/` mirror tags disagreeing with the `type:` field. For `Atlas/`, `npm run okf:validate` flags any note missing a `type:` (OKF conformance).
+   - **Schema drift:** notes missing required frontmatter for their type (see [[note-schema]]), or `#type/` mirror tags disagreeing with the `type:` field. For `Atlas/`, every note must carry a non-empty `type:` (OKF conformance); check this during the lint pass.
    - **Stale index lines:** folder `index.md` listings referencing notes that moved or no longer exist, or missing recent notes.
    - **Oversized indexes:** a folder `index.md` listing that has grown far past a quick scan (roughly 100 lines). Propose letting a Base serve as the index (see the growth path in the AI-OS README).
    - **Contradictions and stale claims:** notes that state conflicting things without an `opposes:` link between them; claims that time has overtaken.

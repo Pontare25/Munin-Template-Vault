@@ -39,7 +39,7 @@ created-date: 2026-01-15
 
 Strongly recommended on knowledge notes (everything outside `Calendar/`):
 
-- **`summary:`** one line stating what the note holds. Indexes, Bases, and retrieval use it to pick the right note without opening it, which matters more the larger the vault grows. This is the vault-native field; the OKF exporter emits it as OKF's recommended `description` field. Templates include it empty; fill it as soon as the note's point is clear.
+- **`summary:`** one line stating what the note holds. Indexes, Bases, and retrieval use it to pick the right note without opening it, which matters more the larger the vault grows. This is the vault-native field; it maps to OKF's recommended `description` field. Templates include it empty; fill it as soon as the note's point is clear.
 
 Optionally, a note may mirror its type as a tag (`#type/note`) for tag-pane browsing. The field stays canonical: if tag and field ever disagree, the field wins and the tag should be fixed. If you do not care about the tag pane, skip the mirror entirely.
 
@@ -173,7 +173,7 @@ Optional refinement if you want more nuance: `%% #AI-Assisted/Drafted %%` (AI wr
 
 ## OKF alignment
 
-This vault targets [Open Knowledge Format (OKF) v0.1](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) conformance for the `Atlas/` bundle. Full details, the native-vs-export split, and the exporter live in [[okf-conformance]].
+This vault targets [Open Knowledge Format (OKF) v0.1](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) conformance for the `Atlas/` bundle, natively on disk. Full details and the native-vs-export split live in [[okf-conformance]].
 
 Frontmatter maps to OKF's canonical fields:
 
@@ -181,14 +181,14 @@ Frontmatter maps to OKF's canonical fields:
 |---|---|---|
 | `type` | REQUIRED | `type` (already required on every note) |
 | `title` | recommended | the filename; add an explicit `title:` only when the display name must differ |
-| `description` | recommended | `summary:` (native); the exporter emits it as OKF `description` |
+| `description` | recommended | `summary:` (native); maps to OKF `description` |
 | `resource` | recommended | `resource:` — canonical URI of the underlying asset (source URL, entity homepage). Replaces the old `url:` field |
 | `tags` | optional | `tags` |
-| `timestamp` | optional | authored as `created-date:` (creation); the exporter emits OKF `timestamp` |
+| `timestamp` | optional | authored as `created-date:` (creation); maps to OKF `timestamp` |
 
 Compass keys (`up`, `related`, `down`, `opposes`), `topics`, and `status` are Munin extensions. OKF consumers preserve unknown keys, so they travel with the note unchanged.
 
-Reserved filenames follow OKF: folder listings are `index.md` (§6), the Atlas changelog is `Atlas/log.md` (§7). Wikilinks stay native on disk; the exporter rewrites them to bundle-relative `/path.md` links in the exported bundle.
+Reserved filenames follow OKF: folder listings are `index.md` (§6), the Atlas changelog is `Atlas/log.md` (§7). Wikilinks stay native on disk; in an exported bundle they become bundle-relative `/path.md` links.
 
 ### Citations
 

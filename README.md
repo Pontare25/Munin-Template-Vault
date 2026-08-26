@@ -33,15 +33,15 @@ No git knowledge required to use the vault. When you are ready to back it up, [g
 
 `Calendar/` (daily notes, the main capture surface) and `Efforts/` (projects and areas) orbit these three.
 
-## Portable export (optional)
+## Open Knowledge Format (optional)
 
-Your `Atlas/` knowledge layer can be exported as a clean, tool-agnostic [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) bundle: plain markdown any tool or AI can read, with the Obsidian-specific syntax stripped out. All of this is optional and self-contained under [System/OKF](System/OKF/README.md); ignore that folder entirely if you don't need it.
+Your `Atlas/` knowledge layer is built to conform to the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md): plain markdown any tool or AI can read, with a single required `type` field and reserved `index.md` / `log.md` files. Conformance is **native — no tooling required**. See [System/OKF](System/OKF/README.md) for the details and how to regenerate a portable bundle if you ever need one.
 
 ## Credits and inspirations
 
 - **Andrej Karpathy's LLM Wiki** idea: a personal wiki curated by a language model. https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
 - **Nick Milo's** AI-OS, File-over-AI, and ACE folder philosophy (Atlas, Calendar, Efforts). https://www.youtube.com/watch?v=jbHB-rzKBAs&t=2s
-- **Google's Open Knowledge Format (OKF)**: the `Atlas/` knowledge layer targets [OKF v0.1](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) conformance (reserved `index.md`/`log.md`, a single required `type` attribute, OKF frontmatter) and exports a conformant bundle on demand. See [System/OKF](System/OKF/README.md). Background: https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
+- **Google's Open Knowledge Format (OKF)**: the `Atlas/` knowledge layer targets [OKF v0.1](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) conformance (reserved `index.md`/`log.md`, a single required `type` attribute, OKF frontmatter), natively on disk. See [System/OKF](System/OKF/README.md). Background: https://cloud.google.com/blog/products/data-analytics/how-the-open-knowledge-format-can-improve-data-sharing
 - **Construct by Dee's** Daily note first principle and logging system. https://www.youtube.com/watch?v=Mt8mNIcoxYM
 - **Zettelkasten** atomic notes and the **idea compass** (extended here with `opposes`). https://medium.com/a-voice-in-the-conversation/the-idea-compass-expanding-ideas-5259b43ac874
 

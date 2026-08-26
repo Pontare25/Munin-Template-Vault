@@ -14,5 +14,5 @@
 
 - [ ] Markdown lint is green (the Lint workflow runs `.markdownlint.jsonc` rules).
 - [ ] No broken wikilinks (`node .github/scripts/check-wikilinks.mjs` from the repo root).
-- [ ] If an `Atlas/` note changed, it still carries a non-empty `type:` (`npm run okf:validate`).
+- [ ] If an `Atlas/` note changed, it still carries a non-empty `type:` (OKF conformance).
 - [ ] Docs updated if behavior changed (README, START-HERE, or the relevant SOP/guide).
