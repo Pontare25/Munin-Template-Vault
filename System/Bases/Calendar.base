@@ -81,3 +81,55 @@ views:
       note.up: 155
       note.summary: 560
     rowHeight: medium
+  - type: table
+    name: Quarterly rollup
+    filters:
+      and:
+        - or:
+            - type == "meeting"
+            - type == "work-session"
+        - date >= this.date
+        - date < this.date + "3 months"
+    groupBy:
+      property: formula.week
+      direction: ASC
+    order:
+      - type
+      - file.name
+      - up
+      - summary
+    sort:
+      - property: date
+        direction: ASC
+    columnSize:
+      note.type: 110
+      file.name: 220
+      note.up: 155
+      note.summary: 560
+    rowHeight: medium
+  - type: table
+    name: Yearly rollup
+    filters:
+      and:
+        - or:
+            - type == "meeting"
+            - type == "work-session"
+        - date >= this.date
+        - date < this.date + "1 year"
+    groupBy:
+      property: formula.week
+      direction: ASC
+    order:
+      - type
+      - file.name
+      - up
+      - summary
+    sort:
+      - property: date
+        direction: ASC
+    columnSize:
+      note.type: 110
+      file.name: 220
+      note.up: 155
+      note.summary: 560
+    rowHeight: medium

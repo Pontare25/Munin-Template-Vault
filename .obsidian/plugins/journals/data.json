@@ -97,109 +97,127 @@
       ],
       "navBlock": {
         "type": "create",
-        "rows": [
-          {
-            "template": "{{date:ddd}}",
-            "fontSize": 1,
-            "bold": false,
-            "italic": false,
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "link": "none",
-            "journal": "",
-            "addDecorations": false
-          },
-          {
-            "template": "{{date:D}}",
-            "fontSize": 3,
-            "bold": true,
-            "italic": false,
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "link": "self",
-            "journal": "",
-            "addDecorations": true
-          },
-          {
-            "template": "{{relative_date}}",
-            "fontSize": 0.7,
-            "bold": false,
-            "italic": false,
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "link": "none",
-            "journal": "",
-            "addDecorations": false
-          },
-          {
-            "template": "{{date:[W]w}}",
-            "fontSize": 1,
-            "bold": false,
-            "italic": false,
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "link": "week",
-            "journal": "",
-            "addDecorations": false
-          },
-          {
-            "template": "{{date:MMMM}}",
-            "fontSize": 1,
-            "bold": false,
-            "italic": false,
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "link": "month",
-            "journal": "",
-            "addDecorations": false
-          },
-          {
-            "template": "{{date:YYYY}}",
-            "fontSize": 1,
-            "bold": false,
-            "italic": false,
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "link": "year",
-            "journal": "",
-            "addDecorations": false
-          }
+        "lines": [
+          [
+            {
+              "template": "{{date:ddd}}",
+              "fontSize": 1,
+              "bold": false,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "none",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": false
+            }
+          ],
+          [
+            {
+              "template": "{{date:D}}",
+              "fontSize": 3,
+              "bold": true,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "self",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": true
+            }
+          ],
+          [
+            {
+              "template": "{{relative_date}}",
+              "fontSize": 0.7,
+              "bold": false,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "none",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": false
+            }
+          ],
+          [
+            {
+              "template": "{{date:[W]w}}",
+              "fontSize": 1,
+              "bold": false,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "week",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": false
+            }
+          ],
+          [
+            {
+              "template": "{{date:MMMM}}",
+              "fontSize": 1,
+              "bold": false,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "month",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": false
+            }
+          ],
+          [
+            {
+              "template": "{{date:YYYY}}",
+              "fontSize": 1,
+              "bold": false,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "year",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": false
+            }
+          ]
         ],
         "decorateWholeBlock": false
       },
       "intervalBlock": {
         "type": "create",
-        "rows": [],
+        "lines": [],
         "decorateWholeBlock": false
       }
     },
@@ -260,77 +278,89 @@
       ],
       "navBlock": {
         "type": "create",
-        "rows": [
-          {
-            "template": "{{date:[W]w}}",
-            "fontSize": 3,
-            "bold": true,
-            "italic": false,
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "link": "self",
-            "journal": "",
-            "addDecorations": true
-          },
-          {
-            "template": "{{relative_date}}",
-            "fontSize": 0.7,
-            "bold": false,
-            "italic": false,
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "link": "none",
-            "journal": "",
-            "addDecorations": false
-          },
-          {
-            "template": "{{date:MMMM}}",
-            "fontSize": 1,
-            "bold": false,
-            "italic": false,
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "link": "month",
-            "journal": "",
-            "addDecorations": false
-          },
-          {
-            "template": "{{date:YYYY}}",
-            "fontSize": 1,
-            "bold": false,
-            "italic": false,
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "link": "year",
-            "journal": "",
-            "addDecorations": false
-          }
+        "lines": [
+          [
+            {
+              "template": "{{date:[W]w}}",
+              "fontSize": 3,
+              "bold": true,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "self",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": true
+            }
+          ],
+          [
+            {
+              "template": "{{relative_date}}",
+              "fontSize": 0.7,
+              "bold": false,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "none",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": false
+            }
+          ],
+          [
+            {
+              "template": "{{date:MMMM}}",
+              "fontSize": 1,
+              "bold": false,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "month",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": false
+            }
+          ],
+          [
+            {
+              "template": "{{date:YYYY}}",
+              "fontSize": 1,
+              "bold": false,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "year",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": false
+            }
+          ]
         ],
         "decorateWholeBlock": false
       },
       "intervalBlock": {
         "type": "create",
-        "rows": [],
+        "lines": [],
         "decorateWholeBlock": false
       }
     },
@@ -391,61 +421,299 @@
       ],
       "navBlock": {
         "type": "create",
+        "lines": [
+          [
+            {
+              "template": "{{date:MMMM}}",
+              "fontSize": 3,
+              "bold": true,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "self",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": true
+            }
+          ],
+          [
+            {
+              "template": "{{relative_date}}",
+              "fontSize": 0.7,
+              "bold": false,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "none",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": false
+            }
+          ],
+          [
+            {
+              "template": "{{date:YYYY}}",
+              "fontSize": 1,
+              "bold": false,
+              "italic": false,
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "link": "year",
+              "journal": "",
+              "linkDate": "",
+              "addDecorations": false
+            }
+          ]
+        ],
+        "decorateWholeBlock": false
+      },
+      "intervalBlock": {
+        "type": "create",
+        "lines": [],
+        "decorateWholeBlock": false
+      }
+    },
+    "quarterly": {
+      "name": "quarterly",
+      "write": {
+        "type": "quarter"
+      },
+      "timeline": {
+        "start": "",
+        "end": {
+          "kind": "never"
+        }
+      },
+      "dateFormat": "YYYY-[Q]Q",
+      "frontmatter": {
+        "dateField": "journal-date",
+        "startDateField": "journal-start-date",
+        "endDateField": "journal-end-date",
+        "addStartDate": false,
+        "addEndDate": false
+      },
+      "numbering": {
+        "enabled": false,
+        "anchorDate": "",
+        "allowBefore": false,
+        "sources": []
+      },
+      "nameTemplate": "{{date}}",
+      "folder": "Calendar/Quarterly Notes/{{date:YYYY}}",
+      "templates": [
+        "System/Templates/Journal-templates/quarterly-template"
+      ],
+      "confirmCreation": false,
+      "autoCreate": false,
+      "decorations": [
+        {
+          "mode": "and",
+          "conditions": [
+            {
+              "type": "has-note"
+            }
+          ],
+          "styles": [
+            {
+              "type": "shape",
+              "size": 0.4,
+              "shape": "circle",
+              "color": {
+                "type": "theme",
+                "name": "interactive-accent"
+              },
+              "placement_x": "center",
+              "placement_y": "bottom"
+            }
+          ]
+        }
+      ],
+      "navBlock": {
+        "type": "create",
         "decorateWholeBlock": false,
-        "rows": [
-          {
-            "template": "{{date:MMMM}}",
-            "fontSize": 3,
-            "bold": true,
-            "italic": false,
-            "link": "self",
-            "journal": "",
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "addDecorations": true
-          },
-          {
-            "template": "{{relative_date}}",
-            "fontSize": 0.7,
-            "bold": false,
-            "italic": false,
-            "link": "none",
-            "journal": "",
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "addDecorations": false
-          },
-          {
-            "template": "{{date:YYYY}}",
-            "fontSize": 1,
-            "bold": false,
-            "italic": false,
-            "link": "year",
-            "journal": "",
-            "color": {
-              "type": "theme",
-              "name": "text-normal"
-            },
-            "background": {
-              "type": "transparent"
-            },
-            "addDecorations": false
-          }
+        "lines": [
+          [
+            {
+              "template": "{{date:[Q]Q}}",
+              "fontSize": 3,
+              "bold": true,
+              "italic": false,
+              "link": "self",
+              "journal": "",
+              "linkDate": "",
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "addDecorations": true
+            }
+          ],
+          [
+            {
+              "template": "{{relative_date}}",
+              "fontSize": 0.7,
+              "bold": false,
+              "italic": false,
+              "link": "none",
+              "journal": "",
+              "linkDate": "",
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "addDecorations": false
+            }
+          ],
+          [
+            {
+              "template": "{{date:YYYY}}",
+              "fontSize": 1,
+              "bold": false,
+              "italic": false,
+              "link": "year",
+              "journal": "",
+              "linkDate": "",
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "addDecorations": false
+            }
+          ]
         ]
       },
       "intervalBlock": {
         "type": "create",
-        "rows": [],
+        "lines": [],
+        "decorateWholeBlock": false
+      }
+    },
+    "yearly": {
+      "name": "yearly",
+      "write": {
+        "type": "year"
+      },
+      "timeline": {
+        "start": "",
+        "end": {
+          "kind": "never"
+        }
+      },
+      "dateFormat": "YYYY",
+      "frontmatter": {
+        "dateField": "journal-date",
+        "startDateField": "journal-start-date",
+        "endDateField": "journal-end-date",
+        "addStartDate": false,
+        "addEndDate": false
+      },
+      "numbering": {
+        "enabled": false,
+        "anchorDate": "",
+        "allowBefore": false,
+        "sources": []
+      },
+      "nameTemplate": "{{date}}",
+      "folder": "Calendar/Yearly Notes/",
+      "templates": [
+        "System/Templates/Journal-templates/yearly-template"
+      ],
+      "confirmCreation": false,
+      "autoCreate": false,
+      "decorations": [
+        {
+          "mode": "and",
+          "conditions": [
+            {
+              "type": "has-note"
+            }
+          ],
+          "styles": [
+            {
+              "type": "shape",
+              "size": 0.4,
+              "shape": "circle",
+              "color": {
+                "type": "theme",
+                "name": "interactive-accent"
+              },
+              "placement_x": "center",
+              "placement_y": "bottom"
+            }
+          ]
+        }
+      ],
+      "navBlock": {
+        "type": "create",
+        "decorateWholeBlock": false,
+        "lines": [
+          [
+            {
+              "template": "{{date:YYYY}}",
+              "fontSize": 3,
+              "bold": true,
+              "italic": false,
+              "link": "self",
+              "journal": "",
+              "linkDate": "",
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "addDecorations": true
+            }
+          ],
+          [
+            {
+              "template": "{{relative_date}}",
+              "fontSize": 0.7,
+              "bold": false,
+              "italic": false,
+              "link": "none",
+              "journal": "",
+              "linkDate": "",
+              "color": {
+                "type": "theme",
+                "name": "text-normal"
+              },
+              "background": {
+                "type": "transparent"
+              },
+              "addDecorations": false
+            }
+          ]
+        ]
+      },
+      "intervalBlock": {
+        "type": "create",
+        "lines": [],
         "decorateWholeBlock": false
       }
     }
@@ -803,5 +1071,5 @@
       "context": "today"
     }
   },
-  "version": 4
+  "version": 5
 }

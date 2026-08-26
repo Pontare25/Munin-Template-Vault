@@ -27,10 +27,14 @@ created-date: 2026-01-15
   | `area` | `Efforts/Areas/` | Ongoing responsibility |
   | `daily` | `Calendar/Daily Notes/` | Daily note |
   | `weekly` | `Calendar/Weekly Notes/` | Weekly note |
+  | `monthly` | `Calendar/Monthly Notes/` | Monthly note |
+  | `quarterly` | `Calendar/Quarterly Notes/` | Quarterly note |
+  | `yearly` | `Calendar/Yearly Notes/` | Yearly note |
   | `meeting` | `Calendar/Meetings/` | Meeting note |
+  | `work-session` | `Calendar/Work Sessions/` | Focused work block on a project |
 
 - **`created-date:`** in ISO `YYYY-MM-DDTHH:mm` datetime format. Templates fill it automatically.
-- **`date:`** on calendar notes marks the day the note covers. Daily/weekly/monthly notes carry a `YYYY-MM-DD` date; **meeting notes carry a full ISO `YYYY-MM-DDTHH:mm` datetime** (the meeting template prompts for it), and the meeting's filename is prefixed with the date. Same-day rollups match on the day (`dateformat(date, "yyyy-MM-dd")`); week/month range rollups key off `file.day` (the filename date, day-truncated and sync-safe), so a meeting's time is informational.
+- **`date:`** on calendar notes marks the day the note covers. Daily through yearly notes carry a `YYYY-MM-DD` date (the period's first day); **meeting and work-session notes carry a full ISO `YYYY-MM-DDTHH:mm` datetime** (the meeting template prompts for it), and the meeting's filename is prefixed with the date. Same-day rollups match on the day (`dateformat(date, "yyyy-MM-dd")`); week/month range rollups key off `file.day` (the filename date, day-truncated and sync-safe), so a meeting's time is informational.
 
 Strongly recommended on knowledge notes (everything outside `Calendar/`):
 
