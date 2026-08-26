@@ -20,6 +20,7 @@ Client product owner on [[Project Muninize]].
 ![[Meetings.base#People meetings]]
 
 ## Tasks involving them
+
 ```dataview
 TASK
 WHERE contains(list(" ", "/", "!", ">", "?"), status)
@@ -28,6 +29,7 @@ SORT date DESC
 ```
 
 ## Log
+
 ```dataview
 TASK
 WHERE contains(list("b", "i", "p", "c", "*"), status)

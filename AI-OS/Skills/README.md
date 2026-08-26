@@ -42,7 +42,7 @@ Add skills only when you feel the need; each one costs context.
 **Start here:**
 
 - [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills): official Obsidian skills covering Obsidian-flavored markdown, Bases, defuddle, json-canvas, and the Obsidian CLI. The closest thing to required: they teach an AI to write notes this vault's tooling understands.
-- [skills/skills at main · anthropics/skills](https://github.com/anthropics/skills/tree/main/skills) a list of skills developed by Anthropic, including skill-creator for creating new skills. 
+- [skills/skills at main · anthropics/skills](https://github.com/anthropics/skills/tree/main/skills) a list of skills developed by Anthropic, including skill-creator for creating new skills.
 
 **Worth considering once the basics run smoothly:**
 

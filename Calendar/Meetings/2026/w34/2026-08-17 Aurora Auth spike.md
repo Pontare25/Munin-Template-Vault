@@ -14,6 +14,7 @@ summary: Technical spike on the Aurora Auth SSO approach.
 # 2026-08-17 Aurora Auth spike
 
 ## Agenda
+
 - SSO provider options
 - Token refresh strategy
 

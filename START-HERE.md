@@ -10,7 +10,8 @@ Welcome. This vault is a personal wiki that an AI assistant maintains with you. 
 4. The vault bundles three community plugins, already installed: **Templater** (required; runs the note templates), **Omnisearch** (full-text search), and **Text Extractor** (OCR and text from PDFs and images). Enabling community plugins in step 3 turns them on. If Templater is not active, enable it under Settings, Community plugins.
 
 ## 2. Open your AI tool in this folder
-> The system is built to work without AI but it makes the onboarding process easier. 
+>
+> The system is built to work without AI but it makes the onboarding process easier.
 
 Any AI assistant that can read and write files works: Claude Code, Codex, or similar. Open it with this vault folder as its working directory. The entry files `CLAUDE.md` and `AGENTS.md` point the AI to its operating manual automatically.
 
@@ -100,6 +101,6 @@ The `Start Here/` folder holds the full set. Read them roughly in this order; ea
 
 Open today's daily note and dump everything there: thoughts, links, tasks, half-ideas. The daily-review SOP sweeps it into the right places. You never need to decide where something goes at capture time.
 
-This vault uses the [Journals](obsidian://show-plugin?id=journals) community plugin for managing periodic notes such as Daily, Weekly, Monthly, Quarterly and Yearly. Do not get overwhelmed, start with daily notes, once you feel like you want to aggregate information from multiple daily notes for a better overview and reflection over time start using the others, each builds the base for the next level (`Daily-> Weekly-> Monthly -> etc.` but it all starts with the daily note. 
+This vault uses the [Journals](obsidian://show-plugin?id=journals) community plugin for managing periodic notes such as Daily, Weekly, Monthly, Quarterly and Yearly. Do not get overwhelmed, start with daily notes, once you feel like you want to aggregate information from multiple daily notes for a better overview and reflection over time start using the others, each builds the base for the next level (`Daily-> Weekly-> Monthly -> etc.` but it all starts with the daily note.
 
-Think of the daily note as your launchpad and tracker. This is where you write your ideas and link information together. This is also what sets Obsidian apart from most note taking applications; the ability to link and aggregate information. This is what allows information to crystallize into knowledge over time. 
+Think of the daily note as your launchpad and tracker. This is where you write your ideas and link information together. This is also what sets Obsidian apart from most note taking applications; the ability to link and aggregate information. This is what allows information to crystallize into knowledge over time.

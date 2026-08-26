@@ -15,6 +15,7 @@ summary: Review of the target data model for the Borealis migration.
 # 2026-08-17 Borealis data model review
 
 ## Agenda
+
 - Target schema
 - Warehouse provisioning
 - Migration sequencing

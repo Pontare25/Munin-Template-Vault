@@ -24,5 +24,21 @@
   "MD034": false,
 
   // Compact |---| separator rows with padded cells are the Obsidian norm.
-  "MD060": false
+  "MD060": false,
+
+  // Obsidian callouts embed fenced code (```tasks, ```dataview) inside a
+  // blockquote; the blank lines MD031 wants around a fence break the callout.
+  "MD031": false,
+
+  // Callouts and multi-part blockquotes legitimately contain blank lines.
+  "MD028": false,
+
+  // Notes use bold text as lightweight section labels (Morning, Wins,
+  // Decisions). That is an Obsidian convention, not a missing heading.
+  "MD036": false,
+
+  // Template-seeded placeholder bullets (a bare "-" under a bold label) read
+  // as setext underlines once trailing spaces are stripped; atx-only
+  // enforcement adds nothing for an Obsidian vault.
+  "MD003": false
 }

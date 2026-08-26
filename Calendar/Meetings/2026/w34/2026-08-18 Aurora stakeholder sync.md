@@ -15,6 +15,7 @@ summary: Stakeholder sync on Aurora scope and timeline.
 # 2026-08-18 Aurora stakeholder sync
 
 ## Agenda
+
 - Scope confirmation
 - Timeline to demo
 

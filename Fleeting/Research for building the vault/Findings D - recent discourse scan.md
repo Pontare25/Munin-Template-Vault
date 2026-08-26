@@ -27,6 +27,7 @@ The strongest abandonment signal is a full reversal, not a tweak — see Q4 (Jac
 ## Q2 — LLM-in-the-vault: sentiment and workflows
 
 **Hype is real and current (mid-2026), driven by "Obsidian + Claude Code" specifically, not generic AI-notes.**
+
 - Greg Isenberg, "How I Use Obsidian + Claude Code to Run My Life" — 2026-02-23, 436,928 views, 8,774 likes. Pitches Obsidian as the data layer and Claude Code as the agent that queries it (e.g., "compares my stated attention intentions against actual behavior over 30-60 days").
 - KJ Rainey, "How To Build The ULTIMATE AI Second Brain (Obsidian + Claude Code)" — 2026-04-10, 227,316 views.
 - Nate Herk, "I Turned Claude Into the Ultimate Second Brain" — 2026-06-10, 349,474 views. Ties it to "Claude Fable" (their Opus 5-class release).
@@ -39,6 +40,7 @@ The strongest abandonment signal is a full reversal, not a tweak — see Q4 (Jac
 **RAG-over-vault is moving from idea to shipped plugins.** "Claude Obsidian Plugin Gives Claude A Real Memory" (r/AISEOInsider, recent) — turns a vault into a grounded memory store an agent can query. "Better Paste" — new plugin from the author of a Notebook-LM-style tool, explicitly cross-pollinating NotebookLM's RAG UX into Obsidian.
 
 **Engineering-side: vaults as agent memory infrastructure, with safety rails emerging.** GitHub activity (not social chatter, but a real signal of what builders are doing right now):
+
 - `optimikelabs/optimike-obsidian-mcp` PR (2026-08-13): "atomic note operation runtime" — adds a `Vault.process`-based SHA-256 compare-and-replace write bridge for AI agents editing Markdown notes. This is a **hash-guarded atomic write pattern** specifically to stop an AI agent from clobbering concurrent edits.
 - `escoffier-labs/brigade` PR (2026-08-14): "project canonical memory into an Obsidian vault" — treats the vault as the canonical memory target for a coding-agent system, not a personal PKM at all.
 - HN, "Session Visualization with Obsidian" (2026-08-17) — using Obsidian purely as a visualization layer for AI agent session logs.

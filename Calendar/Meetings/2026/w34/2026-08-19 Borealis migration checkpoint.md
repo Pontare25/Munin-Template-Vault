@@ -15,6 +15,7 @@ summary: Checkpoint on the Borealis migration status and risks.
 # 2026-08-19 Borealis migration checkpoint
 
 ## Agenda
+
 - Migration progress
 - Reporting-downtime risk
 - Stakeholder communication

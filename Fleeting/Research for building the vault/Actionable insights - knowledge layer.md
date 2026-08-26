@@ -22,7 +22,7 @@ Distillation of [[Findings A - atomic and evergreen notes]], [[Findings B - link
 
 ## INTERCONNECTED — links, compass, topics, MOCs
 
-- **P1 ADOPT the 4-mechanism decision table.** The ambiguity you flagged (compass vs topics vs MOC) is resolved in [[Findings B]] Q3. Publish it verbatim into a linking-conventions guide: **inline link** = reading-flow reference · **compass** = argumentative position · **`topics:`** = subject classification · **MOC** = curated navigation. This is the highest-leverage doc to write.
+- **P1 ADOPT the 4-mechanism decision table.** The ambiguity you flagged (compass vs topics vs MOC) is resolved in [[Findings B - linking and MOCs]] Q3. Publish it verbatim into a linking-conventions guide: **inline link** = reading-flow reference · **compass** = argumentative position · **`topics:`** = subject classification · **MOC** = curated navigation. This is the highest-leverage doc to write.
 - **P1 ADOPT the Mental Squeeze Point trigger.** Never "after N notes, make an MOC." Make an MOC only when scattered notes on a live concern start producing *overwhelm* (Milo). Give the LLM curator this exact rule so it stops proposing speculative MOCs. Guards directly against the over-structuring failure a template invites.
 - **P2 ADOPT: MOCs are heterarchical.** Same note belongs in multiple MOCs — that's the point, not clutter. State it in the MOC guide; correct any "one home per note" folder-thinking.
 - **P2 [DECISION] Self-maintaining (query-backed) MOCs.** D found the live trend: hand-curated MOCs go stale, so people back them with Dataview/Bases queries. **But** B's whole point is that a MOC's value is the *editorial, opinionated arrangement* a query can't produce. My take: **hybrid, not pure-query** — a Base view surfaces candidate notes; the human/LLM curates order + point-of-view on top. Pure-query "MOC" is just an index (which the vault already gets from Bases). Decide whether to ship a query-backed MOC pattern as an above-the-floor option.
@@ -64,7 +64,7 @@ Distillation of [[Findings A - atomic and evergreen notes]], [[Findings B - link
 
 1. **Linking-conventions guide** + publish the 4-mechanism table & Mental Squeeze Point trigger (P1, no schema change — safe to start now).
 2. **Trace model**: `source:` frontmatter + claim-level anchor for AI notes + schema-doc update (P1, needs D1/D2).
-3. **Ingest pipeline rework**: "Extracted claims" block on source, atomization throttle, epistemic-status rule, `/Reviewed` semantics (P1, needs D3/D4; the 8-stage spec in [[Findings C]] is the blueprint).
+3. **Ingest pipeline rework**: "Extracted claims" block on source, atomization throttle, epistemic-status rule, `/Reviewed` semantics (P1, needs D3/D4; the 8-stage spec in [[Findings C - source-to-atomic pipeline and traceability]] is the blueprint).
 4. **Lint invariant** for bidirectional provenance + citation resolution, folded into `lint.md` (P2).
 5. **Note-writing polish**: title convention, atomic≠short, link-while-drafting, cite-your-own-bets (P2, needs D5).
 6. **MOC guide**: heterarchy, up-to-home link, optional query-backed pattern (P2/P3, needs D6).

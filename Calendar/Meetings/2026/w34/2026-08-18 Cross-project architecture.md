@@ -17,6 +17,7 @@ summary: Cross-project architecture alignment between Aurora and Borealis.
 # 2026-08-18 Cross-project architecture
 
 ## Agenda
+
 - Shared auth vs platform boundaries
 - Data contracts between portal and platform
 

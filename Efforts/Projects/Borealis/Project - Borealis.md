@@ -20,6 +20,7 @@ summary: Migration of the analytics data platform. Worked example for the daily-
 # Borealis
 
 ## Last update
+
 ```dataview
 TABLE WITHOUT ID
 file.link AS "Last touched in",
@@ -32,6 +33,7 @@ LIMIT 1
 ```
 
 ## Tasks and Questions
+>
 > [!todo]+ Open
 > ```dataview
 > task
@@ -49,12 +51,16 @@ LIMIT 1
 > Group by file.name as Source
 > SORT Source Desc 
 > ```
+>
 ### Next actions
+
 - [ ] #task Freeze the target schema [[Project - Borealis]] ➕ 2026-08-17 📅 2026-08-24
 - [/] #task Provision the new warehouse [[Project - Borealis]] ➕ 2026-08-17
 
 ## Related
+
 ### Logs
+
 ```dataview
 TASK
 WHERE contains(outlinks, [[]]) or contains(up, [[]])
@@ -62,17 +68,25 @@ WHERE contains(list("b", "i", "p", "c", "*"), status)
 GROUP BY file.name as Source
 SORT Source DESC
 ```
+
 ### Meetings
+
 ![[Meetings.base#Project meetings]]
+
 ### Work sessions
+
 ![[Sessions.base#Project sessions]]
+
 ### Sub Projects
+
 ![[Projects.base#Sub projects]]
 
 ### Child Notes
+
 ![[Notes.base#Child notes]]
 
 ### Related Notes
+
 ![[Notes.base#Related notes]]
 
 ## Goal

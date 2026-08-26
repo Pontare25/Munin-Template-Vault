@@ -14,6 +14,7 @@ summary: Review of the Aurora Auth implementation progress.
 # 2026-08-19 Aurora Auth review
 
 ## Agenda
+
 - SSO provider decision
 - Token refresh implementation
 

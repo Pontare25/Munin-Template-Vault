@@ -14,6 +14,7 @@ summary: Prep for the Aurora portal demo.
 # 2026-08-19 Aurora demo prep
 
 ## Agenda
+
 - Demo script
 - Known gaps
 - Fallbacks

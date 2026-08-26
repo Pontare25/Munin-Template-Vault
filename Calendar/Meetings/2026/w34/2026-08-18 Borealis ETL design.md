@@ -14,6 +14,7 @@ summary: Design session for the Borealis ETL pipeline.
 # 2026-08-18 Borealis ETL design
 
 ## Agenda
+
 - Pipeline architecture
 - Idempotency and retries
 - Source table mapping

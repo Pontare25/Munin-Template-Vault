@@ -7,7 +7,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import { join, relative, sep } from "node:path";
 
 const ROOT = process.cwd();
-const SKIP_DIRS = new Set([".git", ".obsidian", ".github", "node_modules"]);
+const SKIP_DIRS = new Set([".git", ".obsidian", ".github", "node_modules", ".firecrawl"]);
 
 function walk(dir, out = []) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -45,6 +45,7 @@ function resolves(link) {
 let failures = 0;
 for (const f of files.filter((f) => f.endsWith(".md"))) {
   let text = readFileSync(f, "utf8")
+    .replace(/<%[\s\S]*?%>/g, "") // Templater tags (code, not rendered prose)
     .replace(/```[\s\S]*?```/g, "") // fenced code blocks
     .replace(/`[^`\n]*`/g, "") // inline code
     .replace(/%%[\s\S]*?%%/g, "") // Obsidian comments

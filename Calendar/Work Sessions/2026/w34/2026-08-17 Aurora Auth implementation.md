@@ -13,6 +13,7 @@ summary: Solo build session scaffolding the Aurora Auth module.
 # 2026-08-17 Aurora Auth implementation
 
 ## Focus
+
 Scaffold the auth module for [[Project - Aurora Auth]].
 
 ## Notes
@@ -30,4 +31,5 @@ Set up the OIDC client skeleton and a stub token store.
 - [ ] #task Add auth unit tests [[Project - Aurora Auth]] ➕ 2026-08-17 📅 2026-08-24
 
 ## Next session
+
 - Wire the refresh timer to the token store

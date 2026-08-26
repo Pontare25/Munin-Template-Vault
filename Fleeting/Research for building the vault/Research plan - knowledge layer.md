@@ -28,9 +28,11 @@ Everything distills back into these four:
 ## Workstreams
 
 ### Workstream 0 — schema change: `challenges:` → `opposes:` (do first, blocks nothing but touches everything)
+
 Rename the compass East key across the repo: `AI-OS/Schemas/note-schema.md` (~6 refs), every template with the key, `.base` files that filter/display it, example notes, any guide prose. Mechanical but wide. Scope it, then execute as one commit. **Not research — a prerequisite edit.** Get sign-off, then dispatch a bounded builder agent or do inline.
 
 ### Research workstreams (parallel agents)
+
 Each agent returns a tight findings memo (claims + source + so-what for THIS vault), not an essay.
 
 - **A — Atomic / evergreen note-writing.** Zettelkasten (Ahrens), Andy Matuschak's evergreen notes, atomicity, note-titles-as-claims, fleeting→permanent promotion. Output: what makes a good `note`, the promotion rule, title conventions.
@@ -39,9 +41,11 @@ Each agent returns a tight findings memo (claims + source + so-what for THIS vau
 - **D — Recent discourse scan (`/last30days` + web).** What Obsidian/PKM practitioners are actually arguing about *now* (last 30 days): what's working, what people are abandoning, LLM-in-the-vault sentiment. Output: reality-check against the evergreen-methodology findings.
 
 ### Distillation step (main thread, after agents return)
+
 Fold four memos into one actionable insights note in this folder, organized by the four verbs, each insight tagged: keep / adopt / adapt / reject-for-template, with the concrete vault change it implies. That note becomes the build backlog.
 
 ## Sequence
+
 0. Sign-off on this plan + the `opposes:` rename scope.
 1. (optional) Execute `opposes:` rename.
 2. Dispatch agents A–D in parallel.
@@ -49,6 +53,7 @@ Fold four memos into one actionable insights note in this folder, organized by t
 4. Turn insights into build/test items (likely GitHub Project #1 issues).
 
 ## Open questions for Pontus
+
 - **Depth of A/B?** They overlap with what the vault already encodes. Run them lean (validate + find gaps only), or full survey?
 - **`opposes:` timing** — before or after research? (Before = clean base for any note examples the research produces.)
 - **Scope of D** — pure sentiment/reality-check, or also hunt for concrete techniques the evergreen canon misses?

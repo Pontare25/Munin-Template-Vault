@@ -15,6 +15,7 @@ summary: Sprint planning for the Aurora portal rebuild.
 # 2026-08-17 Aurora sprint planning
 
 ## Agenda
+
 - Sprint scope
 - IA decisions
 - Staging environment

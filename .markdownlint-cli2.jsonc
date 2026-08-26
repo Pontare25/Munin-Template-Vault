@@ -7,8 +7,9 @@
   "ignores": [
     "System/Templates/**",
     "node_modules/**",
-    "dist/**",
+    "System/OKF/dist/**",
     "docs/**",
+    ".firecrawl/**",
     "CHANGELOG.md"
   ]
 }

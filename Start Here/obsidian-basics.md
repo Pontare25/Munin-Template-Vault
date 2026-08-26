@@ -26,6 +26,7 @@ up:
 Obsidian shows these as "properties" above the note. This vault leans on frontmatter heavily; the fields and what they mean are defined in [[note-schema]]. When a field holds a wikilink, quote it as above.
 
 ## Daily notes
+
 See [[Guide to writing daily notes]]
 
 Open today's note from the **Calendar** panel (right sidebar, opens on startup) or the "Open today's note" command (Ctrl/Cmd-P opens the command palette). The Journals plugin creates it under `Calendar/Daily Notes/YYYY/MM-MMM/` from the daily template, building the folders as needed. This vault's core habit: dump everything into today's daily note; the [[daily-review]] SOP sorts it later. The summary box at the top is a Meta Bind field that writes straight to the note's `summary:` property. Journals and Meta Bind are preconfigured; the onboarding session verifies them.
@@ -48,13 +49,13 @@ The rollup follows the journal hierarchy — days roll into the week note, weeks
 
 ## Tags
 
-A word with `#` in front (`#example`) is a tag; the tag pane lists all of them. This vault uses tags sparingly: `#example` marks deletable example content, and an optional `#type/...` mirror exists for browsing. Subjects are handled by `topics:` links instead, because links carry more information than tags. The pro of using tags is that it can carry nested hierarchies. 
+A word with `#` in front (`#example`) is a tag; the tag pane lists all of them. This vault uses tags sparingly: `#example` marks deletable example content, and an optional `#type/...` mirror exists for browsing. Subjects are handled by `topics:` links instead, because links carry more information than tags. The pro of using tags is that it can carry nested hierarchies.
 
 ## The graph
 
 Ctrl/Cmd-G opens the graph view: every note a dot, every link a line. Pretty, occasionally useful for spotting orphan notes (dots with no lines). The [[lint]] SOP finds those more reliably but require use of AI.
 
-More useful is the local graph which shows connections to and from the currently selected note. 
+More useful is the local graph which shows connections to and from the currently selected note.
 
 ## Templates (Templater)
 
@@ -64,9 +65,8 @@ Templater powers the note templates and is the one plugin the vault truly needs.
 
 `Ctrl/Cmd-Shift-F` searches all note text. Before searching, though, check the folder README indexes: every folder lists its notes with one-line summaries, which is usually faster. The bundled Omnisearch plugin adds a faster, fuzzy search with its own command and ribbon icon.
 
-The Omnisearch plugin allows you to search much deeper, it searches not only the title, tags, and specified frontmatter but also the actual content of the notes. It is also bundled with the Text Extractor plugin which searches text in attachments such as images and PDFs. 
+The Omnisearch plugin allows you to search much deeper, it searches not only the title, tags, and specified frontmatter but also the actual content of the notes. It is also bundled with the Text Extractor plugin which searches text in attachments such as images and PDFs.
+
 ## Text extraction and OCR languages
 
 Text Extractor pulls text out of PDFs and images, including scanned pages, via OCR. It ships configured for English and Swedish (`eng`, `swe`); Swedish is included because the template's author works in a Swedish context, and it is harmless to keep even if you never scan Swedish. To change the languages, open Settings, Text Extractor, and edit the OCR languages. Each entry is a Tesseract language code (for example `deu` for German, `fra` for French). Removing `swe` is fine if you do not need it.
-
-

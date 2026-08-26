@@ -13,6 +13,7 @@ summary: Build session prototyping the watermark ETL job.
 # 2026-08-18 Borealis ETL build
 
 ## Focus
+
 Prototype the watermark job for [[Project - Borealis ETL]].
 
 ## Notes
@@ -30,4 +31,5 @@ Built a first idempotent job reading from one legacy table with a watermark colu
 - [ ] #task Add dead-letter queue for failed rows [[Project - Borealis ETL]] ➕ 2026-08-18 📅 2026-08-25
 
 ## Next session
+
 - Handle the timestamp normalization edge cases

@@ -13,6 +13,7 @@ summary: Build session preparing the Aurora demo environment.
 # 2026-08-19 Aurora demo build
 
 ## Focus
+
 Get the [[Project - Aurora]] demo build ready.
 
 ## Notes
@@ -30,4 +31,5 @@ Wired the live auth login into the demo build and seeded the analytics panel.
 - [ ] #task Rehearse the demo once more [[Project - Aurora]] [[Erik Lund]] ➕ 2026-08-19 📅 2026-08-20
 
 ## Next session
+
 - Final rehearsal with Mia

@@ -15,6 +15,7 @@ tags:
 # Sofia Marklund
 
 ## Last contact
+
 ```dataview
 TABLE WITHOUT ID
 file.link AS "Contact note",
@@ -24,7 +25,9 @@ FLATTEN (date(today) - file.day).days as T
 SORT file.day desc
 LIMIT 1
 ```
+
 ## Tasks involving them
+>
 > [!todo]+ Open
 > ```dataview
 > TASK
@@ -44,7 +47,9 @@ LIMIT 1
 > Group by file.name as Source
 > Sort Source desc
 > ```
+>
 ## Log
+
 ```dataview
 TASK
 WHERE contains(list("b", "i", "p", "c", "*"), status)
@@ -52,10 +57,13 @@ WHERE contains(outlinks, [[]]) or contains(up, [[]])
 GROUP BY file.name as Source
 SORT Source DESC
 ```
+
 ## Meetings
+
 ![[Meetings.base#People meetings]]
 
 ## Related notes
+
 ![[Notes.base#Related notes]]
 
 ## About
