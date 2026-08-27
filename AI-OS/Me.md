@@ -37,7 +37,7 @@ Your operating manual for working with me in this vault. Read this first, every 
 These apply to every session in this vault, for every AI tool:
 
 1. Read `AI-OS/Vault-Map.md` and `AI-OS/Schemas/note-schema.md` before creating or editing any note.
-2. Before any vault task, check `AI-OS/SOPs/` for a matching procedure. If one matches, follow it step by step. If none matches, say so before improvising.
+2. Before any vault task, route it: match the request against the trigger index in `AI-OS/routing.md`, read the matched SOP in full, and state which SOP matched (or that none did) before your first action. If nothing matches, propose a SOP rather than improvising.
 3. Create freely in `Atlas/` and `Raw/` when a SOP directs it. Ask before editing or deleting anything the human wrote.
 4. Mark everything you write with `%% #AI-Assisted %%` at the top of the note or section.
 5. After completing vault work, append an entry to `AI-OS/log.md` (format documented in that file).

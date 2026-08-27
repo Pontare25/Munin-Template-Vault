@@ -7,6 +7,7 @@ The schema layer: everything the AI needs to operate this vault. Where `Atlas/` 
 | File or folder | Role |
 |---|---|
 | `Me.md` | Your profile: who you are, how you want the AI to work. The entry point every AI tool reads first |
+| `routing.md` | How the AI matches a request to the right handler: the SOP trigger index and the routing procedure |
 | `Vault-Map.md` | Navigation manual: what goes where and why |
 | `SOPs/` | Step-by-step procedures: [[ingest]], [[new-note]], [[query]], [[daily-review]], [[lint]] |
 | `Schemas/note-schema.md` | The note format: types, fields, the idea compass |

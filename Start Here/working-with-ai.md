@@ -11,6 +11,12 @@ Four operations, endlessly repeated:
 3. **Query** (you ask, AI answers): "what do I know about X?" The AI climbs the retrieval ladder in the [[query]] SOP: the relevant Topic page, then its backlinks, then indexes, with full search as the last resort. **File good answers:** when an answer is worth keeping, say "file that" and the AI saves it as an Atlas note. Chat history evaporates; the vault compounds.
 4. **Review and lint** (both): [[daily-review]] sweeps captures regularly; [[lint]] checks graph health occasionally.
 
+## How the AI decides what to do
+
+Before acting on a request, the AI routes it. It checks a trigger index (in `AI-OS/routing.md`) that maps the kind of thing you asked for to the procedure that handles it, reads that procedure, and tells you which one it picked before starting. So a normal request looks like: you ask, the AI says "this is an ingest, following that SOP", then it works.
+
+If nothing matches, the AI says so instead of winging it, and offers to build a new procedure for next time. That is how the system learns your recurring requests: each one that does not fit becomes a SOP, and the next time it just works. The routing rules are plain notes like everything else, so you can always read and edit them.
+
 ## Why this works better than chat
 
 A chat assistant starts every conversation knowing nothing about you. This vault is persistent memory: `Me.md` tells the AI who you are, `Atlas/` holds what you know, and the SOPs tell it how to behave. Any AI tool that reads files gets the same context; switch tools and nothing is lost.
