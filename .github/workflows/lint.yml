@@ -29,3 +29,6 @@ jobs:
 
       - name: Wikilink check
         run: node .github/scripts/check-wikilinks.mjs
+
+      - name: OKF type check
+        run: node .github/scripts/check-types.mjs
