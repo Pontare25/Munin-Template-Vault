@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.11.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.10.0...v1.11.0) (2026-08-27)
+
+
+### Features
+
+* **okf:** add zero-dependency Atlas type: check ([30058e0](https://github.com/Pontare25/Munin-Template-Vault/commit/30058e05cb3571937193b79fa758e0b1389f99f9)), closes [#117](https://github.com/Pontare25/Munin-Template-Vault/issues/117)
+* **routing:** document the agent routing procedure and SOP trigger index ([de20af6](https://github.com/Pontare25/Munin-Template-Vault/commit/de20af675fbdad561e205da8922b62bd84c0471b))
+
+
+### Documentation
+
+* reframe README positioning and add mobile-git guidance ([dfa2ac4](https://github.com/Pontare25/Munin-Template-Vault/commit/dfa2ac40dbcdf11a16d0d8ac3b137665a7588db8))
+
 ## [1.10.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.9.1...v1.10.0) (2026-08-26)
 
 
