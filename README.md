@@ -2,28 +2,28 @@
 
 > **⚠️ Work in progress.** This template is under active development — folder structure, templates, and conventions are still changing and may break between updates. Explore the ideas and kick the tires; don't yet rely on it as a stable base for irreplaceable notes.
 
-A ready-to-use [Obsidian](https://obsidian.md) vault that works as an **AI-maintained personal wiki**. You capture thoughts and sources; an AI assistant (Claude Code, Codex, or any tool that can read files) files, links, and maintains the knowledge base with you.
+A ready-to-use [Obsidian](https://obsidian.md) vault that works as a **personal wiki, project management tool, and a CRM all in one.** The system is designed to work completely without AI but works even better with it. You capture thoughts and sources; an AI assistant (Claude Code, Codex, or any tool that can read files) files, links, and maintains the knowledge base with you and continuously learn and improve.
 
-Named after Munin, one of Odin's two ravens: the one that remembers.
+The system is named after one of Odin's two ravens Hugin and Munin, I forget which one but its the one that remembers 😉.
 
 ## What you get
 
-- A folder structure that separates **capture** (Fleeting + Raw), **knowledge** (Atlas), and **configuration** (AI-OS), with Calendar and Efforts alongside.
-- A note schema built on wikilinks, a small set of frontmatter fields, and an extended idea compass (`up`, `related`, `down`, `opposes`).
-- Standard Operating Procedures (SOPs) the AI follows for ingesting sources, creating notes, answering questions from the wiki, reviewing your daily note, and linting the wiki.
-- Minimal Templater templates, three Bases dashboards, and a small worked example you can explore and then delete.
+- A folder structure that separates the **capture flow** (Fleeting + Raw), **knowledge management** (Atlas), and **configuration standards** (AI-OS), with **Calendar** for journaling and logs, and **Efforts** for project and task management.
+- A note schema built on wikilinks, a small set of frontmatter fields, and an extended idea compass (`up`, `related`, `down`, `opposes`). This allows you to build clear hierarchies of information without getting bogged down and frustrated with organization instead of actually writing. 
+- **Standard Operating Procedures** (SOPs) allow your AI of choice to follow instructions on how to work in your personal vault without it bloating your skillsets. It also allows you to stack skills in recurring procedures. For example, the AI follows an SOP for ingesting sources, creating notes, answering questions from the wiki, reviewing your daily note, and regularly linting the wiki.
+- Minimal Templater templates, dashboards, and small worked examples you can explore and then delete. (These are tagged with `#example`)
 - An AI-led onboarding: paste one prompt and the AI interviews you, fills in your profile, and runs a guided first ingest.
 
 ## Quickstart
 
 1. Click **Use this template** on GitHub (or download this repo as a ZIP).
 2. Open the folder as a vault in Obsidian.
-3. When Obsidian asks, trust the vault and enable community plugins. It bundles three, already installed: **Templater** (required; runs the note templates), **Omnisearch** (fast full-text search), and **Text Extractor** (OCR and text extraction from PDFs and images).
+3. When Obsidian asks, trust the vault and enable community plugins. It bundles three, already installed: **Templater** (required; runs the note templates better than the default core template plugin), **Omnisearch** (fast full-text search), and **Text Extractor** (OCR and text extraction from PDFs and images). Omnisearch is integrated with text extractor giving you one interface to search notes and other files. 
 4. Open [START-HERE](START-HERE.md) and follow it.
 
-No git knowledge required to use the vault. When you are ready to back it up, [github-and-backup](Start%20Here/github-and-backup.md) explains git for people who write notes, not code.
+No git knowledge is required to use the vault. When you are ready to back it up, [github-and-backup](Start%20Here/github-and-backup.md) explains git for people who write notes, not code.
 
-## The three layers
+## The three main layers
 
 | Layer | Folder | Role |
 |---|---|---|
@@ -32,6 +32,12 @@ No git knowledge required to use the vault. When you are ready to back it up, [g
 | Schema | `AI-OS/` | How the vault works: your profile, the rules, the SOPs |
 
 `Calendar/` (daily notes, the main capture surface) and `Efforts/` (projects and areas) orbit these three.
+
+## Start Here
+
+Next I would recommend you read the guides in `Start Here/` and if you want to learn how to use Obsidian I have put together a collection of guides here: `Start Here/Recommended Obsidian Tutorials` ([[Recommended Obsidian Tutorials]]). I have also asked AI to create an [[obsidian-basics]] note. 
+
+I would actually recommend you **not** start with this vault if you are completely new to Obsidian. Instead I would recommend you just create a new empty vault and just start writing and linking. Then once you start to feel comfortable, come back go through the examples and use the basis this vault has created and make it your own. 
 
 ## Open Knowledge Format (optional)
 
