@@ -26,6 +26,8 @@ The capture inbox. Material lands here on its way into the vault: articles, vide
 
 ## Inbox view
 
+Everything in `Inbox/` still waiting to be analyzed, oldest first. Both capture lanes side by side live on the [[Inbox|Inbox dashboard]].
+
 ![[Inbox.base]]
 
 ## Governing SOPs

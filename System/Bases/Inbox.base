@@ -1,0 +1,29 @@
+filters:
+  and:
+    - file.path.startsWith("Raw/Inbox")
+    - '!file.name.contains("README")'
+formulas:
+  waiting: 'if(note["created-date"], (now() - note["created-date"]).days.round(0), (now() - file.ctime).days.round(0))'
+  captured: 'if(note["created-date"], note["created-date"].format("YYYY-MM-DD"), file.ctime.format("YYYY-MM-DD"))'
+properties:
+  formula.waiting:
+    displayName: Days waiting
+  formula.captured:
+    displayName: Captured
+  file.ext:
+    displayName: Kind
+views:
+  - type: table
+    name: Awaiting analysis
+    order:
+      - file.name
+      - file.ext
+      - formula.waiting
+      - summary
+      - formula.captured
+    sort:
+      - property: formula.waiting
+        direction: DESC
+    columnSize:
+      file.name: 340
+      note.summary: 460

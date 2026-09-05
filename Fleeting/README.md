@@ -12,3 +12,9 @@ Both are in transit, not an archive. The AI develops fleeting notes and promotes
 ## How capture works
 
 New notes default to this folder, and a Templater **folder template** applies automatically to anything created here: you get `type: fleeting` and a timestamp for free, then just type. No template picking, no filing decision at the moment of thought. `Fleeting/` is the only auto-templated folder — everywhere else you choose a template when you promote the note.
+
+## What is waiting
+
+Every Fleeting note that has not been promoted or deleted yet, oldest first, with how long it has been sitting here. The **Stale** view is the nagging half. Both capture lanes side by side live on the [[Inbox|Inbox dashboard]].
+
+![[Fleeting.base]]

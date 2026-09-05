@@ -12,4 +12,5 @@ Read-only overview surfaces that pull the vault together in one place. A dashboa
 
 ## Contents
 
+- [[Inbox]] — everything captured but not yet processed, in both capture lanes.
 - [[Tasks]] — every open task in the vault, grouped by when it needs attention.
