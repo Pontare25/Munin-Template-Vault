@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.11.0...v1.12.0) (2026-09-05)
+
+
+### Features
+
+* **capture:** inbox dashboard with Fleeting and Raw Inbox bases ([d31dee7](https://github.com/Pontare25/Munin-Template-Vault/commit/d31dee73d241efd668309b8235cece8f5fcbdf6c)), closes [#126](https://github.com/Pontare25/Munin-Template-Vault/issues/126)
+
 ## [1.11.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.10.0...v1.11.0) (2026-08-27)
 
 
