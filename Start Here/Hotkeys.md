@@ -13,6 +13,12 @@ Custom keyboard shortcuts in this vault. Rebind any of them in **Settings → Ho
 
 Marker meanings: `[b]` log / event · `[i]` fact · `[p]` positive · `[c]` negative · `[*]` highlight. Full system in [[tasks-and-logs]].
 
+## Capture
+
+- **Promote note** — turns the open note into a real type: pick `note`, `topic`, `person`, `meeting`, `work-session`, `project` or `source`, and the note gets that type's frontmatter and sections and moves to that type's folder. What you already wrote is kept.
+- Fleeting notes carry a **Promote note** button at the top; click it. Anywhere else, run *Promote note* from the command palette (`Ctrl+P`). No key is bound by default — bind one in **Settings → Hotkeys** if you promote often.
+- Works on a note that already has a type too, when you want to change it.
+
 ## Search
 
 - **`Ctrl+Alt+F`** — Omnisearch (vault-wide search). (macOS: `Cmd+Option+F`.)

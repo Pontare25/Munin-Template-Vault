@@ -7,7 +7,7 @@ topics:
 resource:
 ---
 ## Capture
-<%* await tp.file.move("Raw/Sources/" + tp.file.title) -%>
+<%* await tp.file.move("Raw/Inbox/" + tp.file.title) -%>
 
 <% tp.file.cursor() %>
 
