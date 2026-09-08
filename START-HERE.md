@@ -101,6 +101,6 @@ The `Start Here/` folder holds the full set. Read them roughly in this order; ea
 
 Open today's daily note and dump everything there: thoughts, links, tasks, half-ideas. The daily-review SOP sweeps it into the right places. You never need to decide where something goes at capture time.
 
-This vault uses the [Journals](obsidian://show-plugin?id=journals) community plugin for managing periodic notes such as Daily, Weekly, Monthly, Quarterly and Yearly. Do not get overwhelmed, start with daily notes, once you feel like you want to aggregate information from multiple daily notes for a better overview and reflection over time start using the others, each builds the base for the next level (`Daily-> Weekly-> Monthly -> etc.` but it all starts with the daily note.
+This vault uses the [Journals](obsidian://show-plugin?id=journals) community plugin for managing periodic notes such as Daily, Weekly, Monthly, Quarterly and Yearly. Do not get overwhelmed, start with daily notes, once you feel like you want to aggregate information from multiple daily notes for a better overview and reflection over time start using the others, each builds the base for the next level (`Daily-> Weekly-> Monthly -> etc.`) but it all starts with the daily note.
 
 Think of the daily note as your launchpad and tracker. This is where you write your ideas and link information together. This is also what sets Obsidian apart from most note taking applications; the ability to link and aggregate information. This is what allows information to crystallize into knowledge over time.
