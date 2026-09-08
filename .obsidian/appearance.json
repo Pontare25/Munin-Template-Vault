@@ -2,6 +2,7 @@
   "cssTheme": "Minimal",
   "enabledCssSnippets": [
     "Unstrike-tasks",
-    "MCL Multi Column"
+    "MCL Multi Column",
+    "headingDots"
   ]
 }

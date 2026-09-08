@@ -1,0 +1,39 @@
+/* Heading level dots — kept in the inline flow at all times so
+   toggling them never reflows the heading text. */
+
+.HyperMD-header::before {
+  content: "...";
+  font-family: sans-serif;
+  display: inline-block;
+  letter-spacing: .05em;
+  line-height: .30em;
+  width: 4px;
+  height: 1.1em;
+  margin: 0;
+  margin-right: 6px;
+  padding: 0;
+  vertical-align: middle;
+  transform: translate(0.40em, 0);
+  color: var(--color-accent);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-align: center;
+  white-space: pre;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 120ms ease;
+}
+
+/* Hide on hover (the fold arrow claims this slot) and while the cursor
+   is on the line. Space stays reserved either way, so nothing shifts. */
+.HyperMD-header:hover::before,
+.HyperMD-header.cm-active::before {
+  opacity: 0;
+}
+
+.HyperMD-header-1::before { content: "."; }
+.HyperMD-header-2::before { content: ".."; }
+.HyperMD-header-3::before { content: "..."; }
+.HyperMD-header-4::before { content: "..\A.."; width: 0.5em; }
+.HyperMD-header-5::before { content: "...\A.."; width: 0.5em; }
+.HyperMD-header-6::before { content: "...\A..."; width: 0.5em; }
