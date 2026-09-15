@@ -8,6 +8,7 @@ Welcome. This vault is a personal wiki that an AI assistant maintains with you. 
 2. Open this folder as a vault (**Open folder as vault**).
 3. When asked, trust the vault and enable community plugins.
 4. The vault bundles three community plugins, already installed: **Templater** (required; runs the note templates), **Omnisearch** (full-text search), and **Text Extractor** (OCR and text from PDFs and images). Enabling community plugins in step 3 turns them on. If Templater is not active, enable it under Settings, Community plugins.
+5. Turn on two Templater settings that are **stored per device** (they do not travel with the vault, so enable them on every device you sync to). Under Settings, Templater, in the **File creation** section: enable **Trigger Templater on new file creation** (this is what applies the folder templates, the fleeting note button, and the Promote command; nothing runs without it), and enable **Automatic jump to cursor** after the filename (so a new note leaves your cursor in the body, not on the title).
 
 ## 2. Open your AI tool in this folder
 >
@@ -44,7 +45,12 @@ time, and wait for my answers before moving on. Keep it conversational.
    "Calendar/Daily Notes" with the
    "System/Templates/Templater/Calendar-templates/daily-template" template,
    and ask me to confirm the bundled plugins (Templater, Omnisearch, Text
-   Extractor) are enabled, Templater above all.
+   Extractor) are enabled, Templater above all. Also have me confirm the two
+   per-device Templater settings under Settings, Templater, File creation:
+   "Trigger Templater on new file creation" and "Automatic jump to cursor"
+   after filename, both ON. These are stored per device and off by default on
+   a fresh install, so templates and the Promote command silently do nothing
+   until they are enabled.
    If anything is off, tell me exactly what to click.
 
 5. EXAMPLE CONTENT. This vault ships a small worked example (notes
