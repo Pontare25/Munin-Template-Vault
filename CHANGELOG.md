@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.13.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.12.0...v1.13.0) (2026-09-15)
+
+
+### Features
+
+* AoR review sweep dashboard (Refs [#136](https://github.com/Pontare25/Munin-Template-Vault/issues/136)) ([dd9180b](https://github.com/Pontare25/Munin-Template-Vault/commit/dd9180bdf1f702ac4b77e36d5e102f8ff992752f))
+* **appearance:** add headingDots snippet ([d9fb0b2](https://github.com/Pontare25/Munin-Template-Vault/commit/d9fb0b2215809af5f8e4eda19753f73fd7c5d37e))
+* **capture:** generic Promote note command (re-template + move) ([49b2751](https://github.com/Pontare25/Munin-Template-Vault/commit/49b2751414cb0aaa4ac57e946c96ce1587857811)), closes [#127](https://github.com/Pontare25/Munin-Template-Vault/issues/127)
+* **logs:** decisions as first-class — log widget rollup + write commands ([4e307f8](https://github.com/Pontare25/Munin-Template-Vault/commit/4e307f80d5ce59eeeb93c8e12d4a67a0b62b4be1))
+
+
+### Bug Fixes
+
+* AoR base — asFile() for backlink props, scope to Efforts/Areas (Refs [#136](https://github.com/Pontare25/Munin-Template-Vault/issues/136)) ([802c827](https://github.com/Pontare25/Munin-Template-Vault/commit/802c827c1645383e3cb460ae152c48907632b00e))
+* **capture:** make Promote work end-to-end, preserve capture date, doc device settings ([aa371c1](https://github.com/Pontare25/Munin-Template-Vault/commit/aa371c1350b528389a56755c0635795937a4fe59))
+* **fleeting:** don't prompt for a name on link-created notes ([74aec06](https://github.com/Pontare25/Munin-Template-Vault/commit/74aec06d16c8f11cbc4c635d5906fbda533ffbb9))
+
+
+### Documentation
+
+* close unmatched paren in START-HERE periodic-notes paragraph ([eba8900](https://github.com/Pontare25/Munin-Template-Vault/commit/eba89007944f472db818b8c9cc4aef35342af7ed))
+
 ## [1.12.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.11.0...v1.12.0) (2026-09-05)
 
 
