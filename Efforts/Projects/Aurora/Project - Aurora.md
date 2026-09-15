@@ -33,7 +33,6 @@ LIMIT 1
 ```
 
 ## Tasks and Questions
->
 > [!todo]+ Open
 > ```dataview
 > task
@@ -74,19 +73,15 @@ SORT Source DESC
 ![[Meetings.base#Project meetings]]
 
 ### Work sessions
-
 ![[Sessions.base#Project sessions]]
 
 ### Sub Projects
-
 ![[Projects.base#Sub projects]]
 
 ### Child Notes
-
 ![[Notes.base#Child notes]]
 
 ### Related Notes
-
 ![[Notes.base#Related notes]]
 
 ## Goal

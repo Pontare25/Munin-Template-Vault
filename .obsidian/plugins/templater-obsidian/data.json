@@ -5,7 +5,7 @@
   "templates_pairs": [],
   "trigger_on_file_creation_mode": "folder",
   "auto_jump_to_cursor": true,
-  "jump_to_cursor_after_file_name": false,
+  "jump_to_cursor_after_file_name": true,
   "shell_path": "",
   "user_scripts_folder": "",
   "folder_templates": [

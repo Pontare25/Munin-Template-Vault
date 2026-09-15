@@ -15,4 +15,4 @@ Product work moves with clear scope, a visible backlog, and a steady cadence.
 
 ## Next actions
 
-- [ ]
+- [ ] 

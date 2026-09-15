@@ -32,7 +32,6 @@ LIMIT 1
 ```
 
 ## Tasks and Questions
->
 > [!todo]+ Open
 > ```dataview
 > task
