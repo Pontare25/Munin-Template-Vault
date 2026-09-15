@@ -77,6 +77,8 @@ Some log kinds are worth querying as a class across the whole vault. Give those 
 
 The marker and the tag do different jobs: the **marker** sets the family, behavior (`NON_TASK`), and visual; the **tag** sets the semantic class for cross-cutting queries. They are orthogonal, which is why decision and risk draw from different markers but share the `#log/` namespace. Query all decisions with `#log/decision`, everything typed with `#log/*`.
 
+To keep these cheap to write, two commands insert the whole prefix for you: **Log decision** drops `- [b] #log/decision ` on the line, **Log risk** drops `- [c] #log/risk ` — cursor left ready for the text. See [[Hotkeys]].
+
 Major decisions can be promoted to their own `type: decision` note (context, rationale, date), ADR-style — the same capture-cheap, promote-what-matters move as the rest of the vault.
 
 ## The linking rule (why any of this rolls up)
@@ -107,6 +109,18 @@ Two engines, deliberately split:
 - **The Tasks plugin** handles date-scoped global dashboards — today, overdue, deferred — across the whole vault, filtered to `#task`. It has no notion of "tasks in notes linking here", so it is the wrong tool for per-project rollups and the right tool for "what is due this week everywhere".
 
 Rule of thumb: **Dataview for link-scoped rollups, the Tasks plugin for date-scoped global views.**
+
+## The Advanced log widget
+
+The project and person templates show the plain link-scoped log rollup above (always visible), and below it a collapsible **Advanced log** browser (a `dataviewjs` widget) for when you need to filter or export. It is collapsed by default — click *Advanced log* to open it; the open/closed state is remembered per note. It shows the same logs that reach the host note — link-scoped by outlink or `up` — and adds live controls on top:
+
+- **Marker toggles** — show or hide each log marker (`[b]` `[i]` `[p]` `[c]` `[*]`).
+- **Text search** — matches the whole line, including any `#log/` tag, so typing `decision` pulls up every `#log/decision` item.
+- **Date range**, folder-scope switch, sort, and a **Copy results** button (Markdown to clipboard). All settings persist per note.
+
+The weekly note keeps its own date-scoped decisions query for the "what got decided this week" view.
+
+The widget lives at `System/Templates/Templater/Sub-templates/Dataview queries/Advanced log template.md` and is pulled into the project and person templates with `tp.file.include`.
 
 ## See also
 

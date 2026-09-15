@@ -75,6 +75,7 @@ WHERE contains(list("b", "i", "p", "c", "*"), status)
 GROUP BY file.name as Source
 SORT Source DESC
 ```
+<% tp.file.include("[[Advanced log template]]") %>
 ### Meetings
 ![[Meetings.base#Project meetings]]
 ### Work sessions

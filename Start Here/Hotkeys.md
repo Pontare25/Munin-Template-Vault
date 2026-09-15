@@ -10,8 +10,12 @@ Custom keyboard shortcuts in this vault. Rebind any of them in **Settings → Ho
 ## Logs
 
 - **`Ctrl+Alt+L`** — insert a `- [b]` log bullet. Press again on the same line to cycle the marker: `[b] → [i] → [p] → [c] → [*]`. (macOS: `Cmd+Option+L`.)
+- **Log decision** — insert a ready-to-write decision log: `- [b] #log/decision `. On a line that already has a log bullet, it just adds the tag.
+- **Log risk** — insert a ready-to-write risk log: `- [c] #log/risk `.
 
 Marker meanings: `[b]` log / event · `[i]` fact · `[p]` positive · `[c]` negative · `[*]` highlight. Full system in [[tasks-and-logs]].
+
+*Log decision* and *Log risk* have no key bound by default — run them from the command palette (`Ctrl+P`), or bind a key in **Settings → Hotkeys** if you log these often.
 
 ## Capture
 

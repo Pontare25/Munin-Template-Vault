@@ -52,6 +52,7 @@ WHERE contains(outlinks, [[]]) or contains(up, [[]])
 GROUP BY file.name as Source
 SORT Source DESC
 ```
+<% tp.file.include("[[Advanced log template]]") %>
 ## Meetings
 ![[Meetings.base#People meetings]]
 

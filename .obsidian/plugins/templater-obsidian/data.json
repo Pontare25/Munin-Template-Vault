@@ -24,7 +24,9 @@
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
     "System/Templates/Templater/Commands/log-bullet.md",
-    "System/Templates/Templater/Commands/promote-note.md"
+    "System/Templates/Templater/Commands/promote-note.md",
+    "System/Templates/Templater/Commands/log-decision.md",
+    "System/Templates/Templater/Commands/log-risk.md"
   ],
   "startup_templates": [],
   "intellisense_render": "1",
