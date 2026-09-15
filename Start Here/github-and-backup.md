@@ -39,9 +39,9 @@ If your AI tool can run commands, backup can be delegated: "commit my vault with
 
 ## Git on mobile
 
-This gets a bit trickier. The author of the Git plugin has himself said that the plugin is unstable on mobile. 
+This gets a bit trickier. The author of the Git plugin has himself said that the plugin is unstable on mobile.
 There are several alternatives, but I personally use Working Copy [‎Git client - Working Copy App - App Store](https://apps.apple.com/us/app/git-client-working-copy/id896694807) which works on iPhone. It does require you to make a one-time purchase which includes all updates for a year.
 This guided walkthrough is a bit outdated but explains how to set it up: [Sync Obsidian using Working Copy and GitHub](https://www.youtube.com/watch?v=akW57xD_EKg&t=213s&pp=ygUVd29ya2luZyBjb3B5IG9ic2lkaWFu "Sync Obsidian using Working Copy and GitHub")
-Note that if you use this app on mobile you need to disable the git plugin on your phone (the plugin allows for device detection) allowing you to still use it on your desktop. 
+Note that if you use this app on mobile you need to disable the git plugin on your phone (the plugin allows for device detection) allowing you to still use it on your desktop.
 
 If you are new to Git, I would recommend you use one of the standard synchronization methods, either Obsidian Sync or iCloud, however I do not know how version control works on these.

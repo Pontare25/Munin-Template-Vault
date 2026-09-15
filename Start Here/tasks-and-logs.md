@@ -77,7 +77,7 @@ Some log kinds are worth querying as a class across the whole vault. Give those 
 
 The marker and the tag do different jobs: the **marker** sets the family, behavior (`NON_TASK`), and visual; the **tag** sets the semantic class for cross-cutting queries. They are orthogonal, which is why decision and risk draw from different markers but share the `#log/` namespace. Query all decisions with `#log/decision`, everything typed with `#log/*`.
 
-To keep these cheap to write, two commands insert the whole prefix for you: **Log decision** drops `- [b] #log/decision ` on the line, **Log risk** drops `- [c] #log/risk ` — cursor left ready for the text. See [[Hotkeys]].
+To keep these cheap to write, two commands insert the whole prefix for you: **Log decision** drops `- [b] #log/decision` on the line, **Log risk** drops `- [c] #log/risk` — cursor left ready for the text. See [[Hotkeys]].
 
 Major decisions can be promoted to their own `type: decision` note (context, rationale, date), ADR-style — the same capture-cheap, promote-what-matters move as the rest of the vault.
 
