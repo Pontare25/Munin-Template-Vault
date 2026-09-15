@@ -1,0 +1,27 @@
+filters:
+  and:
+    - 'type == "area"'
+formulas:
+  active_projects: 'file.backlinks.filter(value.type == "project" && (value.status == "active" || value.status == "simmering")).length'
+  overdue_projects: 'file.backlinks.filter(value.type == "project" && value.status != "done" && value["due-date"] && date(value["due-date"]) < today()).length'
+  flag: 'if(formula.active_projects == 0, "🔴", if(formula.overdue_projects > 0, "🔴", "🟢"))'
+properties:
+  formula.active_projects:
+    displayName: "Active projects"
+  formula.overdue_projects:
+    displayName: "Past due"
+  formula.flag:
+    displayName: "Flag"
+views:
+  - type: table
+    name: AoR Review
+    order:
+      - formula.flag
+      - file.name
+      - formula.active_projects
+      - formula.overdue_projects
+    sort:
+      - property: formula.flag
+        direction: ASC
+      - property: formula.active_projects
+        direction: ASC
