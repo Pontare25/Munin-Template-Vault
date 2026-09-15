@@ -5,8 +5,13 @@
 // flow) invalidates that handle and shows "Button Error". Doing the rename
 // before the button ever renders sidesteps it. Blank input keeps the default
 // name so the flow never blocks.
-const name = await tp.system.prompt("Fleeting note name (blank to name later)");
-if (name) { await tp.file.rename(name); }
+// Only prompt when the note has no real name yet: a CTRL+N note is "Untitled"
+// (or "Untitled 1", ...). A note created from a [[wikilink]] already carries its
+// name as the title, so skip the prompt and keep it.
+if (/^Untitled( \d+)?$/.test(tp.file.title)) {
+  const name = await tp.system.prompt("Fleeting note name (blank to name later)");
+  if (name) { await tp.file.rename(name); }
+}
 -%>
 ---
 type: fleeting
