@@ -4,11 +4,11 @@
 
 A ready-to-use [Obsidian](https://obsidian.md) vault that works as a **personal wiki, project management tool, and a CRM all in one.** The system is designed to work completely without AI but works even better with it. You capture thoughts and sources; an AI assistant (Claude Code, Codex, or any tool that can read files) files, links, and maintains the knowledge base with you and continuously learn and improve.
 
-The system is named after one of Odin's two ravens Hugin and Munin, I forget which one but its the one that remembers 😉.
+The system is named after one of Odin's two ravens Hugin and Munin, I forget which one 😉.
 
 ## What you get
 
-- A folder structure that separates the **capture flow** (Fleeting + Raw), **knowledge management** (Atlas), and **configuration standards** (AI-OS), with **Calendar** for journaling and logs, and **Efforts** for project and task management.
+- An interconnected note-making structure that separates the **capture flow** (Fleeting + Raw), **knowledge management** (Atlas), and **configuration standards** (AI-OS), with **Calendar** for journaling and logs, and **Efforts** for project and task management.
 - A note schema built on wikilinks, a small set of frontmatter fields, and an extended idea compass (`up`, `related`, `down`, `opposes`). This allows you to build clear hierarchies of information without getting bogged down and frustrated with organization instead of actually writing. 
 - **Standard Operating Procedures** (SOPs) allow your AI of choice to follow instructions on how to work in your personal vault without it bloating your skillsets. It also allows you to stack skills in recurring procedures. For example, the AI follows an SOP for ingesting sources, creating notes, answering questions from the wiki, reviewing your daily note, and regularly linting the wiki.
 - Minimal Templater templates, dashboards, and small worked examples you can explore and then delete. (These are tagged with `#example`)
