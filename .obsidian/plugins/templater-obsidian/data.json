@@ -23,10 +23,26 @@
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
-    "System/Templates/Templater/Commands/log-bullet.md",
-    "System/Templates/Templater/Commands/promote-note.md",
-    "System/Templates/Templater/Commands/log-decision.md",
-    "System/Templates/Templater/Commands/log-risk.md"
+    {
+      "template": "System/Templates/Templater/Commands/log-bullet.md",
+      "insert_enabled": true,
+      "create_enabled": false
+    },
+    {
+      "template": "System/Templates/Templater/Commands/promote-note.md",
+      "insert_enabled": true,
+      "create_enabled": false
+    },
+    {
+      "template": "System/Templates/Templater/Commands/log-decision.md",
+      "insert_enabled": true,
+      "create_enabled": false
+    },
+    {
+      "template": "System/Templates/Templater/Commands/log-risk.md",
+      "insert_enabled": true,
+      "create_enabled": false
+    }
   ],
   "startup_templates": [],
   "intellisense_render": "1",

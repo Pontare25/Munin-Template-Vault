@@ -2,6 +2,10 @@
 
 Custom keyboard shortcuts in this vault. Rebind any of them in **Settings → Hotkeys** (search the command name).
 
+## Templates
+
+- **`Alt+E`**: open Templater's template picker and insert the chosen template at the cursor. Bound in this vault because Templater 2.26 no longer ships it as a default.
+
 ## Tasks
 
 - **`Ctrl+L`** — insert an empty checkbox `- [ ]` (Obsidian default).
