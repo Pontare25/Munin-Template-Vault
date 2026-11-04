@@ -15,7 +15,7 @@
 // meeting notes); set the project yourself in the dialog.
 // How: TaskNotes has no creation callback API, so this command shadows the plugin's
 // handleInlineTaskCreated for one call and removes the shadow afterwards (also when the
-// window is cancelled). TaskNotes' own command (Alt+T, if bound) is never changed.
+// window is cancelled). TaskNotes' own command (left unbound in this vault) is never changed.
 // If an update renames that method, the window still works, just without the prefix.
 const tn = app.plugins.plugins.tasknotes;
 const editor = app.workspace.activeEditor?.editor;
@@ -33,12 +33,16 @@ if (!tn || !editor || !host || typeof tn.createInlineTask !== "function") {
   if (linked) {
     await tn.openTaskEditModalForFile(linked);
   } else {
-    const restore = () => { if (Object.prototype.hasOwnProperty.call(tn, "handleInlineTaskCreated")) delete tn.handleInlineTaskCreated; };
-    restore();
+    // Drop a stale shadow left by an earlier run, then install this run's shadow.
+    // restore() removes only this run's shadow, so this run's cancel timer never
+    // deletes the shadow of a later capture.
+    if (Object.prototype.hasOwnProperty.call(tn, "handleInlineTaskCreated")) delete tn.handleInlineTaskCreated;
     const orig = tn.handleInlineTaskCreated;
     // TaskNotes inserts on the same line only when it is blank; otherwise on a new line
     const movedDown = line.trim() !== "";
-    tn.handleInlineTaskCreated = function (task, ctx) {
+    let shadow = null;
+    const restore = () => { if (tn.handleInlineTaskCreated === shadow) delete tn.handleInlineTaskCreated; };
+    shadow = tn.handleInlineTaskCreated = function (task, ctx) {
       restore();
       orig.call(this, task, ctx);
       try {
