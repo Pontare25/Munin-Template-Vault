@@ -36,6 +36,9 @@
     "date_start": "datetime",
     "date_end": "datetime",
     "date_due": "datetime",
-    "birthday": "date"
+    "birthday": "date",
+    "date_scheduled": "datetime",
+    "date_completed": "date",
+    "origin": "text"
   }
 }

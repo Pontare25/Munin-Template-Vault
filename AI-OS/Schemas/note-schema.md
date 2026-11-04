@@ -32,6 +32,7 @@ date_created: 2026-01-15T09:30
   | `yearly` | `Calendar/Yearly Notes/` | Yearly note |
   | `meeting` | `Calendar/Meetings/` | Meeting note |
   | `work-session` | `Calendar/Work Sessions/` | Focused work block on a project |
+  | `task` | `Efforts/TaskNotes/Tasks/` | One task, managed by the TaskNotes plugin (see [Tasks](#tasks)) |
   | `dashboard` | `Dashboards/` | Read-only overview surface that queries other notes; owns no content of its own |
 
 - **`date_created:`** in ISO `YYYY-MM-DDTHH:mm` datetime format. Templates fill it automatically.
@@ -58,7 +59,9 @@ Every date in frontmatter follows one naming rule, so date fields are predictabl
 | `date_modified` | datetime | every note made from a template | When the note's content last changed. Templates leave it empty; whoever edits the note (an AI edit, or you) fills it |
 | `date_start` | datetime | meetings, work sessions, projects | When it starts or started. Meeting and session templates prompt for it; the project template seeds today's date |
 | `date_end` | datetime | meetings, work sessions, projects | When it ended. Add it by hand when an event runs longer; fill it when a project closes |
-| `date_due` | datetime | projects | Target date |
+| `date_due` | datetime | projects, tasks | Target date |
+| `date_scheduled` | datetime | tasks | The day you plan to work on the task. TaskNotes sets today on every new task |
+| `date_completed` | date | tasks | Set by TaskNotes when the task reaches `done` or `dropped` |
 | `birthday` | date | person | The documented exception to the naming rule |
 
 Property types are vault-wide (`.obsidian/types.json`), one type per property. The rule is datetime wherever a time may matter. A date-only value such as `2026-01-15` is still valid in a datetime property, so projects can keep writing plain dates.
@@ -160,6 +163,33 @@ status: active   # backlog | active | waiting | simmering | done | dropped
 Efforts change status, not folder. `done` and `dropped` notes stay where they are as the record of what happened.
 
 Projects also carry three optional date fields (see [Date properties](#date-properties)): **`date_start:`** when work began, **`date_due:`** the target date, and **`date_end:`** when the project actually closed. A plain `YYYY-MM-DD` is enough; add a time only when it matters. Fill what you know; the project template seeds `date_start` with today.
+
+## Tasks
+
+A task is a note with `type: task`, created and written by the TaskNotes plugin and filed as `Efforts/TaskNotes/Tasks/task - <title>.md`. TaskNotes writes these keys itself; do not add them to templates (its body template is body only, because TaskNotes merges template frontmatter into the task):
+
+```yaml
+type: task
+title: Send revised drawings
+status: backlog            # backlog | active | waiting | done | dropped
+priority: normal           # none | low | normal | high
+date_due: 2026-11-07
+date_scheduled: 2026-11-04 # TaskNotes sets today on every new task
+date_completed: 2026-11-07 # set when the task reaches done or dropped
+up:                        # what the task belongs to, set by hand: its project,
+  - "[[Project name]]"     # or an Area for a task outside any project
+assignees:                 # people, from Atlas/Entities/People
+  - "[[Person name]]"
+origin: "[[Note the task was captured in]]"
+date_created: 2026-11-03T15:14:02.118+01:00
+date_modified: 2026-11-03T15:15:40.530+01:00
+```
+
+- **`title:`** the task's clean title. The filename adds a prefix (`task - <title>.md`), so the clean title lives here.
+- **`date_created:` and `date_modified:`** are filled and kept current by TaskNotes, as full ISO timestamps with seconds and time zone.
+- **Area:** a task has no Area field. `up:` always points one level up (task to project, sub-project to project, top-level project to its Area), and the task's Area is found by following `up:`. A task outside any project points `up:` straight at an Area. TaskNotes' `contexts` field is not used.
+- **`origin:`** the note the task was created in (a daily, meeting or work-session note), as a single link. Written by the *New task* command; tasks made another way have none. It records where the task came from; `up:` records what it belongs to.
+- **`archived` tag:** archiving a task (a TaskNotes action, separate from `done`) adds the plugin's `archived` tag and moves the note to `Efforts/TaskNotes/Archive/<year>/<month>/`. It is a plugin convention, not a vault tag namespace.
 
 ## People and organizations
 
