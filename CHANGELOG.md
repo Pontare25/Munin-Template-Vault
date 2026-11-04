@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.1.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v2.0.0...v2.1.0) (2026-11-04)
+
+
+### Features
+
+* **bases:** readable date column labels ([b866ac8](https://github.com/Pontare25/Munin-Template-Vault/commit/b866ac895b4717d30c38b8ecbc4b04680da58d07))
+* **status:** projects drop simmering ([929e945](https://github.com/Pontare25/Munin-Template-Vault/commit/929e94504093e71d1a8053c656c68e1bd8a597e5))
+
+
+### Bug Fixes
+
+* **fleeting:** show the Promote button only on fleeting notes ([2f870df](https://github.com/Pontare25/Munin-Template-Vault/commit/2f870dfd0e7e7e25b91f0b5b37acb5144319b40d))
+* **tasks:** task reference lines use [t] so TaskNotes stops offering conversion ([017a64e](https://github.com/Pontare25/Munin-Template-Vault/commit/017a64eda0f8ceeae5a824bb2a53292df99c50d4))
+
+
+### Documentation
+
+* **tasks:** explain the blockedBy Properties warning ([e0f0784](https://github.com/Pontare25/Munin-Template-Vault/commit/e0f0784f9350d569f94d31fd13e5da3be225152d))
+
 ## [2.0.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.13.0...v2.0.0) (2026-11-04)
 
 
