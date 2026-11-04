@@ -6,7 +6,7 @@ views:
     name: Active
     filters:
       and:
-        - status == "active" || status == "simmering"
+        - status == "active" || status == "waiting" || status == "simmering"
     groupBy:
       property: status
       direction: ASC

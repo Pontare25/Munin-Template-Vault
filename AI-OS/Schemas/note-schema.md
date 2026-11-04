@@ -137,11 +137,25 @@ opposes:
 
 ## Status on efforts
 
-Notes with `type: project` or `type: area` carry a `status:` field:
+Notes with `type: project` or `type: area` carry a `status:` field. One ordered vocabulary serves both: read left to right it gives the kanban columns, and it still answers "is this alive?". Tasks (TaskNotes) share the same words.
 
 ```yaml
-status: active   # active | simmering | done | dropped
+status: active   # backlog | active | waiting | simmering | done | dropped
 ```
+
+| Value | Meaning | Projects | Areas | Tasks (TaskNotes) | Open? |
+|---|---|---|---|---|---|
+| `backlog` | Committed, not started | yes | | yes | yes |
+| `active` | Being worked now | yes | yes | yes | yes |
+| `waiting` | Blocked on someone or something else | yes | | yes | yes |
+| `simmering` | Paused by choice, revisit later | yes | yes | | no |
+| `done` | Finished | yes | | yes (completed) | no |
+| `dropped` | Stopped, not finishing | yes | yes | yes (completed) | no |
+
+- **Per type:** projects use all six values. Areas are ongoing responsibilities, so they use `active | simmering | dropped` only.
+- **Open and closed:** `backlog`, `active` and `waiting` are open; `simmering`, `done` and `dropped` are closed. Views that count live efforts (AoR Review `active_projects`, the Efforts *Active* view) read `active`, `waiting` and `simmering`.
+- **Single lowercase words.** Values with spaces break the TaskNotes status trigger and invite filter typos. Write `dropped`, never `cancelled`; `open`, `in progress` and `test` are retired.
+- **Set it with the selector.** Project and area notes carry a status selector near the top of the body (a Meta Bind field bound to `status`) that offers only the values sanctioned for that type.
 
 Efforts change status, not folder. `done` and `dropped` notes stay where they are as the record of what happened.
 

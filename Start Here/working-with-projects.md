@@ -19,9 +19,11 @@ date_end:
 ---
 ```
 
-Fill in what you know; leave the rest empty. `status: active` while the project runs; `done` or `archived` when it closes.
+Fill in what you know; leave the rest empty. `status: active` while the project runs; `done` or `dropped` when it closes.
 
-**Sub-projects.** When you create a project, the template asks for an optional parent. Pick one and the note is filed under that parent's folder (`Efforts/Projects/Aurora/Aurora Auth/…`) and its `up:` is filled with the parent link automatically; choose top-level and it sits on its own with an empty `up:`. The folder nesting is cosmetic: the `up` link, not the folder, is what wires the rollup, so the parent note's **Sub Projects** table lists it.
+**Status selector.** The status selector at the top of a project or area note sets `status` from a dropdown, so you never hand-edit it: projects offer `backlog, active, waiting, simmering, done, dropped`; areas offer `active, simmering, dropped`. See [[note-schema]] for what each value means.
+
+**Sub-projects.** When you create a project, the template asks for an optional parent. Pick one and the note is filed under that parent's folder (`Efforts/Projects/Aurora/Aurora Auth/…`) and its `up:` is filled with the parent link automatically; choose top-level and it sits on its own with an empty `up:`. The folder nesting is cosmetic: the `up` link, not the folder, is what wires the rollup, so the parent note's **Sub Projects** board (a kanban with one column per status) lists it.
 
 ## Link meetings to the project
 
@@ -100,7 +102,7 @@ Embed any view with `![[BaseName.base#View Name]]`. When you add a new note `typ
 
 1. Mark remaining tasks `[x]` done or `[-]` cancelled.
 2. Capture the outcome and key decisions as logs (`[p]` / `[c]`) so they survive on the project and its people.
-3. Set `status: done` (or `archived`) and fill `date_end`.
+3. Set `status: done` (or `dropped` if it stopped short) and fill `date_end`.
 
 ## See also
 
