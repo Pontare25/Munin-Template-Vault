@@ -99,7 +99,7 @@ The picker lists notes in `Efforts/Projects` and `Efforts/Areas` whose status is
 
 `up:` is **never** filled in for you on capture. Most tasks start in daily and meeting notes, and the note you are in says nothing reliable about what the task belongs to, so set it yourself in the window. A meeting's own `up:` does not pass on to the task notes captured in it. The exception: the **New** button on a project's task board creates a task with `up:` already set to that project.
 
-You never set an Area on a task. The vault finds a task's Area by following `up:` (task, project, parent project, Area), so a task under a sub-project still lands on its Area's board, and on the task boards and the [[Tasks]] dashboard a sub-Area rolls up to its root Area. (The [[AoR Review]] dashboard counts differently; see below.)
+You never set an Area on a task. The vault finds a task's Area by following `up:` (task, project, parent project, Area), so a task under a sub-project still lands on its Area's board, and on the task boards, the [[Tasks]] dashboard and the [[AoR Review]] dashboard a sub-Area rolls up to its root Area.
 
 ## Assign a task
 
@@ -151,7 +151,7 @@ Every task view is a view in `System/Bases/Tasks.base`, embedded where it is use
 
 **Journal notes** show the tasks of their period. The daily note's **Tasks** section lists tasks created today, completed today, **Due** (open tasks due or scheduled by the end of today, overdue ones included) and **Upcoming 2 weeks**. The weekly, monthly, quarterly and yearly notes show tasks completed, created, and still open (due or scheduled by the end of the period).
 
-**The [[AoR Review]] dashboard** has a **Task loops** strip: per Area, the number of overdue tasks and of tasks that need a due date, counting the Area's projects and sub-projects. It counts differently from the task boards above: a task counts if *any* of its `up:` values is the Area or a project below it (the boards follow the first `up:` only), a sub-Area gets its own row instead of rolling up into its parent Area, and subtasks are not counted. Which rule should win is still an open decision.
+**The [[AoR Review]] dashboard** has a **Task loops** strip: per Area, the number of open tasks that are overdue and that need a due date. It uses the same rule as the task boards: a task counts toward the top Area on its first `up:` chain, so subtasks, sub-project tasks and a sub-Area's tasks all count, and a task with several `up:` values counts once.
 
 Board tips: hide the **Done** and **Dropped** columns from the board's own column controls to keep it short, and use the search box at the top of any view to filter it.
 
