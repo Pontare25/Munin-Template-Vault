@@ -13,6 +13,8 @@ properties:
     displayName: Past due
   formula.flag:
     displayName: Flag
+  note.date_due:
+    displayName: Due
 views:
   - type: table
     name: AoR Review

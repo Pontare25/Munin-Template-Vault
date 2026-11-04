@@ -3,6 +3,9 @@ filters:
     - type == "work-session"
 formulas:
   week: date(date_start).format("[W]WW")
+properties:
+  note.date_start:
+    displayName: Start
 views:
   - type: table
     name: Project sessions

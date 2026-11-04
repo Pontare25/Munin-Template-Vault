@@ -15,7 +15,13 @@ properties:
   formula.area:
     displayName: Area
   note.date_scheduled:
-    displayName: scheduled
+    displayName: Scheduled
+  note.date_due:
+    displayName: Due
+  note.date_completed:
+    displayName: Completed
+  note.date_created:
+    displayName: Created
 views:
   - type: tasknotesKanban
     name: Project open
@@ -36,6 +42,10 @@ views:
       - complete_instances
       - file.tasks
     sort:
+      - property: date_due
+        direction: ASC
+      - property: date_scheduled
+        direction: ASC
       - property: tasknotes_manual_order
         direction: DESC
     columnWidth: 280
@@ -115,6 +125,8 @@ views:
       - file.tasks
     sort:
       - property: date_due
+        direction: ASC
+      - property: date_scheduled
         direction: ASC
     swimLane: note.up
     columnWidth: 280
@@ -282,7 +294,7 @@ views:
     filters:
       and:
         - status != "done" && status != "dropped"
-        - '!note.date_due.isEmpty() && date(note.date_due) < today()'
+        - "!note.date_due.isEmpty() && date(note.date_due) < today()"
     groupBy:
       property: up
       direction: ASC

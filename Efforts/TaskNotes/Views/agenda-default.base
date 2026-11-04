@@ -46,6 +46,10 @@ formulas:
 properties:
   formula.dueIn:
     displayName: Due in
+  note.date_due:
+    displayName: Due
+  note.date_scheduled:
+    displayName: Scheduled
 views:
   - type: tasknotesCalendar
     name: Agenda

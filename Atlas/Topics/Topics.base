@@ -6,6 +6,8 @@ formulas:
 properties:
   formula.notes_linking_in:
     displayName: "Linked from"
+  note.date_created:
+    displayName: Created
 views:
   - type: table
     name: "All topics"

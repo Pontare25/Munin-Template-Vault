@@ -1,6 +1,9 @@
 filters:
   and:
     - type == "project"
+properties:
+  note.date_due:
+    displayName: Due
 views:
   - type: table
     name: All Projects

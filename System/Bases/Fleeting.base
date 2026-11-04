@@ -11,6 +11,8 @@ properties:
     displayName: Days alive
   formula.captured:
     displayName: Captured
+  note.date_created:
+    displayName: Created
 views:
   - type: table
     name: Fleeting

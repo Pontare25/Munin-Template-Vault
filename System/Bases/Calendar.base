@@ -5,6 +5,9 @@ formulas:
   anchor: date(if(type == "meeting" || type == "work-session", date_start, date))
   week: formula.anchor.format("[W]WW")
   day: formula.anchor.format("dddd")
+properties:
+  note.date_start:
+    displayName: Start
 views:
   - type: table
     name: Daily rollup

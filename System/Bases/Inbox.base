@@ -12,6 +12,8 @@ properties:
     displayName: Captured
   file.ext:
     displayName: Kind
+  note.date_created:
+    displayName: Created
 views:
   - type: table
     name: Awaiting analysis

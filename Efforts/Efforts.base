@@ -1,6 +1,9 @@
 filters:
   and:
     - type == "project" || type == "area"
+properties:
+  note.date_created:
+    displayName: Created
 views:
   - type: table
     name: Active
