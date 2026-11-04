@@ -1,6 +1,6 @@
 # Guide: Working with Projects
 
-A project is the hub that connects meetings, work sessions, people, tasks, logs, and decisions. You do not maintain those connections by hand: you link notes with a few frontmatter fields, and queries assemble the rest. This guide covers the project side; for how the checkbox items themselves work, see [[tasks-and-logs]].
+A project is the hub that connects meetings, work sessions, people, tasks, logs, and decisions. You do not maintain those connections by hand: you link notes with a few frontmatter fields, and queries assemble the rest. This guide covers the project side; for how tasks and logs themselves work, see [[tasks-and-logs]].
 
 ## Create a project
 
@@ -43,7 +43,7 @@ date_start: 2026-03-02T10:00
 ---
 ```
 
-`up` is what pulls the meeting (and everything in it) onto the project. `people` does the same for each person. `summary` and `date_start` feed the rollup tables below. Any task or log you write in the meeting reaches the project automatically — see [[tasks-and-logs]] for the mechanism.
+`up` is what pulls the meeting (and everything in it) onto the project. `people` does the same for each person. `summary` and `date_start` feed the rollup tables below. Any log you write in the meeting reaches the project automatically. A task you capture there (`Ctrl+Alt+T`) is its own note: set its project in the create window, because the meeting's `up` does not pass on to it. See [[tasks-and-logs]] for both mechanisms.
 
 ## Log work with sessions
 
@@ -65,14 +65,13 @@ The template gives you a **Focus** line (what the session is for), a **Notes** a
 
 The project template assembles itself from the linked notes:
 
-- **Last update** — a one-line Dataview that finds the most recent dated note linking this project (a meeting, work session, daily, or dated note) and shows how many days ago it was. Your at-a-glance "is this project still moving." It mirrors the **Last contact** line on a person note.
-- **Next actions** — the project's own tasks, written directly here.
-- **Tasks from meetings & logs** — open tasks pulled out of every linked meeting, session, and daily.
-- **Log** — information items (`[b] [i] [p] [c] [*]`) pulled out of linked notes, newest source first.
-- **Meetings** — a Bases table (`![[Meetings.base#Project meetings]]`) of every meeting whose `up` points here.
-- **Work sessions** — a separate Bases table (`![[Sessions.base#Project sessions]]`) of every work session for this project.
+- **Last update**: a one-line Dataview that finds the most recent dated note linking this project (a meeting, work session, daily, or dated note) and shows how many days ago it was. Your at-a-glance "is this project still moving." It mirrors the **Last contact** line on a person note.
+- **Tasks**: a board of the project's task notes (every task whose `up:` is this project), one column per status (`![[Tasks.base#Project open]]`). Its **New** button creates a task with `up:` already set to this project. Below it, two folded views: **Closed tasks** (`done` and `dropped`, newest first) and **Sub-project tasks** (the tasks of the direct sub-projects, one row per sub-project).
+- **Logs**: information items (`[b] [i] [p] [c] [*]`) and task reference lines (`[x] #task`) pulled out of linked notes, newest source first, with the collapsible **Advanced log** below for filtering and export.
+- **Meetings**: a Bases table (`![[Meetings.base#Project meetings]]`) of every meeting whose `up` points here.
+- **Work sessions**: a separate Bases table (`![[Sessions.base#Project sessions]]`) of every work session for this project.
 
-A person note carries the same shape, scoped to that person instead of the project.
+A person note carries the same shape, scoped to that person instead of the project: its Tasks board shows the tasks assigned to them (`assignees:`), and its New button pre-fills the assignee.
 
 ## The Bases model
 
@@ -100,11 +99,11 @@ Embed any view with `![[BaseName.base#View Name]]`. When you add a new note `typ
 
 ## Closing a project
 
-1. Mark remaining tasks `[x]` done or `[-]` cancelled.
+1. Close the open tasks on the project's **Tasks** board: set each to `done` or `dropped`, or move it to another project or Area by changing its `up:`. Open tasks left behind show on the [[Tasks]] dashboard under **Open tasks in inactive projects**.
 2. Capture the outcome and key decisions as logs (`[p]` / `[c]`) so they survive on the project and its people.
 3. Set `status: done` (or `dropped` if it stopped short) and fill `date_end`.
 
 ## See also
 
-- [[tasks-and-logs]] — the status system, the `#task` convention, and how rollup queries work.
-- [[Guide to writing daily notes]] — the capture surface that feeds these rollups.
+- [[tasks-and-logs]]: task notes, statuses, capture, and how the rollup queries work.
+- [[Guide to writing daily notes]]: the capture surface that feeds these rollups.

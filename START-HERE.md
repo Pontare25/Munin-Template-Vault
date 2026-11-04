@@ -91,7 +91,7 @@ The `Start Here/` folder holds the full set. Read them roughly in this order; ea
 
 1. [[obsidian-basics]] — just enough Obsidian to operate the vault: links, frontmatter, the daily/weekly/monthly notes, search.
 2. [[Guide to writing daily notes]] — the daily note, the one surface you write into every day.
-3. [[tasks-and-logs]] — the checkbox system: tasks vs logs, the markers, and how the rollups work.
+3. [[tasks-and-logs]]: task notes for things to do, checkbox markers for logs, and how the rollups work.
 4. [[working-with-projects]] — how a project ties meetings, people, tasks, and logs together.
 5. [[linking-notes-and-maps]] — how notes connect: inline links, the idea compass, topics, and Maps of Content.
 6. [[working-with-ai]] — the capture → ingest → query → review loop, day to day.

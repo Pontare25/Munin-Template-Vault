@@ -35,7 +35,7 @@ Open today's note from the **Calendar** panel (right sidebar, opens on startup) 
 
 Open the week's note via the **Calendar** panel or the "Open weekly note" command. Journals files it under `Calendar/Weekly Notes/YYYY/` from the weekly template. The weekly note is a review surface, not a capture surface: it rolls up the week automatically and gives you room to close the week out.
 
-- **Rollup** pulls the week together with no manual work: the week's daily notes (the Journals base's "Weekly-rollup" view — the day-into-week hierarchy); tasks completed and created this week, tasks still open by week's end (Tasks plugin, date-scoped); the week's logs and any `#log/decision` items grouped by day (Dataview over the week's daily and meeting notes); and every meeting held that week (the Meetings base's "Weekly meeting rollup" view). The date range comes from the note title.
+- **Rollup** pulls the week together with no manual work: the week's daily notes (the Journals base's "Weekly-rollup" view, the day-into-week hierarchy); task notes completed and created this week, and those still open by week's end (the period views in `System/Bases/Tasks.base`); the week's logs and any `#log/decision` items grouped by day (Dataview over the week's daily and meeting notes); and every meeting held that week (the Meetings base's "Weekly meeting rollup" view). The date range comes from the note title.
 - **Weekly Review** — prompts for wins, misses, and decisions worth promoting to a `type: decision` note.
 - **Next week** — a top-3 priorities block, so planning flows forward.
 
