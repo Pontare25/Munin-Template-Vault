@@ -1,13 +1,13 @@
 # Note Schema
 
-The rules every note in this vault follows. Rule of thumb: **links for things, tags for kinds (optional), fields for structure.**
+The rules every note in this vault follows. Rule of thumb: **links for things, fields for kinds and structure.**
 
 ## Required on every note
 
 ```yaml
 ---
 type: note
-created-date: 2026-01-15
+date_created: 2026-01-15T09:30
 ---
 ```
 
@@ -34,14 +34,34 @@ created-date: 2026-01-15
   | `work-session` | `Calendar/Work Sessions/` | Focused work block on a project |
   | `dashboard` | `Dashboards/` | Read-only overview surface that queries other notes; owns no content of its own |
 
-- **`created-date:`** in ISO `YYYY-MM-DDTHH:mm` datetime format. Templates fill it automatically.
-- **`date:`** on calendar notes marks the day the note covers. Daily through yearly notes carry a `YYYY-MM-DD` date (the period's first day); **meeting and work-session notes carry a full ISO `YYYY-MM-DDTHH:mm` datetime** (the meeting template prompts for it), and the meeting's filename is prefixed with the date. Same-day rollups match on the day (`dateformat(date, "yyyy-MM-dd")`); week/month range rollups key off `file.day` (the filename date, day-truncated and sync-safe), so a meeting's time is informational.
+- **`date_created:`** in ISO `YYYY-MM-DDTHH:mm` datetime format. Templates fill it automatically.
+- **`date:`** on journal notes (daily through yearly) marks the period the note covers, as a `YYYY-MM-DD` date (the period's first day). **Meeting and work-session notes carry `date_start:` instead**, a full ISO `YYYY-MM-DDTHH:mm` datetime (their templates prompt for it), and the filename is prefixed with the date. A daily note's meeting rollup matches a meeting's `date_start` day against the daily note's own `date` (`dateformat(date_start, "yyyy-MM-dd") = dateformat(this.date, "yyyy-MM-dd")`); the Calendar base's period rollups do the same through a per-type anchor formula. See [Date properties](#date-properties).
+
+Classification is the `type:` field alone. Notes do not mirror their type as a tag; the only tag in use is `#example`, which marks worked-example notes so they are easy to find and delete.
 
 Strongly recommended on knowledge notes (everything outside `Calendar/`):
 
 - **`summary:`** one line stating what the note holds. Indexes, Bases, and retrieval use it to pick the right note without opening it, which matters more the larger the vault grows. This is the vault-native field; it maps to OKF's recommended `description` field. Templates include it empty; fill it as soon as the note's point is clear.
 
-Optionally, a note may mirror its type as a tag (`#type/note`) for tag-pane browsing. The field stays canonical: if tag and field ever disagree, the field wins and the tag should be fixed. If you do not care about the tag pane, skip the mirror entirely.
+## Date properties
+
+Every date in frontmatter follows one naming rule, so date fields are predictable, sit together in the properties panel, and never leave a query guessing between near-synonyms:
+
+- A journal note's own anchor date is a bare **`date`** (daily, weekly, monthly, quarterly, yearly). The Journals plugin and the Calendar rollups read it.
+- Every other date property is **`date_<what>`**, in snake_case. Snake_case names work unbracketed in Bases, Dataview, and scripts (`note.date_due`); a hyphenated name would be read as subtraction.
+- **One exception: `birthday`** on person notes keeps its everyday name.
+
+| Property | Type | Used on | Meaning |
+|---|---|---|---|
+| `date` | date | daily, weekly, monthly, quarterly, yearly | First day of the period the note covers |
+| `date_created` | datetime | every note | When the note was created. Templates fill it |
+| `date_modified` | datetime | every note made from a template | When the note's content last changed. Templates leave it empty; whoever edits the note (an AI edit, or you) fills it |
+| `date_start` | datetime | meetings, work sessions, projects | When it starts or started. Meeting and session templates prompt for it; the project template seeds today's date |
+| `date_end` | datetime | meetings, work sessions, projects | When it ended. Add it by hand when an event runs longer; fill it when a project closes |
+| `date_due` | datetime | projects | Target date |
+| `birthday` | date | person | The documented exception to the naming rule |
+
+Property types are vault-wide (`.obsidian/types.json`), one type per property. The rule is datetime wherever a time may matter. A date-only value such as `2026-01-15` is still valid in a datetime property, so projects can keep writing plain dates.
 
 ## Topics
 
@@ -93,17 +113,17 @@ How much compass a note needs depends on its type:
 | Type | Required | Encouraged |
 |---|---|---|
 | `topic` | All four compass keys | |
-| `note` | `up:` + `created-date:` | `topics:`, `related:`, `down:`, `opposes:` |
+| `note` | `up:` + `date_created:` | `topics:`, `related:`, `down:`, `opposes:` |
 | `source` | `up:` + `topics:` | `related:` |
-| `moc` | `created-date:` | `up:` when the map sits inside a larger map (top-level maps have no up) |
-| everything else | `up:` + `created-date:` | whatever earns its place |
+| `moc` | `date_created:` | `up:` when the map sits inside a larger map (top-level maps have no up) |
+| everything else | `up:` + `date_created:` | whatever earns its place |
 
 A complete topic frontmatter looks like this:
 
 ```yaml
 ---
 type: topic
-created-date: 2026-01-15
+date_created: 2026-01-15T09:30
 up:
   - "[[Learning]]"
 related:
@@ -125,7 +145,7 @@ status: active   # active | simmering | done | dropped
 
 Efforts change status, not folder. `done` and `dropped` notes stay where they are as the record of what happened.
 
-Projects also carry three optional date fields (all `YYYY-MM-DD`): **`start-date:`** when work began, **`due-date:`** the target date, and **`end-date:`** when the project actually closed. Fill what you know; the project template seeds `start-date` with today.
+Projects also carry three optional date fields (see [Date properties](#date-properties)): **`date_start:`** when work began, **`date_due:`** the target date, and **`date_end:`** when the project actually closed. A plain `YYYY-MM-DD` is enough; add a time only when it matters. Fill what you know; the project template seeds `date_start` with today.
 
 ## People and organizations
 
@@ -134,7 +154,7 @@ People use the person template, which files them in `Atlas/Entities/People/`. Or
 ```yaml
 ---
 type: person
-created-date: 2026-01-15
+date_created: 2026-01-15T09:30
 summary: Who they are, in one line
 up:
   - "[[Topic they matter to]]"
@@ -150,7 +170,7 @@ interests:
 ```yaml
 ---
 type: organization
-created-date: 2026-01-15
+date_created: 2026-01-15T09:30
 summary: What they are, in one line
 up:
   - "[[Industry or Topic]]"
@@ -184,7 +204,7 @@ Frontmatter maps to OKF's canonical fields:
 | `description` | recommended | `summary:` (native); maps to OKF `description` |
 | `resource` | recommended | `resource:` — canonical URI of the underlying asset (source URL, entity homepage). Replaces the old `url:` field |
 | `tags` | optional | `tags` |
-| `timestamp` | optional | authored as `created-date:` (creation); maps to OKF `timestamp` |
+| `timestamp` | optional | authored as `date_created:` (creation); maps to OKF `timestamp` |
 
 Compass keys (`up`, `related`, `down`, `opposes`), `topics`, and `status` are Munin extensions. OKF consumers preserve unknown keys, so they travel with the note unchanged.
 
@@ -196,6 +216,6 @@ When a note makes claims backed by external sources, list them under a `# Citati
 
 ## What this schema deliberately leaves out
 
-- No tag namespaces beyond the optional `#type/` mirror. The `#example` tag exists only on the deletable worked-example notes.
+- No tags beyond `#example`, which exists only on deletable worked-example notes. Classification is the `type:` field, never a tag.
 - No status fields outside Efforts.
-- No mandatory fields beyond `type:` and `created-date:`. Everything else, `summary:` included, earns its place by being useful.
+- No mandatory fields beyond `type:` and `date_created:`. Everything else, `summary:` included, earns its place by being useful.

@@ -22,11 +22,11 @@ if (!file) {
   // Drop the old frontmatter and the Promote button; both are re-supplied by
   // the target template (the button only belongs on unpromoted captures).
   const current = editor ? editor.getValue() : tp.file.content;
-  // Carry the original capture date forward: created-date marks when the note
+  // Carry the original capture date forward: date_created marks when the note
   // was captured, not when it was promoted. Pull it from the old frontmatter
   // before stripping; the target template would otherwise reset it to now.
   const oldFm = (current || "").match(/^---\r?\n([\s\S]*?)\r?\n---/);
-  const oldCd = oldFm ? oldFm[1].match(/^created-date:[ \t]*(.+?)[ \t]*$/m) : null;
+  const oldCd = oldFm ? oldFm[1].match(/^date_created:[ \t]*(.+?)[ \t]*$/m) : null;
   const origCreated = oldCd ? oldCd[1] : null;
   const body = (current || "")
     .replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "")
@@ -45,7 +45,7 @@ if (!file) {
 
       // Restore the original capture date over the template's fresh now-stamp.
       if (origCreated) {
-        out = out.replace(/^(created-date:)[ \t]*.*$/m, `$1 ${origCreated}`);
+        out = out.replace(/^(date_created:)[ \t]*.*$/m, `$1 ${origCreated}`);
       }
 
       // Splice the preserved body in at the template's cursor marker: the spot

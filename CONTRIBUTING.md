@@ -32,7 +32,7 @@ After changes land on `main`, release-please opens (or updates) a release PR col
 - **No em-dashes**: use colons, commas, or separate sentences. (House style, enforced by review.)
 - **Lean by default:** new machinery (plugins, SOPs, fields) needs to justify itself against the growth path in [AI-OS/README](AI-OS/README.md). When in doubt, propose documentation instead of machinery.
 - **Frontmatter is governed, not casual:** never introduce a new frontmatter property or `type:` value on a whim. Reuse the existing vocabulary first (`up:`, `related:`, `sources:`, and the rest of [note-schema](AI-OS/Schemas/note-schema.md)). A genuinely new property or type must be signed off deliberately and documented in note-schema in the same change that introduces it. Keep the property count low.
-- **Tags stay minimal:** prefer links and fields over tags. The only sanctioned tags are the deletable `#example` marker and the optional `#type/` mirror. Do not add new tag namespaces without the same deliberation as a frontmatter change.
+- **Tags stay minimal:** prefer links and fields over tags. The only sanctioned tag is the deletable `#example` marker; a note's kind lives in its `type:` field, never in a tag. Do not add new tag namespaces without the same deliberation as a frontmatter change.
 
 ## Definition of done
 

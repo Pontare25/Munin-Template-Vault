@@ -13,9 +13,9 @@ views:
       - file.name
       - status
       - summary
-      - due-date
+      - date_due
     sort:
-      - property: due-date
+      - property: date_due
         direction: DESC
     columnSize:
       file.name: 189

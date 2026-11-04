@@ -5,7 +5,7 @@ Atomic notes: one idea per note, stated in your own words (or the AI's), linked 
 ## What belongs here
 
 - One idea, claim, argument, or observation per note.
-- Frontmatter: `type: note`, `up:` (at least one link to a Topic or parent idea), `created-date:`. `topics:`, `related:`, `down:`, `opposes:` encouraged.
+- Frontmatter: `type: note`, `up:` (at least one link to a Topic or parent idea), `date_created:`. `topics:`, `related:`, `down:`, `opposes:` encouraged.
 - A `%% #AI-Assisted %%` marker at the top when the AI wrote it.
 
 ## What does not belong here

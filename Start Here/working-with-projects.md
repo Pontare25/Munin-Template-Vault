@@ -13,9 +13,9 @@ status: active
 up:            # parent, e.g. a broader area
 related:       # area, client, or organization
 people:        # people on the project
-start-date:
-due-date:
-end-date:
+date_start:
+date_due:
+date_end:
 ---
 ```
 
@@ -25,7 +25,7 @@ Fill in what you know; leave the rest empty. `status: active` while the project 
 
 ## Link meetings to the project
 
-Make a meeting note from the **meeting template**. On creation it prompts for the meeting's date and time (pre-filled with now); it then prefixes the filename with the date (`2026-08-11 Kickoff`) and files it under `Calendar/Meetings/YYYY/wWW/` (year and ISO week, matching the weekly note). The full datetime is stored in `date:`, so the daily/weekly/monthly rollups pick the meeting up by day. Set three links:
+Make a meeting note from the **meeting template**. On creation it prompts for the meeting's date and time (pre-filled with now); it then prefixes the filename with the date (`2026-08-11 Kickoff`) and files it under `Calendar/Meetings/YYYY/wWW/` (year and ISO week, matching the weekly note). The full datetime is stored in `date_start:`, so the daily/weekly/monthly rollups pick the meeting up by day. If a meeting runs long, add `date_end:` by hand. Set three links:
 
 ```yaml
 ---
@@ -37,11 +37,11 @@ people:
 related:
   - "[[Product Development]]"     # area or context
 summary: One line on what the meeting was about.
-date: 2026-08-11
+date_start: 2026-08-11T10:00
 ---
 ```
 
-`up` is what pulls the meeting (and everything in it) onto the project. `people` does the same for each person. `summary` and `date` feed the rollup tables below. Any task or log you write in the meeting reaches the project automatically — see [[tasks-and-logs]] for the mechanism.
+`up` is what pulls the meeting (and everything in it) onto the project. `people` does the same for each person. `summary` and `date_start` feed the rollup tables below. Any task or log you write in the meeting reaches the project automatically — see [[tasks-and-logs]] for the mechanism.
 
 ## Log work with sessions
 
@@ -52,7 +52,7 @@ A meeting is a conversation; a **work session** is a block of focused work you d
 type: work-session
 up:
   - "[[Project Muninize]]"   # the project you worked on
-date: 2026-08-18
+date_start: 2026-08-18T13:00
 summary: One line on what you did.
 ---
 ```
@@ -86,7 +86,7 @@ Two rules explain where every table comes from.
 
 This is why meetings and sessions stay in **separate** tables on a project note: they are separate types, each with its own base.
 
-**Time rollups that span types live in one combined base.** The daily, weekly, and monthly notes do not care whether something was a meeting or a session — they want everything that happened in the period. A per-type base cannot do that: a base's top-level filter gates every view, and a view can only narrow it, never broaden it. So `Calendar.base` scopes its top filter to the whole `Calendar` folder, and each view — `Daily rollup`, `Weekly rollup`, `Monthly rollup` — does the narrowing: filter to meetings and work sessions, then to its date range. A **Type** column keeps the two distinguishable.
+**Time rollups that span types live in one combined base.** The daily, weekly, and monthly notes do not care whether something was a meeting or a session — they want everything that happened in the period. A per-type base cannot do that: a base's top-level filter gates every view, and a view can only narrow it, never broaden it. So `Calendar.base` scopes its top filter to the whole `Calendar` folder, and each view — `Daily rollup`, `Weekly rollup`, `Monthly rollup` — does the narrowing: filter to meetings and work sessions, then to its date range. The range compares each row's `anchor` formula (a meeting's or session's `date_start`) with the embedding journal note's own `date`. A **Type** column keeps the two distinguishable.
 
 | View | Shows | Embed on |
 |---|---|---|
@@ -94,13 +94,13 @@ This is why meetings and sessions stay in **separate** tables on a project note:
 | `Calendar.base#Weekly rollup` | meetings + sessions in that week | a weekly note |
 | `Calendar.base#Monthly rollup` | meetings + sessions in that month | a monthly note |
 
-Embed any view with `![[BaseName.base#View Name]]`. When you add a new note `type`, give it its own base for entity/project views; if it should also appear in the time rollups, add its type to the rollup views' filters in `Calendar.base`.
+Embed any view with `![[BaseName.base#View Name]]`. When you add a new note `type`, give it its own base for entity/project views; if it should also appear in the time rollups, add its type to the rollup views' filters and to the `anchor` formula in `Calendar.base`.
 
 ## Closing a project
 
 1. Mark remaining tasks `[x]` done or `[-]` cancelled.
 2. Capture the outcome and key decisions as logs (`[p]` / `[c]`) so they survive on the project and its people.
-3. Set `status: done` (or `archived`) and fill `end-date`.
+3. Set `status: done` (or `archived`) and fill `date_end`.
 
 ## See also
 

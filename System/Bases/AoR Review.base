@@ -1,18 +1,18 @@
 filters:
   and:
-    - 'type == "area"'
-    - 'file.path.startsWith("Efforts/Areas")'
+    - type == "area"
+    - file.path.startsWith("Efforts/Areas")
 formulas:
-  active_projects: 'file.backlinks.filter(value.asFile().properties.type == "project" && (value.asFile().properties.status == "active" || value.asFile().properties.status == "simmering")).length'
-  overdue_projects: 'file.backlinks.filter(value.asFile().properties.type == "project" && value.asFile().properties.status != "done" && value.asFile().properties["due-date"] && date(value.asFile().properties["due-date"]) < today()).length'
-  flag: 'if(formula.active_projects == 0, "🔴", if(formula.overdue_projects > 0, "🔴", "🟢"))'
+  active_projects: file.backlinks.filter(value.asFile().properties.type == "project" && (value.asFile().properties.status == "active" || value.asFile().properties.status == "simmering")).length
+  overdue_projects: file.backlinks.filter(value.asFile().properties.type == "project" && value.asFile().properties.status != "done" && value.asFile().properties.date_due && date(value.asFile().properties.date_due) < today()).length
+  flag: if(formula.active_projects == 0, "🔴", if(formula.overdue_projects > 0, "🔴", "🟢"))
 properties:
   formula.active_projects:
-    displayName: "Active projects"
+    displayName: Active projects
   formula.overdue_projects:
-    displayName: "Past due"
+    displayName: Past due
   formula.flag:
-    displayName: "Flag"
+    displayName: Flag
 views:
   - type: table
     name: AoR Review

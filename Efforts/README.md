@@ -19,7 +19,7 @@ The action layer: everything you are trying to do, as opposed to everything you 
 
 ## What belongs here
 
-- Project and area notes with `type:`, `status:`, `up:`, `created-date:` frontmatter.
+- Project and area notes with `type:`, `status:`, `up:`, `date_created:` frontmatter.
 - Plans, task lists, and working notes that serve a specific effort.
 
 ## What does not belong here

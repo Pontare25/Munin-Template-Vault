@@ -1,8 +1,8 @@
 ---
 type: daily
 journal: daily
-journal-date: <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_modified:
 date: <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
 tags:
 summary:
@@ -85,9 +85,9 @@ hide tags
 > ```dataview
 > task
 > From "Calendar/Meetings" or "Calendar/Work Sessions"
-> where dateformat(date, "yyyy-MM-dd") = dateformat(this.date, "yyyy-MM-dd")
+> where dateformat(date_start, "yyyy-MM-dd") = dateformat(this.date, "yyyy-MM-dd")
 > group by file.name as source
-> sort date asc
+> sort date_start asc
 > ```
 
 ![[Calendar.base#Daily rollup]]

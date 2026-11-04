@@ -1,8 +1,8 @@
 ---
 type: quarterly
 journal: quarterly
-journal-date: <% moment(tp.file.title, "YYYY-[Q]Q").startOf("quarter").format("YYYY-MM-DD") %>
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_modified:
 date: <% moment(tp.file.title, "YYYY-[Q]Q").startOf("quarter").format("YYYY-MM-DD") %>
 tags:
 summary:

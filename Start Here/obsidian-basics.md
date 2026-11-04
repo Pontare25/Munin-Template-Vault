@@ -17,7 +17,7 @@ The block between `---` lines at the top of a note holds structured fields:
 ```yaml
 ---
 type: note
-created-date: 2026-01-15
+date_created: 2026-01-15T09:30
 up:
   - "[[Learning]]"
 ---
@@ -49,7 +49,7 @@ The rollup follows the journal hierarchy — days roll into the week note, weeks
 
 ## Tags
 
-A word with `#` in front (`#example`) is a tag; the tag pane lists all of them. This vault uses tags sparingly: `#example` marks deletable example content, and an optional `#type/...` mirror exists for browsing. Subjects are handled by `topics:` links instead, because links carry more information than tags. The pro of using tags is that it can carry nested hierarchies.
+A word with `#` in front (`#example`) is a tag; the tag pane lists all of them. This vault uses tags sparingly: `#example` marks deletable example content and is the only tag in use. A note's kind lives in its `type:` field, not a tag. Subjects are handled by `topics:` links instead, because links carry more information than tags. The pro of using tags is that it can carry nested hierarchies.
 
 ## The graph
 

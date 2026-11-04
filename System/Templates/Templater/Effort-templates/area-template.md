@@ -1,7 +1,8 @@
 ---
 type: area
 status: active
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_modified:
 summary:
 up:
 ---

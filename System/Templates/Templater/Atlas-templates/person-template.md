@@ -1,6 +1,7 @@
 ---
 type: person
-created-date: <% tp.date.now("YYYY-MM-DD[T]HH:mm") %>
+date_created: <% tp.date.now("YYYY-MM-DD[T]HH:mm") %>
+date_modified:
 birthday:
 up:
 related:

@@ -18,14 +18,14 @@ await tp.file.move(dest + "/" + tp.file.title);
 ---
 type: project
 status: active
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
-updated:
+date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_modified:
 up:<% parentName ? "\n  - \"[[Project - " + parentName + "]]\"" : "" %>
 related:
 people:
-start-date: <% tp.date.now("YYYY-MM-DD") %>
-due-date:
-end-date:
+date_start: <% tp.date.now("YYYY-MM-DD") %>
+date_due:
+date_end:
 aliases:
   - <% tp.file.title %>
 summary:

@@ -53,7 +53,7 @@
       },
       "dateFormat": "YYYY-MM-DD",
       "frontmatter": {
-        "dateField": "journal-date",
+        "dateField": "date",
         "startDateField": "journal-start-date",
         "endDateField": "journal-end-date",
         "addStartDate": false,
@@ -234,7 +234,7 @@
       },
       "dateFormat": "gggg-[W]ww",
       "frontmatter": {
-        "dateField": "journal-date",
+        "dateField": "date",
         "startDateField": "journal-start-date",
         "endDateField": "journal-end-date",
         "addStartDate": false,
@@ -377,7 +377,7 @@
       },
       "dateFormat": "YYYY-MM",
       "frontmatter": {
-        "dateField": "journal-date",
+        "dateField": "date",
         "startDateField": "journal-start-date",
         "endDateField": "journal-end-date",
         "addStartDate": false,
@@ -501,7 +501,7 @@
       },
       "dateFormat": "YYYY-[Q]Q",
       "frontmatter": {
-        "dateField": "journal-date",
+        "dateField": "date",
         "startDateField": "journal-start-date",
         "endDateField": "journal-end-date",
         "addStartDate": false,
@@ -625,7 +625,7 @@
       },
       "dateFormat": "YYYY",
       "frontmatter": {
-        "dateField": "journal-date",
+        "dateField": "date",
         "startDateField": "journal-start-date",
         "endDateField": "journal-end-date",
         "addStartDate": false,

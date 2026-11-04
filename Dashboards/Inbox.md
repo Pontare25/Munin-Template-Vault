@@ -1,6 +1,6 @@
 ---
 type: dashboard
-created-date: 2026-09-05
+date_created: 2026-09-05
 summary: Capture dashboard — everything captured but not yet processed, across both capture lanes.
 cssclasses:
   - callouts-outlined
@@ -14,7 +14,7 @@ Nothing here is filed by hand. A note disappearing from this dashboard is the si
 > [!info]- How this works
 > Both tables read folder membership, not a status field: a note is unprocessed for exactly as long as it sits in its capture folder. Oldest captures sort to the top, so anything you have been avoiding surfaces first.
 >
-> **Days alive** and **Days waiting** count from the `created-date` stamped into the note when it was captured, so the number survives sync, backup, and a fresh clone. Files with no frontmatter to stamp — a dropped PDF, a slide deck, an image — fall back to the file's own creation time.
+> **Days alive** and **Days waiting** count from the `date_created` stamped into the note when it was captured, so the number survives sync, backup, and a fresh clone. Files with no frontmatter to stamp — a dropped PDF, a slide deck, an image — fall back to the file's own creation time.
 
 ## Fleeting — your own capture
 

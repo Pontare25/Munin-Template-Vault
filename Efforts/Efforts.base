@@ -14,7 +14,7 @@ views:
       - file.name
       - type
       - status
-      - created-date
+      - date_created
   - type: table
     name: All efforts
     groupBy:
@@ -24,4 +24,4 @@ views:
       - file.name
       - type
       - status
-      - created-date
+      - date_created

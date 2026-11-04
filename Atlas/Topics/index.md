@@ -13,7 +13,7 @@ Topics carry the **full idea compass** in frontmatter:
 
 - One page per subject, named as a noun phrase (for example `Spaced Repetition`, not `thoughts on remembering things`).
 - Stub topics the AI created during ingest: a one-line definition plus a compass skeleton, waiting to grow.
-- Frontmatter: `type: topic`, all four compass keys, `created-date:`.
+- Frontmatter: `type: topic`, all four compass keys, `date_created:`.
 
 ## What does not belong here
 

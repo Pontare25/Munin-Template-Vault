@@ -7,8 +7,9 @@ await tp.file.move(`${folder}/${newTitle}`);
 -%>
 ---
 type: work-session
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
-date: <% m.format("YYYY-MM-DDTHH:mm") %>
+date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_modified:
+date_start: <% m.format("YYYY-MM-DDTHH:mm") %>
 up:
 people:
 related:
