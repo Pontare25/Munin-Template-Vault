@@ -26,7 +26,7 @@
   // Compact |---| separator rows with padded cells are the Obsidian norm.
   "MD060": false,
 
-  // Obsidian callouts embed fenced code (```tasks, ```dataview) inside a
+  // Obsidian callouts embed fenced code (```dataview) inside a
   // blockquote; the blank lines MD031 wants around a fence break the callout.
   "MD031": false,
 
