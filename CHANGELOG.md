@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v2.1.0...v2.2.0) (2026-11-04)
+
+
+### Features
+
+* **meetings:** minutes fields, copy button and detailed views ([d237d14](https://github.com/Pontare25/Munin-Template-Vault/commit/d237d146a3416341c684ad18e6b4d8cd0ade02d9))
+
 ## [2.1.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v2.0.0...v2.1.0) (2026-11-04)
 
 
