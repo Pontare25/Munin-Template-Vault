@@ -69,6 +69,9 @@ TaskNotes writes the task's properties itself; you change them in the task's edi
 | `date_completed` | set when the task reaches `done` or `dropped` |
 | `priority` | `none`, `low`, `normal` (default) or `high` |
 | `origin` | the note it was captured in |
+| `blockedBy` | tasks that must finish first (set it in the edit window's **Blocked by** field) |
+
+TaskNotes stores each `blockedBy` entry as a small object (the blocking task's link plus a dependency type). Obsidian's Properties panel cannot display objects, so it marks the property as invalid. The data is fine and the **Not blocked** view reads it; edit dependencies in the TaskNotes edit window, not in Properties.
 
 The body has three sections: **Sub Tasks** (tasks whose `up:` is this task), **Notes** (free text: context, links, findings) and **Log** (every checkbox line in the vault that links this task, such as its reference line and any log about it, grouped by source note).
 
