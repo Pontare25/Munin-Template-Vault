@@ -1,6 +1,7 @@
 ---
 type: person
-created-date: <% tp.date.now("YYYY-MM-DD[T]HH:mm") %>
+date_created: <% tp.date.now("YYYY-MM-DD[T]HH:mm") %>
+date_modified:
 birthday:
 up:
 related:
@@ -24,30 +25,15 @@ FLATTEN (date(today) - file.day).days as T
 SORT file.day desc
 LIMIT 1
 ```
-## Tasks involving them
-> [!todo]+ Open
-> ```dataview
-> TASK
-> WHERE contains(outlinks, [[]]) or contains(up, [[]])
-> WHERE contains(text, "#task")
-> WHERE contains(list(" ", "/", "!", ">", "?"), status)
-> Group by file.name as Source
-> Sort Source desc
-> ```
+## Tasks
+![[Tasks.base#Person open]]
 
-> [!Done]- Closed
-> ```dataview
-> TASK
-> WHERE contains(outlinks, [[]]) or contains(up, [[]])
-> WHERE contains(text, "#task")
-> WHERE contains(list("x", "-"), status)
-> Group by file.name as Source
-> Sort Source desc
-> ```
+> [!done]- Closed tasks
+> ![[Tasks.base#Person closed]]
 ## Log
 ```dataview
 TASK
-WHERE contains(list("b", "i", "p", "c", "*"), status)
+WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "x" AND contains(tags, "#task"))
 WHERE contains(outlinks, [[]]) or contains(up, [[]])
 GROUP BY file.name as Source
 SORT Source DESC

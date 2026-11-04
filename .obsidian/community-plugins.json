@@ -3,9 +3,9 @@
   "omnisearch",
   "text-extractor",
   "dataview",
-  "obsidian-tasks-plugin",
   "tag-wrangler",
   "obsidian-minimal-settings",
   "journals",
-  "obsidian-meta-bind-plugin"
+  "obsidian-meta-bind-plugin",
+  "tasknotes"
 ]

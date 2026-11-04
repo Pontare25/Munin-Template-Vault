@@ -5,7 +5,7 @@ Maps of Content: curated navigation pages that arrange links to notes the way a 
 ## What belongs here
 
 - Curated link collections with your own structure and commentary.
-- Frontmatter: `type: moc` and `created-date:`. Add `up:` only when the map nests inside a larger map; top-level maps have no `up:` (see [[note-schema]]).
+- Frontmatter: `type: moc` and `date_created:`. Add `up:` only when the map nests inside a larger map; top-level maps have no `up:` (see [[note-schema]]).
 
 ## What does not belong here
 
@@ -14,10 +14,6 @@ Maps of Content: curated navigation pages that arrange links to notes the way a 
 
 The AI may **add** links to a MOC during ingest but should not restructure one without asking. MOCs are the most human-owned part of Atlas.
 
-## Example
-
-[[Learning MOC]] is a worked example, tagged `#example`: a topic, two notes in tension, and a project, arranged with editorial intent.
-
 ## Governing SOPs
 
 [[new-note]] for creation, [[ingest]] for link additions.
@@ -25,4 +21,3 @@ The AI may **add** links to a MOC during ingest but should not restructure one w
 ## Index
 
 <!-- The ingest SOP appends one line per note: - [[MOC Name]]: one-line summary -->
-- [[Learning MOC]]: example map of the learning-to-learn cluster (`#example`, delete freely)

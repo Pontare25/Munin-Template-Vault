@@ -1,125 +1,54 @@
 ---
 type: dashboard
-created-date: 2026-08-26
-summary: Vault-wide task dashboard — every open task across all notes, grouped by when it needs attention.
+date_created: 2026-08-26
+summary: Vault-wide task dashboard. Every open task note, grouped by when it needs attention.
 cssclasses:
   - callouts-outlined
 ---
 # Tasks
 
-Every open task in the vault, pulled together in one place. Tasks are collected from wherever you wrote them — daily notes, meetings, projects, work sessions. Nothing here is entered by hand; open a section and act on what's inside.
+Every open task in the vault, in one place. Each task is its own note in `Efforts/TaskNotes/Tasks`, wherever you created it (daily note, meeting, project). Nothing here is entered by hand; open a section and act on what's inside.
 
 > [!info]- How this works
-> These queries read every checkbox in the vault except the templates in `System/`. A task's *status symbol* sets its family (`/` in progress, `!` important, `>` handed to someone else, `?` open question); its *dates* (`📅` due, `⏳` scheduled, `🛫` start) set when it surfaces here. See [[tasks-and-logs]] for how to write them.
+> Every section is a view in `System/Bases/Tasks.base`, so one change there updates every note that embeds it. A task's *status* sets its family (backlog, active, waiting, done, dropped); its *dates* (due, scheduled) set when it surfaces here. Overdue means a due date before today. Today means due today, or scheduled today or earlier. New tasks are scheduled for today by default, so "Needs a due date" lists open tasks without a due date. Handing a task to someone is status `waiting` plus an assignee. See [[tasks-and-logs]] for how to write them.
 
 ## Needs attention
 
-> [!important]+ Important or in progress
-> ```tasks
-> path does not include System
-> not done
-> filter by function (["!", "/"].includes(task.status.symbol)) || ["High", "Highest"].includes(task.priorityName)
-> sort by urgency
-> group by function task.filename
-> hide task count
-> short
-> ```
+> [!important]+ Active or high priority
+> ![[Tasks.base#Needs attention]]
 
 > [!failure]- Overdue
-> ```tasks
-> path does not include System
-> not done
-> happens before today
-> sort by due
-> group by function task.filename
-> hide task count
-> short
-> ```
+> ![[Tasks.base#Overdue]]
 
-> [!success]- Due today
-> ```tasks
-> path does not include System
-> not done
-> happens today
-> sort by due
-> hide task count
-> short
-> ```
+> [!success]- Today
+> ![[Tasks.base#Today]]
 
-> [!todo]- This week
-> ```tasks
-> path does not include System
-> not done
-> happens after yesterday
-> happens before in 1 week
-> sort by happens
-> group by happens
-> hide task count
-> short
-> ```
-
-> [!caution]- Next week
-> ```tasks
-> path does not include System
-> not done
-> happens next week
-> sort by happens
-> group by happens
-> hide task count
-> short
-> ```
+> [!todo]- Next 7 days
+> ![[Tasks.base#Next 7 days]]
 
 ## Waiting & open loops
 
-> [!example]- Handed to someone else
-> ```tasks
-> path does not include System
-> filter by function task.status.symbol === '>'
-> group by function task.filename
-> hide task count
-> short
-> ```
+> [!example]- Waiting on someone
+> ![[Tasks.base#Waiting]]
 
-> [!question]- Open questions
-> ```tasks
-> path does not include System
-> filter by function task.status.symbol === '?'
-> group by function task.filename
-> hide task count
-> short
-> ```
+> [!check]- Not blocked (free to start)
+> ![[Tasks.base#Not blocked]]
 
-> [!error]- Needs scheduling (no date)
-> ```tasks
-> path does not include System
-> not done
-> (no due date) AND (no scheduled date) AND (no start date)
-> sort by path
-> group by function task.filename
-> hide task count
-> short
-> ```
+> [!error]- Needs a due date
+> ![[Tasks.base#No due date]]
 
-## Everything open
+> [!warning]- Open tasks in inactive projects
+> ![[Tasks.base#Inactive project]]
 
-> [!note]- All open tasks, by note
-> ```tasks
-> path does not include System
-> not done
-> group by function task.filename
-> hide task count
-> short
-> ```
+## By area
 
-## Recently done
+> [!note]- Open tasks by area
+> ![[Tasks.base#By area]]
+
+## Recently closed
 
 > [!done]- Last 20 completed
-> ```tasks
-> path does not include System
-> done
-> sort by done reverse
-> limit 20
-> hide task count
-> hide tags
-> short
-> ```
+> ![[Tasks.base#Recently completed]]
+
+> [!failure]- Last 20 dropped
+> ![[Tasks.base#Recently dropped]]

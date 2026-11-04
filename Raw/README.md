@@ -20,10 +20,6 @@ The capture inbox. Material lands here on its way into the vault: articles, vide
 - Distilled ideas (those become atomic notes in `Atlas/Notes/` during ingest).
 - Anything you expect to find again in six months: if it matters, ingest it.
 
-## Example
-
-[[How spaced repetition works]] is a worked example of a **processed** source, tagged `#example`: capture at the top, links to the extracted Atlas notes below.
-
 ## Inbox view
 
 Everything in `Inbox/` still waiting to be analyzed, oldest first. Both capture lanes side by side live on the [[Inbox|Inbox dashboard]].
@@ -37,4 +33,3 @@ Everything in `Inbox/` still waiting to be analyzed, oldest first. Both capture 
 ## Index
 
 <!-- The ingest SOP appends one line per processed source: - [[Source Name]]: one-line summary -->
-- [[How spaced repetition works]]: example article on review intervals and the forgetting curve (`#example`, delete freely)

@@ -2,7 +2,7 @@ filters:
   or:
     - type == "meeting"
 formulas:
-  week: date(date).format("[W]WW")
+  week: date(date_start).format("[W]WW")
 views:
   - type: table
     name: Project meetings
@@ -19,7 +19,7 @@ views:
       - up
       - people
     sort:
-      - property: date
+      - property: date_start
         direction: DESC
     columnSize:
       file.name: 153
@@ -41,7 +41,7 @@ views:
       - up
       - people
     sort:
-      - property: date
+      - property: date_start
         direction: DESC
     columnSize:
       file.name: 173

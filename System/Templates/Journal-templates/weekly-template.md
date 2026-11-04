@@ -1,8 +1,8 @@
 ---
 type: weekly
 journal: weekly
-journal-date: <% moment(tp.file.title, "GGGG-[W]WW").startOf("isoWeek").format("YYYY-MM-DD") %>
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_modified:
 date: <% moment(tp.file.title, "GGGG-[W]WW").startOf("isoWeek").format("YYYY-MM-DD") %>
 tags:
 summary:
@@ -32,30 +32,13 @@ summary:
 ### Tasks
 
 > [!done]- Completed this week
-> ```tasks
-> done on or after <% moment(tp.file.title, "GGGG-[W]WW").startOf("isoWeek").format("YYYY-MM-DD") %>
-> done on or before <% moment(tp.file.title, "GGGG-[W]WW").endOf("isoWeek").format("YYYY-MM-DD") %>
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Period completed]]
 
 > [!todo]- Created this week
-> ```tasks
-> created on or after <% moment(tp.file.title, "GGGG-[W]WW").startOf("isoWeek").format("YYYY-MM-DD") %>
-> created on or before <% moment(tp.file.title, "GGGG-[W]WW").endOf("isoWeek").format("YYYY-MM-DD") %>
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Period created]]
 
 > [!todo]+ Still open (due by end of week)
-> ```tasks
-> not done
-> happens on or before <% moment(tp.file.title, "GGGG-[W]WW").endOf("isoWeek").format("YYYY-MM-DD") %>
-> sort by urgency
-> group by due
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Period due]]
 
 ### Logs & decisions this week
 > [!note]- All logs this week (grouped by day)
@@ -63,7 +46,7 @@ summary:
 > TASK
 > FROM "Calendar"
 > WHERE file.day >= date("<% moment(tp.file.title, "GGGG-[W]WW").startOf("isoWeek").format("YYYY-MM-DD") %>") AND file.day <= date("<% moment(tp.file.title, "GGGG-[W]WW").endOf("isoWeek").format("YYYY-MM-DD") %>")
-> WHERE contains(list("b", "i", "p", "c", "*"), status)
+> WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "x" AND contains(tags, "#task"))
 > GROUP BY file.link AS "Source"
 > SORT file.name ASC
 > ```

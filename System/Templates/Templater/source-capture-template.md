@@ -1,6 +1,7 @@
 ---
 type: source
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_modified:
 summary:
 up:
 topics:

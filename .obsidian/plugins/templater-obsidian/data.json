@@ -42,6 +42,11 @@
       "template": "System/Templates/Templater/Commands/log-risk.md",
       "insert_enabled": true,
       "create_enabled": false
+    },
+    {
+      "template": "System/Templates/Templater/Commands/new-task.md",
+      "insert_enabled": true,
+      "create_enabled": false
     }
   ],
   "startup_templates": [],

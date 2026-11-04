@@ -20,7 +20,7 @@ Every other `Atlas/**/*.md` is a concept document and must carry non-empty `type
 | Aspect | On disk (Obsidian) | In the exported bundle (`System/OKF/dist/okf/`) |
 |---|---|---|
 | Links | `[[wikilinks]]` | bundle-relative `/path.md` links |
-| Timestamp | `created-date:` (creation) | OKF `timestamp` (ISO 8601) |
+| Timestamp | `date_created:` (creation) | OKF `timestamp` (ISO 8601) |
 | Obsidian extras | `%% comments %%`, `![[*.base]]` embeds | stripped |
 | Frontmatter | Munin fields (compass, `topics`, `status`) + OKF fields | OKF-normalized; unknown keys preserved |
 
@@ -28,7 +28,7 @@ In an exported bundle, unresolved wikilinks would be downgraded to plain text ra
 
 ## Field mapping
 
-See the table in [[note-schema]] under "OKF alignment". In short: `type` (required), `title` (defaults to filename), `description` (emitted from the note's native `summary:` field), `resource` (canonical URI, formerly `url`), `tags`, and `timestamp` (from `created-date`).
+See the table in [[note-schema]] under "OKF alignment". In short: `type` (required), `title` (defaults to filename), `description` (emitted from the note's native `summary:` field), `resource` (canonical URI, formerly `url`), `tags`, and `timestamp` (from `date_created`).
 
 ## Regenerating a bundle
 

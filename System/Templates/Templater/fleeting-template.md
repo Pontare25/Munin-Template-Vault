@@ -15,7 +15,8 @@ if (/^Untitled( \d+)?$/.test(tp.file.title)) {
 -%>
 ---
 type: fleeting
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_modified:
 ---
 ```meta-bind-button
 label: Promote note

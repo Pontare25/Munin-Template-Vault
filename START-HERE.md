@@ -7,7 +7,7 @@ Welcome. This vault is a personal wiki that an AI assistant maintains with you. 
 1. Install [Obsidian](https://obsidian.md) if you have not already.
 2. Open this folder as a vault (**Open folder as vault**).
 3. When asked, trust the vault and enable community plugins.
-4. The vault bundles three community plugins, already installed: **Templater** (required; runs the note templates), **Omnisearch** (full-text search), and **Text Extractor** (OCR and text from PDFs and images). Enabling community plugins in step 3 turns them on. If Templater is not active, enable it under Settings, Community plugins.
+4. The vault bundles nine community plugins, already installed (the list is `.obsidian/community-plugins.json`). Five of them the vault depends on: **Templater** (runs the note templates and commands), **Journals** (creates the daily, weekly, monthly, quarterly and yearly notes), **Dataview** (log rollups and queries), **Meta Bind** (the buttons and inline fields in notes) and **TaskNotes** (task notes and task views). The other four are helpers: **Omnisearch** (full-text search), **Text Extractor** (OCR and text from PDFs and images), **Tag Wrangler** (rename and merge tags) and **Minimal Theme Settings** (options for the Minimal theme). Enabling community plugins in step 3 turns them all on. If one of the five is not active, enable it under Settings, Community plugins.
 5. Turn on two Templater settings that are **stored per device** (they do not travel with the vault, so enable them on every device you sync to). Under Settings, Templater, in the **File creation** section: enable **Trigger Templater on new file creation** (this is what applies the folder templates, the fleeting note button, and the Promote command; nothing runs without it), and enable **Automatic jump to cursor** after the filename (so a new note leaves your cursor in the body, not on the title).
 
 ## 2. Open your AI tool in this folder
@@ -41,11 +41,15 @@ time, and wait for my answers before moving on. Keep it conversational.
    comments, and leave the "Rules for the AI" section untouched. Show me
    the result and revise until I approve it.
 
-4. CHECK SETTINGS. Verify .obsidian/daily-notes.json points at
-   "Calendar/Daily Notes" with the
-   "System/Templates/Templater/Calendar-templates/daily-template" template,
-   and ask me to confirm the bundled plugins (Templater, Omnisearch, Text
-   Extractor) are enabled, Templater above all. Also have me confirm the two
+4. CHECK SETTINGS. Daily notes come from the Journals plugin, not from
+   core Daily notes (which is off in .obsidian/core-plugins.json; ignore
+   .obsidian/daily-notes.json). Verify that
+   .obsidian/plugins/journals/data.json gives the "daily" journal the
+   folder "Calendar/Daily Notes/{{date:YYYY/MM-MMM}}" and the template
+   "System/Templates/Journal-templates/daily-template". Ask me to confirm
+   the plugins the vault depends on are enabled: Templater, Journals,
+   Dataview, Meta Bind and TaskNotes (the full list is
+   .obsidian/community-plugins.json). Also have me confirm the two
    per-device Templater settings under Settings, Templater, File creation:
    "Trigger Templater on new file creation" and "Automatic jump to cursor"
    after filename, both ON. These are stored per device and off by default on
@@ -53,12 +57,9 @@ time, and wait for my answers before moving on. Keep it conversational.
    until they are enabled.
    If anything is off, tell me exactly what to click.
 
-5. EXAMPLE CONTENT. This vault ships a small worked example (notes
-   tagged #example) that demonstrates the schema. Ask whether I want to
-   keep it for reference or delete it now. If I say delete: remove the
-   seven #example files, the example lines in the folder README indexes,
-   the "Example" section links to them in the folder READMEs, and the
-   example entry in AI-OS/log.md. Leave no broken links behind.
+5. EXAMPLES. This vault ships empty. Tell me that worked examples live in
+   the separate Munin-Template-Examples repo
+   (https://github.com/Pontare25/Munin-Template-Examples) if I want them.
 
 6. TUTORIAL INGEST. Ask me for one thing to feed the wiki: a link, a
    pasted article, or an idea of mine. Then follow AI-OS/SOPs/ingest.md
@@ -79,7 +80,7 @@ time, and wait for my answers before moving on. Keep it conversational.
 1. Open `AI-OS/Me.md` and fill in every placeholder section by hand.
 2. Read `AI-OS/Vault-Map.md` to learn where things go.
 3. Read `AI-OS/Schemas/note-schema.md` to learn the note format.
-4. Explore the example notes (search for the `#example` tag), then delete them when you no longer need them.
+4. Want to see filled-in notes? Worked examples live in the separate [Munin-Template-Examples](https://github.com/Pontare25/Munin-Template-Examples) repo; this vault ships empty.
 5. Open today's daily note and write something in it. That is the core habit.
 
 ## 5. Skills (optional, recommended once the basics run)
@@ -94,7 +95,7 @@ The `Start Here/` folder holds the full set. Read them roughly in this order; ea
 
 1. [[obsidian-basics]] — just enough Obsidian to operate the vault: links, frontmatter, the daily/weekly/monthly notes, search.
 2. [[Guide to writing daily notes]] — the daily note, the one surface you write into every day.
-3. [[tasks-and-logs]] — the checkbox system: tasks vs logs, the markers, and how the rollups work.
+3. [[tasks-and-logs]]: task notes for things to do, checkbox markers for logs, and how the rollups work.
 4. [[working-with-projects]] — how a project ties meetings, people, tasks, and logs together.
 5. [[linking-notes-and-maps]] — how notes connect: inline links, the idea compass, topics, and Maps of Content.
 6. [[working-with-ai]] — the capture → ingest → query → review loop, day to day.

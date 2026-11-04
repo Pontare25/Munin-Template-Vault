@@ -1,0 +1,75 @@
+filters:
+  and:
+    - list(note["type"]).contains("task")
+    - file.inFolder("System") != true
+formulas:
+  priorityWeight: if(priority=="none",0,if(priority=="low",1,if(priority=="normal",2,if(priority=="high",3,-1))))
+  daysUntilDue: if((date_due.isEmpty() == false), ((number(date(date_due)) - number(today())) / 86400000).floor(), null)
+  dueIn: if(date_due.isEmpty(), "", if(formula.daysUntilDue == 0, "Today", if(formula.daysUntilDue > 0, (if((formula.daysUntilDue) == 1, (if((formula.daysUntilDue) >= 1000 || (formula.daysUntilDue) <= -1000, ("" + (formula.daysUntilDue)).replace(/\B(?=(\d{3})+(?!\d))/g, ","), ("" + (formula.daysUntilDue))) + " day"), (if((formula.daysUntilDue) >= 1000 || (formula.daysUntilDue) <= -1000, ("" + (formula.daysUntilDue)).replace(/\B(?=(\d{3})+(?!\d))/g, ","), ("" + (formula.daysUntilDue))) + " days"))), (if((formula.daysUntilDue * -1) == 1, (if((formula.daysUntilDue * -1) >= 1000 || (formula.daysUntilDue * -1) <= -1000, ("" + (formula.daysUntilDue * -1)).replace(/\B(?=(\d{3})+(?!\d))/g, ","), ("" + (formula.daysUntilDue * -1))) + " day overdue"), (if((formula.daysUntilDue * -1) >= 1000 || (formula.daysUntilDue * -1) <= -1000, ("" + (formula.daysUntilDue * -1)).replace(/\B(?=(\d{3})+(?!\d))/g, ","), ("" + (formula.daysUntilDue * -1))) + " days overdue"))))))
+  daysUntilScheduled: if((date_scheduled.isEmpty() == false), ((number(date(date_scheduled)) - number(today())) / 86400000).floor(), null)
+  daysSinceCreated: ((number(now()) - number(file.ctime)) / 86400000).floor()
+  daysSinceModified: ((number(now()) - number(file.mtime)) / 86400000).floor()
+  isOverdue: (date_due.isEmpty() == false) && date(date_due) < today() && status != "done" && status != "dropped"
+  isDueToday: (date_due.isEmpty() == false) && date(date_due).format("YYYY-MM-DD") == today().format("YYYY-MM-DD")
+  isDueThisWeek: (date_due.isEmpty() == false) && date(date_due).format("YYYY-MM-DD") >= today().format("YYYY-MM-DD") && date(date_due).format("YYYY-MM-DD") <= (today() + "7 days").format("YYYY-MM-DD")
+  isScheduledToday: (date_scheduled.isEmpty() == false) && date(date_scheduled).format("YYYY-MM-DD") == today().format("YYYY-MM-DD")
+  isRecurring: recurrence && !recurrence.isEmpty()
+  hasTimeEstimate: timeEstimate && timeEstimate > 0
+  timeRemaining: if(timeEstimate && timeEstimate > 0, timeEstimate - if(timeEntries, list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0), 0), null)
+  efficiencyRatio: if(timeEstimate && timeEstimate > 0 && timeEntries, (list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0) / timeEstimate * 100).round(), null)
+  timeTrackedThisWeek: if(timeEntries, list(timeEntries).filter(value.endTime && date(value.startTime) >= today() - "7d").map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0).round(), 0)
+  timeTrackedToday: if(timeEntries, list(timeEntries).filter(value.endTime && date(value.startTime).format("YYYY-MM-DD") == today().format("YYYY-MM-DD")).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0).round(), 0)
+  dueMonth: if((date_due.isEmpty() == false), date(date_due).format("YYYY-MM"), "No due date")
+  dueWeek: if((date_due.isEmpty() == false), date(date_due).format("YYYY-[W]WW"), "No due date")
+  scheduledMonth: if((date_scheduled.isEmpty() == false), date(date_scheduled).format("YYYY-MM"), "Not scheduled")
+  scheduledWeek: if((date_scheduled.isEmpty() == false), date(date_scheduled).format("YYYY-[W]WW"), "Not scheduled")
+  dueDateCategory: if(date_due.isEmpty(), "No due date", if(date(date_due) < today(), "Overdue", if(date(date_due).format("YYYY-MM-DD") == today().format("YYYY-MM-DD"), "Today", if(date(date_due).format("YYYY-MM-DD") == (today() + "1 day").format("YYYY-MM-DD"), "Tomorrow", if(date(date_due).format("YYYY-MM-DD") <= (today() + "7 days").format("YYYY-MM-DD"), "This week", "Later")))))
+  timeEstimateCategory: if(!timeEstimate || timeEstimate == 0 || timeEstimate == null, "No estimate", if(timeEstimate < 30, "Quick (<30m)", if(timeEstimate <= 120, "Medium (30m-2h)", "Long (>2h)")))
+  ageCategory: if(((number(now()) - number(file.ctime)) / 86400000) < 1, "Today", if(((number(now()) - number(file.ctime)) / 86400000) < 7, "This week", if(((number(now()) - number(file.ctime)) / 86400000) < 30, "This month", "Older")))
+  createdMonth: file.ctime.format("YYYY-MM")
+  modifiedMonth: file.mtime.format("YYYY-MM")
+  priorityCategory: if(priority=="none","None",if(priority=="low","Low",if(priority=="normal","Normal",if(priority=="high","High","No priority"))))
+  projectCount: (if((if(up, list(up).length, 0)) == 0, ("No projects"), if((if(up, list(up).length, 0)) == 1, ("Single project"), ("Multiple projects"))))
+  contextCount: (if((if(contexts, list(contexts).length, 0)) == 0, ("No contexts"), if((if(contexts, list(contexts).length, 0)) == 1, ("Single context"), ("Multiple contexts"))))
+  trackingStatus: if(!timeEstimate || timeEstimate == 0 || timeEstimate == null, "No estimate", if(!timeEntries || list(timeEntries).length == 0, "Not started", if(formula.efficiencyRatio < 100, "Under estimate", "Over estimate")))
+  nextDate: if((date_due.isEmpty() == false) && (date_scheduled.isEmpty() == false), if(date(date_due) < date(date_scheduled), date_due, date_scheduled), if((date_due.isEmpty() == false), date_due, date_scheduled))
+  daysUntilNext: if((date_due.isEmpty() == false) && (date_scheduled.isEmpty() == false), min(formula.daysUntilDue, formula.daysUntilScheduled), if((date_due.isEmpty() == false), formula.daysUntilDue, formula.daysUntilScheduled))
+  hasDate: (date_due.isEmpty() == false) || (date_scheduled.isEmpty() == false)
+  isToday: ((date_due.isEmpty() == false) && date(date_due).format("YYYY-MM-DD") == today().format("YYYY-MM-DD")) || ((date_scheduled.isEmpty() == false) && date(date_scheduled).format("YYYY-MM-DD") == today().format("YYYY-MM-DD"))
+  isThisWeek: ((date_due.isEmpty() == false) && date(date_due).format("YYYY-MM-DD") >= today().format("YYYY-MM-DD") && date(date_due).format("YYYY-MM-DD") <= (today() + "7 days").format("YYYY-MM-DD")) || ((date_scheduled.isEmpty() == false) && date(date_scheduled).format("YYYY-MM-DD") >= today().format("YYYY-MM-DD") && date(date_scheduled).format("YYYY-MM-DD") <= (today() + "7 days").format("YYYY-MM-DD"))
+  nextDateCategory: if(date_due.isEmpty() && date_scheduled.isEmpty(), "No date", if(((date_due.isEmpty() == false) && date(date_due) < today()) || ((date_scheduled.isEmpty() == false) && date(date_scheduled) < today()), "Overdue/Past", if(((date_due.isEmpty() == false) && date(date_due).format("YYYY-MM-DD") == today().format("YYYY-MM-DD")) || ((date_scheduled.isEmpty() == false) && date(date_scheduled).format("YYYY-MM-DD") == today().format("YYYY-MM-DD")), "Today", if(((date_due.isEmpty() == false) && date(date_due).format("YYYY-MM-DD") == (today() + "1 day").format("YYYY-MM-DD")) || ((date_scheduled.isEmpty() == false) && date(date_scheduled).format("YYYY-MM-DD") == (today() + "1 day").format("YYYY-MM-DD")), "Tomorrow", if(((date_due.isEmpty() == false) && date(date_due).format("YYYY-MM-DD") <= (today() + "7 days").format("YYYY-MM-DD")) || ((date_scheduled.isEmpty() == false) && date(date_scheduled).format("YYYY-MM-DD") <= (today() + "7 days").format("YYYY-MM-DD")), "This week", "Later")))))
+  nextDateMonth: if((date_due.isEmpty() == false) && (date_scheduled.isEmpty() == false), if(date(date_due) < date(date_scheduled), date(date_due).format("YYYY-MM"), date(date_scheduled).format("YYYY-MM")), if((date_due.isEmpty() == false), date(date_due).format("YYYY-MM"), if((date_scheduled.isEmpty() == false), date(date_scheduled).format("YYYY-MM"), "No date")))
+  nextDateWeek: if((date_due.isEmpty() == false) && (date_scheduled.isEmpty() == false), if(date(date_due) < date(date_scheduled), date(date_due).format("YYYY-[W]WW"), date(date_scheduled).format("YYYY-[W]WW")), if((date_due.isEmpty() == false), date(date_due).format("YYYY-[W]WW"), if((date_scheduled.isEmpty() == false), date(date_scheduled).format("YYYY-[W]WW"), "No date")))
+  urgencyScore: if(date_due.isEmpty() && date_scheduled.isEmpty(), formula.priorityWeight, formula.priorityWeight + max(0, 10 - if(formula.daysUntilNext, formula.daysUntilNext, 0)) + (1 - ((number(date(formula.nextDate)) - number(date(date(formula.nextDate).format("YYYY-MM-DD")))) / 86400000)))
+  timeTrackedFormatted: if(timeEntries, if(list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0) >= 60, (if(((list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0) / 60).floor()) >= 1000 || ((list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0) / 60).floor()) <= -1000, ("" + ((list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0) / 60).floor())).replace(/\B(?=(\d{3})+(?!\d))/g, ","), ("" + ((list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0) / 60).floor()))) + "h " + if(((list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0) % 60).round()) >= 1000 || ((list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0) % 60).round()) <= -1000, ("" + ((list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0) % 60).round())).replace(/\B(?=(\d{3})+(?!\d))/g, ","), ("" + ((list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0) % 60).round()))) + "m"), (if((list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0).round()) >= 1000 || (list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0).round()) <= -1000, ("" + (list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0).round())).replace(/\B(?=(\d{3})+(?!\d))/g, ","), ("" + (list(timeEntries).filter(value.endTime).map((number(date(value.endTime)) - number(date(value.startTime))) / 60000).reduce(acc + value, 0).round()))) + "m")), (if((0) >= 1000 || (0) <= -1000, ("" + (0)).replace(/\B(?=(\d{3})+(?!\d))/g, ","), ("" + (0))) + "m"))
+  dueDateDisplay: if(date_due.isEmpty(), "", if(date(date_due).format("YYYY-MM-DD") == today().format("YYYY-MM-DD"), "Today", if(date(date_due).format("YYYY-MM-DD") == (today() + "1 day").format("YYYY-MM-DD"), "Tomorrow", if(date(date_due).format("YYYY-MM-DD") == (today() - "1 day").format("YYYY-MM-DD"), "Yesterday", if(date(date_due) < today(), (if((formula.daysUntilDue * -1) == 1, (if((formula.daysUntilDue * -1) >= 1000 || (formula.daysUntilDue * -1) <= -1000, ("" + (formula.daysUntilDue * -1)).replace(/\B(?=(\d{3})+(?!\d))/g, ","), ("" + (formula.daysUntilDue * -1))) + " day ago"), (if((formula.daysUntilDue * -1) >= 1000 || (formula.daysUntilDue * -1) <= -1000, ("" + (formula.daysUntilDue * -1)).replace(/\B(?=(\d{3})+(?!\d))/g, ","), ("" + (formula.daysUntilDue * -1))) + " days ago"))), if(date(date_due).format("YYYY-MM-DD") <= (today() + "7 days").format("YYYY-MM-DD"), date(date_due).format("ddd"), date(date_due).format("MMM D")))))))
+views:
+  - type: tasknotesMiniCalendar
+    name: Due
+    order:
+      - status
+      - priority
+      - date_due
+      - date_scheduled
+      - up
+      - contexts
+      - file.tags
+      - blockedBy
+      - file.name
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_due
+        direction: ASC
+    dateProperty: date_due
+  - type: tasknotesMiniCalendar
+    name: Scheduled
+    order: []
+    dateProperty: date_scheduled
+  - type: tasknotesMiniCalendar
+    name: Created
+    dateProperty: file.ctime
+  - type: tasknotesMiniCalendar
+    name: Modified
+    dateProperty: file.mtime

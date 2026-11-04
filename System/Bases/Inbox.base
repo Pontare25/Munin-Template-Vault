@@ -3,8 +3,8 @@ filters:
     - file.path.startsWith("Raw/Inbox")
     - '!file.name.contains("README")'
 formulas:
-  waiting: 'if(note["created-date"], (now() - note["created-date"]).days.round(0), (now() - file.ctime).days.round(0))'
-  captured: 'if(note["created-date"], note["created-date"].format("YYYY-MM-DD"), file.ctime.format("YYYY-MM-DD"))'
+  waiting: 'if(note.date_created, (now() - note.date_created).days.round(0), (now() - file.ctime).days.round(0))'
+  captured: 'if(note.date_created, note.date_created.format("YYYY-MM-DD"), file.ctime.format("YYYY-MM-DD"))'
 properties:
   formula.waiting:
     displayName: Days waiting

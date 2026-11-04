@@ -11,6 +11,25 @@ const parent = await tp.system.suggester(
   "Parent project? Pick one to nest this as a sub-project, or choose top-level."
 );
 const parentName = parent ? parent.split("/").pop() : "";
+// Top-level project: its up: is the Area it belongs to (up: always points one level
+// up: sub-project -> project -> Area). Lists active Area notes in Efforts/Areas.
+let areaName = "";
+if (!parent) {
+  const areas = app.vault.getMarkdownFiles()
+    .filter(f => f.path.startsWith("Efforts/Areas/"))
+    .filter(f => {
+      const fm = app.metadataCache.getFileCache(f)?.frontmatter;
+      return fm?.type === "area" && fm?.status === "active";
+    })
+    .map(f => f.basename)
+    .sort((a, b) => a.localeCompare(b));
+  areaName = (await tp.system.suggester(
+    ["(no Area)"].concat(areas),
+    [""].concat(areas),
+    false,
+    "Which Area does this project belong to?"
+  )) || "";
+}
 const root = "Efforts/Projects/";
 const dest = parent ? root + parent + "/" + tp.file.title : root + tp.file.title;
 await tp.file.move(dest + "/" + tp.file.title);
@@ -18,20 +37,22 @@ await tp.file.move(dest + "/" + tp.file.title);
 ---
 type: project
 status: active
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
-updated:
-up:<% parentName ? "\n  - \"[[Project - " + parentName + "]]\"" : "" %>
+date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_modified:
+up:<% parentName ? "\n  - \"[[Project - " + parentName + "]]\"" : areaName ? "\n  - \"[[" + areaName + "]]\"" : "" %>
 related:
 people:
-start-date: <% tp.date.now("YYYY-MM-DD") %>
-due-date:
-end-date:
+date_start: <% tp.date.now("YYYY-MM-DD") %>
+date_due:
+date_end:
 aliases:
   - <% tp.file.title %>
 summary:
 ---
 # <% tp.file.title %>
 <%* await tp.file.rename("Project - " + tp.file.title) -%>
+
+Status: `INPUT[inlineSelect(option(backlog), option(active), option(waiting), option(simmering), option(done), option(dropped)):status]`
 
 ## Last update
 ```dataview
@@ -45,33 +66,21 @@ SORT file.day desc
 LIMIT 1
 ```
 
-## Tasks and Questions
-> [!todo]+ Open
-> ```dataview
-> task
-> WHERE contains(outlinks, [[]]) or contains(up, [[]]) or file.path = this.file.path
-> WHERE contains(list(" ", "?", "!", "/", ">"), status)
-> Group by file.name as Source
-> SORT Source Desc 
-> ```
+## Tasks
+![[Tasks.base#Project open]]
 
-> [!done]- Closed
-> ```dataview
-> task
-> WHERE contains(outlinks, [[]]) or contains(up, [[]]) or file.path = this.file.path
-> WHERE contains(list("x", "-"), status)
-> Group by file.name as Source
-> SORT Source Desc 
-> ```
-### Next actions
-- [ ] #task Kick-off the project
+> [!done]- Closed tasks
+> ![[Tasks.base#Project closed]]
+
+> [!todo]- Sub-project tasks
+> ![[Tasks.base#Sub-project tasks]]
 
 ## Related
 ### Logs
 ```dataview
 TASK
 WHERE contains(outlinks, [[]]) or contains(up, [[]])
-WHERE contains(list("b", "i", "p", "c", "*"), status)
+WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "x" AND contains(tags, "#task"))
 GROUP BY file.name as Source
 SORT Source DESC
 ```

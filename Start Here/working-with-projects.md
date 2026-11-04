@@ -1,47 +1,57 @@
 # Guide: Working with Projects
 
-A project is the hub that connects meetings, work sessions, people, tasks, logs, and decisions. You do not maintain those connections by hand: you link notes with a few frontmatter fields, and queries assemble the rest. This guide covers the project side; for how the checkbox items themselves work, see [[tasks-and-logs]].
+A project is the hub that connects meetings, work sessions, people, tasks, logs, and decisions. You do not maintain those connections by hand: you link notes with a few frontmatter fields, and queries assemble the rest. This guide covers the project side; for how tasks and logs themselves work, see [[tasks-and-logs]].
 
 ## Create a project
 
-Make a new note from the **project template**. It moves itself into `Efforts/Projects/` and starts with this frontmatter:
+The project template does not ask for a name; it takes the note's current name. So inserting it into a fresh, unnamed note gives you `Project - Untitled`. The route that works:
+
+1. Press **`Ctrl+N`**. The new note lands in `Fleeting/` and asks for a name: type the project's name (for example `Website`). A note created by clicking a not-yet-existing `[[link]]` already has its name and skips this prompt.
+2. Click the note's **Promote note** button (or run *Templater: Insert Commands/promote-note*) and choose **project**.
+3. Answer the template's two questions: the parent project (or top-level) and, for a top-level project, its Area.
+
+The template then moves the note into its own folder under `Efforts/Projects/`, renames it `Project - <title>` (here `Project - Website`), adds the plain title as an alias, and keeps anything you had already written in the note. Link the project by its full name, `[[Project - <title>]]`: the `up:` links that queries follow, and the links the pickers write, use that name. The alias only helps you find it in search and link suggestions.
+
+The new project note starts with this frontmatter:
 
 ```yaml
 ---
 type: project
 status: active
-up:            # parent, e.g. a broader area
-related:       # area, client, or organization
+up:            # parent: the Area (top-level project) or the parent project
+related:       # client or organization
 people:        # people on the project
-start-date:
-due-date:
-end-date:
+date_start:
+date_due:
+date_end:
 ---
 ```
 
-Fill in what you know; leave the rest empty. `status: active` while the project runs; `done` or `archived` when it closes.
+Fill in what you know; leave the rest empty. `status: active` while the project runs; `done` or `dropped` when it closes.
 
-**Sub-projects.** When you create a project, the template asks for an optional parent. Pick one and the note is filed under that parent's folder (`Efforts/Projects/Aurora/Aurora Auth/…`) and its `up:` is filled with the parent link automatically; choose top-level and it sits on its own with an empty `up:`. The folder nesting is cosmetic: the `up` link, not the folder, is what wires the rollup, so the parent note's **Sub Projects** table lists it.
+**Status selector.** The status selector at the top of a project or area note sets `status` from a dropdown, so you never hand-edit it: projects offer `backlog, active, waiting, simmering, done, dropped`; areas offer `active, simmering, dropped`. See [[note-schema]] for what each value means.
+
+**Sub-projects.** When you create a project, the template asks for an optional parent. Pick one and the note is filed under that parent's folder (`Efforts/Projects/Parent Project/Child Project/…`) and its `up:` is filled with the parent link automatically; choose top-level and it asks which active Area the project belongs to, then fills `up:` with that Area (pick "(no Area)" to leave it empty). `up:` always points one level up: task to project, sub-project to project, project to Area, so everything rolls up to its Area. The folder nesting is cosmetic: the `up` link, not the folder, is what wires the rollup, so the parent note's **Sub Projects** board (a kanban with one column per status) lists it.
 
 ## Link meetings to the project
 
-Make a meeting note from the **meeting template**. On creation it prompts for the meeting's date and time (pre-filled with now); it then prefixes the filename with the date (`2026-08-11 Kickoff`) and files it under `Calendar/Meetings/YYYY/wWW/` (year and ISO week, matching the weekly note). The full datetime is stored in `date:`, so the daily/weekly/monthly rollups pick the meeting up by day. Set three links:
+Make a meeting note from the **meeting template**. On creation it prompts for the meeting's date and time (pre-filled with now); it then prefixes the filename with the date (`2026-03-02 Kickoff`) and files it under `Calendar/Meetings/YYYY/wWW/` (year and ISO week, matching the weekly note). The full datetime is stored in `date_start:`, so the daily/weekly/monthly rollups pick the meeting up by day. If a meeting runs long, add `date_end:` by hand. Set three links:
 
 ```yaml
 ---
 type: meeting
 up:
-  - "[[Project Muninize]]"        # the project this meeting belongs to
+  - "[[Project - Website]]"       # the project this meeting belongs to
 people:
-  - "[[Anna Berg]]"               # people who were there
+  - "[[Jane Doe]]"                # people who were there
 related:
-  - "[[Product Development]]"     # area or context
+  - "[[Area name]]"               # area or context
 summary: One line on what the meeting was about.
-date: 2026-08-11
+date_start: 2026-03-02T10:00
 ---
 ```
 
-`up` is what pulls the meeting (and everything in it) onto the project. `people` does the same for each person. `summary` and `date` feed the rollup tables below. Any task or log you write in the meeting reaches the project automatically — see [[tasks-and-logs]] for the mechanism.
+`up` is what pulls the meeting (and everything in it) onto the project. `people` does the same for each person. `summary` and `date_start` feed the rollup tables below. Any log you write in the meeting reaches the project automatically. A task you capture there (`Ctrl+Alt+T`) is its own note: set its project in the create window, because the meeting's `up` does not pass on to it. See [[tasks-and-logs]] for both mechanisms.
 
 ## Log work with sessions
 
@@ -51,8 +61,8 @@ A meeting is a conversation; a **work session** is a block of focused work you d
 ---
 type: work-session
 up:
-  - "[[Project Muninize]]"   # the project you worked on
-date: 2026-08-18
+  - "[[Project - Website]]"  # the project you worked on
+date_start: 2026-03-04T13:00
 summary: One line on what you did.
 ---
 ```
@@ -63,14 +73,13 @@ The template gives you a **Focus** line (what the session is for), a **Notes** a
 
 The project template assembles itself from the linked notes:
 
-- **Last update** — a one-line Dataview that finds the most recent dated note linking this project (a meeting, work session, daily, or dated note) and shows how many days ago it was. Your at-a-glance "is this project still moving." It mirrors the **Last contact** line on a person note.
-- **Next actions** — the project's own tasks, written directly here.
-- **Tasks from meetings & logs** — open tasks pulled out of every linked meeting, session, and daily.
-- **Log** — information items (`[b] [i] [p] [c] [*]`) pulled out of linked notes, newest source first.
-- **Meetings** — a Bases table (`![[Meetings.base#Project meetings]]`) of every meeting whose `up` points here.
-- **Work sessions** — a separate Bases table (`![[Sessions.base#Project sessions]]`) of every work session for this project.
+- **Last update**: a one-line Dataview that finds the most recent dated note linking this project (a meeting, work session, daily, or dated note) and shows how many days ago it was. Your at-a-glance "is this project still moving." It mirrors the **Last contact** line on a person note.
+- **Tasks**: a board of the project's task notes (every task whose `up:` is this project), one column per status (`![[Tasks.base#Project open]]`). Its **New** button creates a task with `up:` already set to this project. Below it, two folded views: **Closed tasks** (`done` and `dropped`, newest first) and **Sub-project tasks** (the tasks of the direct sub-projects, one row per sub-project).
+- **Logs**: information items (`[b] [i] [p] [c] [*]`) and task reference lines (`[x] #task`) pulled out of linked notes, newest source first, with the collapsible **Advanced log** below for filtering and export. A line shows here when it links the project itself, or when it sits in a note whose `up:` is the project (a meeting or work session). A task reference line links the task, not the project, so it shows here only when it was captured in such a note; reference lines captured in a daily note do not reach the project's Logs (the task itself is on the **Tasks** board).
+- **Meetings**: a Bases table (`![[Meetings.base#Project meetings]]`) of every meeting whose `up` points here.
+- **Work sessions**: a separate Bases table (`![[Sessions.base#Project sessions]]`) of every work session for this project.
 
-A person note carries the same shape, scoped to that person instead of the project.
+A person note carries the same shape, scoped to that person instead of the project: its Tasks board shows the tasks assigned to them (`assignees:`), and its New button pre-fills the assignee.
 
 ## The Bases model
 
@@ -86,7 +95,7 @@ Two rules explain where every table comes from.
 
 This is why meetings and sessions stay in **separate** tables on a project note: they are separate types, each with its own base.
 
-**Time rollups that span types live in one combined base.** The daily, weekly, and monthly notes do not care whether something was a meeting or a session — they want everything that happened in the period. A per-type base cannot do that: a base's top-level filter gates every view, and a view can only narrow it, never broaden it. So `Calendar.base` scopes its top filter to the whole `Calendar` folder, and each view — `Daily rollup`, `Weekly rollup`, `Monthly rollup` — does the narrowing: filter to meetings and work sessions, then to its date range. A **Type** column keeps the two distinguishable.
+**Time rollups that span types live in one combined base.** The daily, weekly, and monthly notes do not care whether something was a meeting or a session — they want everything that happened in the period. A per-type base cannot do that: a base's top-level filter gates every view, and a view can only narrow it, never broaden it. So `Calendar.base` scopes its top filter to the whole `Calendar` folder, and each view — `Daily rollup`, `Weekly rollup`, `Monthly rollup` — does the narrowing: filter to meetings and work sessions, then to its date range. The range compares each row's `anchor` formula (a meeting's or session's `date_start`) with the embedding journal note's own `date`. A **Type** column keeps the two distinguishable.
 
 | View | Shows | Embed on |
 |---|---|---|
@@ -94,15 +103,15 @@ This is why meetings and sessions stay in **separate** tables on a project note:
 | `Calendar.base#Weekly rollup` | meetings + sessions in that week | a weekly note |
 | `Calendar.base#Monthly rollup` | meetings + sessions in that month | a monthly note |
 
-Embed any view with `![[BaseName.base#View Name]]`. When you add a new note `type`, give it its own base for entity/project views; if it should also appear in the time rollups, add its type to the rollup views' filters in `Calendar.base`.
+Embed any view with `![[BaseName.base#View Name]]`. When you add a new note `type`, give it its own base for entity/project views; if it should also appear in the time rollups, add its type to the rollup views' filters and to the `anchor` formula in `Calendar.base`.
 
 ## Closing a project
 
-1. Mark remaining tasks `[x]` done or `[-]` cancelled.
+1. Close the open tasks on the project's **Tasks** board: set each to `done` or `dropped`, or move it to another project or Area by changing its `up:`. Open tasks left behind show on the [[Tasks]] dashboard under **Open tasks in inactive projects**.
 2. Capture the outcome and key decisions as logs (`[p]` / `[c]`) so they survive on the project and its people.
-3. Set `status: done` (or `archived`) and fill `end-date`.
+3. Set `status: done` (or `dropped` if it stopped short) and fill `date_end`.
 
 ## See also
 
-- [[tasks-and-logs]] — the status system, the `#task` convention, and how rollup queries work.
-- [[Guide to writing daily notes]] — the capture surface that feeds these rollups.
+- [[tasks-and-logs]]: task notes, statuses, capture, and how the rollup queries work.
+- [[Guide to writing daily notes]]: the capture surface that feeds these rollups.

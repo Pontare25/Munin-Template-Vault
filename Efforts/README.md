@@ -4,10 +4,14 @@ The action layer: everything you are trying to do, as opposed to everything you 
 
 | Status | Meaning |
 |---|---|
-| `active` | Full attention now |
-| `simmering` | Not active, keeping warm |
-| `done` | Completed |
-| `dropped` | Abandoned, kept for the record |
+| `backlog` | Committed, not started (projects only) |
+| `active` | Being worked now |
+| `waiting` | Blocked on someone or something else (projects only) |
+| `simmering` | Paused by choice, revisit later |
+| `done` | Finished (projects only) |
+| `dropped` | Stopped, not finishing; kept for the record |
+
+Set it with the status selector at the top of a project or area note. Areas use `active`, `simmering` and `dropped` only. Full rules in [[note-schema]].
 
 ## Subfolders
 
@@ -16,20 +20,19 @@ The action layer: everything you are trying to do, as opposed to everything you 
 | `Projects/` | Efforts with an end: ship it, finish it, decide it (`type: project`) |
 | `Areas/` | Ongoing responsibilities with no end date (`type: area`) |
 | `Learning/` | Subjects you are deliberately studying |
+| `TaskNotes/Tasks/` | Task notes, one per task (`type: task`), created by the TaskNotes plugin |
+| `TaskNotes/Views/` | View Bases the TaskNotes plugin generates (task list, kanban, calendar, agenda and more) |
+| `TaskNotes/Archive/` | Archived tasks; the plugin creates this folder the first time you archive a task |
 
 ## What belongs here
 
-- Project and area notes with `type:`, `status:`, `up:`, `created-date:` frontmatter.
+- Project and area notes with `type:`, `status:`, `up:`, `date_created:` frontmatter.
 - Plans, task lists, and working notes that serve a specific effort.
 
 ## What does not belong here
 
 - Reusable knowledge produced by a project (promote it to `Atlas/`, link it from the project).
 - Time-bound records like meeting notes (those live in `Calendar/` and link here).
-
-## Example
-
-[[Learn Spanish]] is a worked example project, tagged `#example`: status field, goal, next actions, and an `up:` link to its MOC.
 
 ## Dashboard
 
@@ -42,4 +45,3 @@ The action layer: everything you are trying to do, as opposed to everything you 
 ## Index
 
 <!-- The ingest SOP appends one line per note: - [[Effort Name]]: status, one-line summary -->
-- [[Learn Spanish]]: active, example project applying spaced repetition (`#example`, delete freely)

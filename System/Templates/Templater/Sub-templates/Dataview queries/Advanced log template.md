@@ -3,9 +3,12 @@
 // Folders scanned when the "Limited folder search" toggle is on. In this vault
 // every log-bearing note (daily, meeting, weekly, work-session) lives under Calendar/.
 const LIMITED_FOLDERS = ["Calendar/"];
-// Log markers (the "Logs" family from the tasks-and-logs guide). NON_TASK statuses.
-const STATUSES        = ["b", "i", "p", "c", "*"];
+// Log markers (the "Logs" family from the tasks-and-logs guide), plus "x": task reference lines
+// ("- [x] #task [[task - ...]]") written by New task (Ctrl+Alt+T). Only "x" lines tagged #task count.
+const STATUSES        = ["b", "i", "p", "c", "*", "x"];
 const SK              = "advanced-log-search:" + dv.current().file.path;
+// Statuses hidden until toggled on (task reference lines are not logs by default).
+const DEFAULT_OFF     = new Set(["x"]);
 
 // ── BOOTSTRAP ───────────────────────────────────────────────────────────────
 const curLink = dv.current().file.link;
@@ -13,7 +16,7 @@ const saved   = (() => { try { return JSON.parse(localStorage.getItem(SK) || "{}
 
 let searchLimited = saved.searchLimited ?? true;
 let sortOrder     = saved.sortOrder     ?? "desc";
-const statusState = Object.fromEntries(STATUSES.map(s => [s, saved.statusState?.[s] ?? true]));
+const statusState = Object.fromEntries(STATUSES.map(s => [s, saved.statusState?.[s] ?? !DEFAULT_OFF.has(s)]));
 
 let tasksByPath = {}, pathMeta = {}, sortedPaths = [], lastGroups = [];
 
@@ -51,8 +54,31 @@ function plainText(text) {
     .replace(/[ \t]+/g, " ").trim();
 }
 
+// Title of the task note a [x] #task line links to (frontmatter title, as TaskNotes shows it);
+// falls back to the link text without its "task - " filename prefix.
+function taskTitle(task) {
+  const m = (task.text || "").match(/\[\[([^\]|#]+)/);
+  const f = m && app.metadataCache.getFirstLinkpathDest(m[1], task.path);
+  const title = f && app.metadataCache.getFileCache(f)?.frontmatter?.title;
+  return title ? String(title) : plainText(task.text).replace(/^#task\s+/, "").replace(/^task - /, "");
+}
+
+// Task reference line: "[x]" tagged #task (other checked lines are not logs).
+const isTaskRef = task => task.status === "x" && (task.tags ?? []).includes("#task");
+
+// Results minus those nested under another result of the same note; the parent's
+// bullets already include them (same as the rendered list).
+function topLevel(tasks) {
+  const nested = new Set();
+  const walk = t => { for (const c of t.children ?? []) { nested.add(c.line); walk(c); } };
+  tasks.forEach(walk);
+  return tasks.filter(t => !nested.has(t.line));
+}
+
 function taskBullets(task, depth = 0) {
-  const lines = ["  ".repeat(depth) + "- " + plainText(task.text)];
+  // Task reference lines ([x] #task, from New task) copy as "#task <title>"
+  const text = isTaskRef(task) ? "#task " + taskTitle(task) : plainText(task.text);
+  const lines = ["  ".repeat(depth) + "- " + text];
   for (const c of task.children ?? []) lines.push(...taskBullets(c, depth + 1));
   return lines;
 }
@@ -76,6 +102,7 @@ function buildCache() {
     const pageUp   = dv.func.contains(page.up ?? page.Projects ?? page.projects, curLink);
 
     for (const task of page.file?.tasks ?? []) {
+      if (task.status === "x" && !isTaskRef(task)) continue;  // plain checked items are not logs
       if (!dv.func.contains(task.outlinks, curLink) && !pageUp) continue;
       (tasksByPath[path] ??= []).push({ task, status: task.status, lo: (task.text ?? "").toLowerCase(), nd });
       pathMeta[path] = { nd };
@@ -137,7 +164,7 @@ function render() {
 
 // ── COPY ────────────────────────────────────────────────────────────────────
 async function doCopy() {
-  const text = lastGroups.map(g => g.name + "\n" + g.tasks.flatMap(t => taskBullets(t)).join("\n")).join("\n\n").trim();
+  const text = lastGroups.map(g => g.name + "\n" + topLevel(g.tasks).flatMap(t => taskBullets(t)).join("\n")).join("\n\n").trim();
   if (!text) { flash("Nothing to copy"); return; }
   try {
     await navigator.clipboard.writeText(text);
@@ -292,7 +319,7 @@ resetBtn.addEventListener("click", () => {
   searchLimited = true; scopeCheckbox.checked = true;
   sortOrder = "desc"; sortBtn.textContent = "Sort: Date ↓";
   startIn.value = ""; endIn.value = ""; input.value = "";
-  STATUSES.forEach(s => { statusState[s] = true; statusEls[s].toggle.setAttribute("aria-checked", "true"); setStatusVisual(s); });
+  STATUSES.forEach(s => { statusState[s] = !DEFAULT_OFF.has(s); statusEls[s].cb.checked = statusState[s]; setStatusVisual(s); });
   buildCache(); save(); render();
 });
 copyBtn.addEventListener("click", doCopy);

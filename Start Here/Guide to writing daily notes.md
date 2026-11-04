@@ -20,15 +20,15 @@ The template ships with these sections, top to bottom. Use the ones that serve y
 | **Brain dump** | A scratch area. Unsorted thoughts, half-tasks, things to remember. Nothing here is queried — it is a holding pen you promote out of, not a record. |
 | **Today's top 3** | The three things that matter most today. A focus anchor, not a task list. |
 | **Logs** | The heart of the note. Timestamped record of what happened and what you learned, split into **Morning / Afternoon / Evening** as a light time-box. This is the section that feeds the knowledge graph — see below. |
-| **Tasks** | Auto-generated dashboards: tasks created today, completed today, due today, and upcoming. You rarely write here directly; you write tasks inside logs or meeting notes and they appear here. |
-| **Meetings** | A rollup of every meeting note dated today, with its tasks and logs pulled in. Populated automatically from the meeting notes' `date:`. |
+| **Tasks** | Task views that fill themselves: tasks created today, tasks completed today, **Due** (open tasks due or scheduled by the end of today, overdue ones included), and **Upcoming 2 weeks**. You rarely write here directly; capture tasks with `Ctrl+Alt+T` in the Logs section or in a meeting note and they appear here. |
+| **Meetings & sessions** | A rollup of every meeting note and work-session note dated today, with their tasks and logs pulled in. Populated automatically from those notes' `date_start:`, matched against this note's `date:`. |
 
 ## The logging discipline
 
 Logs are where the daily note earns its place. Two rules make everything downstream work:
 
-1. **Pick the right marker.** `[b]` for something that happened, `[i]` for a standing fact, `[p]`/`[c]` for sentiment. A checkbox `[ ]` with `#task` for something to do. The full marker system lives in [[tasks-and-logs]]
-2. **Name the entities.** Every log that touches a project or a person should link it: `[b] Kickoff with [[Anna Berg]] [[Project Muninize]]`. The link is what makes the item traceable.
+1. **Pick the right marker.** `[b]` for something that happened, `[i]` for a standing fact, `[p]`/`[c]` for sentiment. For something to do, press `Ctrl+Alt+T`: it creates a task note and leaves a reference line in the log. The full system lives in [[tasks-and-logs]]
+2. **Name the entities.** Every log that touches a project or a person should link it: `[b] Kickoff with [[Jane Doe]] [[Project - Website]]`. The link is what makes the item traceable.
 
 > [!tip]
 > See [[Recommended Obsidian Tutorials#Construct By Dee]] for more details on how the logging system works.
@@ -45,6 +45,6 @@ So the one habit worth building: **when you write a log, link what it is about.*
 
 ## See also
 
-- [[tasks-and-logs]] — the marker system, the `#task` convention, and how the rollup queries work.
-- [[working-with-projects]] — how projects, meetings, and people wire these items together.
-- [[Hotkeys]] — the shortcuts for inserting tasks and logs.
+- [[tasks-and-logs]]: the log markers, task notes, and how the rollup queries work.
+- [[working-with-projects]]: how projects, meetings, and people wire these items together.
+- [[Hotkeys]]: the shortcuts for capturing tasks and inserting logs.

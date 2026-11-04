@@ -12,4 +12,4 @@ views:
     order:
       - file.name
       - formula.notes_linking_in
-      - created-date
+      - date_created

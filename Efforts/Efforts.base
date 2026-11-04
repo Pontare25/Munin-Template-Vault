@@ -6,7 +6,7 @@ views:
     name: Active
     filters:
       and:
-        - status == "active" || status == "simmering"
+        - status == "active" || status == "waiting" || status == "simmering"
     groupBy:
       property: status
       direction: ASC
@@ -14,7 +14,7 @@ views:
       - file.name
       - type
       - status
-      - created-date
+      - date_created
   - type: table
     name: All efforts
     groupBy:
@@ -24,4 +24,4 @@ views:
       - file.name
       - type
       - status
-      - created-date
+      - date_created

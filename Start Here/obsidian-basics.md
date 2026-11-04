@@ -8,7 +8,7 @@ Every note is a plain text file (`.md`, markdown) on your computer. Obsidian is 
 
 ## Links (the core mechanic)
 
-Type `[[` and start typing a note's name to link to it: `[[Spaced Repetition]]`. If the note does not exist yet, the link is grayed out; clicking it creates the note. Links are what turn a pile of files into a wiki: every note's **backlinks pane** (right sidebar) shows every other note that links to it.
+Type `[[` and start typing a note's name to link to it: `[[Active Recall]]`. If the note does not exist yet, the link is grayed out; clicking it creates the note. Links are what turn a pile of files into a wiki: every note's **backlinks pane** (right sidebar) shows every other note that links to it.
 
 ## Frontmatter (properties)
 
@@ -17,7 +17,7 @@ The block between `---` lines at the top of a note holds structured fields:
 ```yaml
 ---
 type: note
-created-date: 2026-01-15
+date_created: 2026-01-15T09:30
 up:
   - "[[Learning]]"
 ---
@@ -29,13 +29,13 @@ Obsidian shows these as "properties" above the note. This vault leans on frontma
 
 See [[Guide to writing daily notes]]
 
-Open today's note from the **Calendar** panel (right sidebar, opens on startup) or the "Open today's note" command (Ctrl/Cmd-P opens the command palette). The Journals plugin creates it under `Calendar/Daily Notes/YYYY/MM-MMM/` from the daily template, building the folders as needed. This vault's core habit: dump everything into today's daily note; the [[daily-review]] SOP sorts it later. The summary box at the top is a Meta Bind field that writes straight to the note's `summary:` property. Journals and Meta Bind are preconfigured; the onboarding session verifies them.
+Open today's note with the **Journals: Open today's note** command (Ctrl/Cmd-P opens the command palette); that always works. There is also a **Calendar** panel: run **Journals: Open Calendar** and it opens in the right sidebar, where clicking a day opens that day's note. A fresh copy of the vault has no saved window layout, so the panel does not open by itself the first time; once it is open, Obsidian keeps it in your layout. The Journals plugin creates it under `Calendar/Daily Notes/YYYY/MM-MMM/` from the daily template, building the folders as needed. This vault's core habit: dump everything into today's daily note; the [[daily-review]] SOP sorts it later. The summary box at the top is a Meta Bind field that writes straight to the note's `summary:` property. Journals and Meta Bind are preconfigured; the onboarding session verifies them.
 
 ## Weekly notes
 
 Open the week's note via the **Calendar** panel or the "Open weekly note" command. Journals files it under `Calendar/Weekly Notes/YYYY/` from the weekly template. The weekly note is a review surface, not a capture surface: it rolls up the week automatically and gives you room to close the week out.
 
-- **Rollup** pulls the week together with no manual work: the week's daily notes (the Journals base's "Weekly-rollup" view — the day-into-week hierarchy); tasks completed and created this week, tasks still open by week's end (Tasks plugin, date-scoped); the week's logs and any `#log/decision` items grouped by day (Dataview over the week's daily and meeting notes); and every meeting held that week (the Meetings base's "Weekly meeting rollup" view). The date range comes from the note title.
+- **Rollup** pulls the week together with no manual work: the week's daily notes (the Journals base's "Weekly-rollup" view, the day-into-week hierarchy); task notes completed and created this week, and those still open by week's end (the period views in `System/Bases/Tasks.base`); the week's logs and any `#log/decision` items grouped by day (Dataview over the week's daily and meeting notes); and every meeting held that week (the Meetings base's "Weekly meeting rollup" view). The date range comes from the note title.
 - **Weekly Review** — prompts for wins, misses, and decisions worth promoting to a `type: decision` note.
 - **Next week** — a top-3 priorities block, so planning flows forward.
 
@@ -49,7 +49,7 @@ The rollup follows the journal hierarchy — days roll into the week note, weeks
 
 ## Tags
 
-A word with `#` in front (`#example`) is a tag; the tag pane lists all of them. This vault uses tags sparingly: `#example` marks deletable example content, and an optional `#type/...` mirror exists for browsing. Subjects are handled by `topics:` links instead, because links carry more information than tags. The pro of using tags is that it can carry nested hierarchies.
+A word with `#` in front (`#example`) is a tag; the tag pane lists all of them. This vault uses tags sparingly: the only tag in use is `#example`, which marks the worked-example notes in the separate Munin-Template-Examples repo. A note's kind lives in its `type:` field, not a tag. Subjects are handled by `topics:` links instead, because links carry more information than tags. The pro of using tags is that it can carry nested hierarchies.
 
 ## The graph
 
@@ -59,7 +59,7 @@ More useful is the local graph which shows connections to and from the currently
 
 ## Templates (Templater)
 
-Templater powers the note templates and is the one plugin the vault truly needs. When you create a note from a template (via the Templater icon or hotkey), it fills in dates and prompts for values automatically. Template selection table lives in [[Vault-Map]]. The vault also bundles two optional helpers, already installed: Omnisearch (fast full-text search) and Text Extractor (OCR and text extraction from PDFs and images).
+Templater powers the note templates. It is one of five community plugins the vault depends on, together with Journals (daily and other period notes), Dataview (log rollups and queries), Meta Bind (the buttons and inline fields) and TaskNotes (task notes). When you create a note from a template (via the Templater icon or hotkey), it fills in dates and prompts for values automatically. Template selection table lives in [[Vault-Map]]. The vault also bundles optional helpers, already installed: Omnisearch (fast full-text search), Text Extractor (OCR and text extraction from PDFs and images), Tag Wrangler (rename and merge tags) and Minimal Theme Settings (options for the Minimal theme).
 
 ## Search
 

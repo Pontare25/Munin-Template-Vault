@@ -4,20 +4,33 @@ filters:
 views:
   - type: table
     name: All Projects
-  - type: table
+  - type: kanban
     name: Sub projects
     filters:
       and:
         - up.contains(link(this.file))
+        - file.path != this.file.path
+    groupBy:
+      property: status
+      direction: ASC
+    groupOrder:
+      - backlog
+      - active
+      - waiting
+      - simmering
+      - done
+      - dropped
     order:
       - file.name
-      - status
       - summary
-      - due-date
+      - date_due
+      - status
     sort:
-      - property: due-date
+      - property: date_due
         direction: DESC
     columnSize:
       file.name: 189
       note.status: 97
       note.summary: 629
+    columnWidth: 340
+    imageAspectRatio: 0.7

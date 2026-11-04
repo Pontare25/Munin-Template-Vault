@@ -1,8 +1,8 @@
 ---
 type: daily
 journal: daily
-journal-date: <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
-created-date: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
+date_modified:
 date: <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
 tags:
 summary:
@@ -45,39 +45,17 @@ summary:
 
 ---
 > [!todo]- Tasks created today
-> ```tasks
-> created <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD")%>
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Period created]]
 
 > [!done]- Tasks completed today
-> ```tasks
-> done <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD")%>
-> short
-> ```
+> ![[Tasks.base#Period completed]]
 
 **Due**
-```tasks
-not done
-happens on or before <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
-sort by urgency
-group by due
-short
-hide tags
-```
+![[Tasks.base#Period due]]
 
 **Upcoming tasks**
 > [!todo]- Upcoming 2 weeks
-> ```tasks
-> not done
-> happens after <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
-> happens before <% moment(tp.file.title, "YYYY-MM-DD").add(14, "days").format("YYYY-MM-DD") %>
-> sort by due
-> group by due
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Upcoming 2 weeks]]
 
 ---
 ## Meetings & sessions
@@ -85,9 +63,9 @@ hide tags
 > ```dataview
 > task
 > From "Calendar/Meetings" or "Calendar/Work Sessions"
-> where dateformat(date, "yyyy-MM-dd") = dateformat(this.date, "yyyy-MM-dd")
+> where dateformat(date_start, "yyyy-MM-dd") = dateformat(this.date, "yyyy-MM-dd")
 > group by file.name as source
-> sort date asc
+> sort date_start asc
 > ```
 
 ![[Calendar.base#Daily rollup]]

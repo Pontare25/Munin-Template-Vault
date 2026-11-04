@@ -5,7 +5,7 @@ Named methods, models, and frameworks: things with a proper name and a defined s
 ## What belongs here
 
 - One page per framework: what it is, when to use it, how to apply it, where it breaks down.
-- Frontmatter: `type: framework`, `up:` (usually the topic it serves), `created-date:`.
+- Frontmatter: `type: framework`, `up:` (usually the topic it serves), `date_created:`.
 
 ## What does not belong here
 
