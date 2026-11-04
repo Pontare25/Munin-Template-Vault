@@ -1,5 +1,39 @@
 # Changelog
 
+## [2.0.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.13.0...v2.0.0) (2026-11-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* the Tasks plugin is no longer installed. Tasks are TaskNotes notes in Efforts/TaskNotes/Tasks, captured with Ctrl+Alt+T; inline `- [ ]` tasks with emoji dates and ```tasks query blocks are no longer read by any view.
+* date properties are renamed. Migrate existing notes: created-date -> date_created; updated -> date_modified; start-date -> date_start; due-date -> date_due; end-date -> date_end; meeting and work-session date -> date_start; journal-date removed (Journals dateField now reads date). Types: date_created, date_modified, date_start, date_end, date_due are datetime; date and birthday are date.
+
+### Features
+
+* Munin template v2.0.0 ([c8e3475](https://github.com/Pontare25/Munin-Template-Vault/commit/c8e3475d7506ebc54155833543d8e943ee927462))
+* replace the Tasks plugin with TaskNotes ([7871691](https://github.com/Pontare25/Munin-Template-Vault/commit/7871691b4586e0d1caafcf124f777d369654fa1e))
+* ship the template without example notes ([64d6362](https://github.com/Pontare25/Munin-Template-Vault/commit/64d63626acfe9f056a37f97bb73cf017c4df1408))
+* standardize date properties to date_&lt;what&gt; ([3098050](https://github.com/Pontare25/Munin-Template-Vault/commit/3098050a61873eb810d9c4c611c73050fa674904)), closes [#142](https://github.com/Pontare25/Munin-Template-Vault/issues/142)
+* **status:** one status vocabulary with a Meta Bind selector ([185a315](https://github.com/Pontare25/Munin-Template-Vault/commit/185a315cfd07846d6a76b92eab03e06eba7cae09)), closes [#140](https://github.com/Pontare25/Munin-Template-Vault/issues/140)
+* **tasks:** adopt TaskNotes on the date_&lt;what&gt; convention ([1a44b3a](https://github.com/Pontare25/Munin-Template-Vault/commit/1a44b3a5ffbc181affc8fe6c79949d92a0695329)), closes [#143](https://github.com/Pontare25/Munin-Template-Vault/issues/143)
+* **tasks:** capture tasks with Ctrl+Alt+T and keep them in the log trail ([bc337fa](https://github.com/Pontare25/Munin-Template-Vault/commit/bc337fa81edc3ce427e60889eeebefaea931dd37))
+* **tasks:** task views for journals, projects, people, Areas and the dashboard ([daaa333](https://github.com/Pontare25/Munin-Template-Vault/commit/daaa333df279bce1d640390438082a6acc76296b))
+
+
+### Bug Fixes
+
+* **config:** bind Alt+E explicitly, make command templates insert-only ([958100e](https://github.com/Pontare25/Munin-Template-Vault/commit/958100ee7fe042c27a073f2f2a5a2d46fcb70ec7))
+* **tasks:** AoR Task loops count Areas with the Tasks.base rule ([6c3f08d](https://github.com/Pontare25/Munin-Template-Vault/commit/6c3f08df2e3797a76ffd5e1f2e6d1df969ae6186)), closes [#150](https://github.com/Pontare25/Munin-Template-Vault/issues/150)
+* **tasks:** keep the capture override when a cancelled run's timer fires ([7d08bfb](https://github.com/Pontare25/Munin-Template-Vault/commit/7d08bfbc18c151a7f00eb2f4285cd870fcf501e1)), closes [#151](https://github.com/Pontare25/Munin-Template-Vault/issues/151)
+
+
+### Documentation
+
+* guides match the shipped vault after a cold read-through ([79b6b11](https://github.com/Pontare25/Munin-Template-Vault/commit/79b6b11eaffb12703bfcc917e248181a629e2427))
+* guides read without example notes ([0643ab5](https://github.com/Pontare25/Munin-Template-Vault/commit/0643ab5c5a7521350f812e2a473c439487625f1c)), closes [#157](https://github.com/Pontare25/Munin-Template-Vault/issues/157)
+* guides teach the TaskNotes workflow ([18f3519](https://github.com/Pontare25/Munin-Template-Vault/commit/18f3519f1626e1bd782bb9b7457c6752760a8e3c)), closes [#153](https://github.com/Pontare25/Munin-Template-Vault/issues/153)
+* note that TaskNotes' $ contexts shortcut stays on ([347f7ff](https://github.com/Pontare25/Munin-Template-Vault/commit/347f7ff8ea62433245e7379347865f57f91c3ff6)), closes [#153](https://github.com/Pontare25/Munin-Template-Vault/issues/153)
+
 ## [1.13.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v1.12.0...v1.13.0) (2026-09-15)
 
 
