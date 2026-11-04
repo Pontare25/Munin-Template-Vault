@@ -28,7 +28,7 @@ Three things happen:
 - Your line becomes a task reference line:
 
   ```markdown
-  - [x] #task [[task - Draft the integration spec|Draft the integration spec]]
+  - [t] #task [[task - Draft the integration spec|Draft the integration spec]]
   ```
 
 - The task's `origin:` property is set to the note you were in, so you can always trace where it was captured.
@@ -39,7 +39,7 @@ Where the line goes depends on where the cursor was:
 - **Line with text:** the reference goes on a new line below, at the same indent. The text is not used as the title; type the title in the window.
 - **Line that already links a task note:** no new task. `Ctrl+Alt+T` opens that task's edit window instead.
 
-**Why `[x] #task`.** The reference line is checked so it never looks like an open to-do, and tagged `#task` so log queries can tell it apart from other checked lines and show it in the log trail. The box does **not** sync with the task: ticking or unticking it changes nothing. Complete tasks on the task itself (see below).
+**Why `[t] #task`.** The reference line renders as checked so it never looks like an open to-do, and is tagged `#task` so log queries can tell it apart from other lines and show it in the log trail. It uses `t`, not `x`: TaskNotes puts a *Convert to TaskNote* button on every `[ ]` and `[x]` line, and a reference line already points to its task note. The box does **not** sync with the task: ticking or unticking it changes nothing. Complete tasks on the task itself (see below).
 
 TaskNotes' own create command (`tasknotes:create-inline-task`, *TaskNotes: Create new inline task*) is explicitly unbound in this vault's hotkeys, so `Ctrl+Alt+T` is the only capture key and every capture gets a reference line and an `origin:`.
 
@@ -224,13 +224,13 @@ Two engines, split by what they query:
 
   ```dataview
   TASK
-  WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "x" AND contains(tags, "#task"))
+  WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "t" AND contains(tags, "#task"))
   WHERE contains(outlinks, [[]]) or contains(up, [[]])
   GROUP BY file.name as Source
   SORT Source DESC
   ```
 
-  The first `WHERE` keeps the five log markers plus task reference lines (`x` lines tagged `#task`); other checked lines are left out. `contains(outlinks, [[]])` catches lines that link this note; `contains(up, [[]])` catches lines in notes parented to it. Logs are grouped by source note, and because daily and meeting notes are named with a date prefix, that grouping sorts chronologically for free.
+  The first `WHERE` keeps the five log markers plus task reference lines (`t` lines tagged `#task`); other checked lines are left out. `contains(outlinks, [[]])` catches lines that link this note; `contains(up, [[]])` catches lines in notes parented to it. Logs are grouped by source note, and because daily and meeting notes are named with a date prefix, that grouping sorts chronologically for free.
 
   Dataview treats every marker other than a space as *checked*, but only `x` as *completed*. When you write your own query, filter on an explicit list of markers, as above, rather than on "completed".
 

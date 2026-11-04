@@ -46,7 +46,7 @@ summary:
 > TASK
 > FROM "Calendar"
 > WHERE file.day >= date("<% moment(tp.file.title, "GGGG-[W]WW").startOf("isoWeek").format("YYYY-MM-DD") %>") AND file.day <= date("<% moment(tp.file.title, "GGGG-[W]WW").endOf("isoWeek").format("YYYY-MM-DD") %>")
-> WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "x" AND contains(tags, "#task"))
+> WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "t" AND contains(tags, "#task"))
 > GROUP BY file.link AS "Source"
 > SORT file.name ASC
 > ```

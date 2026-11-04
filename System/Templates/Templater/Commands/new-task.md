@@ -1,14 +1,15 @@
 <%*
 // New task (Ctrl+Alt+T): open TaskNotes' own "Create new inline task" window; after
 // you save, the link TaskNotes inserts becomes a task reference line:
-//   "- [x] #task [[task - <title>|<title>]]"
+//   "- [t] #task [[task - <title>|<title>]]"
 // - empty line or empty bullet ("- ") -> the reference goes on that line
 // - text line -> TaskNotes puts the reference on a new line below, at the same indent
 // - line that already links a task note -> opens that task's edit dialog (no new task)
 // The line keeps a checkbox on purpose: the task note's Log section is a Dataview TASK
-// query, which only sees checkbox lines, so this line shows up there. "[x] #task" is
-// checked, so it never counts as an open checkbox task, and tagged, so log queries tell
-// it apart from other checked lines. It does not sync with the task's status. Complete
+// query, which only sees checkbox lines, so this line shows up there. "[t] #task" renders
+// as checked, so it never looks like an open to-do, and is tagged, so log queries tell it
+// apart from other lines. It is "t", not "x": TaskNotes offers to convert every [ ] and
+// [x] line into a task note, and a reference line already has one. It does not sync with the task's status. Complete
 // tasks on the task card.
 // origin: is set to the note you are in (where the task was created).
 // up: is never inferred from the note you are in (most tasks start in daily and
@@ -61,7 +62,7 @@ if (!tn || !editor || !host || typeof tn.createInlineTask !== "function") {
           // Text line: keep the reference at the same indent as the line above
           indent = (prev.match(/^\s*/) || [""])[0];
         }
-        ed.setLine(at, indent + "- [x] #task " + ref);
+        ed.setLine(at, indent + "- [t] #task " + ref);
         ed.setCursor({ line: at, ch: ed.getLine(at).length });
         // origin: the note the task was created in (daily, meeting, ...)
         const file = app.vault.getAbstractFileByPath(task.path);

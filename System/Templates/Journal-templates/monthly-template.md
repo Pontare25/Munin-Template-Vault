@@ -49,7 +49,7 @@ summary:
 > TASK
 > FROM "Calendar"
 > WHERE file.day >= date("<% moment(tp.file.title, "YYYY-MM").startOf("month").format("YYYY-MM-DD") %>") AND file.day <= date("<% moment(tp.file.title, "YYYY-MM").endOf("month").format("YYYY-MM-DD") %>")
-> WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "x" AND contains(tags, "#task"))
+> WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "t" AND contains(tags, "#task"))
 > GROUP BY dateformat(file.day, "'W'WW") AS "Week"
 > SORT file.day ASC
 > ```
