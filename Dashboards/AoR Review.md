@@ -17,6 +17,8 @@ Per Area: active projects and any past their due date. 🔴 = no active project 
 
 Areas carrying overdue or unscheduled tasks: task notes whose `up:` is the Area or one of its projects. Overdue = a past due date; needs a due date = no due date (new tasks are scheduled for today by default, so the scheduled date says little). (Counting per Area is a rollup Bases can't do, so this strip is Dataview; the vault-wide view lives in [[Tasks]].)
 
+This strip and the [[Tasks]] views count differently. Here a task counts if any of its `up:` values is the Area or a project below it; a sub-Area gets its own row, and its tasks are not added to the parent Area; subtasks (tasks whose `up:` is another task) are not counted. The Tasks views (`System/Bases/Tasks.base`) follow only the first `up:` value and roll a sub-Area's tasks up into its top Area. So tasks with several `up:` values, sub-Areas and subtasks can give different numbers in the two places. Which rule should win is an open decision for the vault's maintainer.
+
 ```dataviewjs
 const areas = dv.pages('"Efforts/Areas"').where(p => p.type === "area");
 const today = dv.date("today");

@@ -4,7 +4,15 @@ A project is the hub that connects meetings, work sessions, people, tasks, logs,
 
 ## Create a project
 
-Make a new note from the **project template**. It moves itself into `Efforts/Projects/` and starts with this frontmatter:
+The project template does not ask for a name; it takes the note's current name. So inserting it into a fresh, unnamed note gives you `Project - Untitled`. The route that works:
+
+1. Press **`Ctrl+N`**. The new note lands in `Fleeting/` and asks for a name: type the project's name (for example `Website`). A note created by clicking a not-yet-existing `[[link]]` already has its name and skips this prompt.
+2. Click the note's **Promote note** button (or run *Templater: Insert Commands/promote-note*) and choose **project**.
+3. Answer the template's two questions: the parent project (or top-level) and, for a top-level project, its Area.
+
+The template then moves the note into its own folder under `Efforts/Projects/`, renames it `Project - <title>` (here `Project - Website`), adds the plain title as an alias, and keeps anything you had already written in the note. Link the project by its full name, `[[Project - <title>]]`: the `up:` links that queries follow, and the links the pickers write, use that name. The alias only helps you find it in search and link suggestions.
+
+The new project note starts with this frontmatter:
 
 ```yaml
 ---
@@ -67,7 +75,7 @@ The project template assembles itself from the linked notes:
 
 - **Last update**: a one-line Dataview that finds the most recent dated note linking this project (a meeting, work session, daily, or dated note) and shows how many days ago it was. Your at-a-glance "is this project still moving." It mirrors the **Last contact** line on a person note.
 - **Tasks**: a board of the project's task notes (every task whose `up:` is this project), one column per status (`![[Tasks.base#Project open]]`). Its **New** button creates a task with `up:` already set to this project. Below it, two folded views: **Closed tasks** (`done` and `dropped`, newest first) and **Sub-project tasks** (the tasks of the direct sub-projects, one row per sub-project).
-- **Logs**: information items (`[b] [i] [p] [c] [*]`) and task reference lines (`[x] #task`) pulled out of linked notes, newest source first, with the collapsible **Advanced log** below for filtering and export.
+- **Logs**: information items (`[b] [i] [p] [c] [*]`) and task reference lines (`[x] #task`) pulled out of linked notes, newest source first, with the collapsible **Advanced log** below for filtering and export. A line shows here when it links the project itself, or when it sits in a note whose `up:` is the project (a meeting or work session). A task reference line links the task, not the project, so it shows here only when it was captured in such a note; reference lines captured in a daily note do not reach the project's Logs (the task itself is on the **Tasks** board).
 - **Meetings**: a Bases table (`![[Meetings.base#Project meetings]]`) of every meeting whose `up` points here.
 - **Work sessions**: a separate Bases table (`![[Sessions.base#Project sessions]]`) of every work session for this project.
 

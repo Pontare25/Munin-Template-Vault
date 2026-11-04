@@ -21,7 +21,7 @@ The template ships with these sections, top to bottom. Use the ones that serve y
 | **Today's top 3** | The three things that matter most today. A focus anchor, not a task list. |
 | **Logs** | The heart of the note. Timestamped record of what happened and what you learned, split into **Morning / Afternoon / Evening** as a light time-box. This is the section that feeds the knowledge graph — see below. |
 | **Tasks** | Task views that fill themselves: tasks created today, tasks completed today, **Due** (open tasks due or scheduled by the end of today, overdue ones included), and **Upcoming 2 weeks**. You rarely write here directly; capture tasks with `Ctrl+Alt+T` in the Logs section or in a meeting note and they appear here. |
-| **Meetings** | A rollup of every meeting note dated today, with its tasks and logs pulled in. Populated automatically from the meeting notes' `date_start:`, matched against this note's `date:`. |
+| **Meetings & sessions** | A rollup of every meeting note and work-session note dated today, with their tasks and logs pulled in. Populated automatically from those notes' `date_start:`, matched against this note's `date:`. |
 
 ## The logging discipline
 

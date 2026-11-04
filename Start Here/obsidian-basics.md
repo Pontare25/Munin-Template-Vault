@@ -29,7 +29,7 @@ Obsidian shows these as "properties" above the note. This vault leans on frontma
 
 See [[Guide to writing daily notes]]
 
-Open today's note from the **Calendar** panel (right sidebar, opens on startup) or the "Open today's note" command (Ctrl/Cmd-P opens the command palette). The Journals plugin creates it under `Calendar/Daily Notes/YYYY/MM-MMM/` from the daily template, building the folders as needed. This vault's core habit: dump everything into today's daily note; the [[daily-review]] SOP sorts it later. The summary box at the top is a Meta Bind field that writes straight to the note's `summary:` property. Journals and Meta Bind are preconfigured; the onboarding session verifies them.
+Open today's note with the **Journals: Open today's note** command (Ctrl/Cmd-P opens the command palette); that always works. There is also a **Calendar** panel: run **Journals: Open Calendar** and it opens in the right sidebar, where clicking a day opens that day's note. A fresh copy of the vault has no saved window layout, so the panel does not open by itself the first time; once it is open, Obsidian keeps it in your layout. The Journals plugin creates it under `Calendar/Daily Notes/YYYY/MM-MMM/` from the daily template, building the folders as needed. This vault's core habit: dump everything into today's daily note; the [[daily-review]] SOP sorts it later. The summary box at the top is a Meta Bind field that writes straight to the note's `summary:` property. Journals and Meta Bind are preconfigured; the onboarding session verifies them.
 
 ## Weekly notes
 
@@ -59,7 +59,7 @@ More useful is the local graph which shows connections to and from the currently
 
 ## Templates (Templater)
 
-Templater powers the note templates and is the one plugin the vault truly needs. When you create a note from a template (via the Templater icon or hotkey), it fills in dates and prompts for values automatically. Template selection table lives in [[Vault-Map]]. The vault also bundles two optional helpers, already installed: Omnisearch (fast full-text search) and Text Extractor (OCR and text extraction from PDFs and images).
+Templater powers the note templates. It is one of five community plugins the vault depends on, together with Journals (daily and other period notes), Dataview (log rollups and queries), Meta Bind (the buttons and inline fields) and TaskNotes (task notes). When you create a note from a template (via the Templater icon or hotkey), it fills in dates and prompts for values automatically. Template selection table lives in [[Vault-Map]]. The vault also bundles optional helpers, already installed: Omnisearch (fast full-text search), Text Extractor (OCR and text extraction from PDFs and images), Tag Wrangler (rename and merge tags) and Minimal Theme Settings (options for the Minimal theme).
 
 ## Search
 

@@ -19,7 +19,7 @@ Write tasks wherever the work surfaces: a daily note, a meeting note, a work ses
 
 1. Put the cursor on an empty bullet (a bare `-`) or a blank line, for example in the **Logs** section of today's daily note.
 2. Press **`Ctrl+Alt+T`** (macOS: `Cmd+Option+T`). TaskNotes' create window opens.
-3. Type the title and fill in what you know: **Projects** (what the task belongs to), **Assignees**, **Due** date, status. The scheduled date is already set to today.
+3. The window opens compact: a title box and a row of icons (status, priority, due date, scheduled date, recurrence, reminders). Type the title. Set the **Due** date with the due-date icon. **Projects** (what the task belongs to) and **Assignees** sit under **Show detailed options**, or fill them from the title box with `+` (project) and `@` (assignee); see the shortcuts below. The scheduled date is already set to today. The title box's placeholder (`Buy groceries tomorrow at 3pm @home #errands`) is TaskNotes' generic example: in this vault `@` picks an assignee, not a place, and tags are not used on tasks.
 4. Save.
 
 Three things happen:
@@ -41,7 +41,7 @@ Where the line goes depends on where the cursor was:
 
 **Why `[x] #task`.** The reference line is checked so it never looks like an open to-do, and tagged `#task` so log queries can tell it apart from other checked lines and show it in the log trail. The box does **not** sync with the task: ticking or unticking it changes nothing. Complete tasks on the task itself (see below).
 
-TaskNotes' own create command (Alt+T by default) is deliberately left unbound, so `Ctrl+Alt+T` is the only capture key and every capture gets a reference line and an `origin:`.
+TaskNotes' own create command (`tasknotes:create-inline-task`, *TaskNotes: Create new inline task*) is explicitly unbound in this vault's hotkeys, so `Ctrl+Alt+T` is the only capture key and every capture gets a reference line and an `origin:`.
 
 ### Shortcuts in the create window
 
@@ -99,7 +99,7 @@ The picker lists notes in `Efforts/Projects` and `Efforts/Areas` whose status is
 
 `up:` is **never** filled in for you on capture. Most tasks start in daily and meeting notes, and the note you are in says nothing reliable about what the task belongs to, so set it yourself in the window. A meeting's own `up:` does not pass on to the task notes captured in it. The exception: the **New** button on a project's task board creates a task with `up:` already set to that project.
 
-You never set an Area on a task. The vault finds a task's Area by following `up:` (task, project, parent project, Area), so a task under a sub-project still lands on its Area's board, and a sub-Area rolls up to its root Area.
+You never set an Area on a task. The vault finds a task's Area by following `up:` (task, project, parent project, Area), so a task under a sub-project still lands on its Area's board, and on the task boards and the [[Tasks]] dashboard a sub-Area rolls up to its root Area. (The [[AoR Review]] dashboard counts differently; see below.)
 
 ## Assign a task
 
@@ -151,7 +151,7 @@ Every task view is a view in `System/Bases/Tasks.base`, embedded where it is use
 
 **Journal notes** show the tasks of their period. The daily note's **Tasks** section lists tasks created today, completed today, **Due** (open tasks due or scheduled by the end of today, overdue ones included) and **Upcoming 2 weeks**. The weekly, monthly, quarterly and yearly notes show tasks completed, created, and still open (due or scheduled by the end of the period).
 
-**The [[AoR Review]] dashboard** has a **Task loops** strip: per Area, the number of overdue tasks and of tasks that need a due date, counting the Area's projects and sub-projects.
+**The [[AoR Review]] dashboard** has a **Task loops** strip: per Area, the number of overdue tasks and of tasks that need a due date, counting the Area's projects and sub-projects. It counts differently from the task boards above: a task counts if *any* of its `up:` values is the Area or a project below it (the boards follow the first `up:` only), a sub-Area gets its own row instead of rolling up into its parent Area, and subtasks are not counted. Which rule should win is still an open decision.
 
 Board tips: hide the **Done** and **Dropped** columns from the board's own column controls to keep it short, and use the search box at the top of any view to filter it.
 

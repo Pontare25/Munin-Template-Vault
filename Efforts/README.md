@@ -20,6 +20,9 @@ Set it with the status selector at the top of a project or area note. Areas use 
 | `Projects/` | Efforts with an end: ship it, finish it, decide it (`type: project`) |
 | `Areas/` | Ongoing responsibilities with no end date (`type: area`) |
 | `Learning/` | Subjects you are deliberately studying |
+| `TaskNotes/Tasks/` | Task notes, one per task (`type: task`), created by the TaskNotes plugin |
+| `TaskNotes/Views/` | View Bases the TaskNotes plugin generates (task list, kanban, calendar, agenda and more) |
+| `TaskNotes/Archive/` | Archived tasks; the plugin creates this folder the first time you archive a task |
 
 ## What belongs here
 

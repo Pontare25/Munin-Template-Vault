@@ -7,7 +7,7 @@ Welcome. This vault is a personal wiki that an AI assistant maintains with you. 
 1. Install [Obsidian](https://obsidian.md) if you have not already.
 2. Open this folder as a vault (**Open folder as vault**).
 3. When asked, trust the vault and enable community plugins.
-4. The vault bundles three community plugins, already installed: **Templater** (required; runs the note templates), **Omnisearch** (full-text search), and **Text Extractor** (OCR and text from PDFs and images). Enabling community plugins in step 3 turns them on. If Templater is not active, enable it under Settings, Community plugins.
+4. The vault bundles nine community plugins, already installed (the list is `.obsidian/community-plugins.json`). Five of them the vault depends on: **Templater** (runs the note templates and commands), **Journals** (creates the daily, weekly, monthly, quarterly and yearly notes), **Dataview** (log rollups and queries), **Meta Bind** (the buttons and inline fields in notes) and **TaskNotes** (task notes and task views). The other four are helpers: **Omnisearch** (full-text search), **Text Extractor** (OCR and text from PDFs and images), **Tag Wrangler** (rename and merge tags) and **Minimal Theme Settings** (options for the Minimal theme). Enabling community plugins in step 3 turns them all on. If one of the five is not active, enable it under Settings, Community plugins.
 5. Turn on two Templater settings that are **stored per device** (they do not travel with the vault, so enable them on every device you sync to). Under Settings, Templater, in the **File creation** section: enable **Trigger Templater on new file creation** (this is what applies the folder templates, the fleeting note button, and the Promote command; nothing runs without it), and enable **Automatic jump to cursor** after the filename (so a new note leaves your cursor in the body, not on the title).
 
 ## 2. Open your AI tool in this folder
@@ -41,11 +41,15 @@ time, and wait for my answers before moving on. Keep it conversational.
    comments, and leave the "Rules for the AI" section untouched. Show me
    the result and revise until I approve it.
 
-4. CHECK SETTINGS. Verify .obsidian/daily-notes.json points at
-   "Calendar/Daily Notes" with the
-   "System/Templates/Templater/Calendar-templates/daily-template" template,
-   and ask me to confirm the bundled plugins (Templater, Omnisearch, Text
-   Extractor) are enabled, Templater above all. Also have me confirm the two
+4. CHECK SETTINGS. Daily notes come from the Journals plugin, not from
+   core Daily notes (which is off in .obsidian/core-plugins.json; ignore
+   .obsidian/daily-notes.json). Verify that
+   .obsidian/plugins/journals/data.json gives the "daily" journal the
+   folder "Calendar/Daily Notes/{{date:YYYY/MM-MMM}}" and the template
+   "System/Templates/Journal-templates/daily-template". Ask me to confirm
+   the plugins the vault depends on are enabled: Templater, Journals,
+   Dataview, Meta Bind and TaskNotes (the full list is
+   .obsidian/community-plugins.json). Also have me confirm the two
    per-device Templater settings under Settings, Templater, File creation:
    "Trigger Templater on new file creation" and "Automatic jump to cursor"
    after filename, both ON. These are stored per device and off by default on

@@ -19,7 +19,7 @@ Knowledge flows one way: captured in `Raw/` or a daily note, processed by [[inge
 Ask these questions in order:
 
 1. **Is it a date-bound record** (something that happened, was said, was thought on a day)? Then `Calendar/`: daily note, weekly note, or meeting note.
-2. **Is it something to do** (a goal, a plan, a responsibility)? Then `Efforts/`: `Projects/` if it ends, `Areas/` if it does not, `Learning/` if it is a study subject.
+2. **Is it something to do** (a goal, a plan, a responsibility)? Then `Efforts/`: `Projects/` if it ends, `Areas/` if it does not, `Learning/` if it is a study subject. A single task is a task note (`type: task`) in `Efforts/TaskNotes/Tasks/`. Next to it, `Efforts/TaskNotes/Views/` holds the view Bases the TaskNotes plugin generates, and `Efforts/TaskNotes/Archive/` is created by the plugin the first time a task is archived.
 3. **Is it unprocessed outside material or a fleeting idea?** Then `Raw/`: `Sources/` for external material, `Ideas/` for your own sparks, `Inbox/` when unsure.
 4. **Is it distilled knowledge?** Then `Atlas/`: one idea is a `note`, a subject hub is a `topic`, a curated overview is a `moc`, a person or organization is an entity, a named method is a `framework`.
 5. **Is it about how the vault works?** Then `AI-OS/`.
