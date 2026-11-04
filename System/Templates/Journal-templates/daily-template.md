@@ -45,39 +45,17 @@ summary:
 
 ---
 > [!todo]- Tasks created today
-> ```tasks
-> created <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD")%>
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Period created]]
 
 > [!done]- Tasks completed today
-> ```tasks
-> done <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD")%>
-> short
-> ```
+> ![[Tasks.base#Period completed]]
 
 **Due**
-```tasks
-not done
-happens on or before <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
-sort by urgency
-group by due
-short
-hide tags
-```
+![[Tasks.base#Period due]]
 
 **Upcoming tasks**
 > [!todo]- Upcoming 2 weeks
-> ```tasks
-> not done
-> happens after <% moment(tp.file.title, "YYYY-MM-DD").format("YYYY-MM-DD") %>
-> happens before <% moment(tp.file.title, "YYYY-MM-DD").add(14, "days").format("YYYY-MM-DD") %>
-> sort by due
-> group by due
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Upcoming 2 weeks]]
 
 ---
 ## Meetings & sessions

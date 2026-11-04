@@ -25,26 +25,11 @@ FLATTEN (date(today) - file.day).days as T
 SORT file.day desc
 LIMIT 1
 ```
-## Tasks involving them
-> [!todo]+ Open
-> ```dataview
-> TASK
-> WHERE contains(outlinks, [[]]) or contains(up, [[]])
-> WHERE contains(text, "#task")
-> WHERE contains(list(" ", "/", "!", ">", "?"), status)
-> Group by file.name as Source
-> Sort Source desc
-> ```
+## Tasks
+![[Tasks.base#Person open]]
 
-> [!Done]- Closed
-> ```dataview
-> TASK
-> WHERE contains(outlinks, [[]]) or contains(up, [[]])
-> WHERE contains(text, "#task")
-> WHERE contains(list("x", "-"), status)
-> Group by file.name as Source
-> Sort Source desc
-> ```
+> [!done]- Closed tasks
+> ![[Tasks.base#Person closed]]
 ## Log
 ```dataview
 TASK

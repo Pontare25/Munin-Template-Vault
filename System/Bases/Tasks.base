@@ -1,0 +1,500 @@
+filters:
+  and:
+    - list(note["type"]).contains("task")
+    - file.inFolder("System") != true
+formulas:
+  periodStart: date(this.date)
+  periodEnd: if(this.type == "daily", date(this.date) + "1 day", if(this.type == "weekly", date(this.date) + "7 days", if(this.type == "monthly", date(this.date) + "1 month", if(this.type == "quarterly", date(this.date) + "3 months", date(this.date) + "1 year"))))
+  up1: list(note.up)[0]
+  up2: if(formula.up1, list(file(formula.up1).properties.up)[0], null)
+  up3: if(formula.up2, list(file(formula.up2).properties.up)[0], null)
+  up4: if(formula.up3, list(file(formula.up3).properties.up)[0], null)
+  up5: if(formula.up4, list(file(formula.up4).properties.up)[0], null)
+  area: if(formula.up5 && file(formula.up5).properties.type == "area", formula.up5, if(formula.up4 && file(formula.up4).properties.type == "area", formula.up4, if(formula.up3 && file(formula.up3).properties.type == "area", formula.up3, if(formula.up2 && file(formula.up2).properties.type == "area", formula.up2, if(formula.up1 && file(formula.up1).properties.type == "area", formula.up1, "")))))
+properties:
+  formula.area:
+    displayName: Area
+  note.date_scheduled:
+    displayName: scheduled
+views:
+  - type: tasknotesKanban
+    name: Project open
+    filters:
+      and:
+        - file.hasLink(this.file) && list(note.up).map(file(value.replace(/^\[[^\]]+\]\((.*)\)$/, "$1").replace(/%20/g, " ")).asLink()).contains(this.file.asLink())
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - priority
+      - date_due
+      - date_scheduled
+      - assignees
+      - origin
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: tasknotes_manual_order
+        direction: DESC
+    columnWidth: 280
+    hideEmptyColumns: false
+    maxSwimlaneHeight: 600
+    cardLayout: compact
+    hideTopLevelSubtasks: false
+    enableSearch: true
+    consolidateStatusIcon: false
+  - type: tasknotesKanban
+    name: Area tasks
+    filters:
+      and:
+        - file(formula.up1) == this.file || file(formula.up2) == this.file || file(formula.up3) == this.file || file(formula.up4) == this.file || file(formula.up5) == this.file
+        - file(formula.up1).properties.status == "active"
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - priority
+      - date_due
+      - date_scheduled
+      - up
+      - assignees
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_due
+        direction: ASC
+    columnWidth: 280
+    hideEmptyColumns: false
+    cardLayout: compact
+    enableSearch: true
+    swimLane: note.up
+    maxSwimlaneHeight: 400
+  - type: tasknotesTaskList
+    name: Project closed
+    filters:
+      and:
+        - file.hasLink(this.file) && list(note.up).map(file(value.replace(/^\[[^\]]+\]\((.*)\)$/, "$1").replace(/%20/g, " ")).asLink()).contains(this.file.asLink())
+        - status == "done" || status == "dropped"
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - status
+      - date_completed
+      - assignees
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_completed
+        direction: DESC
+    enableSearch: true
+  - type: tasknotesKanban
+    name: Sub-project tasks
+    filters:
+      and:
+        - list(note.up).filter(value.asFile().properties.type == "project" && list(value.asFile().properties.up).contains(this.file.asLink())).length > 0
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_due
+      - date_scheduled
+      - assignees
+      - date_completed
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_due
+        direction: ASC
+    swimLane: note.up
+    columnWidth: 280
+    hideEmptyColumns: false
+    maxSwimlaneHeight: 600
+    cardLayout: compact
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Period created
+    filters:
+      and:
+        - date(note.date_created) >= formula.periodStart && date(note.date_created) < formula.periodEnd
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_due
+      - date_scheduled
+      - up
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_created
+        direction: ASC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Period completed
+    filters:
+      and:
+        - status == "done" && !note.date_completed.isEmpty() && date(note.date_completed) >= formula.periodStart && date(note.date_completed) < formula.periodEnd
+    order:
+      - date_completed
+      - up
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_completed
+        direction: DESC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Period due
+    filters:
+      and:
+        - status != "done" && status != "dropped"
+        - (!note.date_due.isEmpty() && date(note.date_due) < formula.periodEnd) || (!note.date_scheduled.isEmpty() && date(note.date_scheduled) < formula.periodEnd)
+    groupBy:
+      property: date_due
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_due
+      - date_scheduled
+      - up
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_due
+        direction: ASC
+      - property: date_scheduled
+        direction: ASC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Upcoming 2 weeks
+    filters:
+      and:
+        - status != "done" && status != "dropped"
+        - (!note.date_due.isEmpty() && date(note.date_due) >= formula.periodEnd && date(note.date_due) < date(this.date) + "15 days") || (!note.date_scheduled.isEmpty() && date(note.date_scheduled) >= formula.periodEnd && date(note.date_scheduled) < date(this.date) + "15 days")
+    groupBy:
+      property: date_due
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_due
+      - date_scheduled
+      - up
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_scheduled
+        direction: ASC
+    enableSearch: true
+  - type: tasknotesKanban
+    name: Person open
+    filters:
+      and:
+        - file.hasLink(this.file) && list(note.assignees).map(file(value.replace(/^\[[^\]]+\]\((.*)\)$/, "$1").replace(/%20/g, " ")).asLink()).contains(this.file.asLink())
+        - status != "done" && status != "dropped"
+    groupBy:
+      property: status
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_due
+      - date_scheduled
+      - up
+      - origin
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_due
+        direction: ASC
+    columnWidth: 280
+    hideEmptyColumns: false
+    cardLayout: compact
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Person closed
+    filters:
+      and:
+        - file.hasLink(this.file) && list(note.assignees).map(file(value.replace(/^\[[^\]]+\]\((.*)\)$/, "$1").replace(/%20/g, " ")).asLink()).contains(this.file.asLink())
+        - status == "done" || status == "dropped"
+    order:
+      - status
+      - date_completed
+      - up
+      - origin
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_completed
+        direction: DESC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Needs attention
+    filters:
+      and:
+        - status != "done" && status != "dropped"
+        - status == "active" || priority == "high"
+    groupBy:
+      property: up
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_due
+      - date_scheduled
+      - assignees
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_due
+        direction: ASC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Overdue
+    filters:
+      and:
+        - status != "done" && status != "dropped"
+        - '!note.date_due.isEmpty() && date(note.date_due) < today()'
+    groupBy:
+      property: up
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_due
+      - assignees
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_due
+        direction: ASC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Today
+    filters:
+      and:
+        - status != "done" && status != "dropped"
+        - (!note.date_due.isEmpty() && date(note.date_due) >= today() && date(note.date_due) < today() + "1 day") || (!note.date_scheduled.isEmpty() && date(note.date_scheduled) < today() + "1 day" && (note.date_due.isEmpty() || date(note.date_due) >= today()))
+    order:
+      - status
+      - priority
+      - date_due
+      - date_scheduled
+      - up
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: priority
+        direction: DESC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Next 7 days
+    filters:
+      and:
+        - status != "done" && status != "dropped"
+        - (!note.date_due.isEmpty() && date(note.date_due) >= today() + "1 day" && date(note.date_due) < today() + "8 days") || (!note.date_scheduled.isEmpty() && date(note.date_scheduled) >= today() + "1 day" && date(note.date_scheduled) < today() + "8 days")
+    order:
+      - status
+      - priority
+      - date_due
+      - date_scheduled
+      - up
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_scheduled
+        direction: ASC
+      - property: date_due
+        direction: ASC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Waiting
+    filters:
+      and:
+        - status == "waiting"
+    groupBy:
+      property: up
+      direction: ASC
+    order:
+      - status
+      - assignees
+      - date_due
+      - origin
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_due
+        direction: ASC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Not blocked
+    filters:
+      and:
+        - or:
+            - and:
+                - recurrence.isEmpty()
+                - status != "done"
+                - status != "dropped"
+            - and:
+                - recurrence.isEmpty() == false
+                - complete_instances.map(date(value).format("YYYY-MM-DD")).contains(today().format("YYYY-MM-DD")) != true
+        - or:
+            - blockedBy.isEmpty()
+            - list(blockedBy).filter(file(if(value.isType("object"), value.uid, value)).properties.status != "done" && file(if(value.isType("object"), value.uid, value)).properties.status != "dropped").isEmpty()
+    groupBy:
+      property: up
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_due
+      - date_scheduled
+      - assignees
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_due
+        direction: ASC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Inactive project
+    filters:
+      and:
+        - status != "done" && status != "dropped"
+        - file(formula.up1).properties.type == "project"
+        - file(formula.up1).properties.status != "active"
+    groupBy:
+      property: up
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_due
+      - up
+      - assignees
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_due
+        direction: ASC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: No due date
+    filters:
+      and:
+        - status != "done" && status != "dropped"
+        - note.date_due.isEmpty()
+    groupBy:
+      property: up
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_scheduled
+      - up
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_created
+        direction: ASC
+    enableSearch: true
+  - type: tasknotesKanban
+    name: By area
+    filters:
+      and:
+        - status != "done" && status != "dropped"
+    groupBy:
+      property: formula.area
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_due
+      - up
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_due
+        direction: ASC
+    columnWidth: 280
+    hideEmptyColumns: true
+    cardLayout: compact
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Recently completed
+    filters:
+      and:
+        - list(note["type"]).contains("task") && status == "done"
+    order:
+      - date_completed
+      - up
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_completed
+        direction: DESC
+    limit: 20
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Recently dropped
+    filters:
+      and:
+        - list(note["type"]).contains("task") && status == "dropped"
+    order:
+      - date_completed
+      - up
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_completed
+        direction: DESC
+    limit: 20
+    enableSearch: true

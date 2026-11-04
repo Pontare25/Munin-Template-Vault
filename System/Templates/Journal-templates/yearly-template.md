@@ -38,30 +38,13 @@ summary:
 ### Tasks
 
 > [!done]- Completed this year
-> ```tasks
-> done on or after <% moment(tp.file.title, "YYYY").startOf("year").format("YYYY-MM-DD") %>
-> done on or before <% moment(tp.file.title, "YYYY").endOf("year").format("YYYY-MM-DD") %>
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Period completed]]
 
 > [!todo]- Created this year
-> ```tasks
-> created on or after <% moment(tp.file.title, "YYYY").startOf("year").format("YYYY-MM-DD") %>
-> created on or before <% moment(tp.file.title, "YYYY").endOf("year").format("YYYY-MM-DD") %>
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Period created]]
 
 > [!todo]+ Still open (due by end of year)
-> ```tasks
-> not done
-> happens on or before <% moment(tp.file.title, "YYYY").endOf("year").format("YYYY-MM-DD") %>
-> sort by urgency
-> group by due
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Period due]]
 
 ### Logs & decisions this year
 > [!note]- All logs this year (grouped by month)

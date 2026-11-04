@@ -35,30 +35,13 @@ summary:
 ### Tasks
 
 > [!done]- Completed this quarter
-> ```tasks
-> done on or after <% moment(tp.file.title, "YYYY-[Q]Q").startOf("quarter").format("YYYY-MM-DD") %>
-> done on or before <% moment(tp.file.title, "YYYY-[Q]Q").endOf("quarter").format("YYYY-MM-DD") %>
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Period completed]]
 
 > [!todo]- Created this quarter
-> ```tasks
-> created on or after <% moment(tp.file.title, "YYYY-[Q]Q").startOf("quarter").format("YYYY-MM-DD") %>
-> created on or before <% moment(tp.file.title, "YYYY-[Q]Q").endOf("quarter").format("YYYY-MM-DD") %>
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Period created]]
 
 > [!todo]+ Still open (due by end of quarter)
-> ```tasks
-> not done
-> happens on or before <% moment(tp.file.title, "YYYY-[Q]Q").endOf("quarter").format("YYYY-MM-DD") %>
-> sort by urgency
-> group by due
-> short
-> hide tags
-> ```
+> ![[Tasks.base#Period due]]
 
 ### Logs & decisions this quarter
 > [!note]- All logs this quarter (grouped by month)
