@@ -31,6 +31,7 @@ if (!file) {
   const body = (current || "")
     .replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, "")
     .replace(/```meta-bind-button[\s\S]*?```\r?\n?/g, "")
+    .replace(/```dataviewjs\r?\n[^`]*?promote-note\.md[^`]*```\r?\n?/g, "")
     .trim();
 
   const labels = Object.keys(types);

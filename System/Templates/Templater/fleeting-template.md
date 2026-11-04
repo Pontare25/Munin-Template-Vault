@@ -1,10 +1,6 @@
 <%*
-// Name the note here, during creation, so the meta-bind button below renders
-// once against its final path. Meta-bind keys a code-block button to the note
-// path; renaming AFTER it has rendered (the manual rename in Obsidian's new-note
-// flow) invalidates that handle and shows "Button Error". Doing the rename
-// before the button ever renders sidesteps it. Blank input keeps the default
-// name so the flow never blocks.
+// Name the note here, during creation, so a capture never sits as "Untitled".
+// Blank input keeps the default name so the flow never blocks.
 // Only prompt when the note has no real name yet: a CTRL+N note is "Untitled"
 // (or "Untitled 1", ...). A note created from a [[wikilink]] already carries its
 // name as the title, so skip the prompt and keep it.
@@ -18,12 +14,15 @@ type: fleeting
 date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
 date_modified:
 ---
-```meta-bind-button
-label: Promote note
-style: primary
-action:
-  type: command
-  command: templater-obsidian:System/Templates/Templater/Commands/promote-note.md
+```dataviewjs
+// Promote button. It shows only while the note is still type: fleeting, so it
+// disappears however the note gets a real type (this button, the command, or a
+// template inserted with Alt+E, which merges frontmatter and keeps this block).
+if (dv.current()?.type === "fleeting") {
+  const button = dv.el("button", "Promote note", { cls: "mod-cta" });
+  button.onclick = () => app.commands.executeCommandById(
+    "templater-obsidian:System/Templates/Templater/Commands/promote-note.md");
+}
 ```
 
 <% tp.file.cursor() %>

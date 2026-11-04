@@ -13,7 +13,7 @@ Both are in transit, not an archive. The AI develops fleeting notes and promotes
 
 New notes default to this folder, and a Templater **folder template** applies automatically to anything created here: you get `type: fleeting` and a timestamp for free, then just type. No template picking, no filing decision at the moment of thought. `Fleeting/` is the only auto-templated folder — everywhere else you choose a template when you promote the note.
 
-When a capture is worth keeping, click the **Promote note** button at the top of it and pick the type. The note gets that type's frontmatter and sections, moves to that type's folder, and keeps everything you wrote. Outside `Fleeting/` the same thing runs from the command palette as *Promote note*. See [[Hotkeys]].
+When a capture is worth keeping, click the **Promote note** button at the top of it and pick the type. The note gets that type's frontmatter and sections, moves to that type's folder, and keeps everything you wrote. The button shows only while the note is still `type: fleeting`, so it disappears once the note has another type. Outside `Fleeting/` the same thing runs from the command palette as *Promote note*. See [[Hotkeys]].
 
 ## What is waiting
 
