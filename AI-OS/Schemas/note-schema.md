@@ -38,7 +38,7 @@ date_created: 2026-01-15T09:30
 - **`date_created:`** in ISO `YYYY-MM-DDTHH:mm` datetime format. Templates fill it automatically.
 - **`date:`** on journal notes (daily through yearly) marks the period the note covers, as a `YYYY-MM-DD` date (the period's first day). **Meeting and work-session notes carry `date_start:` instead**, a full ISO `YYYY-MM-DDTHH:mm` datetime (their templates prompt for it), and the filename is prefixed with the date. A daily note's meeting rollup matches a meeting's `date_start` day against the daily note's own `date` (`dateformat(date_start, "yyyy-MM-dd") = dateformat(this.date, "yyyy-MM-dd")`); the Calendar base's period rollups do the same through a per-type anchor formula. See [Date properties](#date-properties).
 
-Classification is the `type:` field alone. Notes do not mirror their type as a tag; the only tag in use is `#example`, which marks worked-example notes so they are easy to find and delete.
+Classification is the `type:` field alone. Notes do not mirror their type as a tag; the only tag in use is `#example`, which marks the worked-example notes in the separate Munin-Template-Examples repo. The template itself ships without example notes.
 
 Strongly recommended on knowledge notes (everything outside `Calendar/`):
 
@@ -72,7 +72,7 @@ Property types are vault-wide (`.obsidian/types.json`), one type per property. T
 
   ```yaml
   topics:
-    - "[[Spaced Repetition]]"
+    - "[[Active Recall]]"
     - "[[Learning]]"
   ```
 
@@ -85,7 +85,7 @@ Property types are vault-wide (`.obsidian/types.json`), one type per property. T
 
   ```yaml
   people:
-    - "[[Anna Berg]]"
+    - "[[Jane Doe]]"
   ```
 
 - One field across every type. Meetings, projects, and anything else use `people:` rather than per-type fields; it replaces the earlier `attendees:` (meetings) and `members:` (projects). The `Meetings.base` "People meetings" view keys off it to surface every meeting a person was in.
@@ -207,7 +207,7 @@ related:
 skills:
   - "[[Python]]"
 interests:
-  - "[[Golf]]"
+  - "[[Photography]]"
 ---
 ```
 
@@ -223,7 +223,7 @@ related:
 ---
 ```
 
-Person notes may also carry **`skills:`** and **`interests:`** — lists of wikilinks to Topic notes (`Atlas/Topics/`) for professional competencies and hobbies. The targets are Topics, not new entities: `[[Python]]`, `[[Golf]]`. Dedicated fields (rather than `related:`) keep them queryable — a base or Dataview answers "who knows Python" with `skills.contains(link("Python"))`, and each Topic's backlinks list everyone who has it.
+Person notes may also carry **`skills:`** and **`interests:`**: lists of wikilinks to Topic notes (`Atlas/Topics/`) for professional competencies and hobbies. The targets are Topics, not new entities: `[[Python]]`, `[[Photography]]`. Dedicated fields (rather than `related:`) keep them queryable: a base or Dataview answers "who knows Python" with `skills.contains(link("Python"))`, and each Topic's backlinks list everyone who has it.
 
 ## AI provenance
 
@@ -260,6 +260,6 @@ When a note makes claims backed by external sources, list them under a `# Citati
 
 ## What this schema deliberately leaves out
 
-- No tags beyond `#example`, which exists only on deletable worked-example notes. Classification is the `type:` field, never a tag.
+- No tags beyond `#example`, which marks worked-example notes in the examples repo and never appears in the template itself. Classification is the `type:` field, never a tag.
 - No status fields outside Efforts.
 - No mandatory fields beyond `type:` and `date_created:`. Everything else, `summary:` included, earns its place by being useful.

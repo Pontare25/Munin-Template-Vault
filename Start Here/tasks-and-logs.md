@@ -53,9 +53,9 @@ Logs record what happened or what is true, not what to do. They live mostly in d
 
 ```markdown
 - [i] [[Application A]] uses a REST API
-- [i] [[Anna Berg]] plays [[Golf]]
+- [i] [[Jane Doe]] plays [[Tennis]]
 - [b] Decided to use REST for [[Application A]]
-- [b] Played [[Golf]] with [[Anna Berg]]
+- [b] Played [[Tennis]] with [[Jane Doe]]
 ```
 
 **Sentiment / emphasis** — how you read something:
@@ -72,8 +72,8 @@ Some log kinds are worth querying as a class across the whole vault. Give those 
 
 | Kind | Marker + tag | Why that marker |
 |---|---|---|
-| Decision | `- [b] #log/decision Go REST-first [[Project Muninize]]` | a decision is an event |
-| Risk | `- [c] #log/risk Legacy SOAP endpoint may block the timeline [[Project Muninize]]` | a risk is a flagged concern |
+| Decision | `- [b] #log/decision Go REST-first [[Project - Website]]` | a decision is an event |
+| Risk | `- [c] #log/risk Legacy SOAP endpoint may block the timeline [[Project - Website]]` | a risk is a flagged concern |
 
 The marker and the tag do different jobs: the **marker** sets the family, behavior (`NON_TASK`), and visual; the **tag** sets the semantic class for cross-cutting queries. They are orthogonal, which is why decision and risk draw from different markers but share the `#log/` namespace. Query all decisions with `#log/decision`, everything typed with `#log/*`.
 
@@ -83,10 +83,10 @@ Major decisions can be promoted to their own `type: decision` note (context, rat
 
 ## The linking rule (why any of this rolls up)
 
-Name the entities an item touches with wikilinks. An item that names `[[Project Muninize]]` and `[[Anna Berg]]` surfaces on **both** of those notes. There are two ways an item reaches a note:
+Name the entities an item touches with wikilinks. An item that names `[[Project - Website]]` and `[[Jane Doe]]` surfaces on **both** of those notes. There are two ways an item reaches a note:
 
-1. **The line links the note** — `[i] Prefers REST [[Project Muninize]]`.
-2. **The item's note declares the note as its parent** — a meeting note with `up: [[Project Muninize]]` rolls *all* of its tasks and logs up to that project.
+1. **The line links the note**: `[i] Prefers REST [[Project - Website]]`.
+2. **The item's note declares the note as its parent**: a meeting note with `up: [[Project - Website]]` rolls *all* of its tasks and logs up to that project.
 
 So a task written in a meeting note reaches the project through the meeting's `up`, without you having to link the project on every line.
 

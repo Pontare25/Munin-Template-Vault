@@ -8,7 +8,7 @@ Every note is a plain text file (`.md`, markdown) on your computer. Obsidian is 
 
 ## Links (the core mechanic)
 
-Type `[[` and start typing a note's name to link to it: `[[Spaced Repetition]]`. If the note does not exist yet, the link is grayed out; clicking it creates the note. Links are what turn a pile of files into a wiki: every note's **backlinks pane** (right sidebar) shows every other note that links to it.
+Type `[[` and start typing a note's name to link to it: `[[Active Recall]]`. If the note does not exist yet, the link is grayed out; clicking it creates the note. Links are what turn a pile of files into a wiki: every note's **backlinks pane** (right sidebar) shows every other note that links to it.
 
 ## Frontmatter (properties)
 
@@ -49,7 +49,7 @@ The rollup follows the journal hierarchy — days roll into the week note, weeks
 
 ## Tags
 
-A word with `#` in front (`#example`) is a tag; the tag pane lists all of them. This vault uses tags sparingly: `#example` marks deletable example content and is the only tag in use. A note's kind lives in its `type:` field, not a tag. Subjects are handled by `topics:` links instead, because links carry more information than tags. The pro of using tags is that it can carry nested hierarchies.
+A word with `#` in front (`#example`) is a tag; the tag pane lists all of them. This vault uses tags sparingly: the only tag in use is `#example`, which marks the worked-example notes in the separate Munin-Template-Examples repo. A note's kind lives in its `type:` field, not a tag. Subjects are handled by `topics:` links instead, because links carry more information than tags. The pro of using tags is that it can carry nested hierarchies.
 
 ## The graph
 

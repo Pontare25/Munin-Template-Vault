@@ -23,23 +23,23 @@ Fill in what you know; leave the rest empty. `status: active` while the project 
 
 **Status selector.** The status selector at the top of a project or area note sets `status` from a dropdown, so you never hand-edit it: projects offer `backlog, active, waiting, simmering, done, dropped`; areas offer `active, simmering, dropped`. See [[note-schema]] for what each value means.
 
-**Sub-projects.** When you create a project, the template asks for an optional parent. Pick one and the note is filed under that parent's folder (`Efforts/Projects/Aurora/Aurora Auth/…`) and its `up:` is filled with the parent link automatically; choose top-level and it asks which active Area the project belongs to, then fills `up:` with that Area (pick "(no Area)" to leave it empty). `up:` always points one level up: task to project, sub-project to project, project to Area, so everything rolls up to its Area. The folder nesting is cosmetic: the `up` link, not the folder, is what wires the rollup, so the parent note's **Sub Projects** board (a kanban with one column per status) lists it.
+**Sub-projects.** When you create a project, the template asks for an optional parent. Pick one and the note is filed under that parent's folder (`Efforts/Projects/Parent Project/Child Project/…`) and its `up:` is filled with the parent link automatically; choose top-level and it asks which active Area the project belongs to, then fills `up:` with that Area (pick "(no Area)" to leave it empty). `up:` always points one level up: task to project, sub-project to project, project to Area, so everything rolls up to its Area. The folder nesting is cosmetic: the `up` link, not the folder, is what wires the rollup, so the parent note's **Sub Projects** board (a kanban with one column per status) lists it.
 
 ## Link meetings to the project
 
-Make a meeting note from the **meeting template**. On creation it prompts for the meeting's date and time (pre-filled with now); it then prefixes the filename with the date (`2026-08-11 Kickoff`) and files it under `Calendar/Meetings/YYYY/wWW/` (year and ISO week, matching the weekly note). The full datetime is stored in `date_start:`, so the daily/weekly/monthly rollups pick the meeting up by day. If a meeting runs long, add `date_end:` by hand. Set three links:
+Make a meeting note from the **meeting template**. On creation it prompts for the meeting's date and time (pre-filled with now); it then prefixes the filename with the date (`2026-03-02 Kickoff`) and files it under `Calendar/Meetings/YYYY/wWW/` (year and ISO week, matching the weekly note). The full datetime is stored in `date_start:`, so the daily/weekly/monthly rollups pick the meeting up by day. If a meeting runs long, add `date_end:` by hand. Set three links:
 
 ```yaml
 ---
 type: meeting
 up:
-  - "[[Project Muninize]]"        # the project this meeting belongs to
+  - "[[Project - Website]]"       # the project this meeting belongs to
 people:
-  - "[[Anna Berg]]"               # people who were there
+  - "[[Jane Doe]]"                # people who were there
 related:
-  - "[[Product Development]]"     # area or context
+  - "[[Area name]]"               # area or context
 summary: One line on what the meeting was about.
-date_start: 2026-08-11T10:00
+date_start: 2026-03-02T10:00
 ---
 ```
 
@@ -53,8 +53,8 @@ A meeting is a conversation; a **work session** is a block of focused work you d
 ---
 type: work-session
 up:
-  - "[[Project Muninize]]"   # the project you worked on
-date_start: 2026-08-18T13:00
+  - "[[Project - Website]]"  # the project you worked on
+date_start: 2026-03-04T13:00
 summary: One line on what you did.
 ---
 ```

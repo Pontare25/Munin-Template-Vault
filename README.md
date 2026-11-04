@@ -11,7 +11,7 @@ The system is named after one of Odin's two ravens Hugin and Munin, I forget whi
 - An interconnected note-making structure that separates the **capture flow** (Fleeting + Raw), **knowledge management** (Atlas), and **configuration standards** (AI-OS), with **Calendar** for journaling and logs, and **Efforts** for project and task management.
 - A note schema built on wikilinks, a small set of frontmatter fields, and an extended idea compass (`up`, `related`, `down`, `opposes`). This allows you to build clear hierarchies of information without getting bogged down and frustrated with organization instead of actually writing.
 - **Standard Operating Procedures** (SOPs) allow your AI of choice to follow instructions on how to work in your personal vault without it bloating your skillsets. It also allows you to stack skills in recurring procedures. For example, the AI follows an SOP for ingesting sources, creating notes, answering questions from the wiki, reviewing your daily note, and regularly linting the wiki.
-- Minimal Templater templates, dashboards, and small worked examples you can explore and then delete. (These are tagged with `#example`)
+- Minimal Templater templates and dashboards in an empty vault. Worked examples live in the separate [Munin-Template-Examples](https://github.com/Pontare25/Munin-Template-Examples) repo, where every example note is tagged `#example`.
 - An AI-led onboarding: paste one prompt and the AI interviews you, fills in your profile, and runs a guided first ingest.
 
 ## Quickstart

@@ -53,12 +53,9 @@ time, and wait for my answers before moving on. Keep it conversational.
    until they are enabled.
    If anything is off, tell me exactly what to click.
 
-5. EXAMPLE CONTENT. This vault ships a small worked example (notes
-   tagged #example) that demonstrates the schema. Ask whether I want to
-   keep it for reference or delete it now. If I say delete: remove the
-   seven #example files, the example lines in the folder README indexes,
-   the "Example" section links to them in the folder READMEs, and the
-   example entry in AI-OS/log.md. Leave no broken links behind.
+5. EXAMPLES. This vault ships empty. Tell me that worked examples live in
+   the separate Munin-Template-Examples repo
+   (https://github.com/Pontare25/Munin-Template-Examples) if I want them.
 
 6. TUTORIAL INGEST. Ask me for one thing to feed the wiki: a link, a
    pasted article, or an idea of mine. Then follow AI-OS/SOPs/ingest.md
@@ -79,7 +76,7 @@ time, and wait for my answers before moving on. Keep it conversational.
 1. Open `AI-OS/Me.md` and fill in every placeholder section by hand.
 2. Read `AI-OS/Vault-Map.md` to learn where things go.
 3. Read `AI-OS/Schemas/note-schema.md` to learn the note format.
-4. Explore the example notes (search for the `#example` tag), then delete them when you no longer need them.
+4. Want to see filled-in notes? Worked examples live in the separate [Munin-Template-Examples](https://github.com/Pontare25/Munin-Template-Examples) repo; this vault ships empty.
 5. Open today's daily note and write something in it. That is the core habit.
 
 ## 5. Skills (optional, recommended once the basics run)

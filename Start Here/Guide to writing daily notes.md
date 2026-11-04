@@ -28,7 +28,7 @@ The template ships with these sections, top to bottom. Use the ones that serve y
 Logs are where the daily note earns its place. Two rules make everything downstream work:
 
 1. **Pick the right marker.** `[b]` for something that happened, `[i]` for a standing fact, `[p]`/`[c]` for sentiment. A checkbox `[ ]` with `#task` for something to do. The full marker system lives in [[tasks-and-logs]]
-2. **Name the entities.** Every log that touches a project or a person should link it: `[b] Kickoff with [[Anna Berg]] [[Project Muninize]]`. The link is what makes the item traceable.
+2. **Name the entities.** Every log that touches a project or a person should link it: `[b] Kickoff with [[Jane Doe]] [[Project - Website]]`. The link is what makes the item traceable.
 
 > [!tip]
 > See [[Recommended Obsidian Tutorials#Construct By Dee]] for more details on how the logging system works.
