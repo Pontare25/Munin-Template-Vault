@@ -26,10 +26,6 @@ The time layer: notes anchored to a date rather than a subject. The daily note i
 - Distilled knowledge (promote it to `Atlas/` via [[daily-review]] or [[ingest]]).
 - Project plans (those live in `Efforts/` and get linked from daily notes).
 
-## Example
-
-[[2026-01-15]] is a worked example daily note, tagged `#example`: it shows the state after a daily-review sweep, with raw captures replaced by links to where each item went.
-
 ## Governing SOPs
 
 [[daily-review]] sweeps daily notes. [[new-note]] covers meeting and weekly notes.

@@ -20,10 +20,6 @@ Topics carry the **full idea compass** in frontmatter:
 - Individual ideas about a topic (those are atomic notes in `Atlas/Notes/` that link back via `topics:`).
 - Curated reading paths across many topics (that is a MOC).
 
-## Example
-
-[[Spaced Repetition]] is a worked example Topic with a complete compass, tagged `#example`: all four directions filled and every link resolving to another example note.
-
 ## Topics index
 
 ![[Topics.base]]
@@ -35,4 +31,3 @@ Topics carry the **full idea compass** in frontmatter:
 ## Index
 
 <!-- The ingest SOP appends one line per note: - [[Topic Name]]: one-line summary -->
-- [[Spaced Repetition]]: reviewing at increasing intervals to beat the forgetting curve (`#example`, delete freely)

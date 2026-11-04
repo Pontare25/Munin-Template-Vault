@@ -14,10 +14,6 @@ Atomic notes: one idea per note, stated in your own words (or the AI's), linked 
 - Raw highlights or unprocessed source material (keep in `Raw/` until ingested).
 - Long multi-idea documents: split them.
 
-## Example
-
-[[Spaced practice beats cramming]] and [[Cramming feels productive but fades fast]] are worked example atomic notes, tagged `#example`. Note the claim-as-title style and the `opposes:` link putting them in explicit tension.
-
 ## Governing SOPs
 
 [[ingest]] and [[new-note]]. Schema details in [[note-schema]].
@@ -25,5 +21,3 @@ Atomic notes: one idea per note, stated in your own words (or the AI's), linked 
 ## Index
 
 <!-- The ingest SOP appends one line per note: - [[Note Name]]: one-line summary -->
-- [[Spaced practice beats cramming]]: spacing builds durable memory, extend gaps not sessions (`#example`, delete freely)
-- [[Cramming feels productive but fades fast]]: why massed practice persists despite the evidence (`#example`, delete freely)

@@ -27,10 +27,6 @@ The action layer: everything you are trying to do, as opposed to everything you 
 - Reusable knowledge produced by a project (promote it to `Atlas/`, link it from the project).
 - Time-bound records like meeting notes (those live in `Calendar/` and link here).
 
-## Example
-
-[[Learn Spanish]] is a worked example project, tagged `#example`: status field, goal, next actions, and an `up:` link to its MOC.
-
 ## Dashboard
 
 ![[Efforts.base]]
@@ -42,4 +38,3 @@ The action layer: everything you are trying to do, as opposed to everything you 
 ## Index
 
 <!-- The ingest SOP appends one line per note: - [[Effort Name]]: status, one-line summary -->
-- [[Learn Spanish]]: active, example project applying spaced repetition (`#example`, delete freely)
