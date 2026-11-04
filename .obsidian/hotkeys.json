@@ -1,13 +1,5 @@
 {
-  "obsidian-tasks-plugin:edit-task": [
-    {
-      "modifiers": [
-        "Mod",
-        "Alt"
-      ],
-      "key": "T"
-    }
-  ],
+  "obsidian-tasks-plugin:edit-task": [],
   "templater-obsidian:System/Templates/Templater/Commands/log-bullet.md": [
     {
       "modifiers": [
@@ -33,5 +25,15 @@
       ],
       "key": "E"
     }
-  ]
+  ],
+  "templater-obsidian:System/Templates/Templater/Commands/new-task.md": [
+    {
+      "modifiers": [
+        "Mod",
+        "Alt"
+      ],
+      "key": "T"
+    }
+  ],
+  "tasknotes:create-inline-task": []
 }

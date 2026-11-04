@@ -98,7 +98,7 @@ Two engines, deliberately split:
 
   ```dataview
   TASK
-  WHERE contains(list("b", "i", "p", "c", "*"), status)
+  WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "x" AND contains(tags, "#task"))
   WHERE contains(outlinks, [[]]) or contains(up, [[]])
   GROUP BY file.name as Source
   SORT Source DESC

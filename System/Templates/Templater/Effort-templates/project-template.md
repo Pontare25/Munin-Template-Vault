@@ -80,7 +80,7 @@ LIMIT 1
 ```dataview
 TASK
 WHERE contains(outlinks, [[]]) or contains(up, [[]])
-WHERE contains(list("b", "i", "p", "c", "*"), status)
+WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "x" AND contains(tags, "#task"))
 GROUP BY file.name as Source
 SORT Source DESC
 ```
