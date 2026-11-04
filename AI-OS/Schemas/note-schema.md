@@ -187,7 +187,7 @@ date_modified: 2026-11-03T15:15:40.530+01:00
 
 - **`title:`** the task's clean title. The filename adds a prefix (`task - <title>.md`), so the clean title lives here.
 - **`date_created:` and `date_modified:`** are filled and kept current by TaskNotes, as full ISO timestamps with seconds and time zone.
-- **Area:** a task has no Area field. `up:` always points one level up (task to project, sub-project to project, top-level project to its Area), and the task's Area is found by following `up:`. A task outside any project points `up:` straight at an Area. TaskNotes' `contexts` field is not used.
+- **Area:** a task has no Area field. `up:` always points one level up (task to project, sub-project to project, top-level project to its Area), and the task's Area is found by following `up:`. A task outside any project points `up:` straight at an Area. TaskNotes' `contexts` field is not used; its `$` shortcut stays switched on in the plugin, so a stray `$` in a task title can still write a `contexts` value.
 - **`origin:`** the note the task was created in (a daily, meeting or work-session note), as a single link. Written by the *New task* command; tasks made another way have none. It records where the task came from; `up:` records what it belongs to.
 - **`archived` tag:** archiving a task (a TaskNotes action, separate from `done`) adds the plugin's `archived` tag and moves the note to `Efforts/TaskNotes/Archive/<year>/<month>/`. It is a plugin convention, not a vault tag namespace.
 

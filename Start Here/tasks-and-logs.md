@@ -53,7 +53,7 @@ You can fill fields from the title box by typing a trigger character and picking
 | `+` | Projects (the task's `up:`) | projects and Areas with status `backlog`, `active` or `waiting` |
 | `*` | Status | the five statuses |
 
-The window also shows **Contexts** and **Tags** fields. This vault does not use them: leave them empty. A task's Area comes from its project (see below), not from a context or a tag.
+The window also shows **Contexts** and **Tags** fields. This vault does not use them: leave them empty. Typing `$` in the title box still opens a contexts suggester (TaskNotes keeps that shortcut on); ignore it. A task's Area comes from its project (see below), not from a context or a tag.
 
 ## What a task note holds
 
