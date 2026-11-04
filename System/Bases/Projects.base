@@ -17,7 +17,6 @@ views:
       - backlog
       - active
       - waiting
-      - simmering
       - done
       - dropped
     order:

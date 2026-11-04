@@ -7,7 +7,7 @@ The action layer: everything you are trying to do, as opposed to everything you 
 | `backlog` | Committed, not started (projects only) |
 | `active` | Being worked now |
 | `waiting` | Blocked on someone or something else (projects only) |
-| `simmering` | Paused by choice, revisit later |
+| `simmering` | Paused by choice, revisit later (areas only; a paused project goes back to `backlog`) |
 | `done` | Finished (projects only) |
 | `dropped` | Stopped, not finishing; kept for the record |
 

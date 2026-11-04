@@ -151,12 +151,12 @@ status: active   # backlog | active | waiting | simmering | done | dropped
 | `backlog` | Committed, not started | yes | | yes | yes |
 | `active` | Being worked now | yes | yes | yes | yes |
 | `waiting` | Blocked on someone or something else | yes | | yes | yes |
-| `simmering` | Paused by choice, revisit later | yes | yes | | no |
+| `simmering` | Paused by choice, revisit later | | yes | | no |
 | `done` | Finished | yes | | yes (completed) | no |
 | `dropped` | Stopped, not finishing | yes | yes | yes (completed) | no |
 
-- **Per type:** projects use all six values. Areas are ongoing responsibilities, so they use `active | simmering | dropped` only.
-- **Open and closed:** `backlog`, `active` and `waiting` are open; `simmering`, `done` and `dropped` are closed. Views that count live efforts (AoR Review `active_projects`, the Efforts *Active* view) read `active`, `waiting` and `simmering`.
+- **Per type:** projects use `backlog | active | waiting | done | dropped`; a paused project goes back to `backlog`. Areas are ongoing responsibilities, so they use `active | simmering | dropped` only.
+- **Open and closed:** `backlog`, `active` and `waiting` are open; `simmering`, `done` and `dropped` are closed. AoR Review `active_projects` counts projects that are `active` or `waiting`; the Efforts *Active* view reads `active`, `waiting` and `simmering`, so a simmering Area stays visible.
 - **Single lowercase words.** Values with spaces break the TaskNotes status trigger and invite filter typos. Write `dropped`, never `cancelled`; `open`, `in progress` and `test` are retired.
 - **Set it with the selector.** Project and area notes carry a status selector near the top of the body (a Meta Bind field bound to `status`) that offers only the values sanctioned for that type.
 

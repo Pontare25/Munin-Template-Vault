@@ -3,7 +3,7 @@ filters:
     - type == "area"
     - file.path.startsWith("Efforts/Areas")
 formulas:
-  active_projects: file.backlinks.filter(value.asFile().properties.type == "project" && (value.asFile().properties.status == "active" || value.asFile().properties.status == "waiting" || value.asFile().properties.status == "simmering")).length
+  active_projects: file.backlinks.filter(value.asFile().properties.type == "project" && (value.asFile().properties.status == "active" || value.asFile().properties.status == "waiting")).length
   overdue_projects: file.backlinks.filter(value.asFile().properties.type == "project" && value.asFile().properties.status != "done" && value.asFile().properties.status != "dropped" && value.asFile().properties.date_due && date(value.asFile().properties.date_due) < today()).length
   flag: if(formula.active_projects == 0, "🔴", if(formula.overdue_projects > 0, "🔴", "🟢"))
 properties:

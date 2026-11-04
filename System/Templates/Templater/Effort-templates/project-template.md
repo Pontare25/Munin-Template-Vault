@@ -52,7 +52,7 @@ summary:
 # <% tp.file.title %>
 <%* await tp.file.rename("Project - " + tp.file.title) -%>
 
-Status: `INPUT[inlineSelect(option(backlog), option(active), option(waiting), option(simmering), option(done), option(dropped)):status]`
+Status: `INPUT[inlineSelect(option(backlog), option(active), option(waiting), option(done), option(dropped)):status]`
 
 ## Last update
 ```dataview
