@@ -90,6 +90,25 @@ Property types are vault-wide (`.obsidian/types.json`), one type per property. T
 
 - One field across every type. Meetings, projects, and anything else use `people:` rather than per-type fields; it replaces the earlier `attendees:` (meetings) and `members:` (projects). The `Meetings.base` "People meetings" view keys off it to surface every meeting a person was in.
 
+## Meeting minutes
+
+Meeting notes carry their minutes in three fields, filled from the **Minutes** section of the meeting template (Meta Bind inputs):
+
+- **`summary:`** one line on what the meeting was about, the same high-level field every note has.
+- **`details:`** a list of the points worth keeping: what was discussed, decided or learned.
+- **`actions:`** a list of follow-ups agreed in the meeting. Plain text, not task notes; capture a real task with *New task* (`Ctrl+Alt+T`).
+
+  ```yaml
+  summary: Kickoff with the client; scope agreed
+  details:
+    - Launch moved to Q3
+    - Jane owns the content inventory
+  actions:
+    - Send the revised timeline to Jane
+  ```
+
+The `Meetings.base` high-level views (*Project meetings*, *People meetings*) show `summary`; the detailed views (*Project meetings detailed*, *People meetings detailed*) add `details` and `actions`. The meeting's **Copy meeting minutes** button copies title, summary, attendees, details and actions as markdown.
+
 ## The idea compass
 
 Four frontmatter keys place a note in the landscape of ideas, like compass directions:

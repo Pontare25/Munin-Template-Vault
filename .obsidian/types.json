@@ -17,6 +17,8 @@
     "birthday": "date",
     "date_scheduled": "datetime",
     "date_completed": "date",
-    "origin": "text"
+    "origin": "text",
+    "details": "multitext",
+    "actions": "multitext"
   }
 }

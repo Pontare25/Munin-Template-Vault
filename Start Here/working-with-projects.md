@@ -47,11 +47,17 @@ people:
 related:
   - "[[Area name]]"               # area or context
 summary: One line on what the meeting was about.
+details:
+  - Launch moved to Q3            # points worth keeping
+actions:
+  - Send the revised timeline     # follow-ups agreed
 date_start: 2026-03-02T10:00
 ---
 ```
 
-`up` is what pulls the meeting (and everything in it) onto the project. `people` does the same for each person. `summary` and `date_start` feed the rollup tables below. Any log you write in the meeting reaches the project automatically. A task you capture there (`Ctrl+Alt+T`) is its own note: set its project in the create window, because the meeting's `up` does not pass on to it. See [[tasks-and-logs]] for both mechanisms.
+`up` is what pulls the meeting (and everything in it) onto the project. `people` does the same for each person. `summary` and `date_start` feed the rollup tables below.
+
+The meeting note has **Agenda** and **Notes** sections for during the meeting, and a **Minutes** section for its close: a summary field and two lists, **Details** and **Actions**, that write `summary`, `details` and `actions`. A table at the top shows the three, and the **Copy meeting minutes** button copies title, summary, attendees, details and actions as markdown, ready to paste into an email or chat. Actions are plain follow-up lines, not task notes; capture a real task with `Ctrl+Alt+T`. Any log you write in the meeting reaches the project automatically. A task you capture there (`Ctrl+Alt+T`) is its own note: set its project in the create window, because the meeting's `up` does not pass on to it. See [[tasks-and-logs]] for both mechanisms.
 
 ## Log work with sessions
 
@@ -67,7 +73,7 @@ summary: One line on what you did.
 ---
 ```
 
-The template gives you a **Focus** line (what the session is for), a **Notes** area, and **Log** and **Tasks** sections that behave exactly like the ones in a meeting. Write what you did as logs (`[b] [i] [p] [c]`), link the entities you touched, and it all rolls up to the project and to today's daily note. Use sessions to answer "what did I actually work on, and when" without holding a meeting for it.
+The template gives you a **Focus** line (what the session is for), a **Notes** area, and **Log** and **Tasks** sections. Write what you did as logs (`[b] [i] [p] [c]`), link the entities you touched, and it all rolls up to the project and to today's daily note. Use sessions to answer "what did I actually work on, and when" without holding a meeting for it.
 
 ## What the project note shows
 
@@ -76,7 +82,7 @@ The project template assembles itself from the linked notes:
 - **Last update**: a one-line Dataview that finds the most recent dated note linking this project (a meeting, work session, daily, or dated note) and shows how many days ago it was. Your at-a-glance "is this project still moving." It mirrors the **Last contact** line on a person note.
 - **Tasks**: a board of the project's task notes (every task whose `up:` is this project), one column per status (`![[Tasks.base#Project open]]`). Its **New** button creates a task with `up:` already set to this project. Below it, two folded views: **Closed tasks** (`done` and `dropped`, newest first) and **Sub-project tasks** (the tasks of the direct sub-projects, one row per sub-project).
 - **Logs**: information items (`[b] [i] [p] [c] [*]`) and task reference lines (`[t] #task`) pulled out of linked notes, newest source first, with the collapsible **Advanced log** below for filtering and export. A line shows here when it links the project itself, or when it sits in a note whose `up:` is the project (a meeting or work session). A task reference line links the task, not the project, so it shows here only when it was captured in such a note; reference lines captured in a daily note do not reach the project's Logs (the task itself is on the **Tasks** board).
-- **Meetings**: a Bases table (`![[Meetings.base#Project meetings]]`) of every meeting whose `up` points here.
+- **Meetings**: a Bases table (`![[Meetings.base#Project meetings]]`) of every meeting whose `up` points here, one line each with its summary. Switch the table to **Project meetings detailed** (the view menu at the top of the table) to add each meeting's details and actions.
 - **Work sessions**: a separate Bases table (`![[Sessions.base#Project sessions]]`) of every work session for this project.
 
 A person note carries the same shape, scoped to that person instead of the project: its Tasks board shows the tasks assigned to them (`assignees:`), and its New button pre-fills the assignee.
@@ -90,7 +96,9 @@ Two rules explain where every table comes from.
 | View | Shows | Embed on |
 |---|---|---|
 | `Meetings.base#Project meetings` | meetings linking the embedding project | a project note |
+| `Meetings.base#Project meetings detailed` | the same meetings with their details and actions | a project note (switch views) |
 | `Meetings.base#People meetings` | meetings linking the embedding person | a person note |
+| `Meetings.base#People meetings detailed` | the same meetings with their details and actions | a person note (switch views) |
 | `Sessions.base#Project sessions` | work sessions linking the embedding project | a project note |
 
 This is why meetings and sessions stay in **separate** tables on a project note: they are separate types, each with its own base.
