@@ -6,11 +6,11 @@ The permanent knowledge layer. Everything in Atlas is meant to last and to compo
 
 | Folder | Holds | Index |
 |---|---|---|
-| `Notes/` | Atomic notes, one idea each | [Notes/README](Notes/README.md) |
-| `Topics/` | Topic pages with a full idea compass | [Topics/README](Topics/README.md) |
-| `MOCs/` | Maps of Content, curated by you | [MOCs/README](MOCs/README.md) |
-| `Entities/` | People and organizations | [Entities/README](Entities/README.md) |
-| `Frameworks/` | Named methods, models, and frameworks | [Frameworks/README](Frameworks/README.md) |
+| `Notes/` | Atomic notes, one idea each | [Notes/index](Notes/index.md) |
+| `Topics/` | Topic pages with a full idea compass | [Topics/index](Topics/index.md) |
+| `MOCs/` | Maps of Content, curated by you | [MOCs/index](MOCs/index.md) |
+| `Entities/` | People and organizations | [Entities/index](Entities/index.md) |
+| `Frameworks/` | Named methods, models, and frameworks | [Frameworks/index](Frameworks/index.md) |
 
 ## What belongs here
 

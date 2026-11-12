@@ -6,12 +6,14 @@ Vault plumbing: files that make the vault work but are not knowledge themselves.
 
 | Folder | Holds |
 |---|---|
-| `Templates/` | Templater templates for every note type |
-| `Attachments/` | Images and other media, kept out of the note folders |
+| `Templates/` | Templates for every note type, plus Templater commands |
+| `Bases/` | Shared Bases: tasks, inbox, fleeting, meetings, journals and more |
+| `Attachments/` | Images and other media, kept out of the note folders (created on first use) |
+| `OKF/` | Notes on Open Knowledge Format conformance |
 
 ## What belongs here
 
-- Templates and attachments. (The three starter Bases live next to the READMEs that embed them: `Efforts/Efforts.base`, `Atlas/Topics/Topics.base`, `Raw/Inbox.base`.)
+- Templates, attachments and the shared Bases in `Bases/`. Two Bases live next to the notes that embed them instead: `Efforts/Efforts.base` and `Atlas/Topics/Topics.base`. The full catalogue is in [[Vault-Map]].
 
 ## What does not belong here
 

@@ -6,12 +6,12 @@ The vault stays Obsidian-first on disk (wikilinks, Templater, Bases). Conformanc
 
 ## The bundle
 
-The exportable OKF bundle is **`Atlas/`** only — the permanent, shareable knowledge. `Raw/` (transient capture), `Calendar/` and `Efforts/` (personal), and `AI-OS/` (configuration) are deliberately excluded.
+The exportable OKF bundle is **`Atlas/`** only: the permanent, shareable knowledge. `Raw/` (transient capture), `Calendar/` and `Efforts/` (personal), and `AI-OS/` (configuration) are deliberately excluded.
 
 Reserved OKF filenames used natively:
 
-- **`index.md`** (OKF §6) — folder listings / progressive disclosure. Every `Atlas/` subfolder has one.
-- **`log.md`** (OKF §7) — the bundle changelog at [[Atlas/log]]. Distinct from [[AI-OS/log|the vault work log]], which records operational sessions.
+- **`index.md`** (OKF §6): folder listings / progressive disclosure. Every `Atlas/` subfolder has one.
+- **`log.md`** (OKF §7): the bundle changelog at [[Atlas/log]]. Distinct from [[AI-OS/log|the vault work log]], which records operational sessions.
 
 Every other `Atlas/**/*.md` is a concept document and must carry non-empty `type:` frontmatter.
 
@@ -32,7 +32,7 @@ See the table in [[note-schema]] under "OKF alignment". In short: `type` (requir
 
 ## Regenerating a bundle
 
-No exporter ships with the template — the `Atlas/` layer is OKF-shaped on disk, which is all conformance requires. If you specifically need a portable bundle:
+No exporter ships with the template: the `Atlas/` layer is OKF-shaped on disk, which is all conformance requires. If you specifically need a portable bundle:
 
 - The original Node exporter/validator (`okf-lib.mjs`, `okf-validate.mjs`, `okf-export.mjs`) lives in git history. Retrieve it from before it was removed, e.g. `git show 757a1b2^:System/OKF/scripts/okf-export.mjs`, and run it with `node` (it needs `gray-matter` + `js-yaml`), or
 - have an AI assistant rebuild it from this spec: the logic is a short walk of `Atlas/`, rewriting wikilinks to relative paths and normalising frontmatter to the field mapping above.

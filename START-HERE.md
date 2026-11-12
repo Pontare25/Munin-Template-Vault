@@ -93,16 +93,16 @@ Recommended first install: [kepano/obsidian-skills](https://github.com/kepano/ob
 
 The `Start Here/` folder holds the full set. Read them roughly in this order; each stands alone if you need to jump.
 
-1. [[obsidian-basics]] — just enough Obsidian to operate the vault: links, frontmatter, the daily/weekly/monthly notes, search.
-2. [[Guide to writing daily notes]] — the daily note, the one surface you write into every day.
+1. [[obsidian-basics]]: just enough Obsidian to operate the vault: links, frontmatter, the daily/weekly/monthly notes, search.
+2. [[Guide to writing daily notes]]: the daily note, the one surface you write into every day.
 3. [[tasks-and-logs]]: task notes for things to do, checkbox markers for logs, and how the rollups work.
-4. [[working-with-projects]] — how a project ties meetings, people, tasks, and logs together.
-5. [[linking-notes-and-maps]] — how notes connect: inline links, the idea compass, topics, and Maps of Content.
-6. [[working-with-ai]] — the capture → ingest → query → review loop, day to day.
-7. [[skills-setup]] — teach your AI repeatable capabilities that live in the vault.
-8. [[github-and-backup]] — make the vault survive your computer.
-9. [[Hotkeys]] — the custom keyboard shortcuts.
-10. [[Recommended Obsidian Tutorials]] — external videos if you want to go deeper.
+4. [[working-with-projects]]: how a project ties meetings, people, tasks, and logs together.
+5. [[linking-notes-and-maps]]: how notes connect: inline links, the idea compass, topics, and Maps of Content.
+6. [[working-with-ai]]: the capture → ingest → query → review loop, day to day.
+7. [[skills-setup]]: teach your AI repeatable capabilities that live in the vault.
+8. [[github-and-backup]]: make the vault survive your computer.
+9. [[Hotkeys]]: the custom keyboard shortcuts.
+10. [[Recommended Obsidian Tutorials]]: external videos if you want to go deeper.
 
 ## The one habit that matters
 

@@ -16,7 +16,7 @@ Statuses, dates, boards and archiving: [[tasks-and-logs]].
 
 ## Logs
 
-- **`Ctrl+Alt+L`** — insert a `- [b]` log bullet. Press again on the same line to cycle the marker: `[b] → [i] → [p] → [c] → [*]`. (macOS: `Cmd+Option+L`.)
+- **`Ctrl+Alt+L`**: insert a `- [b]` log bullet. Press again on the same line to cycle the marker: `[b] → [i] → [p] → [c] → [*]`. (macOS: `Cmd+Option+L`.)
 - **Log decision** (*Templater: Insert Commands/log-decision*): insert a ready-to-write decision log: `- [b] #log/decision`. On a line that already has a log bullet, it just adds the tag.
 - **Log risk** (*Templater: Insert Commands/log-risk*): insert a ready-to-write risk log: `- [c] #log/risk`.
 
@@ -32,4 +32,4 @@ Marker meanings: `[b]` log / event · `[i]` fact · `[p]` positive · `[c]` nega
 
 ## Search
 
-- **`Ctrl+Alt+F`** — Omnisearch (vault-wide search). (macOS: `Cmd+Option+F`.)
+- **`Ctrl+Alt+F`**: Omnisearch (vault-wide search). (macOS: `Cmd+Option+F`.)

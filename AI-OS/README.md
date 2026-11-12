@@ -9,11 +9,13 @@ The schema layer: everything the AI needs to operate this vault. Where `Atlas/` 
 | `Me.md` | Your profile: who you are, how you want the AI to work. The entry point every AI tool reads first |
 | `routing.md` | How the AI matches a request to the right handler: the SOP trigger index and the routing procedure |
 | `Vault-Map.md` | Navigation manual: what goes where and why |
-| `SOPs/` | Step-by-step procedures: [[ingest]], [[new-note]], [[query]], [[daily-review]], [[lint]] |
+| `SOPs/` | Step-by-step procedures: [[ingest]], [[new-note]], [[query]], [[daily-review]], [[lint]], [[upgrade-vault]] |
 | `Schemas/note-schema.md` | The note format: types, fields, the idea compass |
 | `Skills/` | Optional reusable AI instructions; ships empty with a setup guide |
-| `Guides/` | Human-facing explainers: Obsidian basics, working with AI, skills, backup |
+| `state.md` | Personal. Its first line records the installed template version |
 | `log.md` | Append-only record of what the AI did in this vault |
+
+Human-facing guides live in `Start Here/`, outside this folder.
 
 ## What belongs here
 
@@ -25,7 +27,26 @@ The schema layer: everything the AI needs to operate this vault. Where `Atlas/` 
 
 ## Governing SOPs
 
-All five SOPs live in `SOPs/`. Changes to AI-OS itself are proposed by the AI and approved by you.
+All six SOPs live in `SOPs/`. Changes to AI-OS itself are proposed by the AI and approved by you.
+
+## Who owns which file
+
+Every file the template ships has an ownership class. It decides what an upgrade ([[upgrade-vault]], with the steps per version in `UPGRADING.md`) does to that file.
+
+| Class | What an upgrade does |
+|---|---|
+| **system** | Replaces it with the new version. If you edited it, the upgrade shows your edit and backs it up first |
+| **merge** | Shows the difference between your copy and the new version; you choose per file: take the new one, keep yours, or combine |
+| **user** | Never touches it |
+
+| Class | Files (first match wins) |
+|---|---|
+| user | `AI-OS/Me.md`, `AI-OS/state.md` (an upgrade updates only its first line), `AI-OS/log.md`, `Atlas/log.md`, `Efforts/Areas/Personal.md`, `Efforts/Areas/Work.md` (starter notes, yours once filled), `.github/**` and `CONTRIBUTING.md` (template maintainer files) |
+| merge | `AI-OS/routing.md` (your rows live under My SOPs), `AI-OS/README.md`, every folder `README.md` except the root one, every `index.md` in `Atlas/`, `System/Templates/**`, `System/Bases/**`, `Efforts/Efforts.base`, `Atlas/Topics/Topics.base`, `.obsidian/*.json`, `.obsidian/plugins/*/data.json`, `.gitignore` |
+| system | Everything else the template ships: root files (`README.md`, `START-HERE.md`, `UPGRADING.md`, `CHANGELOG.md`, `AGENTS.md`, `CLAUDE.md`, `LICENSE`, `.gitattributes`, `.markdownlint*.jsonc`), `AI-OS/Vault-Map.md`, `AI-OS/Schemas/**`, the shipped `AI-OS/SOPs/*.md`, `Start Here/**`, `Dashboards/*.md` and `System/OKF/**` (except their README), `Efforts/TaskNotes/Views/*.base` (TaskNotes regenerates them), `.gitkeep` files, `.obsidian/snippets/**`, `.obsidian/themes/**`, and plugin code (`.obsidian/plugins/*/main.js`, `manifest.json`, `styles.css`) |
+| user | Any file the template does not ship: your notes, your own SOPs and skills, attachments |
+
+Plugin code is never downgraded: an upgrade copies a plugin only when the vault lacks it or has an older version (compare `manifest.json`). Close Obsidian before an upgrade writes to `.obsidian/`.
 
 ## Growth path
 
@@ -33,7 +54,7 @@ AI-OS starts lean on purpose: every file here loads as AI context, and unused ma
 
 | Pain | Add | How |
 |---|---|---|
-| Every session starts with re-explaining where things stand | A `state.md` snapshot: active efforts, recent decisions, open threads. AI updates it at session end, reads it at session start | One file next to this README; add "read state.md first" to `Me.md` rules |
+| Every session starts with re-explaining where things stand | A snapshot in `state.md` below the version line: active efforts, recent decisions, open threads. AI updates it at session end, reads it at session start | Add "read state.md first" to `Me.md` rules |
 | `log.md` is getting long and slow to scan | Weekly log files (`log-YYYY-wWW.md`) with `log.md` kept as a short index | Roll over when it hurts, not before |
 | You correct the AI the same way for the third time | A rule in `Me.md` under "My additions", or a new SOP in `SOPs/` if it is a whole procedure | Ask the AI to draft it from the corrections |
 | You repeat the same multi-step request | A skill (see `Skills/README.md`) | Ask the AI to turn the last run into a skill |

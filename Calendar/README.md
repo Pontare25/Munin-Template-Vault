@@ -14,9 +14,11 @@ The time layer: notes anchored to a date rather than a subject. The daily note i
 | `Meetings/` | One note per meeting, linked to people and projects |
 | `Work Sessions/` | One note per focused work block on a project |
 
+The Monthly, Quarterly and Yearly folders appear the first time the Journals plugin creates a note for that period.
+
 ## What belongs here
 
-- Periodic notes: `type: daily`, `weekly`, `monthly`, `quarterly`, `yearly` — each altitude rolls up the one below.
+- Periodic notes: `type: daily`, `weekly`, `monthly`, `quarterly`, `yearly`; each altitude rolls up the one below.
 - Event notes: `type: meeting` and `type: work-session`, linked to the people and projects they touch.
 - Anything time-bound: what happened, what was said, what you thought that day.
 - Logs use the `#log/*` taxonomy (see [[tasks-and-logs]]); a log line worth remembering as a decision is tagged `#log/decision` and the weekly/monthly/quarterly/yearly notes roll those up automatically.

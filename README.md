@@ -1,6 +1,6 @@
 # Munin-Template-Vault
 
-> **⚠️ Work in progress.** This template is under active development — folder structure, templates, and conventions are still changing and may break between updates. Explore the ideas and kick the tires; don't yet rely on it as a stable base for irreplaceable notes.
+> **⚠️ Work in progress.** This template is under active development: folder structure, templates, and conventions are still changing and may break between updates. Explore the ideas and kick the tires; don't yet rely on it as a stable base for irreplaceable notes.
 
 A ready-to-use [Obsidian](https://obsidian.md) vault that works as a **personal wiki, project management tool, and a CRM all in one.** The system is designed to work completely without AI but works even better with it. You capture thoughts and sources; an AI assistant (Claude Code, Codex, or any tool that can read files) files, links, and maintains the knowledge base with you and continuously learn and improve.
 
@@ -41,7 +41,7 @@ I would actually recommend you **not** start with this vault if you are complete
 
 ## Open Knowledge Format (optional)
 
-Your `Atlas/` knowledge layer is built to conform to the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md): plain markdown any tool or AI can read, with a single required `type` field and reserved `index.md` / `log.md` files. Conformance is **native — no tooling required**. See [System/OKF](System/OKF/README.md) for the details and how to regenerate a portable bundle if you ever need one.
+Your `Atlas/` knowledge layer is built to conform to the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md): plain markdown any tool or AI can read, with a single required `type` field and reserved `index.md` / `log.md` files. Conformance is **native, no tooling required**. See [System/OKF](System/OKF/README.md) for the details and how to regenerate a portable bundle if you ever need one.
 
 ## Credits and inspirations
 

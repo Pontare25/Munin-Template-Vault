@@ -10,7 +10,7 @@ Climb one rung at a time. Stop as soon as the question is answered.
 
 1. **Topic page.** Read the Topic page in `Atlas/Topics/` closest to the question, including its compass keys.
 2. **Backlinks.** Read the notes that link to that topic (via `topics:` or compass keys) and the notes its compass points at.
-3. **Index or Base.** Scan the relevant folder README index, or the matching Base, for note titles that fit.
+3. **Index or Base.** Scan the relevant folder index (README, or `index.md` inside Atlas), or the matching Base, for note titles that fit.
 4. **Vault search.** Full-text search, last resort, for questions no index anticipated.
 
 ## Steps

@@ -91,7 +91,7 @@ A person note carries the same shape, scoped to that person instead of the proje
 
 Two rules explain where every table comes from.
 
-**One base per note `type`, differentiated by view — not by new files.** `Meetings.base` filters `type == "meeting"` once, then offers views that differ by *relationship* to the note embedding it. `Sessions.base` does the same for work sessions.
+**One base per note `type`, differentiated by view, not by new files.** `Meetings.base` filters `type == "meeting"` once, then offers views that differ by *relationship* to the note embedding it. `Sessions.base` does the same for work sessions.
 
 | View | Shows | Embed on |
 |---|---|---|
@@ -103,7 +103,7 @@ Two rules explain where every table comes from.
 
 This is why meetings and sessions stay in **separate** tables on a project note: they are separate types, each with its own base.
 
-**Time rollups that span types live in one combined base.** The daily, weekly, and monthly notes do not care whether something was a meeting or a session — they want everything that happened in the period. A per-type base cannot do that: a base's top-level filter gates every view, and a view can only narrow it, never broaden it. So `Calendar.base` scopes its top filter to the whole `Calendar` folder, and each view — `Daily rollup`, `Weekly rollup`, `Monthly rollup` — does the narrowing: filter to meetings and work sessions, then to its date range. The range compares each row's `anchor` formula (a meeting's or session's `date_start`) with the embedding journal note's own `date`. A **Type** column keeps the two distinguishable.
+**Time rollups that span types live in one combined base.** The daily, weekly, and monthly notes do not care whether something was a meeting or a session; they want everything that happened in the period. A per-type base cannot do that: a base's top-level filter gates every view, and a view can only narrow it, never broaden it. So `Calendar.base` scopes its top filter to the whole `Calendar` folder, and each view (`Daily rollup`, `Weekly rollup`, `Monthly rollup`) does the narrowing: filter to meetings and work sessions, then to its date range. The range compares each row's `anchor` formula (a meeting's or session's `date_start`) with the embedding journal note's own `date`. A **Type** column keeps the two distinguishable.
 
 | View | Shows | Embed on |
 |---|---|---|

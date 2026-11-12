@@ -1,6 +1,6 @@
 # Raw
 
-The capture inbox. Material lands here on its way into the vault: articles, videos, quotes, half-formed ideas. Raw is **in transit, not an archive**: the [[ingest]] SOP reads each capture, extracts what matters into `Atlas/`, enriches the capture with links, and marks it processed. Knowledge compounds in Atlas, never in Raw.
+The capture inbox for outside material. Articles, videos, quotes and files land here on their way into the vault; your own quick notes go to `Fleeting/`. Raw is **in transit, not an archive**: the [[ingest]] SOP reads each capture, extracts what matters into `Atlas/`, enriches the capture with links, and marks it processed. Knowledge compounds in Atlas, never in Raw.
 
 ## Subfolders
 
@@ -8,7 +8,7 @@ The capture inbox. Material lands here on its way into the vault: articles, vide
 |---|---|
 | `Inbox/` | Anything unsorted; the default landing zone |
 | `Sources/` | Captured external material: articles, videos, papers (`type: source`) |
-| `Ideas/` | Your own fleeting ideas awaiting processing |
+| `Ideas/` | Deprecated: your own ideas go to `Fleeting/`. The folder is removed in 3.0.0 |
 
 ## What belongs here
 

@@ -10,7 +10,8 @@
   ],
   "packages": {
     ".": {
-      "changelog-path": "CHANGELOG.md"
+      "changelog-path": "CHANGELOG.md",
+      "extra-files": ["AI-OS/state.md"]
     }
   }
 }

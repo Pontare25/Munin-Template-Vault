@@ -1,10 +1,10 @@
 # Dashboards
 
-Read-only overview surfaces that pull the vault together in one place. A dashboard owns no content of its own — it queries notes that live elsewhere (tasks in your daily notes, projects in `Efforts/`) and lays them out for a single glance.
+Read-only overview surfaces that pull the vault together in one place. A dashboard owns no content of its own; it queries notes that live elsewhere (tasks in your daily notes, projects in `Efforts/`) and lays them out for a single glance.
 
 ## What belongs here
 
-- Cross-cutting views you open to *act* or *review*, not to write: the task dashboard, and any project or areas-of-responsibility board you add later.
+- Cross-cutting views you open to *act* or *review*, not to write: the task, inbox and AoR dashboards, and any board you add later.
 
 ## What does not belong here
 
@@ -12,5 +12,6 @@ Read-only overview surfaces that pull the vault together in one place. A dashboa
 
 ## Contents
 
-- [[Inbox]] — everything captured but not yet processed, in both capture lanes.
-- [[Tasks]] — every open task in the vault, grouped by when it needs attention.
+- [[Inbox]]: everything captured but not yet processed, in both capture lanes.
+- [[Tasks]]: every open task in the vault, grouped by when it needs attention.
+- [[AoR Review]]: every Area of responsibility with its health signals, for a periodic review of your Areas.

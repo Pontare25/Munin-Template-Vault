@@ -36,16 +36,16 @@ Open today's note with the **Journals: Open today's note** command (Ctrl/Cmd-P o
 Open the week's note via the **Calendar** panel or the "Open weekly note" command. Journals files it under `Calendar/Weekly Notes/YYYY/` from the weekly template. The weekly note is a review surface, not a capture surface: it rolls up the week automatically and gives you room to close the week out.
 
 - **Rollup** pulls the week together with no manual work: the week's daily notes (the Journals base's "Weekly-rollup" view, the day-into-week hierarchy); task notes completed and created this week, and those still open by week's end (the period views in `System/Bases/Tasks.base`); the week's logs and any `#log/decision` items grouped by day (Dataview over the week's daily and meeting notes); and every meeting held that week (the Meetings base's "Weekly meeting rollup" view). The date range comes from the note title.
-- **Weekly Review** — prompts for wins, misses, and decisions worth promoting to a `type: decision` note.
-- **Next week** — a top-3 priorities block, so planning flows forward.
+- **Weekly Review**: prompts for wins, misses, and decisions worth promoting to a `type: decision` note.
+- **Next week**: a top-3 priorities block, so planning flows forward.
 
 The rollups only surface what you linked and tagged during the week (see [[tasks-and-logs]]); an empty section usually means nothing was captured, not a broken query.
 
 ## Monthly notes
 
-Open the month's note via the **Calendar** panel or the "Open monthly note" command. Journals files it under `Calendar/Monthly Notes/YYYY/` from the monthly template. Same idea as the weekly note, one altitude up: it rolls up the month's weekly notes (the Journals base's "Monthly-rollup" view — the week-into-month hierarchy), the month's tasks (completed, created, still open by month's end), the month's logs (grouped by week) and `#log/decision` items, and the month's meetings (the Meetings base's week-grouped "Monthly meeting rollup" view) — and gives you a review surface for wins, misses, decisions, and themes plus next-month priorities.
+Open the month's note via the **Calendar** panel or the "Open monthly note" command. Journals files it under `Calendar/Monthly Notes/YYYY/` from the monthly template. Same idea as the weekly note, one altitude up: it rolls up the month's weekly notes (the Journals base's "Monthly-rollup" view: the week-into-month hierarchy), the month's tasks (completed, created, still open by month's end), the month's logs (grouped by week) and `#log/decision` items, and the month's meetings (the Meetings base's week-grouped "Monthly meeting rollup" view), and gives you a review surface for wins, misses, decisions, and themes plus next-month priorities.
 
-The rollup follows the journal hierarchy — days roll into the week note, weeks roll into the month note — so the monthly note is where you step back and summarize the weeks rather than re-reading every day.
+The rollup follows the journal hierarchy: days roll into the week note, weeks roll into the month note, so the monthly note is where you step back and summarize the weeks rather than re-reading every day.
 
 ## Tags
 
@@ -63,7 +63,7 @@ Templater powers the note templates. It is one of five community plugins the vau
 
 ## Search
 
-`Ctrl/Cmd-Shift-F` searches all note text. Before searching, though, check the folder README indexes: every folder lists its notes with one-line summaries, which is usually faster. The bundled Omnisearch plugin adds a faster, fuzzy search with its own command and ribbon icon.
+`Ctrl/Cmd-Shift-F` searches all note text. Before searching, though, check the folder indexes (a `README.md` per top folder, an `index.md` inside `Atlas/`): they list notes with one-line summaries, which is usually faster. The bundled Omnisearch plugin adds a faster, fuzzy search with its own command and ribbon icon.
 
 The Omnisearch plugin allows you to search much deeper, it searches not only the title, tags, and specified frontmatter but also the actual content of the notes. It is also bundled with the Text Extractor plugin which searches text in attachments such as images and PDFs.
 

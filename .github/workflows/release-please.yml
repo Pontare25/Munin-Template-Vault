@@ -33,4 +33,4 @@ jobs:
 
 # Note for template users: this workflow versions the TEMPLATE repository.
 # In your own vault clone it does nothing useful; delete this file
-# (see AI-OS/Guides/github-and-backup.md).
+# (see Start Here/github-and-backup.md).

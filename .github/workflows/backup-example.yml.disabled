@@ -7,7 +7,7 @@
 #
 # What it does NOT do: reach into your computer. GitHub Actions only sees
 # what you push. Your local vault is backed up by pushing, not by this file.
-# See AI-OS/Guides/github-and-backup.md for the full picture.
+# See Start Here/github-and-backup.md for the full picture.
 #
 # To enable: rename this file to remove the ".disabled" suffix, commit, push.
 

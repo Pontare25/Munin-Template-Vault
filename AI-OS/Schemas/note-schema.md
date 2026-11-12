@@ -265,7 +265,7 @@ Frontmatter maps to OKF's canonical fields:
 | `type` | REQUIRED | `type` (already required on every note) |
 | `title` | recommended | the filename; add an explicit `title:` only when the display name must differ |
 | `description` | recommended | `summary:` (native); maps to OKF `description` |
-| `resource` | recommended | `resource:` — canonical URI of the underlying asset (source URL, entity homepage). Replaces the old `url:` field |
+| `resource` | recommended | `resource:` holds the canonical URI of the underlying asset (source URL, entity homepage). Replaces the old `url:` field |
 | `tags` | optional | `tags` |
 | `timestamp` | optional | authored as `date_created:` (creation); maps to OKF `timestamp` |
 

@@ -10,7 +10,7 @@ Sweep the daily note and the inbox so capture stays effortless. The human's only
 2. **Also list `Raw/Inbox/`** for captures that arrived outside the daily note.
 3. **Walk every item** in the note's capture section and the inbox. For each one, classify:
    - **Source material** (link, article, quote worth keeping): move it to `Raw/Sources/` as a `type: source` note, then run [[ingest]] on it (ask first if there are more than a couple).
-   - **Fleeting idea:** promote to an atomic note in `Atlas/Notes/` via [[new-note]] if it holds up; otherwise move to `Raw/Ideas/` to mature, or drop it with the human's blessing.
+   - **Fleeting idea:** promote to an atomic note in `Atlas/Notes/` via [[new-note]] if it holds up; otherwise move it to a note in `Fleeting/` to mature, or drop it with the human's blessing.
    - **Task:** create a task note in `Efforts/TaskNotes/Tasks/` named `task - <title>.md`, with the keys from the Tasks section of [[note-schema]]: `type: task`, `title: <title>`, `status: backlog`, `up:` the effort it belongs to (its project, or an Area for a task outside any project) and `origin:` the daily note. Give it the body of `System/Templates/Templater/Effort-templates/task-note-template.md`. Then replace the capture in the daily note with the reference line `- [t] #task [[task - <title>|<title>]]`, the same line the *New task* command (Ctrl+Alt+T) writes.
    - **Mention of a person, organization, or meeting:** link the existing entity page, or create one if they matter (pattern in [[note-schema]]).
 4. **Leave the daily note readable:** replace processed dumps with wikilinks to where the content went, so the day still tells its story.
