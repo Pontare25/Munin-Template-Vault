@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v2.2.0...v2.3.0) (2026-11-12)
+
+
+### Features
+
+* **ai-os:** ownership classes, upgrade path and docs truth pass ([3019178](https://github.com/Pontare25/Munin-Template-Vault/commit/30191785539600d68653eaa83ba6172a1c2cc6df))
+
 ## [2.2.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v2.1.0...v2.2.0) (2026-11-04)
 
 
