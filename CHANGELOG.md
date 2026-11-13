@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.0.0...v3.0.1) (2026-11-13)
+
+
+### Bug Fixes
+
+* phone toolbar buttons for log bullet, new task, decision and risk ([37fe59b](https://github.com/Pontare25/Munin-Template-Vault/commit/37fe59ba21228d4bd2af76cf0368f423a445fb73)), closes [#192](https://github.com/Pontare25/Munin-Template-Vault/issues/192)
+* phone toolbar buttons for logs and new task ([177f0d3](https://github.com/Pontare25/Munin-Template-Vault/commit/177f0d3dc031ce4321890c3c3783c1fe634895a4))
+
 ## [3.0.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v2.4.0...v3.0.0) (2026-11-13)
 
 
