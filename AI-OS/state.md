@@ -1,4 +1,4 @@
-Template version: 3.0.0 <!-- x-release-please-version -->
+Template version: 3.0.1 <!-- x-release-please-version -->
 
 # State
 
