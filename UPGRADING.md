@@ -17,6 +17,16 @@ Which files an upgrade replaces, merges or leaves alone is set by the ownership 
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
 
+## 3.0.1
+
+**What changed:** The phone toolbar (above the keyboard) gets buttons for log bullet, new task, log decision and log risk, plus the usual editing buttons. It is set in `.obsidian/app.json`.
+
+**What you do:** Nothing. If you prefer your own set, change it on the phone in Settings, Toolbar.
+
+**What the SOP does:** Shows the difference in `.obsidian/app.json` (a merge file) and lets you take the new toolbar, keep yours, or combine them.
+
+**Removed files:** none.
+
 ## 3.0.0
 
 **What changed:** Breaking release. The AI's rules moved out of `AI-OS/Me.md` into `AGENTS.md` at the vault root, now the rulebook for every AI tool; `CLAUDE.md` is one line importing it. `Me.md` keeps only your profile and My additions (your own rules, which apply on top). New `AI-OS/memory.md`: the AI notes your feedback in its Inbox and folds it into lessons at the next session start. `AI-OS/state.md` gained Last operation, Open threads and Pending decisions sections. The note schema is split: `AI-OS/Schemas/note-schema.md` is now a short core the AI reads before writing a note, and every field in detail moved to the new `AI-OS/Schemas/note-schema-reference.md`. The [[query]] SOP climbs a five-rung navigation ladder (topic page, backlinks, map of content, folder `index.md` or Base, search last), and every SOP that creates an Atlas note keeps the folder `index.md` current. New `AI-OS/Standards/sop-format.md` sets one shape for every SOP (`type: sop`, `version:` and `summary:` in the frontmatter, Steps, Output, a manual checklist), and the shipped SOPs follow it. Your own SOPs keep working as they are; reshape them when you next edit them. New [[onboarding]] SOP: say "set up my vault" and the AI interviews you and fills in `Me.md`; it replaces the long prompt in `START-HERE.md`, and the AI offers it while `Me.md` still has placeholders. `Raw/Ideas/` is removed: your own ideas live in `Fleeting/`. The `simmering` status is retired: areas use `active`, `backlog` and `dropped`, where `backlog` means not in focus now. The AoR Review lists only `active` areas, and the Efforts *Active* view reads `active` and `waiting`. New guide `Start Here/ai-setup.md` replaces `working-with-ai` and `skills-setup` and is the only place for skill install steps. `AI-OS/Skills/README.md` now holds an installed-skills table. `Me.md`, `state.md`, `memory.md` and `log.md` in `AI-OS/` carry a "Private file" header in new copies.

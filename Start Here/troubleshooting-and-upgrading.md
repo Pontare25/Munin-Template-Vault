@@ -46,7 +46,7 @@ Open Settings, Hotkeys and search the command, for example `new-task`. The vault
 ### Mobile
 
 - The bundled plugins run on mobile too. Install the vault on the phone through your sync (see [[github-and-backup]]) and do steps 2 and 3 of [[first-hour]] on the phone itself: the Templater setting is per device.
-- Phones have no keyboard shortcuts. Use the command palette instead: `Journals: Open today's note`, `Templater: Insert Commands/new-task` for a new task.
+- Phones have no keyboard shortcuts. The toolbar above the phone keyboard has buttons instead: the first four add a log bullet, a new task, a decision and a risk. Change the set in Settings, Toolbar. Everything else is in the command palette, for example `Journals: Open today's note`.
 - If you back up with git, do not run the Git plugin on the phone; [[github-and-backup]] explains why and what to use instead.
 
 ### Still stuck
