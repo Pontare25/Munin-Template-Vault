@@ -76,7 +76,7 @@ Bases read frontmatter fields, which is one more reason the schema matters: note
 | `System/Bases/Inbox.base` | Unprocessed captures in `Raw/Inbox/` | `Raw/README.md`, [[Inbox]] dashboard |
 | `System/Bases/Fleeting.base` | Fleeting notes, with a Stale view | `Fleeting/README.md`, [[Inbox]] dashboard |
 | `System/Bases/Tasks.base` | Task views: needs attention, overdue, waiting, by area, per project, person and period | [[Tasks]] dashboard, Areas, project, person and periodic notes |
-| `System/Bases/AoR Review.base` | Every Area with health signals | [[AoR Review]] dashboard |
+| `System/Bases/AoR Review.base` | Every active Area with health signals | [[AoR Review]] dashboard |
 | `System/Bases/Calendar.base` | Meetings and work sessions per period | Periodic notes |
 | `System/Bases/Journals.base` | Periodic rollups (days into weeks, and up) | Weekly to yearly notes |
 | `System/Bases/Meetings.base` | Meetings per project and person | Project and person notes |

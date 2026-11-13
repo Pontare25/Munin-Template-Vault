@@ -4,13 +4,13 @@ How to move a vault made from this template to a newer release. Each version bel
 
 ## How to upgrade
 
-- **With an AI:** ask it to "upgrade the vault". It follows the [[upgrade-vault]] SOP: it reads your installed version, shows a preview of every file it would touch, and changes nothing until you approve. If your vault is older than 2.3.0 it has no copy of that SOP yet: point the AI at `AI-OS/SOPs/upgrade-vault.md` inside the unpacked new release.
+- **With an AI:** ask it to "upgrade the vault". It follows the [[upgrade-vault]] SOP: it reads your installed version, shows a preview of every file it would touch, and changes nothing until you approve. Always point the AI at `AI-OS/SOPs/upgrade-vault.md` inside the unpacked new release: your vault's own copy does not know the newer release's steps.
 - **By hand:** follow the manual checklist at the end of that SOP.
 
 Before you start:
 
 1. Download the new release ZIP from the template's GitHub Releases page and unpack it in a folder **outside** your vault. Never unpack it into the vault.
-2. Close Obsidian and back up your vault.
+2. Back up your vault. The AI asks you to close Obsidian while it copies files, and to reopen it before it moves notes.
 3. Find your version: the first line of `AI-OS/state.md` (`Template version: x.y.z`), or the top entry of your `CHANGELOG.md` if that line is missing.
 
 Which files an upgrade replaces, merges or leaves alone is set by the ownership table in `AI-OS/README.md`. Vaults older than 2.0.0 are not supported by the SOP: upgrade them by hand using the 2.0.0 breaking changes in `CHANGELOG.md`.
@@ -25,9 +25,9 @@ Each section uses the same four parts: **What changed**, **What you do**, **What
 
 **What you do:** Approve the SOP's preview. If you prefer, move your notes out of `Raw/Ideas/` into `Fleeting/` through Obsidian before you upgrade.
 
-**What the SOP does:** Lists the notes in `Raw/Ideas/`, moves the ones you approve into `Fleeting/` through Obsidian (so links update) with `type: fleeting`, and removes the folder once it is empty. Lists notes with `status: simmering` and sets each to `backlog`, in batches of at most ten. Copies the changed files: note schema, Efforts README, area template, `Efforts.base`, `AoR Review.base`, Raw README, `working-with-projects.md`. Your own area notes keep their status selector; the SOP offers to change `simmering` to `backlog` in it.
+**What the SOP does:** With Obsidian open, in batches of at most ten notes: sets `status: simmering` to `backlog`; in every note's status selector, replaces `option(simmering)` with `option(backlog)`, or drops it where `option(backlog)` is already listed; sets `status: active` on area notes in `Efforts/Areas/` that have no `status:`, so the AoR Review still shows them; moves the notes in `Raw/Ideas/` you approve into `Fleeting/` with `type: fleeting`. Last, it trashes the `Raw/Ideas/` folder once it is empty. Updates the changed files (system files are copied, merge files are shown for you to choose): note schema, Efforts README, area template, `Efforts.base`, `AoR Review.base`, Raw README, `working-with-projects.md`, the AoR Review dashboard and the two maps that describe it.
 
-**Removed files:** `Raw/Ideas/` (folder).
+**Removed files:** `Raw/Ideas/.gitkeep`. The folder itself goes last, once it is empty.
 
 ## 2.4.0
 

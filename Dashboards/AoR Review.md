@@ -1,11 +1,11 @@
 ---
 type: dashboard
 date_created: 2026-09-15
-summary: Areas-of-responsibility review, every Area with health signals in one sweep. The GTD 20k-ft check the weekly/monthly digest doesn't cover.
+summary: Areas-of-responsibility review, every active Area with health signals in one sweep. The GTD 20k-ft check the weekly/monthly digest doesn't cover.
 ---
 # Areas of Responsibility: Review
 
-Every Area you're responsible for, in one sweep. Run this monthly (the [[monthly-template|monthly note]] links here). Read the flags top-down, then work the checklist below.
+Every active Area you're responsible for, in one sweep (an Area in `backlog` is skipped). Run this monthly (the [[monthly-template|monthly note]] links here). Read the flags top-down, then work the checklist below.
 
 ## Project health
 

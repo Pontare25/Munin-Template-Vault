@@ -6,7 +6,7 @@ Move this vault to a newer template release without losing anything the human wr
 
 ## Steps
 
-1. **Get the releases, outside the vault.** Ask the human to unpack the new release ZIP (from the template's GitHub Releases) in a folder **outside** the vault, or with git, fetch it from an `upstream` remote. Never unpack a release into the vault. If possible, also unpack the release the vault runs now: it shows which system files the human edited. Ask the human to close Obsidian; steps 7 and 8 may write to `.obsidian/`.
+1. **Get the releases, outside the vault.** Follow this SOP from the new release, never the vault's own copy. Ask the human to unpack the new release ZIP (from the template's GitHub Releases) in a folder **outside** the vault, or with git, fetch it from an `upstream` remote. If possible, also unpack the installed release: it shows which system files the human edited. Ask the human to close Obsidian; step 7 may write to `.obsidian/`.
 2. **Read the installed version.** It is the `Template version: x.y.z` line at the top of `AI-OS/state.md` (after its frontmatter, if any). If the line or the file is missing, take the newest version heading in the vault's own `CHANGELOG.md`; if that is missing too, ask the human. Stop and say why when the installed version is older than 2.0.0 (upgrade by hand using the 2.0.0 breaking changes in `CHANGELOG.md`), the same as the new release, or newer.
 3. **Read `UPGRADING.md` from the new release.** Collect every section newer than the installed version, up to and including the new one, in version order.
 4. **Classify every file.** Class every file in the new release with the ownership table in the new release's `AI-OS/README.md` (first match wins). Add the files listed under "Removed files" in the collected sections.
@@ -18,11 +18,11 @@ Move this vault to a newer template release without losing anything the human wr
    - **Removed files** and the note-level steps from the collected sections, with how many notes each touches.
 
    Stop here and ask for approval. A dry run ends at this step.
-6. **Back up.** Copy every system and merge file that will change, and every file to be removed, into a dated folder outside the vault (for example `vault-backup-YYYY-MM-DD/` next to the release). With git, suggest a commit first as well.
+6. **Back up.** Copy every system and merge file that will change, and every file to be removed, into a dated folder outside the vault (for example `vault-backup-YYYY-MM-DD/` next to the release). With git, also suggest a commit.
 7. **Apply files.** Copy system files over (edited ones only after the human has seen the edit). For each merge file, show the difference and let the human choose: take the new version, keep theirs, or combine. In `AI-OS/routing.md`, any trigger row whose SOP the release does not ship moves under My SOPs. Copy plugin code only where step 5 said so. Copy `CHANGELOG.md` last, in step 9, so a stopped upgrade is never read as finished. Move removed files to Obsidian's trash folder (`.trash/`), never hard-delete.
-8. **Run the note-level steps** from the collected sections in version order, in batches of at most ten notes, with the human's approval per batch. Move or rename notes only through Obsidian, so links survive.
+8. **Run the note-level steps** from the collected sections in version order, in batches of at most ten notes, with the human's approval per batch. Ask the human to reopen Obsidian first: move or rename notes only through it, so links survive.
 9. **Record the version.** Update the `Template version:` line in `AI-OS/state.md`. If there is none, insert `Template version: <new version>` as the first line (after the frontmatter, if any), keeping everything else; create the file with just that line if it is missing. Then copy `CHANGELOG.md`.
-10. **Log and report.** One [[log]] entry (`## [YYYY-MM-DD] upgrade-vault | x.y.z to a.b.c`) listing what changed. Ask the human to reopen Obsidian and confirm the plugins load. Report anything skipped or unsure.
+10. **Log and report.** One [[log]] entry (`## [YYYY-MM-DD] upgrade-vault | x.y.z to a.b.c`) listing what changed. Ask the human to confirm the plugins load. Report anything skipped or unsure.
 
 ## Judgment calls
 
