@@ -29,8 +29,9 @@ Match the request's intent (its "smell") to a SOP, then read that SOP in full be
 | "review my daily note", "sweep my captures", "process my inbox" | [[daily-review]] |
 | "lint", "check the graph", "broken links", "orphans", "graph health" | [[lint]] |
 | "upgrade the vault", "update to the new template version", "install the new release" | [[upgrade-vault]] |
+| "set up my vault", "onboard me", "fill in my profile" | [[onboarding]] |
 
-The index maps intent, not exact words: a request that clearly means one of these routes there even when it is phrased differently or written in another language.
+The index maps intent, not exact words: a paraphrase or another language routes the same.
 
 ## My SOPs
 
