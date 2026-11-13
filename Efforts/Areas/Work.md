@@ -8,7 +8,7 @@ up:
 ---
 # Work
 
-Status: `INPUT[inlineSelect(option(active), option(simmering), option(dropped)):status]`
+Status: `INPUT[inlineSelect(option(active), option(backlog), option(dropped)):status]`
 
 ## Standard of care
 

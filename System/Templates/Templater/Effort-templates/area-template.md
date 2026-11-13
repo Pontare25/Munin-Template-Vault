@@ -9,7 +9,7 @@ up:
 # <% tp.file.title %>
 <%* await tp.file.move("Efforts/Areas/" + tp.file.title) -%>
 
-Status: `INPUT[inlineSelect(option(active), option(simmering), option(dropped)):status]`
+Status: `INPUT[inlineSelect(option(active), option(backlog), option(dropped)):status]`
 
 ## Standard of care
 

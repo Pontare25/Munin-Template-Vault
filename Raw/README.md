@@ -8,7 +8,6 @@ The capture inbox for outside material. Articles, videos, quotes and files land 
 |---|---|
 | `Inbox/` | Anything unsorted; the default landing zone |
 | `Sources/` | Captured external material: articles, videos, papers (`type: source`) |
-| `Ideas/` | Deprecated: your own ideas go to `Fleeting/`. The folder is removed in 3.0.0 |
 
 ## What belongs here
 

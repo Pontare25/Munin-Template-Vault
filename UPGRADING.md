@@ -17,6 +17,18 @@ Which files an upgrade replaces, merges or leaves alone is set by the ownership 
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
 
+## 3.0.0
+
+<!-- Phase 2 in progress: items A to G add their entries to this section. -->
+
+**What changed:** Breaking release. `Raw/Ideas/` is removed: your own ideas live in `Fleeting/`. The `simmering` status is retired: areas use `active`, `backlog` and `dropped`, where `backlog` means not in focus now. The AoR Review lists only `active` areas, and the Efforts *Active* view reads `active` and `waiting`.
+
+**What you do:** Approve the SOP's preview. If you prefer, move your notes out of `Raw/Ideas/` into `Fleeting/` through Obsidian before you upgrade.
+
+**What the SOP does:** Lists the notes in `Raw/Ideas/`, moves the ones you approve into `Fleeting/` through Obsidian (so links update) with `type: fleeting`, and removes the folder once it is empty. Lists notes with `status: simmering` and sets each to `backlog`, in batches of at most ten. Copies the changed files: note schema, Efforts README, area template, `Efforts.base`, `AoR Review.base`, Raw README, `working-with-projects.md`. Your own area notes keep their status selector; the SOP offers to change `simmering` to `backlog` in it.
+
+**Removed files:** `Raw/Ideas/` (folder).
+
 ## 2.4.0
 
 **What changed:** A new front door. `README.md` and `START-HERE.md` were rewritten (the plugin list now matches the nine bundled plugins), and two guides are new: `Start Here/first-hour.md` (from a fresh copy to your first daily note, fleeting note, task and source) and `Start Here/troubleshooting-and-upgrading.md`. Only one Templater setting is per device ("Trigger Templater on new file creation"); earlier docs said two.
