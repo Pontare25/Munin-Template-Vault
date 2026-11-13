@@ -88,8 +88,7 @@ That is the loop by hand: capture, then promote what earns a permanent place. `R
 - [[tasks-and-logs]]: task notes, log markers and how the rollups work.
 - [[working-with-projects]]: how a project ties meetings, people, tasks and logs together.
 - [[linking-notes-and-maps]]: inline links, the idea compass, topics and Maps of Content.
-- [[working-with-ai]]: the capture, ingest, query and review loop with an AI.
-- [[skills-setup]]: reusable AI instructions that live in the vault.
+- [[ai-setup]]: connecting an AI tool, the capture, ingest, query and review loop, privacy, and skills.
 - [[github-and-backup]]: make the vault survive your computer.
 - [[Hotkeys]]: the custom keyboard shortcuts.
 - [[Recommended Obsidian Tutorials]]: videos if you want to go deeper.

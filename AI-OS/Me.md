@@ -1,5 +1,8 @@
 # Me
 
+> [!warning] Private file
+> It describes you and your work. Keep it out of public repositories and shared folders. See [[ai-setup#Privacy and sync]].
+
 Your operating manual for working with me in this vault. Read this first, every session.
 
 <!-- AI interviewer: during onboarding, fill every [bracketed placeholder] from the interview. Keep answers short; this file loads as context every session, so every line must earn its place. Delete this comment when done. -->

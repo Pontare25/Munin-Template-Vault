@@ -1,5 +1,8 @@
 # AI Activity Log
 
+> [!warning] Private file
+> It describes you and your work. Keep it out of public repositories and shared folders. See [[ai-setup#Privacy and sync]].
+
 Append-only record of AI work in this vault. The AI adds an entry after every ingest, review, lint, or other work session. Never edit or delete old entries; corrections get their own entry.
 
 Entry format (grep-friendly):

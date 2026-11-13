@@ -21,13 +21,13 @@ Each section uses the same four parts: **What changed**, **What you do**, **What
 
 <!-- Phase 2 in progress: items A to G add their entries to this section. -->
 
-**What changed:** Breaking release. `Raw/Ideas/` is removed: your own ideas live in `Fleeting/`. The `simmering` status is retired: areas use `active`, `backlog` and `dropped`, where `backlog` means not in focus now. The AoR Review lists only `active` areas, and the Efforts *Active* view reads `active` and `waiting`.
+**What changed:** Breaking release. `Raw/Ideas/` is removed: your own ideas live in `Fleeting/`. The `simmering` status is retired: areas use `active`, `backlog` and `dropped`, where `backlog` means not in focus now. The AoR Review lists only `active` areas, and the Efforts *Active* view reads `active` and `waiting`. New guide `Start Here/ai-setup.md` replaces `working-with-ai` and `skills-setup` and is the only place for skill install steps. `AI-OS/Skills/README.md` now holds an installed-skills table. `Me.md`, `state.md` and `log.md` in `AI-OS/` carry a "Private file" header in new copies.
 
 **What you do:** Approve the SOP's preview. If you prefer, move your notes out of `Raw/Ideas/` into `Fleeting/` through Obsidian before you upgrade.
 
-**What the SOP does:** With Obsidian open, in batches of at most ten notes: sets `status: simmering` to `backlog`; in every note's status selector, replaces `option(simmering)` with `option(backlog)`, or drops it where `option(backlog)` is already listed; sets `status: active` on area notes in `Efforts/Areas/` that have no `status:`, so the AoR Review still shows them; moves the notes in `Raw/Ideas/` you approve into `Fleeting/` with `type: fleeting`. Last, it trashes the `Raw/Ideas/` folder once it is empty. Updates the changed files (system files are copied, merge files are shown for you to choose): note schema, Efforts README, area template, `Efforts.base`, `AoR Review.base`, Raw README, `working-with-projects.md`, the AoR Review dashboard and the two maps that describe it.
+**What the SOP does:** Updates the changed files (system files are copied, merge files are shown for you to choose): note schema, Efforts README, area template, `Efforts.base`, `AoR Review.base`, Raw README, `working-with-projects.md`, the AoR Review dashboard and the two maps that describe it, the new `ai-setup.md`, the Skills README, `first-hour.md` and `linking-notes-and-maps.md`. Then, with Obsidian open, in batches of at most ten notes: sets `status: simmering` to `backlog`; in every note's status selector, replaces `option(simmering)` with `option(backlog)`, or drops it where `option(backlog)` is already listed; sets `status: active` on area notes in `Efforts/Areas/` that have no `status:`, so the AoR Review still shows them; moves the notes in `Raw/Ideas/` you approve into `Fleeting/` with `type: fleeting`; repoints links to `working-with-ai` and `skills-setup` in your notes to [[ai-setup]]; offers to add the "Private file" header to your `Me.md`, `state.md` and `log.md`. Last, it trashes the `Raw/Ideas/` folder once it is empty.
 
-**Removed files:** `Raw/Ideas/.gitkeep`. The folder itself goes last, once it is empty.
+**Removed files:** `Raw/Ideas/.gitkeep`, `Start Here/working-with-ai.md`, `Start Here/skills-setup.md`. The `Raw/Ideas/` folder itself goes last, once it is empty.
 
 ## 2.4.0
 
