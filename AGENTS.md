@@ -7,7 +7,7 @@ The rulebook for any AI agent in this vault. Your own rules, under My additions 
 At the start of every session:
 
 1. Read this file and `AI-OS/Me.md`.
-2. Read `AI-OS/state.md` and `AI-OS/memory.md` if they contain any list item (a line starting with `- ` outside an HTML comment).
+2. Read `AI-OS/state.md` and `AI-OS/memory.md` if they contain any list item outside an HTML comment.
 3. Fold the `memory.md` Inbox (section 5).
 4. If a list item in `Me.md` still holds a `[placeholder]` in single square brackets, offer the onboarding SOP (`AI-OS/SOPs/onboarding.md`).
 
