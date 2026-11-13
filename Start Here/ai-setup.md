@@ -2,8 +2,6 @@
 
 How to connect an AI tool to this vault, what it reads, how it works with you, how to keep private things private, and how to install skills.
 
-<!-- Phase 2 in progress: items A and B update "How the AI finds its instructions" and "Memory and state" when AGENTS.md and memory.md land. Roles are Phase 6: do not describe them here yet. -->
-
 ## Pick a tool
 
 Any AI tool that can read and write files in a folder works. Two common choices:
@@ -11,11 +9,11 @@ Any AI tool that can read and write files in a folder works. Two common choices:
 - **Claude Code** (Anthropic): reads `CLAUDE.md` at the vault root when it starts.
 - **Codex** (OpenAI): reads `AGENTS.md` at the vault root when it starts.
 
-Open the tool with the vault folder as its working folder. Both files point the AI at the same rules, so you can switch tools and nothing is lost.
+Open the tool with the vault folder as its working folder. `CLAUDE.md` is one line that imports `AGENTS.md`, so both tools get the same rules, so you can switch tools and nothing is lost.
 
 ## How the AI finds its instructions
 
-At the start of a session the AI reads `AI-OS/Me.md`: who you are and how you want it to work. `CLAUDE.md` imports it directly; `AGENTS.md` tells the AI to read it first.
+`AGENTS.md` is the rulebook: what the AI reads at the start of a session, what it may do freely, what it must ask first, and what it never does. It then reads `AI-OS/Me.md`: who you are, how you want it to work, and your own rules under My additions, which apply on top of the rulebook. `AGENTS.md` is replaced on upgrades; `Me.md` is yours and never is.
 
 Before acting on a request, the AI routes it. It checks the trigger index in `AI-OS/routing.md`, which maps the kind of thing you asked for to the SOP (standard procedure in `AI-OS/SOPs/`) that handles it, reads that SOP, and tells you which one it picked. If nothing matches, it says so instead of winging it and offers to write a new SOP, so each recurring request you make becomes a procedure that just works next time. Routing rules and SOPs are plain notes: read and edit them like anything else.
 
@@ -32,7 +30,8 @@ Other useful requests: "what connects X and Y?", "what in the vault contradicts 
 
 ## Memory and state
 
-- `AI-OS/state.md` starts with the template version your vault runs; the [[upgrade-vault]] SOP reads it.
+- `AI-OS/state.md` records where work stands: the last operation, open threads and pending decisions. Its first line is the template version your vault runs; the [[upgrade-vault]] SOP reads it. Active projects and tasks are not copied here: the AI reads them from frontmatter.
+- `AI-OS/memory.md` is what the AI learns about working with you. When you correct or praise how it works, it writes one line to the Inbox. At the next session start it folds those lines into lessons. When a lesson comes up twice and applies to most sessions, the AI proposes a rule for your `Me.md` My additions, and adds it only if you agree. It is the only memory the AI uses for this vault.
 - [[log]] (`AI-OS/log.md`) is the append-only record of AI work. Skim it now and then.
 
 ## Trust and provenance

@@ -2,7 +2,7 @@
 
 Move this vault to a newer template release without losing anything the human wrote. The ownership table in `AI-OS/README.md` decides what happens to each file; `UPGRADING.md` lists each version's changes and note-level steps. Steps 1 to 5 only read and end in a preview; nothing changes before the human approves it.
 
-**Trigger:** the human says "upgrade the vault", "update to the new template version", "install the new release", or similar. A vault older than 2.3.0 has no copy of this SOP: read it from the unpacked new release.
+**Trigger:** the human says "upgrade the vault", "update to the new template version", "install the new release", or similar.
 
 ## Steps
 
@@ -27,8 +27,8 @@ Move this vault to a newer template release without losing anything the human wr
 ## Judgment calls
 
 - When unsure whether a file is the human's, treat it as theirs: show it and ask.
-- Never edit a user file, except the version line in `AI-OS/state.md`.
-- A failed or stopped upgrade can be undone from the backup folder; say where it is.
+- Never edit a user file, except the version line in `AI-OS/state.md` and the note-level steps the human approves in step 8. Copy in a shipped user file the vault lacks.
+- A failed or stopped upgrade is undone from the backup folder; say where it is.
 
 ## Manual checklist (without an AI)
 
