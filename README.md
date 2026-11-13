@@ -1,5 +1,7 @@
 # Munin-Template-Vault
 
+**New here?** Open [START-HERE](START-HERE.md), then follow the [first-hour](Start%20Here/first-hour.md) guide from a fresh copy to your first note, task and source.
+
 > **⚠️ Work in progress.** The template is under active development: folders, templates and conventions still change between releases. Each release says what changed and what you do in [UPGRADING](UPGRADING.md). Kick the tires, and keep a backup of anything irreplaceable.
 
 A ready-to-use [Obsidian](https://obsidian.md) vault that works as your second brain, your project and task tool, and a wiki an AI keeps for you. It works fully without AI; with an AI assistant (Claude Code, Codex, or any tool that can read and write files) it files, links and maintains the notes with you.
