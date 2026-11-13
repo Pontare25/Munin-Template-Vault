@@ -63,7 +63,11 @@ Organizations have no template yet; use the frontmatter pattern in [[note-schema
 
 ## Folder indexes
 
-Every top folder has a `README.md` stating its purpose and holding an index: one line per note, appended by the SOPs. Inside `Atlas/`, the root and each subfolder use an `index.md` instead (the OKF convention). When looking for something, follow the retrieval ladder in [[query]]; the indexes are one of its rungs, and full search is the last resort.
+Every top folder has a `README.md` stating its purpose and holding an index: one line per note, appended by the SOPs. Inside `Atlas/`, the root and each subfolder use an `index.md` instead (the OKF convention).
+
+**Keeping them current:** every SOP that creates, renames or retires a note in `Atlas/` updates that folder's `index.md` in the same step; [[lint]] catches notes made by hand that have no line yet.
+
+**Finding things:** follow the navigation ladder in [[query]], cheapest first: the topic page, its backlinks, a map in `Atlas/MOCs/`, the folder `index.md` or a Base from the catalogue below, and full-text search last. Never read whole folders to find one note.
 
 ## Dashboards (Bases)
 

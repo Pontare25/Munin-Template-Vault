@@ -10,8 +10,9 @@ Climb one rung at a time. Stop as soon as the question is answered.
 
 1. **Topic page.** Read the Topic page in `Atlas/Topics/` closest to the question, including its compass keys.
 2. **Backlinks.** Read the notes that link to that topic (via `topics:` or compass keys) and the notes its compass points at.
-3. **Index or Base.** Scan the relevant folder index (README, or `index.md` inside Atlas), or the matching Base, for note titles that fit.
-4. **Vault search.** Full-text search, last resort, for questions no index anticipated.
+3. **Map of content.** If a map in `Atlas/MOCs/` covers the area (its `index.md` lists them), read it for the notes it gathers.
+4. **Index or Base.** Inside `Atlas/`, scan the folder's `index.md` (`Atlas/index.md` lists the folders); elsewhere, the matching Base from the catalogue in [[Vault-Map]]. Pick by the one-line `summary:`.
+5. **Vault search.** Full-text search, last resort, for questions no map or index anticipated.
 
 ## Steps
 
@@ -29,9 +30,10 @@ Climb one rung at a time. Stop as soon as the question is answered.
 | "What do I know about X?" | Rungs 1-2: topic page plus its backlinks |
 | "What connects X and Y?" | Both compasses and backlink sets; the overlap is the answer |
 | "What contradicts X?" | The note's `opposes:` links first, then `opposes:` entries across its topic's notes |
-| A specific fact | Topic page if one fits, otherwise rung 3, then search |
+| A specific fact | Topic page if one fits, otherwise rungs 3 and 4, then search |
+| "What am I working on?" | Frontmatter, never a copied list: the current-work query in `AGENTS.md`, or the Efforts and Tasks Bases |
 
 ## Judgment calls
 
-- A confident answer from rung 4 alone is a hint the graph is missing structure; consider proposing a topic or compass links along with the answer.
+- A confident answer from rung 5 alone is a hint the graph is missing structure; consider proposing a topic or compass links along with the answer.
 - Plain queries need no [[log]] entry; filing an answer does (the [[new-note]] steps cover it).
