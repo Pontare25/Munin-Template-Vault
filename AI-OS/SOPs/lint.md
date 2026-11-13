@@ -8,7 +8,7 @@ summary: Scan the knowledge graph for broken links, orphans, schema drift and st
 
 Periodic health check of the knowledge graph. Lint finds problems and proposes fixes; it changes nothing without approval.
 
-**Trigger:** the human says "lint", "health check", "check the wiki", or on a cadence the human sets.
+**Trigger:** the human says "lint", "check the graph", "broken links", "orphans", "graph health", or on a cadence the human sets.
 
 ## Steps
 

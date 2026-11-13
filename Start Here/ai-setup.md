@@ -43,7 +43,7 @@ Other useful requests: "what connects X and Y?", "what in the vault contradicts 
 ## Privacy and sync
 
 - **What leaves your machine.** Everything an AI tool reads may be sent to the provider's servers. Keep out of the vault anything you would not paste into a chat window: credentials, other people's confidential information, anything regulated. Check your provider's data retention and training settings; they differ.
-- **Personal files.** `AI-OS/Me.md`, `AI-OS/state.md` and `AI-OS/log.md` describe you and your work, and the AI writes to them. They carry a "Private file" header as a reminder.
+- **Personal files.** `AI-OS/Me.md`, `AI-OS/state.md`, `AI-OS/memory.md` and `AI-OS/log.md` describe you and your work, and the AI writes to them. They carry a "Private file" header as a reminder.
 - **Sync and git.** If you back up with git, use a **private** repository ([[github-and-backup]]). Never put the vault in a shared or public folder. A note that must stay local belongs in a folder your AI tool cannot see, or in another vault.
 
 ## Skills

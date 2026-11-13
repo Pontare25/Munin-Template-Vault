@@ -1,6 +1,6 @@
 # AGENTS.md
 
-The rulebook for any AI agent in this vault. Rules in `AI-OS/Me.md` My additions apply on top.
+The rulebook for any AI agent in this vault. Your own rules, under My additions in `AI-OS/Me.md`, apply on top.
 
 ## 1. Boot
 
@@ -29,7 +29,7 @@ Read it from frontmatter, never from a copied list. Active projects: notes in `E
 
 - Before writing a note, read the schema core, `AI-OS/Schemas/note-schema.md`. Open `AI-OS/Vault-Map.md` only for filing questions the schema does not answer.
 - Mark what you write with `%% #AI-Assisted %%` at the top of the note or section.
-- After vault work, append an entry to `AI-OS/log.md` (format in that file).
+- After vault work, append an entry to `AI-OS/log.md` (format in that file) and update `AI-OS/state.md`.
 - Offer to file a valuable answer as an Atlas note.
 - **Capture:** when the user corrects or praises how you work, or answers a question about how to work, append one line to the `memory.md` Inbox before your next action: `- YYYY-MM-DD | pos or neg | context | feedback`.
 - **Fold:** route each Inbox line: a general lesson to Lessons (a repeat gets `hits` +1 and today's date), a note about one SOP to Procedure notes, a tool problem to Tool gotchas, a system change to a proposal; drop one-offs. Clear the Inbox and log a tally: `## [YYYY-MM-DD] fold | 3 lines, 1 lesson, 1 hit, 1 dropped`.

@@ -96,5 +96,5 @@ The TaskNotes plugin adds seven view Bases of its own in `Efforts/TaskNotes/View
 - **Capture** (human): dump into today's daily note, `Fleeting/` or `Raw/Inbox/`. No filing decisions at capture time.
 - **Ingest** (AI, [[ingest]]): process a capture into Atlas.
 - **Review** (both, [[daily-review]]): sweep the daily note and the capture folders.
-- **Query** (human asks, AI, [[query]]): climb the retrieval ladder, synthesize, file good answers back.
+- **Query** (human asks, AI, [[query]]): climb the navigation ladder, synthesize, file good answers back.
 - **Lint** (AI, [[lint]]): periodic health check of the knowledge graph.

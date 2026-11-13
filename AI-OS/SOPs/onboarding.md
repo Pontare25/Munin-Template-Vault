@@ -12,10 +12,10 @@ Set up a fresh vault with its human: learn who they are, fill in their profile, 
 
 ## Steps
 
-1. **Orient.** Read `AI-OS/Me.md` and the trigger index in `AI-OS/routing.md`. Tell the human in two or three sentences what this vault is (a second brain the AI helps maintain: capture, ingest, query, review) and what your job in it will be. Ask whether they want the full setup or only the profile; skip phases 4 and 5 on "only the profile".
+1. **Orient.** Read `AI-OS/Me.md` and the trigger index in `AI-OS/routing.md`. Tell the human in two or three sentences what this vault is (a second brain the AI helps maintain: capture, ingest, query, review) and what your job in it will be. Ask whether they want the full setup or only the profile; skip steps 4 and 5 on "only the profile".
 2. **Interview.** Ask what you need to fill every `[placeholder]` list item in `Me.md`, at most three questions at a time. Follow up where an answer is vague. On a re-run, ask only about placeholders that remain.
 3. **Fill `Me.md`.** Replace each placeholder with the answer, as short as the skeleton line. Delete roles or purposes the human does not have rather than leaving a placeholder. Remove the onboarding comment at the top. Leave My additions empty unless the human names a rule for you. Show the result and revise until the human approves it.
-4. **Check settings.** Ask the human to confirm steps 2 and 3 of [[first-hour]] are done (community plugins on, the per-device Templater setting); if one is not, walk them through it.
+4. **Check settings.** Ask the human to confirm steps 2 and 3 of [[first-hour]] are done (community plugins on, the per-device Templater setting); if one is not, walk them through it. Offer the starter skills in [[ai-setup#Skills]].
 5. **Tutorial ingest.** Ask for one thing to feed the vault: a link, a pasted article, or an idea of theirs. Follow [[ingest]] end to end, explaining each step in one line as you do it.
 6. **Close.** Append a [[AI-OS/log|log]] entry (`## [YYYY-MM-DD] setup | Onboarding`) listing what was filled and ingested. Remind the human of the one habit that matters: dump everything into today's daily note. Point them to [[first-hour]] for what to read next. Capture any feedback about this setup in the `memory.md` Inbox.
 

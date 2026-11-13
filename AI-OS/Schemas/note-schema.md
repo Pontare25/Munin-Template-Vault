@@ -51,6 +51,7 @@ Journal notes carry `date`, the first day of their period. Every other date is `
 | `topic` | all four compass keys |
 | `source` | `up:` and `topics:` |
 | `moc` | nothing (`up:` when it sits inside a larger map) |
+| `sop` | nothing, not even `date_created:` |
 | everything else | `up:` |
 
 ## Status on efforts

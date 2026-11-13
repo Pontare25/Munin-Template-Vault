@@ -59,7 +59,7 @@ Brand new to Obsidian? Consider writing and linking in an empty vault for a few 
 
 - Your notes are plain markdown files on your own device. Nothing leaves it unless you sync it or point a tool at it.
 - An AI tool you open in this folder reads your notes and sends what it reads to its provider. Use one whose data terms you accept.
-- `AI-OS/Me.md` (your profile) and `AI-OS/log.md` (what the AI did) are personal. If you back the vault up to GitHub, make the repository private.
+- `AI-OS/Me.md` (your profile), `AI-OS/state.md` and `AI-OS/memory.md` (where work stands, what the AI learned) and `AI-OS/log.md` (what the AI did) are personal. If you back the vault up to GitHub, make the repository private.
 - The daily note template fetches a quote of the day from the web when it creates a note. Delete that line from `System/Templates/Journal-templates/daily-template.md` if you want no web calls.
 
 ## Open Knowledge Format (optional)

@@ -10,7 +10,7 @@ Answer questions from the vault. Retrieval climbs a ladder from the cheapest loo
 
 **Trigger:** the human asks "what do I know about X?", "what connects X and Y?", "what contradicts X?", "where is that note about...", or any question the vault might answer.
 
-## The retrieval ladder
+## The navigation ladder
 
 Climb one rung at a time. Stop as soon as the question is answered.
 
@@ -41,6 +41,7 @@ An answer with wikilinks to every note it draws on, or a plain "not in the vault
 | "What connects X and Y?" | Both compasses and backlink sets; the overlap is the answer |
 | "What contradicts X?" | The note's `opposes:` links first, then `opposes:` entries across its topic's notes |
 | A specific fact | Topic page if one fits, otherwise rungs 3 and 4, then search |
+| A meeting or a day | `Calendar/`: a meeting by its `people:` or date (Meetings Base), a daily note by its date |
 | "What am I working on?" | Frontmatter, never a copied list: the current-work query in `AGENTS.md`, or the Efforts and Tasks Bases |
 
 ## Judgment calls

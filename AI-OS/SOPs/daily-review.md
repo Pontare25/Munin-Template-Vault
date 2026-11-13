@@ -8,7 +8,7 @@ summary: Sort the daily note and Raw/Inbox captures into sources, notes, tasks a
 
 Sweep the daily note and the inbox so capture stays effortless. The human's only job is to dump things into today's daily note; this SOP is where those dumps get sorted.
 
-**Trigger:** the human says "review my day", "sweep the daily note", "process my inbox", or similar. Works on any day's note, defaulting to today.
+**Trigger:** the human says "review my daily note", "sweep my captures", "process my inbox", or similar. Works on any day's note, defaulting to today.
 
 ## Steps
 
