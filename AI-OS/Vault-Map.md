@@ -59,11 +59,15 @@ Templates live in `System/Templates/` (paths below are relative to it). Pick by 
 | Promoted note | `Templater/Commands/promote-note.md` (command) | The chosen type's folder |
 | Advanced log widget | `Templater/Sub-templates/Dataview queries/Advanced log template.md` | Included in project and person notes |
 
-Organizations have no template yet; use the frontmatter pattern in [[note-schema]].
+Organizations have no template yet; use the frontmatter pattern in [[note-schema-reference]].
 
 ## Folder indexes
 
-Every top folder has a `README.md` stating its purpose and holding an index: one line per note, appended by the SOPs. Inside `Atlas/`, the root and each subfolder use an `index.md` instead (the OKF convention). When looking for something, follow the retrieval ladder in [[query]]; the indexes are one of its rungs, and full search is the last resort.
+Every top folder has a `README.md` stating its purpose and holding an index: one line per note, appended by the SOPs. Inside `Atlas/`, the root and each subfolder use an `index.md` instead (the OKF convention).
+
+**Keeping them current:** every SOP that creates, renames or retires a note in `Atlas/` updates that folder's `index.md` in the same step; [[lint]] catches notes made by hand that have no line yet.
+
+**Finding things:** follow the navigation ladder in [[query]], cheapest first: the topic page, its backlinks, a map in `Atlas/MOCs/`, the folder `index.md` or a Base from the catalogue below, and full-text search last. Never read whole folders to find one note.
 
 ## Dashboards (Bases)
 
@@ -76,7 +80,7 @@ Bases read frontmatter fields, which is one more reason the schema matters: note
 | `System/Bases/Inbox.base` | Unprocessed captures in `Raw/Inbox/` | `Raw/README.md`, [[Inbox]] dashboard |
 | `System/Bases/Fleeting.base` | Fleeting notes, with a Stale view | `Fleeting/README.md`, [[Inbox]] dashboard |
 | `System/Bases/Tasks.base` | Task views: needs attention, overdue, waiting, by area, per project, person and period | [[Tasks]] dashboard, Areas, project, person and periodic notes |
-| `System/Bases/AoR Review.base` | Every Area with health signals | [[AoR Review]] dashboard |
+| `System/Bases/AoR Review.base` | Every active Area with health signals | [[AoR Review]] dashboard |
 | `System/Bases/Calendar.base` | Meetings and work sessions per period | Periodic notes |
 | `System/Bases/Journals.base` | Periodic rollups (days into weeks, and up) | Weekly to yearly notes |
 | `System/Bases/Meetings.base` | Meetings per project and person | Project and person notes |
@@ -92,5 +96,5 @@ The TaskNotes plugin adds seven view Bases of its own in `Efforts/TaskNotes/View
 - **Capture** (human): dump into today's daily note, `Fleeting/` or `Raw/Inbox/`. No filing decisions at capture time.
 - **Ingest** (AI, [[ingest]]): process a capture into Atlas.
 - **Review** (both, [[daily-review]]): sweep the daily note and the capture folders.
-- **Query** (human asks, AI, [[query]]): climb the retrieval ladder, synthesize, file good answers back.
+- **Query** (human asks, AI, [[query]]): climb the navigation ladder, synthesize, file good answers back.
 - **Lint** (AI, [[lint]]): periodic health check of the knowledge graph.

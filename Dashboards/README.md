@@ -14,4 +14,4 @@ Read-only overview surfaces that pull the vault together in one place. A dashboa
 
 - [[Inbox]]: everything captured but not yet processed, in both capture lanes.
 - [[Tasks]]: every open task in the vault, grouped by when it needs attention.
-- [[AoR Review]]: every Area of responsibility with its health signals, for a periodic review of your Areas.
+- [[AoR Review]]: every active Area of responsibility with its health signals, for a periodic review of your Areas.

@@ -4,18 +4,28 @@ How to move a vault made from this template to a newer release. Each version bel
 
 ## How to upgrade
 
-- **With an AI:** ask it to "upgrade the vault". It follows the [[upgrade-vault]] SOP: it reads your installed version, shows a preview of every file it would touch, and changes nothing until you approve. If your vault is older than 2.3.0 it has no copy of that SOP yet: point the AI at `AI-OS/SOPs/upgrade-vault.md` inside the unpacked new release.
+- **With an AI:** ask it to "upgrade the vault". It follows the [[upgrade-vault]] SOP: it reads your installed version, shows a preview of every file it would touch, and changes nothing until you approve. Always point the AI at `AI-OS/SOPs/upgrade-vault.md` inside the unpacked new release: your vault's own copy does not know the newer release's steps.
 - **By hand:** follow the manual checklist at the end of that SOP.
 
 Before you start:
 
 1. Download the new release ZIP from the template's GitHub Releases page and unpack it in a folder **outside** your vault. Never unpack it into the vault.
-2. Close Obsidian and back up your vault.
+2. Back up your vault. The AI asks you to close Obsidian while it copies files, and to reopen it before it moves notes.
 3. Find your version: the first line of `AI-OS/state.md` (`Template version: x.y.z`), or the top entry of your `CHANGELOG.md` if that line is missing.
 
 Which files an upgrade replaces, merges or leaves alone is set by the ownership table in `AI-OS/README.md`. Vaults older than 2.0.0 are not supported by the SOP: upgrade them by hand using the 2.0.0 breaking changes in `CHANGELOG.md`.
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
+
+## 3.0.0
+
+**What changed:** Breaking release. The AI's rules moved out of `AI-OS/Me.md` into `AGENTS.md` at the vault root, now the rulebook for every AI tool; `CLAUDE.md` is one line importing it. `Me.md` keeps only your profile and My additions (your own rules, which apply on top). New `AI-OS/memory.md`: the AI notes your feedback in its Inbox and folds it into lessons at the next session start. `AI-OS/state.md` gained Last operation, Open threads and Pending decisions sections. The note schema is split: `AI-OS/Schemas/note-schema.md` is now a short core the AI reads before writing a note, and every field in detail moved to the new `AI-OS/Schemas/note-schema-reference.md`. The [[query]] SOP climbs a five-rung navigation ladder (topic page, backlinks, map of content, folder `index.md` or Base, search last), and every SOP that creates an Atlas note keeps the folder `index.md` current. New `AI-OS/Standards/sop-format.md` sets one shape for every SOP (`type: sop`, `version:` and `summary:` in the frontmatter, Steps, Output, a manual checklist), and the shipped SOPs follow it. Your own SOPs keep working as they are; reshape them when you next edit them. New [[onboarding]] SOP: say "set up my vault" and the AI interviews you and fills in `Me.md`; it replaces the long prompt in `START-HERE.md`, and the AI offers it while `Me.md` still has placeholders. `Raw/Ideas/` is removed: your own ideas live in `Fleeting/`. The `simmering` status is retired: areas use `active`, `backlog` and `dropped`, where `backlog` means not in focus now. The AoR Review lists only `active` areas, and the Efforts *Active* view reads `active` and `waiting`. New guide `Start Here/ai-setup.md` replaces `working-with-ai` and `skills-setup` and is the only place for skill install steps. `AI-OS/Skills/README.md` now holds an installed-skills table. `Me.md`, `state.md`, `memory.md` and `log.md` in `AI-OS/` carry a "Private file" header in new copies.
+
+**What you do:** Approve the SOP's preview. If you changed the "Rules for the AI" section in your `Me.md`, decide which of your changes to keep as My additions when the SOP asks. If you prefer, move your notes out of `Raw/Ideas/` into `Fleeting/` through Obsidian before you upgrade.
+
+**What the SOP does:** Updates every file this release changed: system files are copied, merge files are shown for you to choose. Copies in `AI-OS/memory.md` and adds whichever of the three new section headings your `AI-OS/state.md` lacks, below what is there. Shows the "Rules for the AI" section of your `Me.md` (the template shipped exactly seven numbered rules there; anything else is yours), moves any rule you added there into My additions, and removes the section with your approval; it also removes the `- [none yet]` line under My additions. Your other `Me.md` sections stay as they are. Then, with Obsidian open, in batches of at most ten notes: sets `status: simmering` to `backlog`; in every note's status selector, replaces `option(simmering)` with `option(backlog)`, or drops it where `option(backlog)` is already listed; sets `status: active` on area notes in `Efforts/Areas/` that have no `status:`, so the AoR Review still shows them; moves the notes in `Raw/Ideas/` you approve into `Fleeting/` with `type: fleeting`; repoints links to `working-with-ai` and `skills-setup` in your notes to [[ai-setup]]; offers to add the "Private file" header to your `Me.md`, `state.md` and `log.md`. Last, it trashes the `Raw/Ideas/` folder once it is empty.
+
+**Removed files:** `Raw/Ideas/.gitkeep`, `Start Here/working-with-ai.md`, `Start Here/skills-setup.md`. The `Raw/Ideas/` folder itself goes last, once it is empty.
 
 ## 2.4.0
 

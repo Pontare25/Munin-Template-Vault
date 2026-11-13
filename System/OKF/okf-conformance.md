@@ -28,7 +28,7 @@ In an exported bundle, unresolved wikilinks would be downgraded to plain text ra
 
 ## Field mapping
 
-See the table in [[note-schema]] under "OKF alignment". In short: `type` (required), `title` (defaults to filename), `description` (emitted from the note's native `summary:` field), `resource` (canonical URI, formerly `url`), `tags`, and `timestamp` (from `date_created`).
+See the table in [[note-schema-reference]] under "OKF alignment". In short: `type` (required), `title` (defaults to filename), `description` (emitted from the note's native `summary:` field), `resource` (canonical URI, formerly `url`), `tags`, and `timestamp` (from `date_created`).
 
 ## Regenerating a bundle
 

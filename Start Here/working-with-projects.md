@@ -29,7 +29,7 @@ date_end:
 
 Fill in what you know; leave the rest empty. `status: active` while the project runs; `done` or `dropped` when it closes.
 
-**Status selector.** The status selector at the top of a project or area note sets `status` from a dropdown, so you never hand-edit it: projects offer `backlog, active, waiting, done, dropped`; areas offer `active, simmering, dropped`. See [[note-schema]] for what each value means.
+**Status selector.** The status selector at the top of a project or area note sets `status` from a dropdown, so you never hand-edit it: projects offer `backlog, active, waiting, done, dropped`; areas offer `active, backlog, dropped`. See [[note-schema-reference]] for what each value means.
 
 **Sub-projects.** When you create a project, the template asks for an optional parent. Pick one and the note is filed under that parent's folder (`Efforts/Projects/Parent Project/Child Project/…`) and its `up:` is filled with the parent link automatically; choose top-level and it asks which active Area the project belongs to, then fills `up:` with that Area (pick "(no Area)" to leave it empty). `up:` always points one level up: task to project, sub-project to project, project to Area, so everything rolls up to its Area. The folder nesting is cosmetic: the `up` link, not the folder, is what wires the rollup, so the parent note's **Sub Projects** board (a kanban with one column per status) lists it.
 

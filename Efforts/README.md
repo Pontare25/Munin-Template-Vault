@@ -4,14 +4,13 @@ The action layer: everything you are trying to do, as opposed to everything you 
 
 | Status | Meaning |
 |---|---|
-| `backlog` | Committed, not started (projects only) |
+| `backlog` | Committed, not started; for an area, not in focus now |
 | `active` | Being worked now |
 | `waiting` | Blocked on someone or something else (projects only) |
-| `simmering` | Paused by choice, revisit later (areas only; a paused project goes back to `backlog`) |
 | `done` | Finished (projects only) |
 | `dropped` | Stopped, not finishing; kept for the record |
 
-Set it with the status selector at the top of a project or area note. Areas use `active`, `simmering` and `dropped` only. Full rules in [[note-schema]].
+Set it with the status selector at the top of a project or area note. Areas use `active`, `backlog` and `dropped` only. Full rules in [[note-schema-reference]].
 
 ## Subfolders
 

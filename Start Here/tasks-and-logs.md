@@ -57,7 +57,7 @@ The window also shows **Contexts** and **Tags** fields. This vault does not use 
 
 ## What a task note holds
 
-TaskNotes writes the task's properties itself; you change them in the task's edit window (click a task card) or in the note's Properties. The full list is in [[note-schema]]. The ones you work with:
+TaskNotes writes the task's properties itself; you change them in the task's edit window (click a task card) or in the note's Properties. The full list is in [[note-schema-reference]]. The ones you work with:
 
 | Property | Holds |
 |---|---|

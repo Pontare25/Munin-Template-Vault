@@ -1,1 +1,1 @@
-@AI-OS/Me.md
+@AGENTS.md

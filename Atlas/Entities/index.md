@@ -12,7 +12,7 @@ Pages for people and organizations. When a source mentions a person or organizat
 - Ideas a person had (atomic note in `Atlas/Notes/`, linked to the person).
 - Meeting notes with a person (those live in `Calendar/Meetings/` and link here).
 
-There is no template for entities; the frontmatter pattern is documented in [[note-schema]].
+There is no template for entities; the frontmatter pattern is documented in [[note-schema-reference]].
 
 ## Example
 

@@ -61,7 +61,7 @@ The template gets new releases. An upgrade brings your vault to the newer releas
 
 Every file the template ships has one of three classes. The full table is in `AI-OS/README.md`, section "Who owns which file".
 
-- **Yours (user):** your notes, `AI-OS/Me.md`, `AI-OS/state.md`, `AI-OS/log.md`, `Atlas/log.md`, the starter Areas once you filled them in, and anything you added yourself, such as your own SOPs and skills. An upgrade never changes these, except the version line at the top of `AI-OS/state.md`.
+- **Yours (user):** your notes, `AI-OS/Me.md`, `AI-OS/state.md`, `AI-OS/memory.md`, `AI-OS/log.md`, `Atlas/log.md`, the starter Areas once you filled them in, and anything you added yourself, such as your own SOPs and skills. An upgrade changes these only through steps you approve, plus the version line at the top of `AI-OS/state.md`.
 - **Shared (merge):** templates, Bases, folder READMEs, `AI-OS/routing.md`, Atlas `index.md` files and the `.obsidian` settings. An upgrade shows you the difference between your copy and the new one, and you choose per file: take the new one, keep yours, or combine them.
 - **The template's (system):** the guides in `Start Here/`, the shipped SOPs, the schema, the root files such as this vault's README. An upgrade replaces them. If you edited one, it shows you your edit and backs it up first.
 
@@ -72,6 +72,6 @@ So: put your own rules in `AI-OS/Me.md` under My additions and your own procedur
 1. Find your version on the first line of `AI-OS/state.md` (`Template version: x.y.z`). Vaults older than 2.3.0 have no such line: use the top entry of your `CHANGELOG.md`.
 2. Download the new release ZIP from the template's GitHub Releases page and unpack it in a folder **outside** your vault.
 3. Close Obsidian and back up your vault.
-4. With an AI: ask it to "upgrade the vault". It previews every file it would touch and changes nothing until you approve. Without AI: follow the manual checklist at the end of the upgrade SOP (`AI-OS/SOPs/upgrade-vault.md`; in vaults older than 2.3.0, use the copy in the unpacked release).
+4. With an AI: ask it to "upgrade the vault" and point it at `AI-OS/SOPs/upgrade-vault.md` in the unpacked release. It previews every file it would touch and changes nothing until you approve. Without AI: follow the manual checklist at the end of that SOP.
 
 What changed in each version, and what you do for it, is in [[UPGRADING]].

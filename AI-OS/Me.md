@@ -1,8 +1,11 @@
 # Me
 
-Your operating manual for working with me in this vault. Read this first, every session.
+> [!warning] Private file
+> It describes you and your work. Keep it out of public repositories and shared folders. See [[ai-setup#Privacy and sync]].
 
-<!-- AI interviewer: during onboarding, fill every [bracketed placeholder] from the interview. Keep answers short; this file loads as context every session, so every line must earn its place. Delete this comment when done. -->
+Who I am and how I want the AI to work with me. Every AI session reads this after `AGENTS.md`, the rulebook.
+
+<!-- The onboarding SOP fills every bracketed placeholder from an interview. Keep answers short: this file loads every session, so every line must earn its place. -->
 
 ## Who I am
 
@@ -32,20 +35,6 @@ Your operating manual for working with me in this vault. Read this first, every 
 - [preference 1]
 - [preference 2]
 
-## Rules for the AI
-
-These apply to every session in this vault, for every AI tool:
-
-1. Read `AI-OS/Vault-Map.md` and `AI-OS/Schemas/note-schema.md` before creating or editing any note.
-2. Before any vault task, route it: match the request against the trigger index in `AI-OS/routing.md`, read the matched SOP in full, and state which SOP matched (or that none did) before your first action. If nothing matches, propose a SOP rather than improvising.
-3. Create freely in `Atlas/` and `Raw/` when a SOP directs it. Ask before editing or deleting anything the human wrote.
-4. Mark everything you write with `%% #AI-Assisted %%` at the top of the note or section.
-5. After completing vault work, append an entry to `AI-OS/log.md` (format documented in that file).
-6. When a conversation produces a valuable answer or synthesis, offer to file it as an Atlas note instead of letting it disappear.
-7. Never use em-dashes; use colons, commas, or separate sentences.
-
 ## My additions
 
-<!-- Extra rules discovered over time. When the human corrects you twice about the same thing, propose adding it here. -->
-
-- [none yet]
+<!-- Your own rules for the AI, one list item each. They apply on top of AGENTS.md. The AI proposes one when a lesson in memory.md reaches hits: 2; it adds it only with your approval. -->
