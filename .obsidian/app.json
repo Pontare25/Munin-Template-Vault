@@ -3,5 +3,19 @@
   "newFileFolderPath": "Fleeting",
   "attachmentFolderPath": "System/Attachments",
   "showUnsupportedFiles": true,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "mobileToolbarCommands": [
+    "templater-obsidian:System/Templates/Templater/Commands/log-bullet.md",
+    "templater-obsidian:System/Templates/Templater/Commands/new-task.md",
+    "templater-obsidian:System/Templates/Templater/Commands/log-decision.md",
+    "templater-obsidian:System/Templates/Templater/Commands/log-risk.md",
+    "editor:undo",
+    "editor:redo",
+    "editor:indent-list",
+    "editor:unindent-list",
+    "editor:insert-wikilink",
+    "editor:toggle-checklist-status",
+    "editor:toggle-bullet-list",
+    "editor:configure-toolbar"
+  ]
 }
