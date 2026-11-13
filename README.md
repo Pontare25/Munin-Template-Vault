@@ -1,47 +1,70 @@
 # Munin-Template-Vault
 
-> **⚠️ Work in progress.** This template is under active development: folder structure, templates, and conventions are still changing and may break between updates. Explore the ideas and kick the tires; don't yet rely on it as a stable base for irreplaceable notes.
+**New here?** Open [START-HERE](START-HERE.md), then follow the [first-hour](Start%20Here/first-hour.md) guide from a fresh copy to your first note, task and source.
 
-A ready-to-use [Obsidian](https://obsidian.md) vault that works as a **personal wiki, project management tool, and a CRM all in one.** The system is designed to work completely without AI but works even better with it. You capture thoughts and sources; an AI assistant (Claude Code, Codex, or any tool that can read files) files, links, and maintains the knowledge base with you and continuously learn and improve.
+> **⚠️ Work in progress.** The template is under active development: folders, templates and conventions still change between releases. Each release says what changed and what you do in [UPGRADING](UPGRADING.md). Kick the tires, and keep a backup of anything irreplaceable.
+
+A ready-to-use [Obsidian](https://obsidian.md) vault that works as your second brain, your project and task tool, and a wiki an AI keeps for you. It works fully without AI; with an AI assistant (Claude Code, Codex, or any tool that can read and write files) it files, links and maintains the notes with you.
 
 The system is named after one of Odin's two ravens Hugin and Munin, I forget which one 😉.
 
-## What you get
+## Four uses, one vault
 
-- An interconnected note-making structure that separates the **capture flow** (Fleeting + Raw), **knowledge management** (Atlas), and **configuration standards** (AI-OS), with **Calendar** for journaling and logs, and **Efforts** for project and task management.
-- A note schema built on wikilinks, a small set of frontmatter fields, and an extended idea compass (`up`, `related`, `down`, `opposes`). This allows you to build clear hierarchies of information without getting bogged down and frustrated with organization instead of actually writing.
-- **Standard Operating Procedures** (SOPs) allow your AI of choice to follow instructions on how to work in your personal vault without it bloating your skillsets. It also allows you to stack skills in recurring procedures. For example, the AI follows an SOP for ingesting sources, creating notes, answering questions from the wiki, reviewing your daily note, and regularly linting the wiki.
-- Minimal Templater templates and dashboards in an empty vault. Worked examples live in the separate [Munin-Template-Examples](https://github.com/Pontare25/Munin-Template-Examples) repo, where every example note is tagged `#example`.
-- An AI-led onboarding: paste one prompt and the AI interviews you, fills in your profile, and runs a guided first ingest.
+- **Second brain:** dump everything into today's daily note; a review sweeps it into the right place later.
+- **Projects and tasks:** project notes tie together their meetings, people, logs and task notes, with dashboards that fill themselves.
+- **LLM wiki:** drop a source in `Raw/`, ask the AI to ingest it, and it writes linked notes in `Atlas/` that grow with every source.
+- **Personal knowledge management:** your own atomic notes, topics and maps, linked with the idea compass (`up`, `related`, `down`, `opposes`).
+
+## How it fits together
+
+```mermaid
+flowchart LR
+  C["Calendar/<br>daily notes, meetings"] -->|capture| F["Fleeting/<br>your ideas"]
+  C -->|capture| R["Raw/<br>sources"]
+  F -->|promote| A["Atlas/<br>knowledge"]
+  R -->|ingest| A
+  C -->|tasks, logs| E["Efforts/<br>projects, areas, tasks"]
+  O["AI-OS/<br>profile, rules, procedures"] -.->|guides the AI| A
+```
+
+| Folder | What lives there |
+|---|---|
+| `Calendar/` | Daily, weekly and other period notes, meetings, work sessions. Where you write every day |
+| `Fleeting/` | Your own quick notes and ideas, waiting to be promoted or deleted |
+| `Raw/` | Source material (articles, PDFs, links) waiting to be ingested |
+| `Atlas/` | Permanent knowledge: notes, topics, maps, people and organizations |
+| `Efforts/` | Areas, projects, learning and task notes |
+| `AI-OS/` | Your profile, the rules and the step-by-step procedures (SOPs) the AI follows |
+| `Dashboards/`, `System/` | Dashboards, templates, Bases and settings that run the vault |
+| `Start Here/` | The guides, starting with [first-hour](Start%20Here/first-hour.md) |
+
+## Plugins
+
+The vault bundles nine community plugins, already installed (the list is `.obsidian/community-plugins.json`). Turn on community plugins when Obsidian asks and all nine start.
+
+- **Required (five):** Templater (note templates and commands), Journals (daily and other period notes), Dataview (rollups and the Promote button), Meta Bind (inline fields such as the Daily Summary box and status selectors), TaskNotes (task notes and task views).
+- **Helpers (four):** Omnisearch (fast full-text search), Text Extractor (text from PDFs and images), Tag Wrangler (rename and merge tags), Minimal Theme Settings (options for the Minimal theme).
 
 ## Quickstart
 
-1. Click **Use this template** on GitHub (or download this repo as a ZIP).
-2. Open the folder as a vault in Obsidian.
-3. When Obsidian asks, trust the vault and enable community plugins. It bundles three, already installed: **Templater** (required; runs the note templates better than the default core template plugin), **Omnisearch** (fast full-text search), and **Text Extractor** (OCR and text extraction from PDFs and images). Omnisearch is integrated with text extractor giving you one interface to search notes and other files.
-4. Open [START-HERE](START-HERE.md) and follow it.
+1. Click **Use this template** on GitHub and clone or download your new repository, or download the latest release ZIP and unpack it where you keep your notes.
+2. Open the folder with **Open folder as vault** in Obsidian 1.13.3 or newer.
+3. Open [START-HERE](START-HERE.md). It routes you to setup with AI, setup without AI, or upgrading; the [first hour](Start%20Here/first-hour.md) guide takes you to your first note, task and ingest.
 
-No git knowledge is required to use the vault. When you are ready to back it up, [github-and-backup](Start%20Here/github-and-backup.md) explains git for people who write notes, not code.
+No git knowledge is needed. When you want a backup, [github-and-backup](Start%20Here/github-and-backup.md) explains git for people who write notes, not code.
 
-## The three main layers
+Brand new to Obsidian? Consider writing and linking in an empty vault for a few days first, then come back: this vault makes more sense once links and frontmatter feel familiar.
 
-| Layer | Folder | Role |
-|---|---|---|
-| Capture | `Fleeting/` + `Raw/` | `Fleeting/` = your own quick notes and ideas; `Raw/` = source material awaiting processing. In transit, not an archive |
-| Knowledge | `Atlas/` | Permanent notes, topics, maps, entities. AI-maintained, compounding |
-| Schema | `AI-OS/` | How the vault works: your profile, the rules, the SOPs |
+## Privacy
 
-`Calendar/` (daily notes, the main capture surface) and `Efforts/` (projects and areas) orbit these three.
-
-## Start Here
-
-Next I would recommend you read the guides in `Start Here/` and if you want to learn how to use Obsidian I have put together a collection of guides here: `Start Here/Recommended Obsidian Tutorials` ([[Recommended Obsidian Tutorials]]). I have also asked AI to create an [[obsidian-basics]] note.
-
-I would actually recommend you **not** start with this vault if you are completely new to Obsidian. Instead I would recommend you just create a new empty vault and just start writing and linking. Then once you start to feel comfortable, come back go through the examples and use the basis this vault has created and make it your own.
+- Your notes are plain markdown files on your own device. Nothing leaves it unless you sync it or point a tool at it.
+- An AI tool you open in this folder reads your notes and sends what it reads to its provider. Use one whose data terms you accept.
+- `AI-OS/Me.md` (your profile) and `AI-OS/log.md` (what the AI did) are personal. If you back the vault up to GitHub, make the repository private.
+- The daily note template fetches a quote of the day from the web when it creates a note. Delete that line from `System/Templates/Journal-templates/daily-template.md` if you want no web calls.
 
 ## Open Knowledge Format (optional)
 
-Your `Atlas/` knowledge layer is built to conform to the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md): plain markdown any tool or AI can read, with a single required `type` field and reserved `index.md` / `log.md` files. Conformance is **native, no tooling required**. See [System/OKF](System/OKF/README.md) for the details and how to regenerate a portable bundle if you ever need one.
+The `Atlas/` layer follows the [Open Knowledge Format](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md): plain markdown any tool can read, one required `type` field and reserved `index.md` and `log.md` files. No tooling is needed. See [System/OKF](System/OKF/README.md) for details and how to build a portable bundle.
 
 ## Credits and inspirations
 

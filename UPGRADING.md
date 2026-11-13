@@ -17,6 +17,16 @@ Which files an upgrade replaces, merges or leaves alone is set by the ownership 
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
 
+## 2.4.0
+
+**What changed:** A new front door. `README.md` and `START-HERE.md` were rewritten (the plugin list now matches the nine bundled plugins), and two guides are new: `Start Here/first-hour.md` (from a fresh copy to your first daily note, fleeting note, task and source) and `Start Here/troubleshooting-and-upgrading.md`. Only one Templater setting is per device ("Trigger Templater on new file creation"); earlier docs said two.
+
+**What you do:** Nothing.
+
+**What the SOP does:** Copies the changed and new files (all system files). No note changes.
+
+**Removed files:** none.
+
 ## 2.3.0
 
 **What changed:** Every shipped file now has an ownership class (system, user or merge) in `AI-OS/README.md`. New: this file, the [[upgrade-vault]] SOP and its routing row, and `AI-OS/state.md`, whose first line records the installed version. `AI-OS/routing.md` gained a My SOPs section for your own rows. `Raw/Ideas/` is deprecated: your own ideas go to `Fleeting/`; the folder itself is removed in 3.0.0. Docs were corrected to match the disk (Bases catalogue and per-file template table in `Vault-Map.md`, Atlas index links, SOPs write `summary:`), and em-dashes were removed from shipped markdown.

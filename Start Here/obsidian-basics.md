@@ -29,7 +29,7 @@ Obsidian shows these as "properties" above the note. This vault leans on frontma
 
 See [[Guide to writing daily notes]]
 
-Open today's note with the **Journals: Open today's note** command (Ctrl/Cmd-P opens the command palette); that always works. There is also a **Calendar** panel: run **Journals: Open Calendar** and it opens in the right sidebar, where clicking a day opens that day's note. A fresh copy of the vault has no saved window layout, so the panel does not open by itself the first time; once it is open, Obsidian keeps it in your layout. The Journals plugin creates it under `Calendar/Daily Notes/YYYY/MM-MMM/` from the daily template, building the folders as needed. This vault's core habit: dump everything into today's daily note; the [[daily-review]] SOP sorts it later. The summary box at the top is a Meta Bind field that writes straight to the note's `summary:` property. Journals and Meta Bind are preconfigured; the onboarding session verifies them.
+Open today's note with the **Journals: Open today's note** command (Ctrl/Cmd-P opens the command palette); that always works. There is also a **Calendar** panel, which opens in the right sidebar when Obsidian starts; clicking a day opens that day's note. If you closed it, run **Journals: Open Calendar** to bring it back. The Journals plugin creates it under `Calendar/Daily Notes/YYYY/MM-MMM/` from the daily template, building the folders as needed. This vault's core habit: dump everything into today's daily note; the [[daily-review]] SOP sorts it later. The summary box at the top is a Meta Bind field that writes straight to the note's `summary:` property. Journals and Meta Bind are preconfigured; [[first-hour]] checks they are on.
 
 ## Weekly notes
 
