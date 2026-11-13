@@ -1,4 +1,5 @@
 ---
+type: sop
 version: 1
 summary: Move the vault to a newer template release, preview first, without losing anything the human wrote
 ---

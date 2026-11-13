@@ -1,4 +1,5 @@
 ---
+type: sop
 version: 1
 summary: Turn one capture in Raw into atomic notes, entity pages and topic links in Atlas
 ---

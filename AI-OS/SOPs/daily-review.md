@@ -1,4 +1,5 @@
 ---
+type: sop
 version: 1
 summary: Sort the daily note and Raw/Inbox captures into sources, notes, tasks and entity links
 ---

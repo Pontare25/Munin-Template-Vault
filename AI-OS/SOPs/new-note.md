@@ -1,4 +1,5 @@
 ---
+type: sop
 version: 1
 summary: Create one note by hand in the right folder, with minimum frontmatter, links and an index line
 ---

@@ -1,4 +1,5 @@
 ---
+type: sop
 version: 1
 summary: Interview a new user, fill in Me.md, check settings and run a first ingest together
 ---

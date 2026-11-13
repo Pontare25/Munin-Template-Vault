@@ -6,6 +6,7 @@ How every SOP in `AI-OS/SOPs/` is written, the shipped ones and your own. Read i
 
 ```markdown
 ---
+type: sop
 version: 1
 summary: One line on what the SOP does
 ---
@@ -37,7 +38,7 @@ What the human gets at the end, and the log entry format.
 
 ## Rules
 
-- **Frontmatter:** `version:` (a whole number) and `summary:` only. SOPs are system files, not notes, so they carry no `type:`.
+- **Frontmatter:** `type: sop`, `version:` (a whole number) and `summary:`, nothing else. SOPs skip `date_created:`: `version:` and git history track them.
 - **Version:** raise it by one when a change alters what the procedure does; wording fixes keep it.
 - **Length:** 800 words at most, frontmatter included. Past that, split the SOP or move reference detail into another file.
 - **Steps:** reading and previewing come before writing; a step that changes the vault says when it needs the human's approval. Every SOP that creates, renames or retires a note in `Atlas/` updates the folder's `index.md` in the same step.

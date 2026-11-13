@@ -1,4 +1,5 @@
 ---
+type: sop
 version: 1
 summary: Scan the knowledge graph for broken links, orphans, schema drift and stale indexes, and propose fixes
 ---

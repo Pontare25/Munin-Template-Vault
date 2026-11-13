@@ -30,6 +30,7 @@ date_created: 2026-01-15T09:30
   | `work-session` | `Calendar/Work Sessions/` | Focused work block on a project |
   | `task` | `Efforts/TaskNotes/Tasks/` | One task, written by the TaskNotes plugin |
   | `dashboard` | `Dashboards/` | Overview that queries other notes |
+  | `sop` | `AI-OS/SOPs/` | A procedure the AI follows ([[sop-format]]) |
 
 - **`date_created:`** ISO `YYYY-MM-DDTHH:mm`. Templates fill it.
 - **`summary:`** strongly recommended outside `Calendar/`: one line on what the note holds. Indexes, Bases and retrieval use it.

@@ -1,4 +1,5 @@
 ---
+type: sop
 version: 1
 summary: Answer a question from the vault by climbing the navigation ladder, cheapest lookup first
 ---
