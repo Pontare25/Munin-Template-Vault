@@ -10,7 +10,8 @@ The schema layer: everything the AI needs to operate this vault. Where `Atlas/` 
 | `routing.md` | How the AI matches a request to the right handler: the SOP trigger index and the routing procedure |
 | `Vault-Map.md` | Navigation manual: what goes where and why |
 | `SOPs/` | Step-by-step procedures: [[ingest]], [[new-note]], [[query]], [[daily-review]], [[lint]], [[upgrade-vault]], [[onboarding]] |
-| `Schemas/note-schema.md` | The note format: types, fields, the idea compass |
+| `Schemas/note-schema.md` | The note format, core rules: types, required fields, the idea compass. Read before writing a note |
+| `Schemas/note-schema-reference.md` | Every field in detail, with examples: dates, meetings, tasks, people, OKF mapping |
 | `Skills/` | Optional reusable AI instructions; its README lists what is installed |
 | `state.md` | Personal. Where work stands: last operation, open threads, pending decisions. Its first line records the installed template version |
 | `memory.md` | Personal. What the AI has learned about working with you: an Inbox for feedback, folded into lessons at the next session start |

@@ -59,7 +59,7 @@ Templates live in `System/Templates/` (paths below are relative to it). Pick by 
 | Promoted note | `Templater/Commands/promote-note.md` (command) | The chosen type's folder |
 | Advanced log widget | `Templater/Sub-templates/Dataview queries/Advanced log template.md` | Included in project and person notes |
 
-Organizations have no template yet; use the frontmatter pattern in [[note-schema]].
+Organizations have no template yet; use the frontmatter pattern in [[note-schema-reference]].
 
 ## Folder indexes
 

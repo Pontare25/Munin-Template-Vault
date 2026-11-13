@@ -50,6 +50,6 @@ Two rules once you do make one:
 
 ## See also
 
-- [[note-schema]]: the compass fields, `topics:`, and every frontmatter rule.
+- [[note-schema]]: the core frontmatter rules, including the compass and `topics:`; [[note-schema-reference]] has every field in detail.
 - [[obsidian-basics]]: wikilinks, backlinks, aliases, the mechanics of linking.
 - [[ai-setup]]: asking the AI to propose links and compass entries for you.

@@ -10,7 +10,7 @@ The action layer: everything you are trying to do, as opposed to everything you 
 | `done` | Finished (projects only) |
 | `dropped` | Stopped, not finishing; kept for the record |
 
-Set it with the status selector at the top of a project or area note. Areas use `active`, `backlog` and `dropped` only. Full rules in [[note-schema]].
+Set it with the status selector at the top of a project or area note. Areas use `active`, `backlog` and `dropped` only. Full rules in [[note-schema-reference]].
 
 ## Subfolders
 
