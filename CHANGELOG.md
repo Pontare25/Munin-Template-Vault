@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.4.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v2.3.0...v2.4.0) (2026-11-13)
+
+
+### Features
+
+* **docs:** front door with first-hour and troubleshooting guides ([9123025](https://github.com/Pontare25/Munin-Template-Vault/commit/91230254e40c8e5b69a91de7376a7576bc9de16b))
+* **docs:** front door with first-hour and troubleshooting guides ([2b9568d](https://github.com/Pontare25/Munin-Template-Vault/commit/2b9568d9e6aa355d3428d7926442bb7936475bd7))
+
+
+### Documentation
+
+* **readme:** early link to START-HERE and first-hour for new users ([8aaa283](https://github.com/Pontare25/Munin-Template-Vault/commit/8aaa2838bbec4f73b4f4060b69ea03a35996ebc0)), closes [#164](https://github.com/Pontare25/Munin-Template-Vault/issues/164)
+
 ## [2.3.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v2.2.0...v2.3.0) (2026-11-12)
 
 
