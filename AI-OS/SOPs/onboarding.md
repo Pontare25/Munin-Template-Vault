@@ -1,3 +1,8 @@
+---
+version: 1
+summary: Interview a new user, fill in Me.md, check settings and run a first ingest together
+---
+
 # SOP: Onboarding
 
 Set up a fresh vault with its human: learn who they are, fill in their profile, check the one per-device setting, and run a first ingest together. Conversational, one phase at a time.
@@ -13,6 +18,10 @@ Set up a fresh vault with its human: learn who they are, fill in their profile, 
 5. **Tutorial ingest.** Ask for one thing to feed the vault: a link, a pasted article, or an idea of theirs. Follow [[ingest]] end to end, explaining each step in one line as you do it.
 6. **Close.** Append a [[AI-OS/log|log]] entry (`## [YYYY-MM-DD] setup | Onboarding`) listing what was filled and ingested. Remind the human of the one habit that matters: dump everything into today's daily note. Point them to [[first-hour]] for what to read next. Capture any feedback about this setup in the `memory.md` Inbox.
 
+## Output
+
+A `Me.md` the human approved, a first ingested source, and the step 6 `setup` log entry.
+
 ## Judgment calls
 
 - The human may stop after any phase. Say what is left; the next boot offers onboarding again while placeholders remain.
@@ -23,3 +32,5 @@ Set up a fresh vault with its human: learn who they are, fill in their profile, 
 
 1. Open `AI-OS/Me.md` and replace every bracketed placeholder with your own short answer; delete lines that do not apply.
 2. Follow [[first-hour]] from start to end.
+
+<!-- Maintainer lessons: template maintainers only. Your notes about this SOP go in AI-OS/memory.md, Procedure notes. -->

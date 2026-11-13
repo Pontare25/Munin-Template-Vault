@@ -1,3 +1,8 @@
+---
+version: 1
+summary: Scan the knowledge graph for broken links, orphans, schema drift and stale indexes, and propose fixes
+---
+
 # SOP: Lint
 
 Periodic health check of the knowledge graph. Lint finds problems and proposes fixes; it changes nothing without approval.
@@ -19,7 +24,19 @@ Periodic health check of the knowledge graph. Lint finds problems and proposes f
 4. **Apply approved fixes** only. For contradictions, prefer linking both notes via `opposes:` over deleting either.
 5. **Log it:** one [[AI-OS/log|log]] entry (`## [YYYY-MM-DD] lint | N findings, M fixed`).
 
+## Output
+
+A findings report grouped by category with counts, the approved fixes applied, and the step 5 log entry.
+
 ## Judgment calls
 
 - Empty compass keys on a young topic stub are normal, not findings. Flag them only when a topic has five or more notes and still no compass.
 - When unsure whether something is stale, ask; the human's memory outranks the file dates.
+
+## Manual checklist (without an AI)
+
+1. Look for broken links (Obsidian shows them in a fainter color), notes in `Atlas/` with no backlinks, and notes without `type:`.
+2. Compare each folder `index.md` with the notes in that folder.
+3. Fix what you find, or write it down for later.
+
+<!-- Maintainer lessons: template maintainers only. Your notes about this SOP go in AI-OS/memory.md, Procedure notes. -->

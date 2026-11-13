@@ -1,3 +1,8 @@
+---
+version: 1
+summary: Answer a question from the vault by climbing the navigation ladder, cheapest lookup first
+---
+
 # SOP: Query
 
 Answer questions from the vault. Retrieval climbs a ladder from the cheapest lookup to the most expensive, so answers stay fast even when the vault is large. Never read the whole vault to answer a question.
@@ -23,6 +28,10 @@ Climb one rung at a time. Stop as soon as the question is answered.
 5. **Offer to file good answers.** A synthesis worth keeping becomes an Atlas note via [[new-note]]. Chat history evaporates; the vault compounds.
 6. **Report retrieval failures.** If the answer existed but the ladder missed it (a missing index line, an unlinked topic, an orphan note), that is a [[lint]] finding: flag it or fix it on approval.
 
+## Output
+
+An answer with wikilinks to every note it draws on, or a plain "not in the vault", plus an offer to file a good answer. No log entry unless a note is filed.
+
 ## Query shapes
 
 | Question | Where to look |
@@ -37,3 +46,11 @@ Climb one rung at a time. Stop as soon as the question is answered.
 
 - A confident answer from rung 5 alone is a hint the graph is missing structure; consider proposing a topic or compass links along with the answer.
 - Plain queries need no [[log]] entry; filing an answer does (the [[new-note]] steps cover it).
+
+## Manual checklist (without an AI)
+
+1. Open the topic page closest to the question and follow its backlinks and compass.
+2. Check `Atlas/MOCs/` and the folder `index.md`, then a Base, before full-text search.
+3. Save an answer worth keeping as a note in `Atlas/Notes/`.
+
+<!-- Maintainer lessons: template maintainers only. Your notes about this SOP go in AI-OS/memory.md, Procedure notes. -->

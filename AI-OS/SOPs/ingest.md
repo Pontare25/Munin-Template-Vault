@@ -1,3 +1,8 @@
+---
+version: 1
+summary: Turn one capture in Raw into atomic notes, entity pages and topic links in Atlas
+---
+
 # SOP: Ingest
 
 Turn a capture in `Raw/` into compounding knowledge in `Atlas/`. This is the core operation of the wiki. One source should typically touch several notes: that is the point.
@@ -18,7 +23,20 @@ Turn a capture in `Raw/` into compounding knowledge in `Atlas/`. This is the cor
 10. **Log it.** Append an entry to [[AI-OS/log|log]] (`## [YYYY-MM-DD] ingest | Source title`, with bullets for notes created or updated). Also append `**Creation**`/`**Update**` lines to [[Atlas/log]] for the Atlas concepts you created or changed (OKF §7 bundle changelog).
 11. **Report.** Tell the human what was created, what was updated, and anything you chose not to extract and why.
 
+## Output
+
+A report of the notes created and updated, the enriched source note, and the step 10 entries in [[AI-OS/log|log]] and [[Atlas/log]].
+
 ## Judgment calls
 
 - Fewer, better notes beat exhaustive extraction. If in doubt whether an idea earns a note, ask or leave it in the source summary.
 - Contradictions with existing notes are findings, not errors: link both notes via `opposes:` and flag the tension to the human.
+
+## Manual checklist (without an AI)
+
+1. Read the source in `Raw/Sources/` and list its ideas, people and subjects.
+2. Search `Atlas/` before creating anything: update an existing note rather than duplicating it.
+3. Write one atomic note per idea in `Atlas/Notes/` with `up:` and `topics:`; create a stub topic page when one is missing.
+4. Add a summary and links to the source note, and one line per new note to the folder `index.md`.
+
+<!-- Maintainer lessons: template maintainers only. Your notes about this SOP go in AI-OS/memory.md, Procedure notes. -->
