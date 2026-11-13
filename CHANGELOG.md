@@ -1,5 +1,31 @@
 # Changelog
 
+## [3.0.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v2.4.0...v3.0.0) (2026-11-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* the AI's rules moved from AI-OS/Me.md to AGENTS.md; CLAUDE.md no longer imports Me.md directly.
+* the simmering status and the Raw/Ideas/ folder are gone; the upgrade-vault SOP rewrites simmering to backlog and moves Raw/Ideas notes into Fleeting/.
+
+### Features
+
+* AGENTS.md rulebook, profile-only Me.md, state and memory ([ce0b5a0](https://github.com/Pontare25/Munin-Template-Vault/commit/ce0b5a089af7a98bf3df902c39dfa3d20a477300))
+* ai-setup guide, installed-skills table and privacy headers ([44d09c4](https://github.com/Pontare25/Munin-Template-Vault/commit/44d09c406183249bdb987d136a6137b963f0f069))
+* navigation ladder and index upkeep rule ([b905b7b](https://github.com/Pontare25/Munin-Template-Vault/commit/b905b7b5ef30a7104635e0a91ad1ebc78d31ac60))
+* onboarding SOP replaces the START-HERE setup prompt ([adb9b19](https://github.com/Pontare25/Munin-Template-Vault/commit/adb9b19d45dd3b28e12f1874ee411bbfc8fa516a))
+* retire simmering status and remove Raw/Ideas ([5905ef8](https://github.com/Pontare25/Munin-Template-Vault/commit/5905ef8ee9c1942d3d318498e06e71da8a3d1959))
+* SOP files carry type: sop ([75beb4f](https://github.com/Pontare25/Munin-Template-Vault/commit/75beb4fcfbee4a700c7b2560541e16ca15e74a9c))
+* SOP format standard and the shipped SOPs retrofitted to it ([52466ef](https://github.com/Pontare25/Munin-Template-Vault/commit/52466ef0b9dd139c786d3da1b2423be965d2ee76))
+* split the note schema into a core and a reference ([fff60c1](https://github.com/Pontare25/Munin-Template-Vault/commit/fff60c1f93066159bd1830df0c138997aeb09313))
+
+
+### Bug Fixes
+
+* AGENTS.md boot step without a spaced code span (MD038) ([8d920e6](https://github.com/Pontare25/Munin-Template-Vault/commit/8d920e6038bb5b1a893f2b56258f574732096e48))
+* Phase 2 verification and post-build review fixes ([9bc8660](https://github.com/Pontare25/Munin-Template-Vault/commit/9bc866049527a0331bd10ce11d33cc0ea6f47a21))
+* **upgrade:** safe Raw/Ideas removal and simmering migration steps ([fcfab1c](https://github.com/Pontare25/Munin-Template-Vault/commit/fcfab1c48871268beb8cf2b71d516456cbedeb20))
+
 ## [2.4.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v2.3.0...v2.4.0) (2026-11-13)
 
 
