@@ -6,7 +6,7 @@ That is the whole idea: **capture is cheap, structure is automatic**. You do not
 
 ## Creating a daily note
 
-Start by either clicking `Ctrl+P` to open the `Command palette` and search for `Journals: Open today's note`, or the easier option is to simply use the calendar widget and click on today's date to create the note.
+Press `Ctrl+P` to open the `Command palette` and run `Journals: Open today's note`. Clicking today's date in the calendar panel in the right sidebar works too (if you closed the panel, run `Journals: Open Calendar` to bring it back).
 
 The note is created from the daily template, pre-filled with the date, a quote, and the empty sections below. One note per day, named `YYYY-MM-DD`, filed automatically under `Calendar/Daily Notes/YYYY/MM-Mon/`.
 

@@ -1,113 +1,57 @@
 # Start Here
 
-Welcome. This vault is a personal wiki that an AI assistant maintains with you. Setup takes about ten minutes and the AI does most of it.
+Welcome. Pick the path that fits you. Either way, [first-hour](Start%20Here/first-hour.md) is the guide to keep open: it takes you from a fresh copy to your first daily note, fleeting note, task and source in about an hour.
 
-## 1. Set up Obsidian
+## With an AI assistant
 
-1. Install [Obsidian](https://obsidian.md) if you have not already.
-2. Open this folder as a vault (**Open folder as vault**).
-3. When asked, trust the vault and enable community plugins.
-4. The vault bundles nine community plugins, already installed (the list is `.obsidian/community-plugins.json`). Five of them the vault depends on: **Templater** (runs the note templates and commands), **Journals** (creates the daily, weekly, monthly, quarterly and yearly notes), **Dataview** (log rollups and queries), **Meta Bind** (the buttons and inline fields in notes) and **TaskNotes** (task notes and task views). The other four are helpers: **Omnisearch** (full-text search), **Text Extractor** (OCR and text from PDFs and images), **Tag Wrangler** (rename and merge tags) and **Minimal Theme Settings** (options for the Minimal theme). Enabling community plugins in step 3 turns them all on. If one of the five is not active, enable it under Settings, Community plugins.
-5. Turn on two Templater settings that are **stored per device** (they do not travel with the vault, so enable them on every device you sync to). Under Settings, Templater, in the **File creation** section: enable **Trigger Templater on new file creation** (this is what applies the folder templates, the fleeting note button, and the Promote command; nothing runs without it), and enable **Automatic jump to cursor** after the filename (so a new note leaves your cursor in the body, not on the title).
-
-## 2. Open your AI tool in this folder
->
-> The system is built to work without AI but it makes the onboarding process easier.
-
-Any AI assistant that can read and write files works: Claude Code, Codex, or similar. Open it with this vault folder as its working directory. The entry files `CLAUDE.md` and `AGENTS.md` point the AI to its operating manual automatically.
-
-## 3. Paste the onboarding prompt
-
-Copy the prompt below into a fresh AI session. The AI will interview you, fill in your profile (`AI-OS/Me.md`), check your settings, and walk you through your first ingest.
+1. Do steps 1 to 3 of [first-hour](Start%20Here/first-hour.md): install, plugins, the one per-device Templater setting.
+2. Open your AI tool (Claude Code, Codex, or any tool that can read and write files) with this vault folder as its working directory. `CLAUDE.md` and `AGENTS.md` point it to its operating manual.
+3. Paste the prompt below into a fresh session. The AI interviews you, fills in your profile (`AI-OS/Me.md`), checks your settings and runs a first ingest with you.
 
 ```text
 You are setting up my new AI-maintained Obsidian vault (built from the
 Munin-Template-Vault). Work through the phases below in order, one at a
 time, and wait for my answers before moving on. Keep it conversational.
 
-1. ORIENT. Read AI-OS/Me.md, AI-OS/Vault-Map.md, and
+1. ORIENT. Read AI-OS/Me.md, AI-OS/Vault-Map.md and
    AI-OS/Schemas/note-schema.md, and skim every SOP in AI-OS/SOPs/.
-   Then tell me, in two or three sentences, what this vault is and what
-   your job in it will be, so I know you understood.
+   Tell me in two or three sentences what this vault is and what your
+   job in it will be.
 
 2. INTERVIEW. Ask me what you need to fill every bracketed placeholder
-   in AI-OS/Me.md: who I am, what to call me, where I am, what language
-   my notes should be in, my roles, what I want this vault to do for me,
-   and how I like an assistant to behave. Ask at most three questions at
-   a time. Follow up where my answers are vague.
+   in AI-OS/Me.md. Ask at most three questions at a time. Follow up
+   where my answers are vague.
 
-3. FILL ME.MD. Update AI-OS/Me.md: replace every placeholder with what
-   you learned, keep it as short as the skeleton, delete the interviewer
-   comments, and leave the "Rules for the AI" section untouched. Show me
-   the result and revise until I approve it.
+3. FILL ME.MD. Replace every placeholder with what you learned, keep it
+   as short as the skeleton, delete the interviewer comments, and leave
+   the "Rules for the AI" section untouched. Show me the result and
+   revise until I approve it.
 
-4. CHECK SETTINGS. Daily notes come from the Journals plugin, not from
-   core Daily notes (which is off in .obsidian/core-plugins.json; ignore
-   .obsidian/daily-notes.json). Verify that
-   .obsidian/plugins/journals/data.json gives the "daily" journal the
-   folder "Calendar/Daily Notes/{{date:YYYY/MM-MMM}}" and the template
-   "System/Templates/Journal-templates/daily-template". Ask me to confirm
-   the plugins the vault depends on are enabled: Templater, Journals,
-   Dataview, Meta Bind and TaskNotes (the full list is
-   .obsidian/community-plugins.json). Also have me confirm the two
-   per-device Templater settings under Settings, Templater, File creation:
-   "Trigger Templater on new file creation" and "Automatic jump to cursor"
-   after filename, both ON. These are stored per device and off by default on
-   a fresh install, so templates and the Promote command silently do nothing
-   until they are enabled.
-   If anything is off, tell me exactly what to click.
+4. CHECK SETTINGS. Ask me to confirm that steps 2 and 3 of
+   Start Here/first-hour.md are done; if one is not, walk me through it.
 
-5. EXAMPLES. This vault ships empty. Tell me that worked examples live in
-   the separate Munin-Template-Examples repo
-   (https://github.com/Pontare25/Munin-Template-Examples) if I want them.
+5. TUTORIAL INGEST. Ask me for one thing to feed the wiki: a link, a
+   pasted article or an idea of mine. Follow AI-OS/SOPs/ingest.md end
+   to end, explaining each step in one line as you do it.
 
-6. TUTORIAL INGEST. Ask me for one thing to feed the wiki: a link, a
-   pasted article, or an idea of mine. Then follow AI-OS/SOPs/ingest.md
-   end to end, explaining each step in one line as you do it, so I see
-   the loop working: atomic notes, topic stub, compass, index lines.
-
-7. CLOSE. Append a setup entry to AI-OS/log.md (format is documented in
-   that file). Then remind me of the one habit that matters (dump
-   everything into today's daily note) and point me to
-   Start Here/working-with-ai.md for daily use,
-   Start Here/tasks-and-logs.md and
-   Start Here/working-with-projects.md for the task/log and project
-   system, and Start Here/github-and-backup.md for backing this up.
+6. CLOSE. Append a setup entry to AI-OS/log.md (format is in that file).
+   Remind me of the one habit that matters (dump everything into today's
+   daily note) and point me to Start Here/first-hour.md for what to
+   read next.
 ```
 
-## 4. Manual setup (if you prefer doing it yourself)
+## Without AI
 
-1. Open `AI-OS/Me.md` and fill in every placeholder section by hand.
-2. Read `AI-OS/Vault-Map.md` to learn where things go.
-3. Read `AI-OS/Schemas/note-schema.md` to learn the note format.
-4. Want to see filled-in notes? Worked examples live in the separate [Munin-Template-Examples](https://github.com/Pontare25/Munin-Template-Examples) repo; this vault ships empty.
-5. Open today's daily note and write something in it. That is the core habit.
+1. Follow [first-hour](Start%20Here/first-hour.md) from start to end.
+2. Make the two starter Areas yours: rewrite the **Standard of care** line in `Efforts/Areas/Work.md` and `Efforts/Areas/Personal.md` in your own words.
+3. If you plan to use an AI later, fill in the bracketed placeholders in `AI-OS/Me.md`; it is the profile any AI reads first.
 
-## 5. Skills (optional, recommended once the basics run)
+Worked examples live in the separate [Munin-Template-Examples](https://github.com/Pontare25/Munin-Template-Examples) repo; this vault ships empty.
 
-Skills are reusable instruction files that teach your AI tool specific capabilities. They can live in this vault (`AI-OS/Skills/`, recommended: versioned and portable) or in your AI tool's own default location if you prefer to keep the vault free of them. [AI-OS/Skills/README](AI-OS/Skills/README.md) explains the choice and the setup.
+## Upgrading from an older version
 
-Recommended first install: [kepano/obsidian-skills](https://github.com/kepano/obsidian-skills), official Obsidian CEO's skills that teach an AI correct Obsidian markdown, Bases (Obsidian native databases), defuddle (fetch webpages into markdown), json-canvas, and the Obsidian CLI (the best way for AI to interact with Obsidian). The full list lives in [AI-OS/Skills/README](AI-OS/Skills/README.md).
+Already using a vault made from this template? Read [troubleshooting-and-upgrading](Start%20Here/troubleshooting-and-upgrading.md) for how upgrades work and which files are yours, then [UPGRADING](UPGRADING.md) for what changed in each version.
 
-## Your guides
+## Something not working?
 
-The `Start Here/` folder holds the full set. Read them roughly in this order; each stands alone if you need to jump.
-
-1. [[obsidian-basics]]: just enough Obsidian to operate the vault: links, frontmatter, the daily/weekly/monthly notes, search.
-2. [[Guide to writing daily notes]]: the daily note, the one surface you write into every day.
-3. [[tasks-and-logs]]: task notes for things to do, checkbox markers for logs, and how the rollups work.
-4. [[working-with-projects]]: how a project ties meetings, people, tasks, and logs together.
-5. [[linking-notes-and-maps]]: how notes connect: inline links, the idea compass, topics, and Maps of Content.
-6. [[working-with-ai]]: the capture → ingest → query → review loop, day to day.
-7. [[skills-setup]]: teach your AI repeatable capabilities that live in the vault.
-8. [[github-and-backup]]: make the vault survive your computer.
-9. [[Hotkeys]]: the custom keyboard shortcuts.
-10. [[Recommended Obsidian Tutorials]]: external videos if you want to go deeper.
-
-## The one habit that matters
-
-Open today's daily note and dump everything there: thoughts, links, tasks, half-ideas. The daily-review SOP sweeps it into the right places. You never need to decide where something goes at capture time.
-
-This vault uses the [Journals](obsidian://show-plugin?id=journals) community plugin for managing periodic notes such as Daily, Weekly, Monthly, Quarterly and Yearly. Do not get overwhelmed, start with daily notes, once you feel like you want to aggregate information from multiple daily notes for a better overview and reflection over time start using the others, each builds the base for the next level (`Daily-> Weekly-> Monthly -> etc.`) but it all starts with the daily note.
-
-Think of the daily note as your launchpad and tracker. This is where you write your ideas and link information together. This is also what sets Obsidian apart from most note taking applications; the ability to link and aggregate information. This is what allows information to crystallize into knowledge over time.
+[troubleshooting-and-upgrading](Start%20Here/troubleshooting-and-upgrading.md) covers plugins that seem off, templates that do nothing, raw text where buttons should be, empty dashboards and mobile.
