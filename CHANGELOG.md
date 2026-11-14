@@ -1,5 +1,36 @@
 # Changelog
 
+## [3.2.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.1.0...v3.2.0) (2026-11-14)
+
+
+### Features
+
+* Archive folder for closed efforts, kept out of search ([8c64e57](https://github.com/Pontare25/Munin-Template-Vault/commit/8c64e57e1d535c7469f4ebcb96c08d09a8418b5d))
+* area: copied onto new tasks, Tasks views read it first ([70f905c](https://github.com/Pontare25/Munin-Template-Vault/commit/70f905cbb61218cce0738c1c8db21fbea2997bb3))
+* CI checks shipped templates against the field registry, plus evals scaffold ([802cf0b](https://github.com/Pontare25/Munin-Template-Vault/commit/802cf0b4b83c28a11b24471426fc2e21341c9268))
+* daily Next actions and task views ordered by due date ([2bae227](https://github.com/Pontare25/Munin-Template-Vault/commit/2bae22753280153b941a88bcbe09166b2c223a25))
+* field registry, schema governance rule and complete property types ([ddd7b84](https://github.com/Pontare25/Munin-Template-Vault/commit/ddd7b841733e880a845cf9a7a9a71f15d6ca37db))
+* lint checks your notes against the schema rules ([8478424](https://github.com/Pontare25/Munin-Template-Vault/commit/8478424fc1c64f0f7e6269ddfd2b28730a1dd33b))
+* organization and framework templates, both reachable from Promote note ([9570a23](https://github.com/Pontare25/Munin-Template-Vault/commit/9570a235c01e4fcf844759aea2c466596434b8f7))
+* parent prompt on knowledge notes, ai: review selector, source author and date ([5cc0a16](https://github.com/Pontare25/Munin-Template-Vault/commit/5cc0a16b61a93445a88ac3d59c3176befb7d7d54))
+* Phase 3, schema and checks (3.2.0) ([21eb747](https://github.com/Pontare25/Munin-Template-Vault/commit/21eb747c2ff5c7c57054cd60b1f715214f91eb17))
+* projects file themselves under Work and personal or Learning, with Retro and Close project ([6d47fc7](https://github.com/Pontare25/Munin-Template-Vault/commit/6d47fc7dd5c38f72e47e9efa96720c151ab830ce))
+* SOPs set ai: on AI-written notes; AI notes awaiting review view ([1aefd85](https://github.com/Pontare25/Munin-Template-Vault/commit/1aefd85516b092df38ee5b0bf77cb0b26671a02e))
+
+
+### Bug Fixes
+
+* allowlist the close-project command in the template check ([a220401](https://github.com/Pontare25/Munin-Template-Vault/commit/a220401a63dd06c5179868ea6f468b8cdb359120)), closes [#204](https://github.com/Pontare25/Munin-Template-Vault/issues/204)
+* full ISO date_created on shipped dashboards so lint stays quiet ([1e3debb](https://github.com/Pontare25/Munin-Template-Vault/commit/1e3debb1a28222e391d50ac4b3e467e31b5750e1)), closes [#204](https://github.com/Pontare25/Munin-Template-Vault/issues/204)
+* post-build review fixes for Phase 3 ([90d0481](https://github.com/Pontare25/Munin-Template-Vault/commit/90d048136b9b57708a758115fb013f5fcbc9341c))
+
+
+### Documentation
+
+* journal: and tags: explained; tags are the user's own (D6) ([2e18740](https://github.com/Pontare25/Munin-Template-Vault/commit/2e18740a9fa5e57480af6352ea6e98a7e99894a6))
+* say where area: is copied and where lint proposes it ([0401cc6](https://github.com/Pontare25/Munin-Template-Vault/commit/0401cc65774c9cfd1fdc9a633a44cf74064e2cde))
+* UPGRADING section for 3.2.0 ([2831a8b](https://github.com/Pontare25/Munin-Template-Vault/commit/2831a8bd5a6ce0fcafae6139c8b8101bf28f1ecb)), closes [#166](https://github.com/Pontare25/Munin-Template-Vault/issues/166)
+
 ## [3.1.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.0.1...v3.1.0) (2026-11-14)
 
 
