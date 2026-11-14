@@ -141,6 +141,7 @@
     "requiredTags": [],
     "includeFolders": [
       "Efforts/Projects",
+      "Efforts/Learning",
       "Efforts/Areas"
     ],
     "propertyKey": "status",
