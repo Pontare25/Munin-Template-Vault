@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 1
+version: 2
 summary: Weekly clearing of overdue and waiting tasks, people follow-ups, AI notes, a scoped lint and lessons, then fill the week's wins, misses and top 3
 ---
 
@@ -21,7 +21,7 @@ Clear what slipped through the week and set up the next one. Run it once a week,
 7. **Stale-claim check.** Compare `AI-OS/state.md` (Open threads, Pending decisions) and the Lessons in `AI-OS/memory.md` against the week's daily and meeting notes. Report claims that look superseded. Never edit without approval.
 8. **Goal drift.** Report active Areas with no active project (the red flag in [[AoR Review]]). Set the free-text priorities in the latest quarterly note and last week's Top 3 against what the week's notes show.
 9. **Capture system friction.** Read the **System friction** line in the weekly note. For each item add one Inbox line to `AI-OS/memory.md`: `YYYY-MM-DD | neg | weekly friction | text`. The next fold routes it.
-10. **Fill the note with the human.** Wins, Misses, a "Carries forward" list (open items that move into next week) and next week's Top 3 priorities. Write what the human says; suggest, never invent.
+10. **Fill the note with the human.** Wins, Misses, a "Carries forward" list (open items that move into next week) and next week's Top 3 priorities. Write what the human says; suggest, never invent. Set `date_modified` on every note you edit.
 11. **Log it:** one entry `## [YYYY-MM-DD] weekly-review | YYYY-Www` with bullets for notes approved, notes created, friction lines captured and claims flagged.
 
 ## Output

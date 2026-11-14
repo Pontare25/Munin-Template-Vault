@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 3
+version: 4
 summary: Sort the daily note, Raw/Inbox and Fleeting captures into sources, notes, tasks and entity links, and report overdue and waiting tasks
 ---
 
@@ -24,7 +24,7 @@ Sweep the daily note, the inbox and the fleeting notes so capture stays effortle
 6. **Ask about parents.** When a new note's `up:` is unclear, ask the human which note it belongs under. Never guess.
 7. **Report overdue and waiting tasks.** Read them from frontmatter, the same rule as the Tasks.base views "Overdue" and "Waiting". Overdue: `type: task`, `date_due` before today, `status` not `done` or `dropped`. Waiting: `status: waiting`. List each with its due date and project. Do not change them.
 8. **Update indexes:** for every note this review created in `Atlas/` (entity pages included), append its one-line entry to that folder's `index.md`.
-9. **Leave the daily note readable:** replace processed dumps with wikilinks to where the content went, so the day still tells its story.
+9. **Leave the daily note readable:** replace processed dumps with wikilinks to where the content went, so the day still tells its story. Set `date_modified` on every note you edit.
 10. **Log it:** one [[log]] entry (`## [YYYY-MM-DD] daily-review | YYYY-MM-DD`) with bullets for what was promoted, filed, or dropped.
 11. **Report** anything you were unsure about instead of guessing.
 

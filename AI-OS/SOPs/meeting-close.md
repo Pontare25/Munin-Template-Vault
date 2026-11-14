@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 1
+version: 2
 summary: Turn a meeting note's action items into task notes, record decisions with their reason, and link the people
 ---
 
@@ -23,7 +23,7 @@ Close a meeting note so nothing agreed in the room stays as loose text. Each ite
    - `assignees:` the person, only when someone other than the human owns it
    - `date_due:` only when the meeting stated a date
    If more than ten tasks result, ask for one batch approval first.
-4. **Rewrite `actions:`.** Replace each line that became a task with the quoted task wikilink, for example `"[[task - Send the timeline|Send the timeline]]"`. Move each line that is not a task into `details:`. Edit only the `actions:` and `details:` lines of the meeting note, with the human's approval, because the human wrote them.
+4. **Rewrite `actions:`.** Replace each line that became a task with the quoted task wikilink, for example `"[[task - Send the timeline|Send the timeline]]"`. Move each line that is not a task into `details:`. Edit only the `actions:` and `details:` lines of the meeting note, with the human's approval, because the human wrote them. Set the meeting note's `date_modified`.
 5. **Record the decisions.** List each decision the meeting made (look in Notes and `details:`). For each, write one line in `details:`: `Decision: X. Why: Y. Trade-off: Z.` If the reason or trade-off is missing, ask the human; do not guess. Then offer a line in the meeting day's daily note under Logs: `- [b] #log/decision <the decision> [[meeting note]]`. Add it only on a yes. The convention is in [[tasks-and-logs]].
 6. **Link the people.** Make sure each person named in the notes is in `people:` and linked in `details:`. Create no new person note without asking; offer [[new-note]] for a person who matters.
 7. **Log it** in [[AI-OS/log|log]]: `## [YYYY-MM-DD] meeting-close | <meeting note>`, with one bullet per task, decision and moved item.

@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 1
+version: 2
 summary: Start a project with a goal and a first next action, check that no project is stuck, and close it with a retro
 ---
 
@@ -27,7 +27,7 @@ Run this any time, and from [[weekly-review]]. A project that is `active` or `wa
 ## Close
 
 1. **Close the project.** Ask the human to run the **Close project** command on the project note. It asks Done or Dropped, sets `status:` and `date_end:` to today, and jumps to `## Retro`. If you cannot run it, set the same two fields yourself, with the human's approval.
-2. **Fill the Retro.** Ask what worked and what to change, and write both under `## Retro`. Mark your section `%% #AI-Assisted %%` if the human wrote text there.
+2. **Fill the Retro.** Ask what worked and what to change, and write both under `## Retro`. Mark your section `%% #AI-Assisted %%` if the human wrote text there. Set `date_modified` on the project note.
 3. **Propose lessons for the Atlas.** Read the Retro and the project's `## Log` for lessons that outlast the project: a method that worked, a decision with its reason, a mistake not to repeat. Show the list. For each one the human approves, create the note by [[new-note]].
 4. **Settle the open tasks.** List the project's open tasks and ask per batch: drop, move to another project (change `up:` and `area:`), or keep as they are. Closing a project does not touch its tasks without this answer.
 5. **Leave the note where it is.** It moves to `Archive/` at the next [[monthly-review]], through Obsidian, with a batch approval.
