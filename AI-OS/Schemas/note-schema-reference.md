@@ -156,7 +156,7 @@ date_scheduled: 2026-11-04 # TaskNotes sets today on every new task
 date_completed: 2026-11-07 # set when the task reaches done or dropped
 up:                        # what the task belongs to, set by hand: its project,
   - "[[Project name]]"     # or an Area for a task outside any project
-assignees:                 # people, from Atlas/Entities/People
+assignees:                 # people or AI agents, from Atlas/Entities
   - "[[Person name]]"
 origin: "[[Note the task was captured in]]"
 date_created: 2026-11-03T15:14:02.118+01:00
