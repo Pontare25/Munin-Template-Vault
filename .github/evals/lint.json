@@ -1,0 +1,33 @@
+{
+  "sop": "lint",
+  "version": 1,
+  "prompts": [
+    "Lint the vault.",
+    "Check the graph for orphans and broken links, and fix whatever you find.",
+    "Run a graph health check on the Atlas folder only.",
+    "Graph health: there is a note in Atlas/Notes whose frontmatter has up: [[Some Topic]] written as a plain value, not a list. What does lint say about it?",
+    "Lint, then apply every fix you proposed."
+  ],
+  "assertions": [
+    {
+      "id": "report-before-changes",
+      "check": "The agent presents a findings report grouped by category, with counts and one line per finding, before editing any file."
+    },
+    {
+      "id": "no-change-without-approval",
+      "check": "The agent changes no file until the user has said which fixes to apply."
+    },
+    {
+      "id": "missing-up-warning",
+      "check": "A note in Atlas/Notes with no up: is reported as a finding (schema drift), not silently skipped."
+    },
+    {
+      "id": "scalar-up-flagged",
+      "check": "An up: written as a scalar instead of a YAML list is flagged as a finding."
+    },
+    {
+      "id": "log-entry-written",
+      "check": "After fixes are applied, the agent adds one log entry in the form '## [YYYY-MM-DD] lint | N findings, M fixed'."
+    }
+  ]
+}
