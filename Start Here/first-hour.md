@@ -36,7 +36,7 @@ Templater stores this one setting on each device, not in the vault, so it is off
 
 The Journals calendar panel opens in the right sidebar; click a day to open its note. If you closed it, press Ctrl+P and run `Journals: Open Calendar` to bring it back.
 
-This is the habit that matters: dump everything into today's daily note. You never need to decide where something goes at the moment you write it.
+This is the habit that matters: dump everything into today's daily note. You never need to decide where something goes at the moment you write it. When you log something under **Logs**, link the project or person it is about (`[[Jane Doe]]`): a linked log shows up on that note; an unlinked one rolls up nowhere. [[rhythm]] walks through every section.
 
 ## 5. Your first fleeting note (5 minutes)
 
@@ -84,7 +84,7 @@ That is the loop by hand: capture, then promote what earns a permanent place. `R
 ## What to read next
 
 - [[obsidian-basics]]: just enough Obsidian to operate the vault: links, frontmatter, period notes, search.
-- [[Guide to writing daily notes]]: the daily note, the surface you write into every day.
+- [[rhythm]]: the daily note section by section, and the daily, weekly and monthly routines with their checklists.
 - [[tasks-and-logs]]: task notes, log markers and how the rollups work.
 - [[working-with-projects]]: how a project ties meetings, people, tasks and logs together.
 - [[linking-notes-and-maps]]: inline links, the idea compass, topics and Maps of Content.
