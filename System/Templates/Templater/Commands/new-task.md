@@ -1,14 +1,15 @@
 <%*
-// New task (Ctrl+Alt+T): open TaskNotes' own "Create new inline task" window; after
-// you save, the link TaskNotes inserts becomes a task reference line:
-//   "- [t] #task [[task - <title>|<title>]]"
+// New task (Ctrl+Alt+T): ask for the context (personal or work), then open TaskNotes'
+// own "Create new inline task" window with that context filled in; after you save, the
+// link TaskNotes inserts becomes a task reference line:
+//   "- [t] [[task - <title>|<title>]]"
 // - empty line or empty bullet ("- ") -> the reference goes on that line
 // - text line -> TaskNotes puts the reference on a new line below, at the same indent
 // - line that already links a task note -> opens that task's edit dialog (no new task)
 // The line keeps a checkbox on purpose: the task note's Log section is a Dataview TASK
-// query, which only sees checkbox lines, so this line shows up there. "[t] #task" renders
-// as checked, so it never looks like an open to-do, and is tagged, so log queries tell it
-// apart from other lines. It is "t", not "x": TaskNotes offers to convert every [ ] and
+// query, which only sees checkbox lines, so this line shows up there. "[t]" renders
+// as checked, so it never looks like an open to-do; log queries count a [t] line that
+// links a task note as a task reference. It is "t", not "x": TaskNotes offers to convert every [ ] and
 // [x] line into a task note, and a reference line already has one. It does not sync with the task's status. Complete
 // tasks on the task card.
 // origin: is set to the note you are in (where the task was created).
@@ -34,6 +35,10 @@ if (!tn || !editor || !host || typeof tn.createInlineTask !== "function") {
   if (linked) {
     await tn.openTaskEditModalForFile(linked);
   } else {
+    // Context first: TaskNotes reads its default context when the window opens, so set it
+    // for this one window and put the setting back right after. Escape cancels the task.
+    const context = await tp.system.suggester(["Personal", "Work"], ["personal", "work"], false, "Context for this task?");
+    if (!context) return;
     // Drop a stale shadow left by an earlier run, then install this run's shadow.
     // restore() removes only this run's shadow, so this run's cancel timer never
     // deletes the shadow of a later capture.
@@ -62,16 +67,27 @@ if (!tn || !editor || !host || typeof tn.createInlineTask !== "function") {
           // Text line: keep the reference at the same indent as the line above
           indent = (prev.match(/^\s*/) || [""])[0];
         }
-        ed.setLine(at, indent + "- [t] #task " + ref);
+        ed.setLine(at, indent + "- [t] " + ref);
         ed.setCursor({ line: at, ch: ed.getLine(at).length });
         // origin: the note the task was created in (daily, meeting, ...)
         const file = app.vault.getAbstractFileByPath(task.path);
-        if (file) app.fileManager.processFrontMatter(file, (fm) => { fm.origin = "[[" + host.basename + "]]"; });
+        // contexts: the one picked above, if the window left it empty
+        if (file) app.fileManager.processFrontMatter(file, (fm) => {
+          fm.origin = "[[" + host.basename + "]]";
+          if (!fm.contexts || (Array.isArray(fm.contexts) && fm.contexts.length === 0)) fm.contexts = [context];
+        });
       } catch (e) {
         console.error("New task:", e);
       }
     };
-    await tn.createInlineTask(editor);
+    const defaults = tn.settings.taskCreationDefaults;
+    const prevContexts = defaults.defaultContexts;
+    defaults.defaultContexts = context;
+    try {
+      await tn.createInlineTask(editor);
+    } finally {
+      defaults.defaultContexts = prevContexts;
+    }
     // Cancelled window: drop the shadow 10 s after the window is gone (a saved task has
     // been created and has removed the shadow itself by then)
     const modal = [...document.querySelectorAll(".modal-container")].pop();

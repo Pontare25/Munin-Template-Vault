@@ -4,7 +4,8 @@
 // every log-bearing note (daily, meeting, weekly, work-session) lives under Calendar/.
 const LIMITED_FOLDERS = ["Calendar/"];
 // Log markers (the "Logs" family from the tasks-and-logs guide), plus "t": task reference lines
-// ("- [t] #task [[task - ...]]") written by New task (Ctrl+Alt+T). Only "t" lines tagged #task count.
+// ("- [t] [[task - ...]]") written by New task (Ctrl+Alt+T). Only "t" lines that link a task note
+// (or carry the older #task tag) count.
 const STATUSES        = ["b", "i", "p", "c", "*", "t"];
 const SK              = "advanced-log-search:" + dv.current().file.path;
 // Statuses hidden until toggled on (task reference lines are not logs by default).
@@ -54,7 +55,7 @@ function plainText(text) {
     .replace(/[ \t]+/g, " ").trim();
 }
 
-// Title of the task note a [t] #task line links to (frontmatter title, as TaskNotes shows it);
+// Title of the task note a [t] line links to (frontmatter title, as TaskNotes shows it);
 // falls back to the link text without its "task - " filename prefix.
 function taskTitle(task) {
   const m = (task.text || "").match(/\[\[([^\]|#]+)/);
@@ -63,8 +64,13 @@ function taskTitle(task) {
   return title ? String(title) : plainText(task.text).replace(/^#task\s+/, "").replace(/^task - /, "");
 }
 
-// Task reference line: "[t]" tagged #task (an untagged [t] line is not a log).
-const isTaskRef = task => task.status === "t" && (task.tags ?? []).includes("#task");
+// Task reference line: "[t]" that links a task note, or is tagged #task (older lines).
+// Any other [t] line is not a log.
+const linksTask = task => (task.outlinks ?? []).some(l => {
+  const f = app.metadataCache.getFirstLinkpathDest(l.path, task.path);
+  return f && app.metadataCache.getFileCache(f)?.frontmatter?.type === "task";
+});
+const isTaskRef = task => task.status === "t" && ((task.tags ?? []).includes("#task") || linksTask(task));
 
 // Results minus those nested under another result of the same note; the parent's
 // bullets already include them (same as the rendered list).
@@ -76,7 +82,7 @@ function topLevel(tasks) {
 }
 
 function taskBullets(task, depth = 0) {
-  // Task reference lines ([t] #task, from New task) copy as "#task <title>"
+  // Task reference lines ([t], from New task) copy as "#task <title>"
   const text = isTaskRef(task) ? "#task " + taskTitle(task) : plainText(task.text);
   const lines = ["  ".repeat(depth) + "- " + text];
   for (const c of task.children ?? []) lines.push(...taskBullets(c, depth + 1));
@@ -102,7 +108,7 @@ function buildCache() {
     const pageUp   = dv.func.contains(page.up ?? page.Projects ?? page.projects, curLink);
 
     for (const task of page.file?.tasks ?? []) {
-      if (task.status === "t" && !isTaskRef(task)) continue;  // an untagged [t] line is not a log
+      if (task.status === "t" && !isTaskRef(task)) continue;  // a [t] line without a task link is not a log
       if (!dv.func.contains(task.outlinks, curLink) && !pageUp) continue;
       (tasksByPath[path] ??= []).push({ task, status: task.status, lo: (task.text ?? "").toLowerCase(), nd });
       pathMeta[path] = { nd };

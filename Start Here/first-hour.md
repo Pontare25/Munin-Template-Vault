@@ -53,10 +53,10 @@ Fleeting notes are your ideas in transit. When one is worth keeping, **Promote n
 ## 6. Your first task (5 minutes)
 
 1. In today's daily note, put the cursor on an empty line under **Logs**.
-2. Press Ctrl+Alt+T. The TaskNotes window for a new task opens.
+2. Press Ctrl+Alt+T and pick **Personal** or **Work**. The TaskNotes window for a new task opens.
 3. Type a title. Optionally type `+` to link a project or Area, for example `Work`. Save.
 
-**You should see:** a ticked line tagged `#task` that links your new task in the daily note, and the task note itself in `Efforts/TaskNotes/Tasks/`. Open the **Tasks** dashboard in `Dashboards/`: new tasks are scheduled for today, so expand **Today** and it is listed there.
+**You should see:** a ticked line that links your new task in the daily note, and the task note itself in `Efforts/TaskNotes/Tasks/`. Open the **Tasks** dashboard in `Dashboards/`: new tasks are scheduled for today, so expand **Today** and it is listed there.
 
 Complete a task on its task card or in a task view, not on the reference line: that line does not follow the task's status. [[tasks-and-logs]] explains the whole task and log system.
 
