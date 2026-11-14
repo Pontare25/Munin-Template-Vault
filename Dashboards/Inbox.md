@@ -27,3 +27,9 @@ Quick notes you wrote without deciding where they belong. Promote the keepers to
 Originals you want the AI to read, in whatever form they arrived: a PDF, a slide deck, a saved web page, a clipping, or your own long-form writing worth keeping verbatim. Dump the file, keep moving. These are never rewritten. Ingest extracts what matters into `Atlas/` and moves the original to `Raw/Sources/`, which is what takes it off this list.
 
 ![[Inbox.base]]
+
+## AI notes awaiting review
+
+Notes the AI wrote that nobody has looked at yet (`ai: pending`), oldest first. Read one, then set its AI review selector to approved, collaborative or checked.
+
+![[Notes.base#AI notes awaiting review]]

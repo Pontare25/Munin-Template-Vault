@@ -16,7 +16,7 @@ if (!file || fm?.type !== "project") {
     });
     const editor = app.workspace.activeEditor?.editor;
     if (editor) {
-      const at = editor.getValue().split("\n").findIndex(l => /Retro/.test(l));
+      const at = editor.getValue().split("\n").findIndex(l => /^## Retro\s*$/.test(l));
       if (at >= 0) { editor.setCursor({ line: at, ch: 0 }); editor.scrollIntoView({ from: { line: at, ch: 0 }, to: { line: at, ch: 0 } }, true); }
     }
     new Notice(`Project closed as ${status}. Fill in the Retro.`);
