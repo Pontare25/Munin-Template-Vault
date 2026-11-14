@@ -82,8 +82,8 @@ Bases read frontmatter fields, which is one more reason the schema matters: note
 | `System/Bases/AoR Review.base` | Every active Area with health signals | [[AoR Review]] dashboard |
 | `System/Bases/Calendar.base` | Meetings and work sessions per period | Periodic notes |
 | `System/Bases/Journals.base` | Periodic rollups (days into weeks, and up) | Weekly to yearly notes |
-| `System/Bases/Meetings.base` | Meetings per project and person | Project and person notes |
-| `System/Bases/Sessions.base` | Work sessions per project | Project notes |
+| `System/Bases/Meetings.base` | Meetings and work sessions per project; meetings per person | Project and person notes |
+| `System/Bases/Sessions.base` | Work sessions per project (project notes made before 3.1.0) | Older project notes |
 | `System/Bases/Notes.base` | Child and related notes | Project and person notes |
 | `System/Bases/Projects.base` | Sub projects | Project notes |
 | `System/Bases/People.base` | All people | Open it directly |

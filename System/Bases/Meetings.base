@@ -1,6 +1,7 @@
 filters:
   or:
     - type == "meeting"
+    - type == "work-session"
 formulas:
   week: date(date_start).format("[W]WW")
 properties:
@@ -14,9 +15,31 @@ properties:
     displayName: Actions
 views:
   - type: table
+    name: Project meetings and work sessions
+    filters:
+      and:
+        - up.contains(link(this.file))
+    groupBy:
+      property: formula.week
+      direction: DESC
+    order:
+      - type
+      - file.name
+      - summary
+      - people
+    sort:
+      - property: date_start
+        direction: DESC
+    columnSize:
+      note.type: 110
+      file.name: 220
+      note.summary: 560
+    rowHeight: medium
+  - type: table
     name: Project meetings
     filters:
       and:
+        - type == "meeting"
         - up.contains(link(this.file))
     groupBy:
       property: formula.week
@@ -40,6 +63,7 @@ views:
     name: Project meetings detailed
     filters:
       and:
+        - type == "meeting"
         - up.contains(link(this.file))
     groupBy:
       property: formula.week
@@ -60,9 +84,31 @@ views:
       note.actions: 260
     rowHeight: extra
   - type: table
+    name: Project work sessions detailed
+    filters:
+      and:
+        - type == "work-session"
+        - up.contains(link(this.file))
+    groupBy:
+      property: formula.week
+      direction: DESC
+    order:
+      - file.name
+      - date_start
+      - summary
+      - people
+    sort:
+      - property: date_start
+        direction: DESC
+    columnSize:
+      file.name: 200
+      note.summary: 560
+    rowHeight: extra
+  - type: table
     name: People meetings
     filters:
       and:
+        - type == "meeting"
         - people.contains(link(this.file))
     groupBy:
       property: formula.week
@@ -84,6 +130,7 @@ views:
     name: People meetings detailed
     filters:
       and:
+        - type == "meeting"
         - people.contains(link(this.file))
     groupBy:
       property: formula.week

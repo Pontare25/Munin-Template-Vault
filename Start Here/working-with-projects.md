@@ -81,27 +81,28 @@ The project template assembles itself from the linked notes:
 
 - **Last update**: a one-line Dataview that finds the most recent dated note linking this project (a meeting, work session, daily, or dated note) and shows how many days ago it was. Your at-a-glance "is this project still moving." It mirrors the **Last contact** line on a person note.
 - **Tasks**: a board of the project's task notes (every task whose `up:` is this project), one column per status (`![[Tasks.base#Project open]]`). Its **New** button creates a task with `up:` already set to this project. Below it, two folded views: **Closed tasks** (`done` and `dropped`, newest first) and **Sub-project tasks** (the tasks of the direct sub-projects, one row per sub-project).
-- **Logs**: information items (`[b] [i] [p] [c] [*]`) and task reference lines (`[t] #task`) pulled out of linked notes, newest source first, with the collapsible **Advanced log** below for filtering and export. A line shows here when it links the project itself, or when it sits in a note whose `up:` is the project (a meeting or work session). A task reference line links the task, not the project, so it shows here only when it was captured in such a note; reference lines captured in a daily note do not reach the project's Logs (the task itself is on the **Tasks** board).
-- **Meetings**: a Bases table (`![[Meetings.base#Project meetings]]`) of every meeting whose `up` points here, one line each with its summary. Switch the table to **Project meetings detailed** (the view menu at the top of the table) to add each meeting's details and actions.
-- **Work sessions**: a separate Bases table (`![[Sessions.base#Project sessions]]`) of every work session for this project.
+- **Goal**: what the project is for, in your words. The cursor lands here when you create the project.
+- **Meetings and work sessions**: one Bases table (`![[Meetings.base#Project meetings and work sessions]]`) of every meeting and work session whose `up` points here, with a **Type** column. Switch the table (the view menu at the top) to **Project meetings detailed** for each meeting's details and actions, or **Project work sessions detailed** for the sessions alone.
+- **Log**: the collapsible **Advanced log**: information items (`[b] [i] [p] [c] [*]`) and task reference lines (`[t]`) pulled out of linked notes, newest source first, with filters and export. A line shows here when it links the project itself, or when it sits in a note whose `up:` is the project (a meeting or work session). A task reference line links the task, not the project, so it shows here only when it was captured in such a note; reference lines captured in a daily note do not reach the project's Logs (the task itself is on the **Tasks** board).
 
-A person note carries the same shape, scoped to that person instead of the project: its Tasks board shows the tasks assigned to them (`assignees:`), and its New button pre-fills the assignee.
+Under the Status selector, a **Summary** box edits the project's `summary:` line in place. A person note carries the same shape, scoped to that person instead of the project, with its **About** box (the `summary:` line) at the top: its Tasks board shows the tasks assigned to them (`assignees:`), and its New button pre-fills the assignee.
 
 ## The Bases model
 
 Two rules explain where every table comes from.
 
-**One base per note `type`, differentiated by view, not by new files.** `Meetings.base` filters `type == "meeting"` once, then offers views that differ by *relationship* to the note embedding it. `Sessions.base` does the same for work sessions.
+**One base per kind of note, differentiated by view, not by new files.** `Meetings.base` holds meetings and work sessions, then offers views that differ by *type* and by *relationship* to the note embedding it. (`Sessions.base` still ships for project notes made before 3.1.0.)
 
 | View | Shows | Embed on |
 |---|---|---|
-| `Meetings.base#Project meetings` | meetings linking the embedding project | a project note |
+| `Meetings.base#Project meetings and work sessions` | meetings and work sessions linking the embedding project | a project note |
+| `Meetings.base#Project meetings` | meetings linking the embedding project | a project note (switch views) |
 | `Meetings.base#Project meetings detailed` | the same meetings with their details and actions | a project note (switch views) |
+| `Meetings.base#Project work sessions detailed` | work sessions linking the embedding project | a project note (switch views) |
 | `Meetings.base#People meetings` | meetings linking the embedding person | a person note |
 | `Meetings.base#People meetings detailed` | the same meetings with their details and actions | a person note (switch views) |
-| `Sessions.base#Project sessions` | work sessions linking the embedding project | a project note |
 
-This is why meetings and sessions stay in **separate** tables on a project note: they are separate types, each with its own base.
+Meetings and work sessions share one table on a project note because a project cares about both; the detailed views split them again.
 
 **Time rollups that span types live in one combined base.** The daily, weekly, and monthly notes do not care whether something was a meeting or a session; they want everything that happened in the period. A per-type base cannot do that: a base's top-level filter gates every view, and a view can only narrow it, never broaden it. So `Calendar.base` scopes its top filter to the whole `Calendar` folder, and each view (`Daily rollup`, `Weekly rollup`, `Monthly rollup`) does the narrowing: filter to meetings and work sessions, then to its date range. The range compares each row's `anchor` formula (a meeting's or session's `date_start`) with the embedding journal note's own `date`. A **Type** column keeps the two distinguishable.
 

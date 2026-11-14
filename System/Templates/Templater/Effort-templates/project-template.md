@@ -54,6 +54,8 @@ summary:
 
 Status: `INPUT[inlineSelect(option(backlog), option(active), option(waiting), option(done), option(dropped)):status]`
 
+Summary: `INPUT[textArea:summary]`
+
 ## Last update
 ```dataview
 TABLE WITHOUT ID
@@ -75,20 +77,16 @@ LIMIT 1
 > [!todo]- Sub-project tasks
 > ![[Tasks.base#Sub-project tasks]]
 
-## Related
-### Logs
-```dataview
-TASK
-WHERE contains(outlinks, [[]]) or contains(up, [[]])
-WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "t" AND contains(tags, "#task"))
-GROUP BY file.name as Source
-SORT Source DESC
-```
+## Goal
+
+<% tp.file.cursor() %>
+
+## Meetings and work sessions
+![[Meetings.base#Project meetings and work sessions]]
+
+## Log
 <% tp.file.include("[[Advanced log template]]") %>
-### Meetings
-![[Meetings.base#Project meetings]]
-### Work sessions
-![[Sessions.base#Project sessions]]
+## Related
 ### Sub Projects
 ![[Projects.base#Sub projects]]
 
@@ -97,7 +95,3 @@ SORT Source DESC
 
 ### Related Notes
 ![[Notes.base#Related notes]]
-
-## Goal
-
-<% tp.file.cursor() %>

@@ -218,7 +218,7 @@ Two engines, split by what they query:
 
 - **Bases** (`System/Bases/Tasks.base`) handles every task view: the dashboard, the project, Area and person boards, and the journal sections. Task notes are notes with properties, which is exactly what Bases queries.
 
-- **Dataview** handles the log rollups on project, person and journal notes. The standard pattern is:
+- **Dataview** handles the log rollups on journal notes. The standard pattern is:
 
   ```dataview
   TASK
@@ -234,9 +234,9 @@ Two engines, split by what they query:
 
 ## The Advanced log widget
 
-The project and person templates show the plain log rollup above (always visible), and below it a collapsible **Advanced log** browser (a `dataviewjs` widget) for when you need to filter or export. It is collapsed by default; click *Advanced log* to open it. The open/closed state is remembered per note. It shows the same lines that reach the host note (link-scoped by outlink or `up`) and adds live controls on top:
+Project and person notes show their logs in a collapsible **Advanced log** browser (a `dataviewjs` widget) for when you need to filter or export. It is collapsed by default; click *Advanced log* to open it. The open/closed state is remembered per note. It shows the same lines that reach the host note (link-scoped by outlink or `up`) and adds live controls on top:
 
-- **Marker toggles**: show or hide each log marker (`[b]` `[i]` `[p]` `[c]` `[*]`), plus an `x` toggle for task reference lines. The `x` toggle is off by default; turn it on to see the tasks captured about this note in the timeline.
+- **Marker toggles**: show or hide each log marker (`[b]` `[i]` `[p]` `[c]` `[*]`), plus a `t` toggle for task reference lines. The `t` toggle is off by default; turn it on to see the tasks captured about this note in the timeline.
 - **Text search**: matches the whole line, including any `#log/` tag, so typing `decision` pulls up every `#log/decision` item.
 - **Date range**, a **Limited folder search** switch (only `Calendar/` notes), sort order, **Reset filters**, and a **Copy results** button (Markdown to clipboard; task reference lines are copied as `#task <title>`). All settings persist per note.
 
