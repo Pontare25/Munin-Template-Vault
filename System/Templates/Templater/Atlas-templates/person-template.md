@@ -15,6 +15,11 @@ tags:
 # <% tp.file.title %>
 <%* await tp.file.move("Atlas/Entities/People/" + tp.file.title) -%>
 
+## About
+`INPUT[textArea:summary]`
+
+<% tp.file.cursor() %>
+
 ## Last contact
 ```dataview
 TABLE WITHOUT ID
@@ -31,21 +36,9 @@ LIMIT 1
 > [!done]- Closed tasks
 > ![[Tasks.base#Person closed]]
 ## Log
-```dataview
-TASK
-WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "t" AND contains(tags, "#task"))
-WHERE contains(outlinks, [[]]) or contains(up, [[]])
-GROUP BY file.name as Source
-SORT Source DESC
-```
 <% tp.file.include("[[Advanced log template]]") %>
 ## Meetings
 ![[Meetings.base#People meetings]]
 
 ## Related notes
 ![[Notes.base#Related notes]]
-
-## About
-`INPUT[textArea:summary]`
-
-<% tp.file.cursor() %>

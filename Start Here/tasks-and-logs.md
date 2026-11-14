@@ -28,7 +28,7 @@ Three things happen:
 - Your line becomes a task reference line:
 
   ```markdown
-  - [t] #task [[task - Draft the integration spec|Draft the integration spec]]
+  - [t] [[task - Draft the integration spec|Draft the integration spec]]
   ```
 
 - The task's `origin:` property is set to the note you were in, so you can always trace where it was captured.
@@ -39,7 +39,7 @@ Where the line goes depends on where the cursor was:
 - **Line with text:** the reference goes on a new line below, at the same indent. The text is not used as the title; type the title in the window.
 - **Line that already links a task note:** no new task. `Ctrl+Alt+T` opens that task's edit window instead.
 
-**Why `[t] #task`.** The reference line renders as checked so it never looks like an open to-do, and is tagged `#task` so log queries can tell it apart from other lines and show it in the log trail. It uses `t`, not `x`: TaskNotes puts a *Convert to TaskNote* button on every `[ ]` and `[x]` line, and a reference line already points to its task note. The box does **not** sync with the task: ticking or unticking it changes nothing. Complete tasks on the task itself (see below).
+**Why `[t]`.** The reference line renders as checked so it never looks like an open to-do, and log queries count a `[t]` line as a task reference and show it in the log trail. It uses `t`, not `x`: TaskNotes puts a *Convert to TaskNote* button on every `[ ]` and `[x]` line, and a reference line already points to its task note. The box does **not** sync with the task: ticking or unticking it changes nothing. Complete tasks on the task itself (see below).
 
 TaskNotes' own create command (`tasknotes:create-inline-task`, *TaskNotes: Create new inline task*) is explicitly unbound in this vault's hotkeys, so `Ctrl+Alt+T` is the only capture key and every capture gets a reference line and an `origin:`.
 
@@ -53,7 +53,7 @@ You can fill fields from the title box by typing a trigger character and picking
 | `+` | Projects (the task's `up:`) | projects and Areas with status `backlog`, `active` or `waiting` |
 | `*` | Status | the five statuses |
 
-The window also shows **Contexts** and **Tags** fields. This vault does not use them: leave them empty. Typing `$` in the title box still opens a contexts suggester (TaskNotes keeps that shortcut on); ignore it. A task's Area comes from its project (see below), not from a context or a tag.
+**Contexts** says whether a task is `personal` or `work`. `Ctrl+Alt+T` asks for it before the window opens and fills it in; keep to those two values. The **Tags** field is not used: leave it empty. A task's Area comes from its project (see below), not from a context or a tag.
 
 ## What a task note holds
 
@@ -199,8 +199,6 @@ Some log kinds are worth querying as a class across the whole vault. Give those 
 
 The marker and the tag do different jobs: the **marker** sets the family and the icon; the **tag** sets the semantic class for cross-cutting queries. They are orthogonal, which is why decision and risk draw from different markers but share the `#log/` namespace. Query all decisions with `#log/decision`, everything typed with `#log/*`.
 
-To keep these cheap to write, two commands insert the whole prefix for you: **Log decision** drops `- [b] #log/decision` on the line, **Log risk** drops `- [c] #log/risk`, cursor left ready for the text. See [[Hotkeys]].
-
 Major decisions can be promoted to their own `type: decision` note (context, rationale, date), ADR-style: the same capture-cheap, promote-what-matters move as the rest of the vault.
 
 ## The linking rule (why any of this rolls up)
@@ -220,29 +218,27 @@ Two engines, split by what they query:
 
 - **Bases** (`System/Bases/Tasks.base`) handles every task view: the dashboard, the project, Area and person boards, and the journal sections. Task notes are notes with properties, which is exactly what Bases queries.
 
-- **Dataview** handles the log rollups on project, person and journal notes. The standard pattern is:
+- **Dataview** handles the log rollups on journal notes. The standard pattern is:
 
   ```dataview
   TASK
-  WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "t" AND contains(tags, "#task"))
+  WHERE contains(list("b", "i", "p", "c", "*"), status) OR status = "t"
   WHERE contains(outlinks, [[]]) or contains(up, [[]])
   GROUP BY file.name as Source
   SORT Source DESC
   ```
 
-  The first `WHERE` keeps the five log markers plus task reference lines (`t` lines tagged `#task`); other checked lines are left out. `contains(outlinks, [[]])` catches lines that link this note; `contains(up, [[]])` catches lines in notes parented to it. Logs are grouped by source note, and because daily and meeting notes are named with a date prefix, that grouping sorts chronologically for free.
+  The first `WHERE` keeps the five log markers plus task reference lines (`t` lines); other checked lines are left out. `contains(outlinks, [[]])` catches lines that link this note; `contains(up, [[]])` catches lines in notes parented to it. Logs are grouped by source note, and because daily and meeting notes are named with a date prefix, that grouping sorts chronologically for free.
 
   Dataview treats every marker other than a space as *checked*, but only `x` as *completed*. When you write your own query, filter on an explicit list of markers, as above, rather than on "completed".
 
 ## The Advanced log widget
 
-The project and person templates show the plain log rollup above (always visible), and below it a collapsible **Advanced log** browser (a `dataviewjs` widget) for when you need to filter or export. It is collapsed by default; click *Advanced log* to open it. The open/closed state is remembered per note. It shows the same lines that reach the host note (link-scoped by outlink or `up`) and adds live controls on top:
+Project and person notes show their logs in a collapsible **Advanced log** browser (a `dataviewjs` widget) for when you need to filter or export. It is collapsed by default; click *Advanced log* to open it. The open/closed state is remembered per note. It shows the same lines that reach the host note (link-scoped by outlink or `up`) and adds live controls on top:
 
-- **Marker toggles**: show or hide each log marker (`[b]` `[i]` `[p]` `[c]` `[*]`), plus an `x` toggle for task reference lines. The `x` toggle is off by default; turn it on to see the tasks captured about this note in the timeline.
+- **Marker toggles**: show or hide each log marker (`[b]` `[i]` `[p]` `[c]` `[*]`), plus a `t` toggle for task reference lines. The `t` toggle is off by default; turn it on to see the tasks captured about this note in the timeline.
 - **Text search**: matches the whole line, including any `#log/` tag, so typing `decision` pulls up every `#log/decision` item.
 - **Date range**, a **Limited folder search** switch (only `Calendar/` notes), sort order, **Reset filters**, and a **Copy results** button (Markdown to clipboard; task reference lines are copied as `#task <title>`). All settings persist per note.
-
-The weekly note keeps its own date-scoped decisions query for the "what got decided this week" view.
 
 The widget lives at `System/Templates/Templater/Sub-templates/Dataview queries/Advanced log template.md` and is pulled into the project and person templates with `tp.file.include`.
 

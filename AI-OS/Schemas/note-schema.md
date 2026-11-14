@@ -22,14 +22,15 @@ date_created: 2026-01-15T09:30
   | `source` | `Raw/Sources/` | Captured external material |
   | `person` | `Atlas/Entities/People/` | A person |
   | `organization` | `Atlas/Entities/Organizations/` | An organization |
+  | `ai-agent` | `Atlas/Entities/Agents/` | AI agent you assign tasks to |
   | `framework` | `Atlas/Frameworks/` | Named method or model |
   | `project` | `Efforts/Projects/` | Effort with an end |
   | `area` | `Efforts/Areas/` | Ongoing responsibility |
   | `daily` to `yearly` | `Calendar/<Period> Notes/` | Journal notes: `daily`, `weekly`, `monthly`, `quarterly`, `yearly` |
   | `meeting` | `Calendar/Meetings/` | Meeting note |
-  | `work-session` | `Calendar/Work Sessions/` | Focused work block on a project |
-  | `task` | `Efforts/TaskNotes/Tasks/` | One task, written by the TaskNotes plugin |
-  | `dashboard` | `Dashboards/` | Overview that queries other notes |
+  | `work-session` | `Calendar/Work Sessions/` | Focused work block |
+  | `task` | `Efforts/TaskNotes/Tasks/` | One task, written by TaskNotes |
+  | `dashboard` | `Dashboards/` | Overview querying other notes |
   | `sop` | `AI-OS/SOPs/` | A procedure the AI follows ([[sop-format]]) |
 
 - **`date_created:`** ISO `YYYY-MM-DDTHH:mm`. Templates fill it.

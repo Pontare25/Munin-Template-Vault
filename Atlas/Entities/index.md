@@ -1,10 +1,11 @@
 # Atlas/Entities
 
-Pages for people and organizations. When a source mentions a person or organization that matters to you, the ingest SOP creates or updates their page here, so context accumulates: who they are, how you know them, what they have said or done across every source that mentions them.
+Pages for people, organizations and AI agents. When a source mentions a person or organization that matters to you, the ingest SOP creates or updates their page here, so context accumulates: who they are, how you know them, what they have said or done across every source that mentions them.
 
 ## What belongs here
 
 - One page per person (`type: person`) or organization (`type: organization`).
+- One page per AI agent (`type: ai-agent`) in `Agents/`, such as [[Claude tasks]]: assign it a task in TaskNotes like a person.
 - Relationship links: people link to their organizations via `related:`, organizations link upward to industries or topics via `up:`.
 
 ## What does not belong here

@@ -43,25 +43,16 @@ summary:
 > [!todo]+ Still open (due by end of month)
 > ![[Tasks.base#Period due]]
 
-### Logs & decisions this month
+### Logs this month
 > [!note]- All logs this month (grouped by week)
 > ```dataview
 > TASK
 > FROM "Calendar"
 > WHERE file.day >= date("<% moment(tp.file.title, "YYYY-MM").startOf("month").format("YYYY-MM-DD") %>") AND file.day <= date("<% moment(tp.file.title, "YYYY-MM").endOf("month").format("YYYY-MM-DD") %>")
-> WHERE contains(list("b", "i", "p", "c", "*"), status) OR (status = "t" AND contains(tags, "#task"))
+> WHERE contains(list("b", "i", "p", "c", "*"), status) OR status = "t"
 > GROUP BY dateformat(file.day, "'W'WW") AS "Week"
 > SORT file.day ASC
 > ```
-
-**Decisions**
-```dataview
-TASK
-FROM "Calendar"
-WHERE file.day >= date("<% moment(tp.file.title, "YYYY-MM").startOf("month").format("YYYY-MM-DD") %>") AND file.day <= date("<% moment(tp.file.title, "YYYY-MM").endOf("month").format("YYYY-MM-DD") %>")
-WHERE contains(text, "#log/decision")
-SORT file.day ASC
-```
 
 ### Meetings & sessions this month
 ![[Calendar.base#Monthly rollup]]

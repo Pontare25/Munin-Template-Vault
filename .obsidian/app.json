@@ -7,8 +7,6 @@
   "mobileToolbarCommands": [
     "templater-obsidian:System/Templates/Templater/Commands/log-bullet.md",
     "templater-obsidian:System/Templates/Templater/Commands/new-task.md",
-    "templater-obsidian:System/Templates/Templater/Commands/log-decision.md",
-    "templater-obsidian:System/Templates/Templater/Commands/log-risk.md",
     "editor:undo",
     "editor:redo",
     "editor:indent-list",

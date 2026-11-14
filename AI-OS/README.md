@@ -44,7 +44,7 @@ Every file the template ships has an ownership class. It decides what an upgrade
 
 | Class | Files (first match wins) |
 |---|---|
-| user | `AI-OS/Me.md`, `AI-OS/state.md` (an upgrade sets its first line), `AI-OS/memory.md`, `AI-OS/log.md`, `Atlas/log.md`, `Efforts/Areas/Personal.md`, `Efforts/Areas/Work.md` (starter notes, yours once filled), `.github/**` and `CONTRIBUTING.md` (template maintainer files) |
+| user | `AI-OS/Me.md`, `AI-OS/state.md` (an upgrade sets its first line), `AI-OS/memory.md`, `AI-OS/log.md`, `Atlas/log.md`, `Efforts/Areas/Personal.md`, `Efforts/Areas/Work.md`, `Atlas/Entities/Agents/Claude tasks.md` (starter notes, yours once filled), `.github/**` and `CONTRIBUTING.md` (template maintainer files) |
 | merge | `AI-OS/routing.md` (your rows live under My SOPs), `AI-OS/README.md`, every folder `README.md` except the root one, every `index.md` in `Atlas/`, `System/Templates/**`, `System/Bases/**`, `Efforts/Efforts.base`, `Atlas/Topics/Topics.base`, `.obsidian/*.json`, `.obsidian/plugins/*/data.json`, `.gitignore` |
 | system | Everything else the template ships: root files (`README.md`, `START-HERE.md`, `UPGRADING.md`, `CHANGELOG.md`, `AGENTS.md`, `CLAUDE.md`, `LICENSE`, `.gitattributes`, `.markdownlint*.jsonc`), `AI-OS/Vault-Map.md`, `AI-OS/Schemas/**`, the shipped `AI-OS/SOPs/*.md`, `Start Here/**`, `Dashboards/*.md` and `System/OKF/**` (except their README), `Efforts/TaskNotes/Views/*.base` (TaskNotes regenerates them), `.gitkeep` files, `.obsidian/snippets/**`, `.obsidian/themes/**`, and plugin code (`.obsidian/plugins/*/main.js`, `manifest.json`, `styles.css`) |
 | user | Any file the template does not ship: your notes, your own SOPs and skills, attachments |

@@ -327,10 +327,10 @@
       "autosuggestFilter": {
         "requiredTags": [],
         "includeFolders": [
-          "Atlas/Entities/People"
+          "Atlas/Entities"
         ],
         "propertyKey": "type",
-        "propertyValue": "person"
+        "propertyValue": "containsAny(person, ai-agent)"
       }
     }
   ],
