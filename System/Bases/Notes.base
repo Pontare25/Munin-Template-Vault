@@ -2,6 +2,19 @@ views:
   - type: table
     name: All notes
   - type: table
+    name: AI notes awaiting review
+    filters:
+      and:
+        - ai == "pending"
+    order:
+      - file.name
+      - type
+      - summary
+      - date_created
+    sort:
+      - property: date_created
+        direction: ASC
+  - type: table
     name: Child notes
     filters:
       and:

@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 1
+version: 2
 summary: Create one note by hand in the right folder, with minimum frontmatter, links and an index line
 ---
 
@@ -17,7 +17,7 @@ Create a single note by hand (as opposed to ingest, which creates notes in bulk 
 3. **Pick the template** from the selection table in [[Vault-Map]]. People and organizations use the frontmatter pattern in [[note-schema-reference]] instead of a template.
 4. **Name the note well:** nouns over sentences, specific over generic, no dates in knowledge-note titles (dates belong to Calendar notes).
 5. **Fill the minimum frontmatter** for the type (see the compass table in [[note-schema]]). At minimum: `type:`, `date_created:`, and `up:` for knowledge notes, plus a one-line `summary:` so indexes and retrieval can pick the note without opening it.
-6. **Write the body.** One idea per atomic note. Start with `%% #AI-Assisted %%` if you wrote it.
+6. **Write the body.** One idea per atomic note. Set `ai: pending` on notes you write; inside a note the user wrote, put `%% #AI-Assisted %%` above your section.
 7. **Link it in:** make sure at least one existing note links to the new note or is linked from it. Orphan notes are lint findings waiting to happen.
 8. **Update the folder `index.md`** with one line for the new note.
 9. **Log it** in [[AI-OS/log|log]] if the note was created as part of a work session (a single quick note for the human does not need its own log entry).

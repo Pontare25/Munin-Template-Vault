@@ -36,7 +36,7 @@ Other useful requests: "what connects X and Y?", "what in the vault contradicts 
 
 ## Trust and provenance
 
-- Everything the AI writes is marked `%% #AI-Assisted %%` (hidden in reading mode, findable in search), so you know which notes to double-check.
+- The AI sets `ai: pending` on notes it writes; inside a note you wrote, it puts `%% #AI-Assisted %%` above its section. That way you know what to double-check.
 - The SOPs make the AI ask before editing anything you wrote and report what it created.
 - AI-written notes are drafts of your knowledge, not truth. Correct them freely; the vault keeps the corrected version.
 
