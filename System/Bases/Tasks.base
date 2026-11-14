@@ -12,6 +12,7 @@ formulas:
   up5: if(formula.up4, list(file(formula.up4).properties.up)[0], null)
   area_up: if(formula.up5 && file(formula.up5).properties.type == "area", formula.up5, if(formula.up4 && file(formula.up4).properties.type == "area", formula.up4, if(formula.up3 && file(formula.up3).properties.type == "area", formula.up3, if(formula.up2 && file(formula.up2).properties.type == "area", formula.up2, if(formula.up1 && file(formula.up1).properties.type == "area", formula.up1, "")))))
   area: if(note.area, list(note.area)[0], formula.area_up)
+  last_touch: if(!note.date_modified.isEmpty(), note.date_modified, if(!note["created-date"].isEmpty(), note["created-date"], note.date_created))
 properties:
   formula.area:
     displayName: Area
@@ -377,6 +378,29 @@ views:
       - file.tasks
     sort:
       - property: date_due
+        direction: ASC
+    enableSearch: true
+  - type: tasknotesTaskList
+    name: Stale 14 days
+    filters:
+      and:
+        - status != "done" && status != "dropped"
+        - '!file.path.startsWith("Archive/")'
+        - '!formula.last_touch.isEmpty() && date(formula.last_touch) < today() - "14 days"'
+    groupBy:
+      property: up
+      direction: ASC
+    order:
+      - status
+      - priority
+      - date_due
+      - assignees
+      - blockedBy
+      - recurrence
+      - complete_instances
+      - file.tasks
+    sort:
+      - property: date_modified
         direction: ASC
     enableSearch: true
   - type: tasknotesTaskList

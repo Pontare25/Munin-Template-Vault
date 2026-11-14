@@ -15,3 +15,16 @@ views:
       - file.name
       - formula.notes_linking_in
       - date_created
+  - type: table
+    name: "Stubs"
+    filters:
+      and:
+        - 'up.isEmpty() && related.isEmpty() && down.isEmpty() && opposes.isEmpty()'
+        - 'formula.notes_linking_in >= 3'
+    order:
+      - file.name
+      - formula.notes_linking_in
+      - date_created
+    sort:
+      - property: formula.notes_linking_in
+        direction: DESC

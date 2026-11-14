@@ -5,7 +5,7 @@ summary: Areas-of-responsibility review, every active Area with health signals i
 ---
 # Areas of Responsibility: Review
 
-Every active Area you're responsible for, in one sweep (an Area in `backlog` is skipped). Run this monthly (the [[monthly-template|monthly note]] links here). Read the flags top-down, then work the checklist below.
+Every active Area you're responsible for, in one sweep (an Area in `backlog` is skipped). Run this monthly (the [[monthly-template|monthly note]] embeds the checklist and this view; see [[monthly-review]]). Read the flags top-down, then work the checklist at the end.
 
 ## Project health
 
@@ -48,3 +48,12 @@ rows.sort((x, y) => (Number(y[1]) || 0) - (Number(x[1]) || 0));
 if (rows.length) dv.table(["Area", "Overdue", "Needs a due date"], rows);
 else dv.paragraph("*No overdue or unscheduled tasks in any Area.*");
 ```
+
+## Checklist
+
+- For each red Area, decide one thing: start a project, park the Area as `backlog`, or drop it.
+- Check the Task loops strip above: clear or reschedule overdue tasks, give unscheduled ones a date.
+- Check goals drift: do the active projects serve the priorities in the latest quarterly note?
+- Compare with last month's Top 3 priorities: what did not move, and does it still matter?
+- Move closed projects (status done or dropped) to Archive, through Obsidian, at the monthly review (see [[monthly-review]]).
+- Write what carries forward in the monthly note.

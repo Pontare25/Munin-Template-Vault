@@ -6,12 +6,15 @@ filters:
 formulas:
   active_projects: file.backlinks.filter(value.asFile().properties.type == "project" && (value.asFile().properties.status == "active" || value.asFile().properties.status == "waiting")).length
   overdue_projects: file.backlinks.filter(value.asFile().properties.type == "project" && value.asFile().properties.status != "done" && value.asFile().properties.status != "dropped" && value.asFile().properties.date_due && date(value.asFile().properties.date_due) < today()).length
-  flag: if(formula.active_projects == 0, "🔴", if(formula.overdue_projects > 0, "🔴", "🟢"))
+  open_tasks: file.backlinks.filter(value.asFile().properties.type == "task" && value.asFile().properties.status != "done" && value.asFile().properties.status != "dropped").length
+  flag: if(formula.active_projects == 0 && formula.open_tasks == 0, "🔴", if(formula.overdue_projects > 0, "🔴", "🟢"))
 properties:
   formula.active_projects:
     displayName: Active projects
   formula.overdue_projects:
     displayName: Past due
+  formula.open_tasks:
+    displayName: Open tasks
   formula.flag:
     displayName: Flag
   note.date_due:
@@ -24,6 +27,7 @@ views:
       - file.name
       - formula.active_projects
       - formula.overdue_projects
+      - formula.open_tasks
     sort:
       - property: formula.flag
         direction: ASC
