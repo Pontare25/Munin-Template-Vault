@@ -31,6 +31,7 @@ Before the first tool call on any task, state the routing decision in one line, 
 | "close the meeting", "turn the actions into tasks" | [[meeting-close]] |
 | "merge these notes", "these notes say the same thing" | [[merge-notes]] |
 | "lint", "check the graph", "broken links", "orphans", "graph health" | [[lint]] |
+| "run the optimizer", "audit the AI setup" | [[optimizer]] |
 | "upgrade the vault", "update to the new template version", "install the new release" | [[upgrade-vault]] |
 | "set up my vault", "onboard me", "fill in my profile" | [[onboarding]] |
 

@@ -1,0 +1,41 @@
+{
+  "sop": "optimizer",
+  "version": 1,
+  "prompts": [
+    "Run the optimizer.",
+    "Audit the AI setup and fix whatever is wrong.",
+    "Kör optimeraren och berätta hur feedback-loopen mår.",
+    "Run the optimizer. My weekly-review SOP feels long, and I think routing has a row for a procedure I deleted.",
+    "Optimizer, please. This is the first time it has ever run in this vault."
+  ],
+  "assertions": [
+    {
+      "id": "read-only",
+      "check": "The agent changes no file except appending one optimizer entry to AI-OS/log.md, even when asked to fix things."
+    },
+    {
+      "id": "fixed-report-shape",
+      "check": "The report has a Summary line and the sections 1. Schema vs disk, 2. Word caps, 3. Routing, 4. Lessons and rules, 5. Loop numbers, Proposals and Run stats, in that order, with 'None' under each empty section."
+    },
+    {
+      "id": "case-specific-reasoning",
+      "check": "Every finding names a file and states why it matters in this vault, not only which rule it breaks."
+    },
+    {
+      "id": "planted-drift-found",
+      "check": "A SOP over 800 words and a routing row whose SOP file does not exist are each reported as a finding."
+    },
+    {
+      "id": "four-loop-numbers",
+      "check": "The log entry has the form '## [YYYY-MM-DD] optimizer | N findings | captured X, promoted Y, rules Z (total T), recurring lint W' with numbers taken from the fold tallies, Me.md My additions and lint entries."
+    },
+    {
+      "id": "baseline-stated",
+      "check": "With no earlier optimizer entry in the log, the report says the window is the whole log and the run is the baseline."
+    },
+    {
+      "id": "no-invented-feedback",
+      "check": "When the window has no fold lines but shows real work, the agent asks the human whether feedback is being missed and does not invent feedback lines."
+    }
+  ]
+}

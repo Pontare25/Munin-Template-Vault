@@ -40,6 +40,10 @@
     {
       "id": "log-entry-written",
       "check": "The agent adds one log entry in the form '## [YYYY-MM-DD] monthly-review | YYYY-MM' with bullets for notes moved, status changes, tasks created and claims flagged."
+    },
+    {
+      "id": "optimizer-run",
+      "check": "The agent runs the optimizer SOP during the review, shows its report, and applies none of its proposals without the human's approval."
     }
   ]
 }
