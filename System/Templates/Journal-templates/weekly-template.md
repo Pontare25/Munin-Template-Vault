@@ -20,7 +20,13 @@ summary:
 **Misses**
 - 
 
-**Decisions** (Anything worth promoting to a `type: decision` note?)
+**Carries forward**
+- 
+
+**Decisions** (log each as `#log/decision`: what, why, trade-off)
+- 
+
+**System friction** (what annoyed you about the vault or its routines this week; feeds the AI's improvement loop, see [[weekly-review]])
 - 
 
 ---

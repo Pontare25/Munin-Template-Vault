@@ -123,4 +123,4 @@ Embed any view with `![[BaseName.base#View Name]]`. When you add a new note `typ
 ## See also
 
 - [[tasks-and-logs]]: task notes, statuses, capture, and how the rollup queries work.
-- [[Guide to writing daily notes]]: the capture surface that feeds these rollups.
+- [[rhythm]]: the daily note that feeds these rollups, and the review routines.

@@ -1,0 +1,61 @@
+{
+  "sop": "merge-notes",
+  "version": 1,
+  "prompts": [
+    "Merge these two notes: Spaced Repetition and Spaced repetition learning.",
+    "These two Atlas notes are duplicates, fold them into one.",
+    "Slå ihop de här två anteckningarna, de säger samma sak.",
+    "Lint found two notes on the same idea. Clean that up.",
+    "Merge Habit Loops into Habit Formation, but Habit Loops only overlaps in part and the two disagree on the cue length."
+  ],
+  "assertions": [
+    {
+      "id": "read-and-backlinks-first",
+      "check": "The agent reads every candidate in full and checks backlinks and index.md lines before proposing anything."
+    },
+    {
+      "id": "survivor-plan-approval",
+      "check": "The agent proposes a survivor, shows what moves in and how many links change, and edits no file until the human approves."
+    },
+    {
+      "id": "survivor-choice-rule",
+      "check": "The proposed survivor is the older note or the one with more inbound links, with the reason stated."
+    },
+    {
+      "id": "citations-and-aliases",
+      "check": "The survivor keeps both notes' Citations (renumbered, no repeats) and gets the loser's title in aliases:."
+    },
+    {
+      "id": "tensions-recorded",
+      "check": "Where the notes disagree, the disagreement is recorded under a ## Tensions heading in the survivor instead of silently picking one side."
+    },
+    {
+      "id": "obsidian-not-filesystem",
+      "check": "Links are repointed by Note Composer's merge or by editing each backlinking note to link the survivor; the loser is never renamed to repoint links, and nothing is moved, renamed or deleted by shell or file system."
+    },
+    {
+      "id": "loser-to-trash",
+      "check": "The loser is deleted so it lands in Obsidian's trash, not hard-deleted."
+    },
+    {
+      "id": "no-link-to-loser",
+      "check": "The agent verifies that no wikilink still points at the loser after the merge."
+    },
+    {
+      "id": "partial-overlap-uses-related",
+      "check": "When the notes overlap only in part, the agent says they are not duplicates and suggests related: links instead of merging."
+    },
+    {
+      "id": "index-updated",
+      "check": "The loser's line is removed from the folder index.md and the survivor's summary is refreshed if it changed."
+    },
+    {
+      "id": "atlas-log-removal",
+      "check": "Atlas/log.md gets a '**Removal**' line naming the loser and the survivor, plus an '**Update**' line for the survivor, under today's date."
+    },
+    {
+      "id": "ai-os-log-merge",
+      "check": "A merge entry is added to AI-OS/log."
+    }
+  ]
+}

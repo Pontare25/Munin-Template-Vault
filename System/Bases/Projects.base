@@ -1,6 +1,8 @@
 filters:
   and:
     - type == "project"
+formulas:
+  open_tasks: 'file.backlinks.filter(value.asFile().properties.type == "task" && value.asFile().properties.status != "done" && value.asFile().properties.status != "dropped").length'
 properties:
   note.date_due:
     displayName: Due
@@ -20,6 +22,18 @@ views:
       - file.name
       - status
       - related
+      - summary
+  - type: table
+    name: No open task
+    filters:
+      and:
+        - status == "active" || status == "waiting"
+        - '!file.path.startsWith("Archive/")'
+        - formula.open_tasks == 0
+    order:
+      - file.name
+      - status
+      - area
       - summary
   - type: kanban
     name: Sub projects

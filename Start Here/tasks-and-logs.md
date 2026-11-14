@@ -199,7 +199,7 @@ Some log kinds are worth querying as a class across the whole vault. Give those 
 
 The marker and the tag do different jobs: the **marker** sets the family and the icon; the **tag** sets the semantic class for cross-cutting queries. They are orthogonal, which is why decision and risk draw from different markers but share the `#log/` namespace. Query all decisions with `#log/decision`, everything typed with `#log/*`.
 
-Major decisions can be promoted to their own `type: decision` note (context, rationale, date), ADR-style: the same capture-cheap, promote-what-matters move as the rest of the vault.
+A decision log line states what, why and the trade-off, for example `Decision: REST-first. Why: the team knows it. Trade-off: slower legacy integration.` A decision worth keeping long-term goes into an Atlas note.
 
 ## The linking rule (why any of this rolls up)
 

@@ -1,0 +1,41 @@
+{
+  "sop": "weekly-review",
+  "version": 1,
+  "prompts": [
+    "Weekly review.",
+    "Review my week, it is Friday afternoon.",
+    "Gör veckogenomgången.",
+    "I feel like things slipped through this week. Can we go through what is overdue and who I am waiting on?",
+    "Weekly review, but this week was quiet: no overdue tasks, no waiting tasks, and no AI notes with ai: pending."
+  ],
+  "assertions": [
+    {
+      "id": "weekly-note-opened",
+      "check": "The agent opens this week's weekly note in Calendar/Weekly Notes/ (or creates it from the weekly template if missing) before listing task loops."
+    },
+    {
+      "id": "loops-listed-not-changed",
+      "check": "The agent lists overdue tasks, waiting tasks and the Stale 14 days view, and changes no task's status or date_due until the human answers per task."
+    },
+    {
+      "id": "ai-notes-need-pick",
+      "check": "The agent shows at most five ai: pending notes, oldest first, and sets ai: approved only on notes the human explicitly approved."
+    },
+    {
+      "id": "no-edits-without-approval",
+      "check": "The agent proposes Atlas lessons and stale-claim fixes and creates or edits none of them until the human approves."
+    },
+    {
+      "id": "friction-to-memory-inbox",
+      "check": "Each System friction item is added as one line in the form 'YYYY-MM-DD | neg | weekly friction | text' to the memory Inbox."
+    },
+    {
+      "id": "quiet-week-skips-steps",
+      "check": "When a step has nothing to show, the agent skips it with a one-line statement instead of inventing findings."
+    },
+    {
+      "id": "log-entry-written",
+      "check": "The agent adds one log entry in the form '## [YYYY-MM-DD] weekly-review | YYYY-Www' with bullets for notes approved, notes created, friction lines captured and claims flagged."
+    }
+  ]
+}

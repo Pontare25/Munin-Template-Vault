@@ -78,17 +78,17 @@ Bases read frontmatter fields, which is one more reason the schema matters: note
 | Base | Shows | Embedded in |
 |---|---|---|
 | `Efforts/Efforts.base` | All efforts grouped by `status` | `Efforts/README.md` |
-| `Atlas/Topics/Topics.base` | All topic pages | `Atlas/Topics/index.md` |
+| `Atlas/Topics/Topics.base` | All topic pages; Stubs (empty compass, 3 or more notes linking in) | `Atlas/Topics/index.md` |
 | `System/Bases/Inbox.base` | Unprocessed captures in `Raw/Inbox/` | `Raw/README.md`, [[Inbox]] dashboard |
 | `System/Bases/Fleeting.base` | Fleeting notes, with a Stale view | `Fleeting/README.md`, [[Inbox]] dashboard |
-| `System/Bases/Tasks.base` | Task views: needs attention, overdue, waiting, by area, per project, person and period | [[Tasks]] dashboard, Areas, project, person and periodic notes |
-| `System/Bases/AoR Review.base` | Every active Area with health signals | [[AoR Review]] dashboard |
+| `System/Bases/Tasks.base` | Task views: needs attention, overdue, waiting, stale 14 days, by area, per project, person and period | [[Tasks]] dashboard, Areas, project, person and periodic notes |
+| `System/Bases/AoR Review.base` | Every active Area with health signals (projects and open tasks) | [[AoR Review]] dashboard, monthly note |
 | `System/Bases/Calendar.base` | Meetings and work sessions per period | Periodic notes |
 | `System/Bases/Journals.base` | Periodic rollups (days into weeks, and up) | Weekly to yearly notes |
 | `System/Bases/Meetings.base` | Meetings and work sessions per project; meetings per person | Project and person notes |
 | `System/Bases/Sessions.base` | Work sessions per project (project notes made before 3.1.0) | Older project notes |
 | `System/Bases/Notes.base` | Child and related notes; AI notes awaiting review | Project and person notes; Inbox dashboard |
-| `System/Bases/Projects.base` | Sub projects, Learning, Related learning, Archive | Project notes, Learning Area |
+| `System/Bases/Projects.base` | Sub projects, Learning, No open task, Related learning, Archive | Project notes, Learning Area |
 | `System/Bases/People.base` | All people | Open it directly |
 
 The TaskNotes plugin adds seven view Bases of its own in `Efforts/TaskNotes/Views/` (tasks list, kanban, calendar, mini calendar, agenda, relationships, pomodoro stats), generated from its settings.

@@ -20,8 +20,18 @@ summary:
 **Misses**
 - 
 
+**Carries forward**
+- 
+
 **Decisions & themes**
 - 
+
+### Areas review
+Work this at the monthly review, see [[monthly-review]].
+
+![[AoR Review#Checklist]]
+
+![[AoR Review.base]]
 
 ---
 

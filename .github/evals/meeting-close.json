@@ -1,0 +1,57 @@
+{
+  "sop": "meeting-close",
+  "version": 1,
+  "prompts": [
+    "Close the meeting.",
+    "Turn the actions in this meeting note into tasks.",
+    "Stäng mötet och gör uppgifter av åtgärderna.",
+    "Nothing from yesterday's call should stay as loose text, sort it out.",
+    "Close the meeting again. The actions: list in the note already holds only task links."
+  ],
+  "assertions": [
+    {
+      "id": "closed-meeting-stops",
+      "check": "When actions: is empty or holds only task links, the agent creates no task; it still records decisions not yet in details:, and if those are recorded too it says the meeting is already closed and edits no file."
+    },
+    {
+      "id": "sorting-asked-one-round",
+      "check": "For plain-text actions the agent asks in one batched round whether each is a task, with the recommended answer first, before creating any task note."
+    },
+    {
+      "id": "task-fields-complete",
+      "check": "Each new task note has type: task, status: backlog, up: the meeting's project (or an Area), origin: the meeting note, and area: copied from that project."
+    },
+    {
+      "id": "task-file-path",
+      "check": "Each task note is filed as Efforts/TaskNotes/Tasks/task - <title>.md."
+    },
+    {
+      "id": "assignee-and-due-conditional",
+      "check": "assignees: is set only when someone other than the human owns the task, and date_due: only when the meeting stated a date."
+    },
+    {
+      "id": "actions-hold-only-links",
+      "check": "Afterwards actions: holds only quoted task wikilinks, and each non-task item has moved to details:."
+    },
+    {
+      "id": "edit-only-actions-details",
+      "check": "The agent edits only the actions: and details: lines of the meeting note, and only after the human approved."
+    },
+    {
+      "id": "decision-reason-not-guessed",
+      "check": "Each decision is written in details: as 'Decision: X. Why: Y. Trade-off: Z.', and the agent asks the human when the reason or trade-off is missing instead of guessing."
+    },
+    {
+      "id": "daily-log-on-yes",
+      "check": "The agent offers a '#log/decision' line in the daily note and adds it only after a yes."
+    },
+    {
+      "id": "no-person-note-unasked",
+      "check": "The agent creates no new person note without asking."
+    },
+    {
+      "id": "log-entry-written",
+      "check": "The agent adds a log entry in the form '## [YYYY-MM-DD] meeting-close | <meeting note>' with one bullet per task, decision and moved item."
+    }
+  ]
+}

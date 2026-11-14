@@ -9,7 +9,7 @@ The schema layer: everything the AI needs to operate this vault. Where `Atlas/` 
 | `Me.md` | Your profile: who you are, how you want the AI to work, and your own rules (My additions). Read every session after the rulebook, `AGENTS.md` at the vault root |
 | `routing.md` | How the AI matches a request to the right handler: the SOP trigger index and the routing procedure |
 | `Vault-Map.md` | Navigation manual: what goes where and why |
-| `SOPs/` | Step-by-step procedures: [[ingest]], [[new-note]], [[query]], [[daily-review]], [[lint]], [[upgrade-vault]], [[onboarding]] |
+| `SOPs/` | Step-by-step procedures: [[ingest]], [[new-note]], [[query]], [[merge-notes]], [[daily-review]], [[weekly-review]], [[monthly-review]], [[project-lifecycle]], [[meeting-close]], [[lint]], [[upgrade-vault]], [[onboarding]] |
 | `Standards/sop-format.md` | How every SOP is written: frontmatter, sections, the 800-word cap, a manual checklist. Read before creating or editing a SOP |
 | `Schemas/note-schema.md` | The note format, core rules: types, required fields, the idea compass. Read before writing a note |
 | `Schemas/note-schema-reference.md` | Every field in detail, with examples: dates, meetings, tasks, people, OKF mapping |
@@ -30,7 +30,7 @@ Human-facing guides live in `Start Here/`, outside this folder.
 
 ## Governing SOPs
 
-All seven SOPs live in `SOPs/`. Changes to AI-OS itself are proposed by the AI and approved by you.
+All twelve SOPs live in `SOPs/`. Changes to AI-OS itself are proposed by the AI and approved by you.
 
 ## Who owns which file
 

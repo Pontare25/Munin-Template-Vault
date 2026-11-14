@@ -214,6 +214,14 @@ A note the AI writes carries **`ai:`**, its review state, set with the selector 
 
 `ai:` is the one status-like field outside Efforts. When the AI adds a section inside a note you wrote, it puts `%% #AI-Assisted %%` above that section instead of setting the field. Vaults before 3.2.0 marked whole notes with that comment; the upgrade turns a comment on a note's first body line into `ai: pending` (`/Drafted` becomes `approved`, `/Collaborative` becomes `collaborative`, `/Reviewed` becomes `checked`).
 
+## Tensions
+
+When a source or note says something that conflicts with an existing note, keep both and record the conflict instead of picking a winner. Add a `## Tensions` section to the note, one bullet per conflicting claim, each with its source (a link or a `# Citations` number). Link the two notes through `opposes:` and flag it to the human; they decide which claim stands. [[ingest]] and [[lint]] both use this section.
+
+## PDFs and other binaries
+
+The Text Extractor plugin ships with the vault. For a PDF, image or other binary, the original stays in `Raw/Sources/`. Beside it, a markdown source note (`type: source`) holds the extracted text and links the original with an embed. Ingest reads that text, never the binary. Mention in the note when extraction was partial (scans, tables).
+
 ## OKF alignment
 
 This vault targets [Open Knowledge Format (OKF) v0.1](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) conformance for the `Atlas/` bundle, natively on disk. Full details and the native-vs-export split live in [[okf-conformance]].
@@ -278,7 +286,7 @@ Every frontmatter field the template uses. **Type** is the Obsidian property typ
 | `author` | text | source | Who wrote or said it | you, AI at ingest |
 | `status` | text | project, area, task | `backlog`, `active`, `waiting`, `done`, `dropped` | selector, TaskNotes |
 | `area` | multitext | project, task, meeting, work session | The top-level Area (Work, Personal or Learning), one link in a list | New task and the project template copy it from the parent; lint proposes it on other notes |
-| `ai` | text | notes the AI wrote | Review state: `pending`, `approved`, `collaborative`, `checked` | AI sets, you change |
+| `ai` | text | knowledge notes the AI wrote (not tasks or Calendar notes) | Review state: `pending`, `approved`, `collaborative`, `checked` | AI sets, you change |
 | `details` | multitext | meeting | Meeting minutes points | you, AI |
 | `actions` | multitext | meeting | Actions agreed | you, AI |
 | `version` | number | sop | SOP version | maintainer |

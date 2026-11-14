@@ -1,6 +1,6 @@
 # Routing
 
-How the AI decides what to do with a request, before doing any of it. Routing is the first move of every task: match the request to the right handler, then follow that handler.
+How the AI picks the handler for a request before acting. Routing is the first move of every task.
 
 ## The procedure
 
@@ -19,14 +19,17 @@ Before the first tool call on any task, state the routing decision in one line, 
 
 ## Trigger index
 
-Match the request's intent (its "smell") to a SOP, then read that SOP in full before acting.
-
 | Request smells like | SOP |
 |---|---|
 | "ingest this", "process this", a pasted source or URL, a file dropped in `Raw/` | [[ingest]] |
 | "make a note", "write this up as an atomic note", "capture this idea" | [[new-note]] |
 | "what do I know about X", "what connects X and Y", "what contradicts X", "find that note" | [[query]] |
-| "review my daily note", "sweep my captures", "process my inbox" | [[daily-review]] |
+| "review my daily note", "sweep my captures", "process my inbox", "develop my fleeting notes" | [[daily-review]] |
+| "weekly review", "review my week" | [[weekly-review]] |
+| "monthly review", "review my month", "review my Areas" | [[monthly-review]] |
+| "start a project", "close this project", "project retro" | [[project-lifecycle]] |
+| "close the meeting", "turn the actions into tasks" | [[meeting-close]] |
+| "merge these notes", "these notes say the same thing" | [[merge-notes]] |
 | "lint", "check the graph", "broken links", "orphans", "graph health" | [[lint]] |
 | "upgrade the vault", "update to the new template version", "install the new release" | [[upgrade-vault]] |
 | "set up my vault", "onboard me", "fill in my profile" | [[onboarding]] |
@@ -44,10 +47,10 @@ The index maps intent, not exact words: a paraphrase or another language routes 
 
 When nothing in the index fits and no skill applies:
 
-1. **Say so.** Tell the human plainly that no procedure matches, rather than improvising a vault operation.
-2. **Propose a procedure.** Offer to create a new SOP for this kind of request, or to adapt the closest existing one. A new SOP can start as a stub: a title, its trigger, and the steps you would have taken, saved to `AI-OS/SOPs/` and added under My SOPs.
+1. **Say so.** Tell the human no procedure matches; never improvise a vault operation.
+2. **Propose a procedure.** Offer a new SOP (it can start as a stub: title, trigger, the steps you would have taken) under My SOPs, or adapt the closest one.
 3. **Proceed only with the human's go-ahead** for anything that writes to the vault. Answering a plain question needs no SOP.
 
 ## Keeping the index current
 
-The index only works while it tracks the SOPs. When a SOP is created, add its row under My SOPs in the same change; when its scope changes, update the row; when it is retired, remove the row. The AI proposes these edits and the human approves them, like any AI-OS change.
+A SOP and its row change together: add, update or remove the row in the same change as the SOP ([[sop-format]]).

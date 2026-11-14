@@ -28,7 +28,7 @@ Read it from frontmatter, never from a copied list. Active projects: notes in `E
 ## 5. Writing and memory
 
 - Before writing a note, read the schema core, `AI-OS/Schemas/note-schema.md`. Open `AI-OS/Vault-Map.md` only for filing questions the schema does not answer.
-- Set `ai: pending` on notes you write; inside a note the user wrote, put `%% #AI-Assisted %%` above your section.
+- Set `ai: pending` on knowledge notes you write; inside a note the user wrote, put `%% #AI-Assisted %%` above your section.
 - After vault work, append an entry to `AI-OS/log.md` (format in that file) and update `AI-OS/state.md`.
 - Offer to file a valuable answer as an Atlas note.
 - **Capture:** when the user corrects or praises how you work, or answers a question about how to work, append one line to the `memory.md` Inbox before your next action: `- YYYY-MM-DD | pos or neg | context | feedback`.

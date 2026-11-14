@@ -3,7 +3,10 @@ filters:
     - 'type == "topic"'
 formulas:
   notes_linking_in: 'file.backlinks.length'
+  knowledge_links: 'file.backlinks.filter(["note", "source", "framework"].contains(value.asFile().properties.type)).length'
 properties:
+  formula.knowledge_links:
+    displayName: "Notes linking in"
   formula.notes_linking_in:
     displayName: "Linked from"
   note.date_created:
@@ -15,3 +18,16 @@ views:
       - file.name
       - formula.notes_linking_in
       - date_created
+  - type: table
+    name: "Stubs"
+    filters:
+      and:
+        - 'up.isEmpty() && related.isEmpty() && down.isEmpty() && opposes.isEmpty()'
+        - 'formula.knowledge_links >= 3'
+    order:
+      - file.name
+      - formula.knowledge_links
+      - date_created
+    sort:
+      - property: formula.knowledge_links
+        direction: DESC

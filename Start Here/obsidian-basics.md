@@ -27,7 +27,7 @@ Obsidian shows these as "properties" above the note. This vault leans on frontma
 
 ## Daily notes
 
-See [[Guide to writing daily notes]]
+See [[rhythm]] for the daily note section by section and the review routines.
 
 Open today's note with the **Journals: Open today's note** command (Ctrl/Cmd-P opens the command palette); that always works. There is also a **Calendar** panel, which opens in the right sidebar when Obsidian starts; clicking a day opens that day's note. If you closed it, run **Journals: Open Calendar** to bring it back. The Journals plugin creates it under `Calendar/Daily Notes/YYYY/MM-MMM/` from the daily template, building the folders as needed. This vault's core habit: dump everything into today's daily note; the [[daily-review]] SOP sorts it later. The summary box at the top is a Meta Bind field that writes straight to the note's `summary:` property. Journals and Meta Bind are preconfigured; [[first-hour]] checks they are on.
 
@@ -36,7 +36,7 @@ Open today's note with the **Journals: Open today's note** command (Ctrl/Cmd-P o
 Open the week's note via the **Calendar** panel or the "Open weekly note" command. Journals files it under `Calendar/Weekly Notes/YYYY/` from the weekly template. The weekly note is a review surface, not a capture surface: it rolls up the week automatically and gives you room to close the week out.
 
 - **Rollup** pulls the week together with no manual work: the week's daily notes (the Journals base's "Weekly-rollup" view, the day-into-week hierarchy); task notes completed and created this week, and those still open by week's end (the period views in `System/Bases/Tasks.base`); the week's logs and any `#log/decision` items grouped by day (Dataview over the week's daily and meeting notes); and every meeting held that week (the Meetings base's "Weekly meeting rollup" view). The date range comes from the note title.
-- **Weekly Review**: prompts for wins, misses, and decisions worth promoting to a `type: decision` note.
+- **Weekly Review**: prompts for wins, misses, what carries forward, decisions (logged as `#log/decision` lines) and a System friction line; the [[weekly-review]] SOP walks through it.
 - **Next week**: a top-3 priorities block, so planning flows forward.
 
 The rollups only surface what you linked and tagged during the week (see [[tasks-and-logs]]); an empty section usually means nothing was captured, not a broken query.
