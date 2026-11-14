@@ -1,6 +1,6 @@
 # Efforts
 
-The action layer: everything you are trying to do, as opposed to everything you know. Each effort is one note (or a small folder) with a `status:` field that tracks its energy level. Efforts move between statuses instead of moving between folders.
+The action layer: everything you are trying to do, as opposed to everything you know. Each effort is one note (or a small folder) with a `status:` field that tracks its energy level. Efforts move between statuses, not folders, while they are open; once `done` or `dropped`, the monthly review moves them to `Archive/`.
 
 | Status | Meaning |
 |---|---|
@@ -18,10 +18,9 @@ Set it with the status selector at the top of a project or area note. Areas use 
 |---|---|
 | `Projects/` | Efforts with an end: ship it, finish it, decide it (`type: project`) |
 | `Areas/` | Ongoing responsibilities with no end date (`type: area`) |
-| `Learning/` | Subjects you are deliberately studying |
+| `Learning/` | Learning projects, one folder per subject (`Learning/<Subject>/Project - <Subject>.md`, `type: project`, under the Learning Area) |
 | `TaskNotes/Tasks/` | Task notes, one per task (`type: task`), created by the TaskNotes plugin |
 | `TaskNotes/Views/` | View Bases the TaskNotes plugin generates (task list, kanban, calendar, agenda and more) |
-| `TaskNotes/Archive/` | Archived tasks; the plugin creates this folder the first time you archive a task |
 
 ## What belongs here
 

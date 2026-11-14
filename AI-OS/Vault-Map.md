@@ -21,7 +21,7 @@ Knowledge flows one way: captured in `Fleeting/`, `Raw/` or a daily note, proces
 Ask these questions in order:
 
 1. **Is it a date-bound record** (something that happened, was said, was thought on a day)? Then `Calendar/`: daily note, weekly note, or meeting note.
-2. **Is it something to do** (a goal, a plan, a responsibility)? Then `Efforts/`: `Projects/` if it ends, `Areas/` if it does not, `Learning/` if it is a study subject. A single task is a task note (`type: task`) in `Efforts/TaskNotes/Tasks/`. Next to it, `Efforts/TaskNotes/Views/` holds the view Bases the TaskNotes plugin generates, and `Efforts/TaskNotes/Archive/` is created by the plugin the first time a task is archived.
+2. **Is it something to do** (a goal, a plan, a responsibility)? Then `Efforts/`: `Projects/` if it ends, `Areas/` if it does not, `Learning/` if it is a study subject. A single task is a task note (`type: task`) in `Efforts/TaskNotes/Tasks/`. Next to it, `Efforts/TaskNotes/Views/` holds the view Bases the TaskNotes plugin generates. Closed efforts and archived tasks go to `Archive/` (see its README), which is excluded from search.
 3. **Is it a quick note or idea of your own?** Then `Fleeting/`.
 4. **Is it unprocessed outside material?** Then `Raw/`: `Sources/` for external material, `Inbox/` when unsure.
 5. **Is it distilled knowledge?** Then `Atlas/`: one idea is a `note`, a subject hub is a `topic`, a curated overview is a `moc`, a person or organization is an entity, a named method is a `framework`.
