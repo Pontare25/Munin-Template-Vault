@@ -17,6 +17,23 @@ Which files an upgrade replaces, merges or leaves alone is set by the ownership 
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
 
+## 3.2.0
+
+**What changed:** Every frontmatter field is now listed in a field registry (`AI-OS/Schemas/note-schema-reference.md`), and adding a field or note type needs your sign-off. Knowledge notes need `up:`: new note, source, person, organization and framework notes ask for their parent. Notes the AI writes carry `ai:` (`pending`, `approved`, `collaborative`, `checked`) instead of a whole-note `%% #AI-Assisted %%` comment; an "AI notes awaiting review" view lists the pending ones. Sources get optional `author:` and `date_published:`. New organization and framework templates, both in Promote note. New projects ask "Work and personal, or Learning?"; learning projects live in `Efforts/Learning/<Subject>/` under a new Learning Area, and show on the work project they serve under Related learning. Projects get a Retro section and a Close project button. Projects, tasks, meetings and work sessions carry `area:`, the top-level Area; New task copies it from the project you pick. Closed efforts move to a new `Archive/` folder at the monthly review, which search skips; TaskNotes archives tasks to `Archive/Tasks/<year>/`. The daily note's Due block is now Next actions, earliest due first. Lint checks your notes against these rules.
+
+**What you do:** Approve the SOP's preview and each batch of note changes. Pick a parent when the SOP lists notes without `up:` (or skip a note to leave it for later). From now on, move closed projects and Areas to `Archive/` inside Obsidian at the monthly review.
+
+**What the SOP does:** Updates every file this release changed: system files are copied; merge files (templates, Bases, `.obsidian/app.json`, `.obsidian/types.json`, the Omnisearch, Templater and TaskNotes `data.json`) are shown for you to choose; keep TaskNotes' new archive folder if you want archived tasks in `Archive/`. Copies in `Efforts/Areas/Learning.md` and `Archive/README.md` if you have none. Then, in approved batches of ten:
+
+1. **`up:`:** lists notes of type note, framework, source, person and organization with no `up:`, and asks you for each one's parent.
+2. **`ai:`:** a note whose first body line is `%% #AI-Assisted %%` gets `ai: pending` and loses that line (`/Drafted` becomes `approved`, `/Collaborative` becomes `collaborative`, `/Reviewed` becomes `checked`). A comment further down marks a section and stays.
+3. **`area:`:** open projects (`backlog`, `active`, `waiting`) and open tasks get `area:` from the Area at the top of their `up:` chain. Closed ones are left; the Tasks views find their Area through `up:` anyway.
+4. **Archived tasks:** offers to move notes in `Efforts/TaskNotes/Archive/` to `Archive/Tasks/<year>/` through Obsidian.
+
+<!-- D6 (journal: and tags: on templates): outcome pending sign-off; add its step here. -->
+
+**Removed files:** none.
+
 ## 3.1.0
 
 **What changed:** The Log decision and Log risk commands are gone, and so are the Decisions queries in the weekly, monthly, quarterly and yearly templates; a `#log/decision` tag still works and a search finds it. The phone toolbar buttons get their own icons, set by a new startup template (`System/Templates/Templater/Startup/command-icons.md`). New task asks for the context (`personal` or `work`) before the TaskNotes window opens, and writes `- [t] [[task - ...]]` without `#task`; older `[t] #task` lines still count in every log. New project notes: a Summary box under Status, Goal under Tasks, one table for meetings and work sessions (`Meetings.base` now holds both, with a detailed view for each), then the Advanced log only. New person notes: About box at the top, Advanced log only. New type `ai-agent` in `Atlas/Entities/Agents/`, with a starter note `Claude tasks`: TaskNotes' Assignees field now suggests people and AI agents from all of `Atlas/Entities`. Existing project and person notes keep their layout.
