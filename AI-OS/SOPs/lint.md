@@ -31,12 +31,12 @@ Periodic health check of the knowledge graph. Lint finds problems and proposes f
    - **Stale index lines:** folder `index.md` listings referencing notes that moved or no longer exist, or missing recent notes. Propose the missing line for notes the human made by hand.
    - **Missing maps:** a topic with 10 or more notes and no MOC; propose one (the human owns `Atlas/MOCs/`).
    - **Stubs:** topics with an empty compass and 3 or more notes linking in are the "Stubs" view in `Topics.base`. Propose compass fill-in; do not guess.
-   - **Oversized indexes:** a folder `index.md` listing past roughly 100 lines. Propose letting a Base serve as the index (see the growth path in the AI-OS README).
-   - **Contradictions and stale claims:** notes that state conflicting things without an `opposes:` link between them; claims that time has overtaken. A note is stale when its `date_modified` is older than the newest source linking its topic. Flag it, never rewrite it.
-3. **Write the report:** group findings by category, one line each (`path: problem`). State counts. Propose a fix per finding.
+   - **Oversized indexes:** a folder `index.md` past roughly 100 lines. Propose a Base as the index (AI-OS README growth path).
+   - **Contradictions and stale claims:** conflicting notes with no `opposes:` link; claims that time has overtaken. A note is stale when its `date_modified` is older than the newest source linking its topic. Flag it, never rewrite it.
+3. **Write the report:** group findings by category, one line each (`path: problem`). State counts. Propose a fix per finding. A category also non-zero in the previous two bulleted lint entries is recurring: say so and propose fixing its cause.
 4. **Wait for approval.** The human picks which fixes to apply (all, some, none).
 5. **Apply approved fixes** only, and set `date_modified` on each note you change. For contradictions, prefer linking both notes via `opposes:` over deleting either.
-6. **Log it** on every run: one [[AI-OS/log|log]] entry (`## [YYYY-MM-DD] lint | N findings, M fixed`, plus the queue line in incremental mode), with one bullet of per-category counts using the step 2 names, non-zero only or "none" (`- broken links 2, schema drift 3`). A category non-zero in three consecutive lint entries is recurring: the report says so and proposes fixing the cause (the optimizer counts these).
+6. **Log it** on every run: one [[AI-OS/log|log]] entry (`## [YYYY-MM-DD] lint | N findings, M fixed`, plus the queue line in incremental mode), with one bullet of per-category counts using the step 2 names, non-zero only or "none" (`- broken links 2, schema drift 3`). A no-change entry (step 1) has no bullet; recurrence counting skips it.
 
 ## Output
 

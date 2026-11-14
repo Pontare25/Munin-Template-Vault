@@ -44,7 +44,7 @@ The monthly review looks one level up: is every active Area moving, are your pri
 
 ![[monthly-review#Manual checklist (without an AI)]]
 
-The monthly review ends with the optimizer: a check of the AI's own setup. It reports drift in the rules and files the AI reads, and four numbers that show whether your feedback reaches the AI. It changes nothing on its own.
+The monthly review includes the optimizer: a check of the AI's own setup. It reports drift in the rules and files the AI reads, and four numbers that show whether your feedback reaches the AI. It changes nothing on its own.
 
 ![[optimizer#Manual checklist (without an AI)]]
 

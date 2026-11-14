@@ -16,7 +16,7 @@ Clear what slipped through the week and set up the next one. Run it once a week,
 2. **List task loops.** Read them from frontmatter, as in the Tasks.base views. Show overdue tasks (`date_due` before today, `status` not `done` or `dropped`), waiting tasks (a waiting task's `date_due` is its chase date; flag those due or past due) and the Tasks.base view "Stale 14 days". Do not change them.
 3. **People follow-up.** List the person notes named in `assignees:` of, or linked from, open or waiting tasks. One line each: the person, the task, what to ask.
 4. **Drain AI notes.** Open the Notes.base view "AI notes awaiting review". Take five notes with `ai: pending`, oldest first. Show each (summary and body). The human picks approved, fix or leave. Set `ai: approved` only on an approve, apply a fix when asked, and leave the rest untouched.
-5. **Run a scoped lint** on the notes changed this week via [[lint]] (scoped mode). Write one summary line to the [[AI-OS/log|log]].
+5. **Run a scoped lint** on the notes changed this week via [[lint]] (scoped mode). Lint writes its own [[AI-OS/log|log]] entry.
 6. **Retro to Atlas.** Read the weekly note's Wins and Misses, the week's `#log/decision` lines and `[i]` lines. Propose Atlas notes for lessons worth keeping; create only the approved ones via [[new-note]].
 7. **Stale-claim check.** Compare `AI-OS/state.md` (Open threads, Pending decisions) and the Lessons in `AI-OS/memory.md` against the week's daily and meeting notes. Report claims that look superseded. Never edit without approval.
 8. **Goal drift.** Report active Areas with no active project (the red flag in [[AoR Review]]). Set the free-text priorities in the latest quarterly note and last week's Top 3 against what the week's notes show.

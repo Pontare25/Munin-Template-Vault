@@ -11,7 +11,7 @@
   "assertions": [
     {
       "id": "read-only",
-      "check": "The agent changes no file except appending one optimizer entry to AI-OS/log.md, even when asked to fix things."
+      "check": "The agent changes no file except appending one optimizer entry to AI-OS/log.md and the routine AGENTS.md updates (state.md, a memory.md Inbox line), even when asked to fix things."
     },
     {
       "id": "fixed-report-shape",
@@ -23,7 +23,7 @@
     },
     {
       "id": "planted-drift-found",
-      "check": "A SOP over 800 words and a routing row whose SOP file does not exist are each reported as a finding."
+      "check": "A SOP over 800 words and a routing row whose SOP file does not exist (in the trigger index or My SOPs) are each reported as a finding."
     },
     {
       "id": "four-loop-numbers",
