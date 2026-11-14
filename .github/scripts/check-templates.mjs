@@ -16,6 +16,7 @@ const NO_FRONTMATTER_ALLOWLIST = [
   "System/Templates/Templater/Commands/log-bullet.md",
   "System/Templates/Templater/Commands/new-task.md",
   "System/Templates/Templater/Commands/promote-note.md",
+  "System/Templates/Templater/Commands/close-project.md",
   "System/Templates/Templater/Startup/command-icons.md",
   "System/Templates/Templater/Effort-templates/task-note-template.md",
   "System/Templates/Templater/Sub-templates/Dataview queries/Advanced log template.md",
