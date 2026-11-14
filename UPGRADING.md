@@ -17,6 +17,16 @@ Which files an upgrade replaces, merges or leaves alone is set by the ownership 
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
 
+## 3.1.0
+
+**What changed:** The Log decision and Log risk commands are gone, and so are the Decisions queries in the weekly, monthly, quarterly and yearly templates; a `#log/decision` tag still works and a search finds it. The phone toolbar buttons get their own icons, set by a new startup template (`System/Templates/Templater/Startup/command-icons.md`). New task asks for the context (`personal` or `work`) before the TaskNotes window opens, and writes `- [t] [[task - ...]]` without `#task`; older `[t] #task` lines still count in every log. New project notes: a Summary box under Status, Goal under Tasks, one table for meetings and work sessions (`Meetings.base` now holds both, with a detailed view for each), then the Advanced log only. New person notes: About box at the top, Advanced log only. New type `ai-agent` in `Atlas/Entities/Agents/`, with a starter note `Claude tasks`: TaskNotes' Assignees field now suggests people and AI agents from all of `Atlas/Entities`. Existing project and person notes keep their layout.
+
+**What you do:** Approve the SOP's preview. Pick personal or work when New task asks. If you made your own note for AI tasks, set `type: ai-agent` on it, or delete it and use `Claude tasks`.
+
+**What the SOP does:** Updates every file this release changed: system files are copied, merge files (templates, Bases, `.obsidian/app.json`, `.obsidian/plugins/templater-obsidian/data.json`, `.obsidian/plugins/tasknotes/data.json`) are shown for you to choose. Copies in `Atlas/Entities/Agents/Claude tasks.md` if you have no note by that name.
+
+**Removed files:** `System/Templates/Templater/Commands/log-decision.md`, `System/Templates/Templater/Commands/log-risk.md`.
+
 ## 3.0.1
 
 **What changed:** The phone toolbar (above the keyboard) gets buttons for log bullet, new task, log decision and log risk, plus the usual editing buttons. It is set in `.obsidian/app.json`.
