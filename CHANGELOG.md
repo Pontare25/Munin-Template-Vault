@@ -1,5 +1,22 @@
 # Changelog
 
+## [3.1.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.0.1...v3.1.0) (2026-11-14)
+
+
+### Features
+
+* ai-agent type and Claude tasks note as a TaskNotes assignee ([192b1ef](https://github.com/Pontare25/Munin-Template-Vault/commit/192b1efd60a6673b289c186ff0e44bc646128979))
+* drop log decision and log risk, give toolbar buttons their own icons ([d6f8646](https://github.com/Pontare25/Munin-Template-Vault/commit/d6f86465f63ab41b4e6ae54025912c09c8ce8d15))
+* new task asks for context and drops the #task tag ([db3cf4b](https://github.com/Pontare25/Munin-Template-Vault/commit/db3cf4bea7957eb68c26f807c7513208c54bc68c))
+* person template with About box at the top and the Advanced log only ([7c98b8b](https://github.com/Pontare25/Munin-Template-Vault/commit/7c98b8b7aaa1efaf0d8a8d55525f9a897a48d91e))
+* project template reorder, summary box, meetings and work sessions in one base ([0bab4fe](https://github.com/Pontare25/Munin-Template-Vault/commit/0bab4fe8574de2e13aa4a79e1ff5cfd84dd10280))
+* template cleanup: toolbar icons, project and person layout, task context, AI agent assignee ([fb24711](https://github.com/Pontare25/Munin-Template-Vault/commit/fb247118b1f214ff3c5cb3ed7461ecd3be4f2dc0))
+
+
+### Documentation
+
+* UPGRADING section for 3.1.0 ([44fe8ee](https://github.com/Pontare25/Munin-Template-Vault/commit/44fe8eedf2bae03ccfa02531c1363199b45b365c))
+
 ## [3.0.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.0.0...v3.0.1) (2026-11-13)
 
 
