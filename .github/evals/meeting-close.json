@@ -11,7 +11,7 @@
   "assertions": [
     {
       "id": "closed-meeting-stops",
-      "check": "When actions: is empty or holds only task links, the agent says the meeting is already closed and stops, creating no task and editing no file."
+      "check": "When actions: is empty or holds only task links, the agent creates no task; it still records decisions not yet in details:, and if those are recorded too it says the meeting is already closed and edits no file."
     },
     {
       "id": "sorting-asked-one-round",

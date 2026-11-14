@@ -286,7 +286,7 @@ Every frontmatter field the template uses. **Type** is the Obsidian property typ
 | `author` | text | source | Who wrote or said it | you, AI at ingest |
 | `status` | text | project, area, task | `backlog`, `active`, `waiting`, `done`, `dropped` | selector, TaskNotes |
 | `area` | multitext | project, task, meeting, work session | The top-level Area (Work, Personal or Learning), one link in a list | New task and the project template copy it from the parent; lint proposes it on other notes |
-| `ai` | text | notes the AI wrote | Review state: `pending`, `approved`, `collaborative`, `checked` | AI sets, you change |
+| `ai` | text | knowledge notes the AI wrote (not tasks or Calendar notes) | Review state: `pending`, `approved`, `collaborative`, `checked` | AI sets, you change |
 | `details` | multitext | meeting | Meeting minutes points | you, AI |
 | `actions` | multitext | meeting | Actions agreed | you, AI |
 | `version` | number | sop | SOP version | maintainer |

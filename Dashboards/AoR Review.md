@@ -9,7 +9,7 @@ Every active Area you're responsible for, in one sweep (an Area in `backlog` is 
 
 ## Project health
 
-Per Area: active projects and any past their due date. 🔴 = no active project **or** something past due · 🟢 = clear.
+Per Area: active projects, open tasks, and projects past their due date. 🔴 = no active project and no open task, **or** a project past due · 🟢 = clear.
 
 ![[AoR Review.base]]
 
@@ -52,7 +52,7 @@ else dv.paragraph("*No overdue or unscheduled tasks in any Area.*");
 ## Checklist
 
 - For each red Area, decide one thing: start a project, park the Area as `backlog`, or drop it.
-- Check the Task loops strip above: clear or reschedule overdue tasks, give unscheduled ones a date.
+- Check the [[AoR Review#Task loops|Task loops]] strip: clear or reschedule overdue tasks, give unscheduled ones a date.
 - Check goals drift: do the active projects serve the priorities in the latest quarterly note?
 - Compare with last month's Top 3 priorities: what did not move, and does it still matter?
 - Move closed projects (status done or dropped) to Archive, through Obsidian, at the monthly review (see [[monthly-review]]).

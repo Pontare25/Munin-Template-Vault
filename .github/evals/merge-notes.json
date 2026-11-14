@@ -31,7 +31,7 @@
     },
     {
       "id": "obsidian-not-filesystem",
-      "check": "Link repointing, rename and delete happen through Obsidian (app, Note Composer or CLI), never by shell mv, rm or file-system rename."
+      "check": "Links are repointed by Note Composer's merge or by editing each backlinking note to link the survivor; the loser is never renamed to repoint links, and nothing is moved, renamed or deleted by shell or file system."
     },
     {
       "id": "loser-to-trash",

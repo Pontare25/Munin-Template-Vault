@@ -12,7 +12,7 @@ Clear what slipped through the week and set up the next one. Run it once a week,
 
 ## Steps
 
-1. **Open this week's weekly note** (`Calendar/Weekly Notes/`, filed by the Journals plugin as `YYYY-Www`). Create it from the weekly template if it does not exist.
+1. **Open the weekly note of the week under review** (on a Monday, the week that just ended; otherwise this week) in `Calendar/Weekly Notes/YYYY/`, filed by the Journals plugin as `YYYY-Www`. Create it from the weekly template if it does not exist.
 2. **List task loops.** Read them from frontmatter, as in the Tasks.base views. Show overdue tasks (`date_due` before today, `status` not `done` or `dropped`), waiting tasks (a waiting task's `date_due` is its chase date; flag those due or past due) and the Tasks.base view "Stale 14 days". Do not change them.
 3. **People follow-up.** List the person notes named in `assignees:` of, or linked from, open or waiting tasks. One line each: the person, the task, what to ask.
 4. **Drain AI notes.** Open the Notes.base view "AI notes awaiting review". Take five notes with `ai: pending`, oldest first. Show each (summary and body). The human picks approved, fix or leave. Set `ai: approved` only on an approve, apply a fix when asked, and leave the rest untouched.

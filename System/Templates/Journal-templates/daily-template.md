@@ -19,7 +19,9 @@ if (cur.date && dv.date(cur.date).toISODate() === today.toISODate()) {
   // Monday of last ISO week; weekly notes are found by frontmatter, not path.
   const mon = today.startOf("week").minus({ weeks: 1 }).toISODate();
   const hasWeekly = dv.pages('"Calendar"').where(p => p.type === "weekly" && p.date && dv.date(p.date).toISODate() === mon).length > 0;
-  if (!hasWeekly) out.push("No weekly note for last week");
+  // Only nag once the vault is older than last week (a new vault has no weekly notes yet).
+  const older = dv.pages('"Calendar"').where(p => p.type === "daily" && p.date && dv.date(p.date).toISODate() < mon).length > 0;
+  if (!hasWeekly && older) out.push("No weekly note for last week");
   // Overdue tasks already show in Next actions, so only waiting tasks past their chase date.
   const waiting = dv.pages('"Efforts/TaskNotes/Tasks"')
     .where(t => t.type === "task" && t.status === "waiting" && t.date_due && dv.date(t.date_due) < today);

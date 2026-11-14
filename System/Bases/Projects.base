@@ -27,7 +27,7 @@ views:
     name: No open task
     filters:
       and:
-        - status == "active"
+        - status == "active" || status == "waiting"
         - '!file.path.startsWith("Archive/")'
         - formula.open_tasks == 0
     order:

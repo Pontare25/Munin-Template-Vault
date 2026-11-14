@@ -58,6 +58,10 @@ The monthly review looks one level up: is every active Area moving, are your pri
 
 ![[ingest#Manual checklist (without an AI)]]
 
+**A new note by hand:**
+
+![[new-note#Manual checklist (without an AI)]]
+
 **Questions to the vault:**
 
 ![[query#Manual checklist (without an AI)]]

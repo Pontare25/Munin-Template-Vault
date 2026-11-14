@@ -56,7 +56,7 @@ Projects, areas and tasks carry `status:`: `backlog`, `active`, `waiting`, `done
 
 ## AI provenance
 
-Set `ai: pending` on a note you write; the user changes it to `approved`, `collaborative` or `checked`. For a section inside a human note, put `%% #AI-Assisted %%` above it instead.
+Set `ai: pending` on a knowledge note you write; the user changes it to `approved`, `collaborative` or `checked`. For a section inside a human note, put `%% #AI-Assisted %%` above it instead.
 
 ## Changing the schema
 

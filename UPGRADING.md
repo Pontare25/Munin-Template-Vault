@@ -23,7 +23,7 @@ Each section uses the same four parts: **What changed**, **What you do**, **What
 
 **What you do:** Approve the SOP's preview. Existing daily, weekly and monthly notes keep their layout; new ones get the new sections. Write on the weekly note's System friction line when something in the vault annoys you.
 
-**What the SOP does:** Copies the system files (the new and changed SOPs, `Start Here/rhythm.md`, the changed guides, `Dashboards/AoR Review.md`) and shows the merge files for you to choose: `AI-OS/routing.md` (five new rows; your My SOPs section stays), the daily, weekly and monthly templates, `System/Bases/Tasks.base`, `Projects.base`, `AoR Review.base` and `Atlas/Topics/Topics.base`. Repoints links to "Guide to writing daily notes" in your notes to [[rhythm]]. No note changes.
+**What the SOP does:** Copies the system files (the new and changed SOPs, `Start Here/rhythm.md`, the changed guides, `Dashboards/AoR Review.md`) and shows the merge files for you to choose: `AI-OS/routing.md` (five new rows; your My SOPs section stays), the daily, weekly and monthly templates, `System/Bases/Tasks.base`, `Projects.base`, `AoR Review.base`, `Atlas/Topics/Topics.base` and `AI-OS/README.md` (the SOP list). Then one note-level step, in approved batches of ten: notes of yours that link "Guide to writing daily notes" get the link changed to [[rhythm]]; the SOP shows how many first.
 
 **Removed files:** `Start Here/Guide to writing daily notes.md`.
 
