@@ -14,7 +14,8 @@
 // tasks on the task card.
 // origin: is set to the note you are in (where the task was created).
 // up: is never inferred from the note you are in (most tasks start in daily and
-// meeting notes); set the project yourself in the dialog.
+// meeting notes); set the project yourself in the dialog. area: is then copied
+// from that project (its top-level Area), so Area filters work outside Bases.
 // How: TaskNotes has no creation callback API, so this command shadows the plugin's
 // handleInlineTaskCreated for one call and removes the shadow afterwards (also when the
 // window is cancelled). TaskNotes' own command (left unbound in this vault) is never changed.
@@ -72,9 +73,27 @@ if (!tn || !editor || !host || typeof tn.createInlineTask !== "function") {
         // origin: the note the task was created in (daily, meeting, ...)
         const file = app.vault.getAbstractFileByPath(task.path);
         // contexts: the one picked above, if the window left it empty
+        // area: the top-level Area of the project picked in the window (its own
+        // area:, else walk up: to an Area with no parent Area)
+        const clean = (v) => typeof v === "string" ? v.replace(/^\[\[/, "").replace(/\]\]$/, "").split("|")[0] : "";
+        const topArea = (name) => {
+          for (let i = 0; i < 6 && name; i++) {
+            const f = app.metadataCache.getFirstLinkpathDest(name, "");
+            const pfm = f ? app.metadataCache.getFileCache(f)?.frontmatter : null;
+            if (!pfm) return "";
+            const own = clean([].concat(pfm.area ?? [])[0]);
+            if (own) return own;
+            const up = clean([].concat(pfm.up ?? [])[0]);
+            if (pfm.type === "area" && !up) return f.basename;
+            name = up;
+          }
+          return "";
+        };
         if (file) app.fileManager.processFrontMatter(file, (fm) => {
           fm.origin = "[[" + host.basename + "]]";
           if (!fm.contexts || (Array.isArray(fm.contexts) && fm.contexts.length === 0)) fm.contexts = [context];
+          const area = topArea(clean([].concat(fm.up ?? [])[0]));
+          if (area && !fm.area) fm.area = ["[[" + area + "]]"];
         });
       } catch (e) {
         console.error("New task:", e);

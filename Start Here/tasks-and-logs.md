@@ -119,14 +119,14 @@ Set both in the create or edit window.
 
 To finish a task, set its status to `done` (or `dropped` if it will not happen) in one of the ways above. The task's reference line in your daily or meeting note stays as it is.
 
-**Done is not archived.** A done task stays in `Efforts/TaskNotes/Tasks/` and keeps showing in the closed-task views. Archiving is a separate, optional clean-up step: right-click a task card and choose **Archive**. TaskNotes adds its `archived` tag to the task and moves the note to `Efforts/TaskNotes/Archive/<year>/<month>/`. The same menu unarchives it. Nothing is archived automatically.
+**Done is not archived.** A done task stays in `Efforts/TaskNotes/Tasks/` and keeps showing in the closed-task views. Archiving is a separate, optional clean-up step: right-click a task card and choose **Archive**. TaskNotes adds its `archived` tag to the task and moves the note to `Archive/Tasks/<year>/`, a folder kept out of search. The same menu unarchives it. Nothing is archived automatically.
 
 ## Where tasks live
 
 | Path | Holds |
 |---|---|
 | `Efforts/TaskNotes/Tasks/` | every task note |
-| `Efforts/TaskNotes/Archive/<year>/<month>/` | archived tasks (created on the first archive) |
+| `Archive/Tasks/<year>/` | archived tasks (created on the first archive) |
 | `System/Bases/Tasks.base` | the vault's task views, embedded by the dashboard and the templates |
 | `Efforts/TaskNotes/Views/` | TaskNotes' own view files, opened by its commands (task list, kanban, calendar, agenda) |
 

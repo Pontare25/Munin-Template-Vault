@@ -20,6 +20,9 @@ views:
       - date_created
   - type: table
     name: All efforts
+    filters:
+      and:
+        - '!file.path.startsWith("Archive/")'
     groupBy:
       property: status
       direction: ASC
@@ -28,3 +31,17 @@ views:
       - type
       - status
       - date_created
+  - type: table
+    name: Archive
+    filters:
+      and:
+        - file.path.startsWith("Archive/")
+    order:
+      - file.name
+      - type
+      - status
+      - date_end
+      - summary
+    sort:
+      - property: date_end
+        direction: DESC

@@ -1,7 +1,7 @@
 {
   "tasksFolder": "Efforts/TaskNotes/Tasks",
   "moveArchivedTasks": true,
-  "archiveFolder": "Efforts/TaskNotes/Archive/{{year}}/{{month}}",
+  "archiveFolder": "Archive/Tasks/{{year}}",
   "taskTag": "task",
   "taskIdentificationMethod": "property",
   "hideIdentifyingTagsInCards": false,
@@ -141,6 +141,7 @@
     "requiredTags": [],
     "includeFolders": [
       "Efforts/Projects",
+      "Efforts/Learning",
       "Efforts/Areas"
     ],
     "propertyKey": "status",

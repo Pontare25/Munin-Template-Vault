@@ -15,5 +15,8 @@
     "editor:toggle-checklist-status",
     "editor:toggle-bullet-list",
     "editor:configure-toolbar"
+  ],
+  "userIgnoreFilters": [
+    "Archive/"
   ]
 }

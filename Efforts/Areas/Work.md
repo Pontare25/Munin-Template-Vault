@@ -3,7 +3,7 @@ type: area
 status: active
 date_created: 2026-11-04T11:00
 date_modified:
-summary: Paid work. Client assignments, employer duties and professional development.
+summary: Paid work. Client assignments and employer duties.
 up:
 ---
 # Work

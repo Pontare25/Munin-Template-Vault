@@ -7,8 +7,11 @@ summary:
 up:
 related:
 down:
+ai:
 opposes:
 ---
+AI review: `INPUT[inlineSelect(option(pending), option(approved), option(collaborative), option(checked)):ai]`
+
 <% tp.file.cursor() %>
 
 ## About this topic

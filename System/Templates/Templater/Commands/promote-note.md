@@ -7,6 +7,8 @@ const types = {
   "note": "System/Templates/Templater/Atlas-templates/atomic-note-template.md",
   "topic": "System/Templates/Templater/Atlas-templates/topic-template.md",
   "person": "System/Templates/Templater/Atlas-templates/person-template.md",
+  "organization": "System/Templates/Templater/Atlas-templates/organization-template.md",
+  "framework": "System/Templates/Templater/Atlas-templates/framework-template.md",
   "meeting": "System/Templates/Templater/Calendar-templates/meeting-template.md",
   "work-session": "System/Templates/Templater/Calendar-templates/work-session-template.md",
   "project": "System/Templates/Templater/Effort-templates/project-template.md",

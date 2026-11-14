@@ -21,7 +21,7 @@ Knowledge flows one way: captured in `Fleeting/`, `Raw/` or a daily note, proces
 Ask these questions in order:
 
 1. **Is it a date-bound record** (something that happened, was said, was thought on a day)? Then `Calendar/`: daily note, weekly note, or meeting note.
-2. **Is it something to do** (a goal, a plan, a responsibility)? Then `Efforts/`: `Projects/` if it ends, `Areas/` if it does not, `Learning/` if it is a study subject. A single task is a task note (`type: task`) in `Efforts/TaskNotes/Tasks/`. Next to it, `Efforts/TaskNotes/Views/` holds the view Bases the TaskNotes plugin generates, and `Efforts/TaskNotes/Archive/` is created by the plugin the first time a task is archived.
+2. **Is it something to do** (a goal, a plan, a responsibility)? Then `Efforts/`: `Projects/` if it ends, `Areas/` if it does not, `Learning/` if it is a study subject. A single task is a task note (`type: task`) in `Efforts/TaskNotes/Tasks/`. Next to it, `Efforts/TaskNotes/Views/` holds the view Bases the TaskNotes plugin generates. Closed efforts and archived tasks go to `Archive/` (see its README), which is excluded from search.
 3. **Is it a quick note or idea of your own?** Then `Fleeting/`.
 4. **Is it unprocessed outside material?** Then `Raw/`: `Sources/` for external material, `Inbox/` when unsure.
 5. **Is it distilled knowledge?** Then `Atlas/`: one idea is a `note`, a subject hub is a `topic`, a curated overview is a `moc`, a person or organization is an entity, a named method is a `framework`.
@@ -47,14 +47,17 @@ Templates live in `System/Templates/` (paths below are relative to it). Pick by 
 | Topic page | `Templater/Atlas-templates/topic-template.md` | `Atlas/Topics/` |
 | Map of Content | `Templater/Atlas-templates/moc-template.md` | `Atlas/MOCs/` |
 | Person | `Templater/Atlas-templates/person-template.md` | `Atlas/Entities/People/` |
+| Organization | `Templater/Atlas-templates/organization-template.md` | `Atlas/Entities/Organizations/` |
+| Framework | `Templater/Atlas-templates/framework-template.md` | `Atlas/Frameworks/` |
 | Fleeting note | `Templater/fleeting-template.md` (applied automatically) | `Fleeting/` |
 | Source capture | `Templater/source-capture-template.md` | `Raw/Inbox/` (ingest moves it to `Raw/Sources/`) |
 | Area | `Templater/Effort-templates/area-template.md` | `Efforts/Areas/` |
-| Project | `Templater/Effort-templates/project-template.md` | `Efforts/Projects/` |
+| Project | `Templater/Effort-templates/project-template.md` | `Efforts/Projects/`, or `Efforts/Learning/<Subject>/` for a learning project |
 | Task note body | `Templater/Effort-templates/task-note-template.md` (used by TaskNotes) | `Efforts/TaskNotes/Tasks/` |
 | Log bullet | `Templater/Commands/log-bullet.md` (command) | At the cursor |
 | New task | `Templater/Commands/new-task.md` (command) | A task note plus a reference line at the cursor |
 | Promoted note | `Templater/Commands/promote-note.md` (command) | The chosen type's folder |
+| Close project | `Templater/Commands/close-project.md` (command, Close project button) | Sets status and `date_end` on the open project |
 | Command icons | `Templater/Startup/command-icons.md` (runs at startup) | Icons on the phone toolbar buttons |
 | Advanced log widget | `Templater/Sub-templates/Dataview queries/Advanced log template.md` | Included in project and person notes |
 
@@ -84,8 +87,8 @@ Bases read frontmatter fields, which is one more reason the schema matters: note
 | `System/Bases/Journals.base` | Periodic rollups (days into weeks, and up) | Weekly to yearly notes |
 | `System/Bases/Meetings.base` | Meetings and work sessions per project; meetings per person | Project and person notes |
 | `System/Bases/Sessions.base` | Work sessions per project (project notes made before 3.1.0) | Older project notes |
-| `System/Bases/Notes.base` | Child and related notes | Project and person notes |
-| `System/Bases/Projects.base` | Sub projects | Project notes |
+| `System/Bases/Notes.base` | Child and related notes; AI notes awaiting review | Project and person notes; Inbox dashboard |
+| `System/Bases/Projects.base` | Sub projects, Learning, Related learning, Archive | Project notes, Learning Area |
 | `System/Bases/People.base` | All people | Open it directly |
 
 The TaskNotes plugin adds seven view Bases of its own in `Efforts/TaskNotes/Views/` (tasks list, kanban, calendar, mini calendar, agenda, relationships, pomodoro stats), generated from its settings.

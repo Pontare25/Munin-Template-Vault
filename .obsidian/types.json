@@ -19,6 +19,24 @@
     "date_completed": "date",
     "origin": "text",
     "details": "multitext",
-    "actions": "multitext"
+    "actions": "multitext",
+    "type": "text",
+    "summary": "text",
+    "status": "text",
+    "journal": "text",
+    "location": "text",
+    "resource": "text",
+    "author": "text",
+    "date_published": "date",
+    "down": "multitext",
+    "opposes": "multitext",
+    "topics": "multitext",
+    "area": "multitext",
+    "ai": "text",
+    "assignees": "multitext",
+    "contexts": "multitext",
+    "title": "text",
+    "priority": "text",
+    "version": "number"
   }
 }

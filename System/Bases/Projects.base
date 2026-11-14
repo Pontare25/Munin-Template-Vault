@@ -7,6 +7,20 @@ properties:
 views:
   - type: table
     name: All Projects
+    filters:
+      and:
+        - '!file.path.startsWith("Archive/")'
+  - type: table
+    name: Learning
+    filters:
+      and:
+        - '!file.path.startsWith("Archive/")'
+        - list(area).contains(link("Learning")) || file.path.startsWith("Efforts/Learning/")
+    order:
+      - file.name
+      - status
+      - related
+      - summary
   - type: kanban
     name: Sub projects
     filters:
@@ -36,3 +50,26 @@ views:
       note.summary: 629
     columnWidth: 340
     imageAspectRatio: 0.7
+  - type: table
+    name: Related learning
+    filters:
+      and:
+        - list(related).contains(link(this.file))
+        - list(area).contains(link("Learning")) || file.path.startsWith("Efforts/Learning/")
+    order:
+      - file.name
+      - status
+      - summary
+  - type: table
+    name: Archive
+    filters:
+      and:
+        - file.path.startsWith("Archive/")
+    order:
+      - file.name
+      - status
+      - date_end
+      - summary
+    sort:
+      - property: date_end
+        direction: DESC
