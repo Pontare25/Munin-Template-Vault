@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 1
+version: 2
 summary: Answer a question from the vault by climbing the navigation ladder, cheapest lookup first
 ---
 
@@ -26,12 +26,12 @@ Climb one rung at a time. Stop as soon as the question is answered.
 2. **Climb the ladder** and read only what each rung surfaces.
 3. **Synthesize.** Answer in your own words, with wikilinks to every note the answer draws on.
 4. **Say "not in the vault" when it is not.** If the ladder ends without an answer, say so plainly and offer to research or ingest. Never fill the gap from general knowledge without labeling it as outside the vault.
-5. **Offer to file good answers.** A synthesis worth keeping becomes an Atlas note via [[new-note]]. Chat history evaporates; the vault compounds.
-6. **Report retrieval failures.** If the answer existed but the ladder missed it (a missing index line, an unlinked topic, an orphan note), that is a [[lint]] finding: flag it or fix it on approval.
+5. **Offer to file good answers.** A synthesis worth keeping becomes a `type: note` in `Atlas/Notes/` via [[new-note]], with `up:` a topic, `ai: pending`, a `# Citations` list linking the notes it draws on, and a line in the folder `index.md`. Chat history evaporates; the vault compounds.
+6. **Report retrieval misses.** If a rung should have found the answer but did not (a missing index line, an unlinked topic, an orphan note), append a line to [[AI-OS/log|log]] naming the rung and the note. It is also a [[lint]] finding: flag it or fix it on approval.
 
 ## Output
 
-An answer with wikilinks to every note it draws on, or a plain "not in the vault", plus an offer to file a good answer. No log entry unless a note is filed.
+An answer with wikilinks to every note it draws on, or a plain "not in the vault", plus an offer to file a good answer. A log entry only when a note is filed or a retrieval miss is found.
 
 ## Query shapes
 
@@ -47,7 +47,7 @@ An answer with wikilinks to every note it draws on, or a plain "not in the vault
 ## Judgment calls
 
 - A confident answer from rung 5 alone is a hint the graph is missing structure; consider proposing a topic or compass links along with the answer.
-- Plain queries need no [[log]] entry; filing an answer does (the [[new-note]] steps cover it).
+- Plain queries need no [[log]] entry; filing an answer or a retrieval miss does.
 
 ## Manual checklist (without an AI)
 
