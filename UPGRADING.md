@@ -17,6 +17,16 @@ Which files an upgrade replaces, merges or leaves alone is set by the ownership 
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
 
+## 3.4.0
+
+**What changed:** New [[optimizer]] SOP: once a month (the [[monthly-review]] runs it, or say "run the optimizer") the AI audits its own setup. It checks that template fields match the field registry, that the files it reads every session stay within their word caps, that every routing row points at a real SOP, and that lessons in `memory.md` are not already covered by a rule. It reports four numbers that show whether your feedback reaches the AI: feedback lines captured, lessons promoted, rules added, lint findings that keep coming back. It reads and proposes; it changes nothing on its own. Every SOP that edits a note now sets `date_modified`, so staleness checks can trust it. Lint's log entry counts findings per category. The template's GitHub repo has a "Feedback from use" issue form, and the optimizer can draft one from your procedure notes. `Start Here/rhythm.md` embeds the optimizer checklist under Monthly.
+
+**What you do:** Approve the SOP's preview. Nothing else: the first optimizer run counts the whole log as its baseline.
+
+**What the SOP does:** Copies the system files (the new `optimizer` SOP, the changed SOPs, `AI-OS/Standards/sop-format.md`, `Start Here/rhythm.md`) and shows the merge files for you to choose: `AI-OS/routing.md` (one new row; your My SOPs section stays) and `AI-OS/README.md` (the SOP list). No note changes.
+
+**Removed files:** none.
+
 ## 3.3.0
 
 **What changed:** Five new SOPs give the vault a rhythm: [[weekly-review]], [[monthly-review]], [[project-lifecycle]], [[meeting-close]] and [[merge-notes]], each with a routing row and a manual checklist. The daily review also sweeps `Fleeting/` and the Brain dump section, and "develop my fleeting notes" grows one or two fleeting notes. Ingest checks for duplicates, writes Citations and a Tensions section for conflicting claims, and takes PDFs (the original stays, the extracted text sits beside it). Query files good answers back as notes. Lint runs weekly on changed notes and monthly in full, leaves a summary line in `log.md`, proposes maps of content and stub fill-ins, and has a short incremental mode. Onboarding reads what is already in the vault and asks only about gaps. New views: Stale 14 days (Tasks), No open task (Projects), Stubs (Topics); the AoR Review counts open tasks and has a checklist, and the monthly note embeds it. The daily note gets a Due strip (today only, empty when nothing is due); the weekly note gets Carries forward and System friction lines and no longer mentions `type: decision`. New guide `Start Here/rhythm.md` with every review checklist; it replaces "Guide to writing daily notes".
