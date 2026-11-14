@@ -1,6 +1,6 @@
 ---
 type: dashboard
-date_created: 2026-08-26
+date_created: 2026-08-26T00:00
 summary: Vault-wide task dashboard. Every open task note, grouped by when it needs attention.
 cssclasses:
   - callouts-outlined

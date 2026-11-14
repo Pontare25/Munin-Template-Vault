@@ -1,6 +1,6 @@
 ---
 type: dashboard
-date_created: 2026-09-15
+date_created: 2026-09-15T00:00
 summary: Areas-of-responsibility review, every active Area with health signals in one sweep. The GTD 20k-ft check the weekly/monthly digest doesn't cover.
 ---
 # Areas of Responsibility: Review

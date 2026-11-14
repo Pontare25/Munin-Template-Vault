@@ -1,6 +1,6 @@
 ---
 type: dashboard
-date_created: 2026-09-05
+date_created: 2026-09-05T00:00
 summary: Capture dashboard, everything captured but not yet processed, across both capture lanes.
 cssclasses:
   - callouts-outlined
