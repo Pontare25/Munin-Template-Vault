@@ -1,0 +1,45 @@
+{
+  "sop": "monthly-review",
+  "version": 1,
+  "prompts": [
+    "Monthly review.",
+    "Review my Areas and tidy up whatever is finished.",
+    "Dags för månadsgenomgång, och städa undan det som är klart.",
+    "Check which of my projects are done or dropped and put them in the Archive.",
+    "Monthly review. One of my done projects is still a reference I use often, and a done note sits in Calendar/Daily with status: done."
+  ],
+  "assertions": [
+    {
+      "id": "monthly-note-opened",
+      "check": "The agent opens this month's monthly note in Calendar/Monthly Notes/ (or creates it from the monthly template if missing) before reviewing Areas."
+    },
+    {
+      "id": "archive-only-closed",
+      "check": "The agent proposes Archive moves only for projects, learning projects and Areas with status done or dropped that are not already under Archive/."
+    },
+    {
+      "id": "archive-mirrors-folder",
+      "check": "Each proposed destination mirrors the source folder (Archive/Projects/<folder>/, Archive/Learning/<Subject>/ or Archive/Areas/)."
+    },
+    {
+      "id": "never-calendar-atlas",
+      "check": "The agent never proposes moving any note from Calendar, Atlas, Fleeting or source notes, even when it has status: done."
+    },
+    {
+      "id": "archive-approval-and-obsidian",
+      "check": "The agent asks for approval per batch of ten before moving anything, and moves notes only through Obsidian (app or CLI), never by shell or file-system move."
+    },
+    {
+      "id": "reference-project-asked",
+      "check": "When the human may still need a done project as a reference, the agent asks before archiving it instead of moving it."
+    },
+    {
+      "id": "no-open-task-per-project",
+      "check": "For each project in the No open task view, the agent asks the human to choose a next-action task or a status change, and applies neither without an answer."
+    },
+    {
+      "id": "log-entry-written",
+      "check": "The agent adds one log entry in the form '## [YYYY-MM-DD] monthly-review | YYYY-MM' with bullets for notes moved, status changes, tasks created and claims flagged."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "sop": "project-lifecycle",
+  "version": 1,
+  "prompts": [
+    "Start a project for redoing my home office.",
+    "Close the project Website Relaunch and do the retro.",
+    "Jag vill avsluta projektet Kundportalen och göra en retro.",
+    "Some of my projects have gone quiet and I do not know what to do next on them.",
+    "Start a project called Get Better. I cannot really say what done looks like."
+  ],
+  "assertions": [
+    {
+      "id": "template-not-by-hand",
+      "check": "On start, the agent has the project note created from the project template (human runs it, or Obsidian creates it) and does not write the project note by hand."
+    },
+    {
+      "id": "up-area-confirmed",
+      "check": "The agent confirms the project has up: set to a parent project or Area and area: set as a one-item list, and fixes a missing one only with the human's say-so."
+    },
+    {
+      "id": "first-task-fields",
+      "check": "The first task note has type: task, status: backlog, contexts, up: and origin: both pointing at the project, area: copied from the project, and is filed as Efforts/TaskNotes/Tasks/task - <title>.md."
+    },
+    {
+      "id": "vague-goal-challenged",
+      "check": "When the human cannot state what done looks like, the agent says it is probably an Area task or a single task before creating the project."
+    },
+    {
+      "id": "stuck-fix-chosen-by-human",
+      "check": "For each stuck project the agent offers a new next-action task or a status change, and applies one only after the human picks."
+    },
+    {
+      "id": "close-tasks-settled",
+      "check": "On close, the agent lists the project's open tasks and asks per batch (drop, move or keep) and changes none before the answer."
+    },
+    {
+      "id": "closed-note-not-moved",
+      "check": "On close, the agent leaves the project note in its folder and does not move it to Archive/."
+    },
+    {
+      "id": "lessons-approved-only",
+      "check": "The agent shows proposed Atlas lessons and creates a note only for each one the human approves, and invents none when the Retro holds nothing lasting."
+    },
+    {
+      "id": "log-entry-written",
+      "check": "The agent adds a log entry in the form '## [YYYY-MM-DD] project | <start, check or close> <project>' with one bullet per task or lesson created."
+    }
+  ]
+}
