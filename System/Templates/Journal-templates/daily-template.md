@@ -50,7 +50,7 @@ summary:
 > [!done]- Tasks completed today
 > ![[Tasks.base#Period completed]]
 
-**Due**
+**Next actions** (earliest due first; priority is only a flag)
 ![[Tasks.base#Period due]]
 
 **Upcoming tasks**

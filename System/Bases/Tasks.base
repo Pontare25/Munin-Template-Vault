@@ -218,6 +218,8 @@ views:
       - complete_instances
       - file.tasks
     sort:
+      - property: date_due
+        direction: ASC
       - property: date_scheduled
         direction: ASC
     enableSearch: true
@@ -329,6 +331,8 @@ views:
       - complete_instances
       - file.tasks
     sort:
+      - property: date_due
+        direction: ASC
       - property: priority
         direction: DESC
     enableSearch: true
