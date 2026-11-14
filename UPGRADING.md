@@ -30,8 +30,6 @@ Each section uses the same four parts: **What changed**, **What you do**, **What
 3. **`area:`:** open projects (`backlog`, `active`, `waiting`) and open tasks get `area:` from the Area at the top of their `up:` chain. Closed ones are left; the Tasks views find their Area through `up:` anyway.
 4. **Archived tasks:** offers to move notes in `Efforts/TaskNotes/Archive/` to `Archive/Tasks/<year>/` through Obsidian.
 
-<!-- D6 (journal: and tags: on templates): outcome pending sign-off; add its step here. -->
-
 **Removed files:** none.
 
 ## 3.1.0

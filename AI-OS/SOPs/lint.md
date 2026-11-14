@@ -16,7 +16,7 @@ Periodic health check of the knowledge graph. Lint finds problems and proposes f
    - **Broken links:** wikilinks pointing at notes that do not exist (excluding topic stubs the ingest SOP is expected to create).
    - **Orphans:** notes in `Atlas/` with no inbound links and no `topics:` pointing at them.
    - **Missing topic pages:** subjects referenced in `topics:` fields with no page in `Atlas/Topics/`.
-   - **Schema drift:** notes missing required frontmatter for their type (see [[note-schema]]), or tags other than `#example` (classification is the `type:` field, never a tag). For `Atlas/`, every note must carry a non-empty `type:` (OKF conformance); check this during the lint pass. Also check the user's notes for the following. All are warnings with a proposed fix, never auto-applied; a batch of more than ten notes needs approval first.
+   - **Schema drift:** notes missing required frontmatter for their type (see [[note-schema]]), or a tag used to classify a note instead of `type:` (the user's own tags are fine). For `Atlas/`, every note must carry a non-empty `type:` (OKF conformance); check this during the lint pass. Also check the user's notes for the following. All are warnings with a proposed fix, never auto-applied; a batch of more than ten notes needs approval first.
      - `up:` missing where the core's `up:` table says required (note, framework, source, person, organization). Projects and tasks without `up:` count as one line, not one warning each.
      - A relationship field written as a scalar, not a YAML list: `up`, `related`, `down`, `opposes`, `people`, `skills`, `interests`, `topics`, `area`.
      - `type:` that disagrees with the folder per the core type table. Notes under `Archive/` and captures in `Raw/Inbox/` are exempt.

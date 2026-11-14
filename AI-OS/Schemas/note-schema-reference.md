@@ -239,7 +239,7 @@ When a note makes claims backed by external sources, list them under a `# Citati
 
 ## What the schema deliberately leaves out
 
-- No tags beyond `#example`, which marks worked-example notes in the examples repo and never appears in the template itself. Classification is the `type:` field, never a tag.
+- No system tags beyond `#example`, which marks worked-example notes in the examples repo. Classification is the `type:` field, never a tag. Templates keep an empty `tags:` for your own use; nothing in the template reads it.
 - No status fields outside Efforts, except `ai:`.
 - No mandatory fields beyond `type:`, `date_created:` and the `up:` rules in [[note-schema]]. Everything else, `summary:` included, earns its place by being useful.
 
@@ -255,7 +255,7 @@ Every frontmatter field the template uses. **Type** is the Obsidian property typ
 | `summary` | text | every note outside `Calendar/` (recommended) | One line on what the note holds; OKF `description` | you, AI |
 | `aliases` | aliases | person, project, any | Other names the note answers to | template, you |
 | `cssclasses` | multitext | dashboards | Obsidian layout classes | shipped notes |
-| `tags` | tags | none by default | Only `#example`, in the examples repo | you |
+| `tags` | tags | journal, meeting, work session, person (empty) | Yours to use. The template never relies on it; classification is `type:`, and the examples repo uses only `#example` | you |
 | `journal` | text | journal notes | Which Journals plugin journal owns the note (`daily` to `yearly`); the plugin finds its notes by it | Journals template |
 | `date` | date | journal notes | First day of the period the note covers | Journals template |
 | `date_start` | datetime | project, meeting, work session | When it started or starts | template |

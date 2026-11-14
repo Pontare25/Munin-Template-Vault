@@ -4,7 +4,7 @@ Core rules; read this before writing a note. **Links for things, fields for kind
 
 ## Required on every note
 
-- **`type:`** says what kind of note it is. Classification is this field alone, never a tag; the only tag in use is `#example`.
+- **`type:`** says what kind of note it is. Classification is this field alone, never a tag; tags are the user's own.
 
   | Value | Lives in | Meaning |
   |---|---|---|
