@@ -165,7 +165,7 @@ date_modified: 2026-11-03T15:15:40.530+01:00
 
 - **`title:`** the task's clean title. The filename adds a prefix (`task - <title>.md`), so the clean title lives here.
 - **`date_created:` and `date_modified:`** are filled and kept current by TaskNotes, as full ISO timestamps with seconds and time zone.
-- **Area:** `up:` always points one level up (task to project, sub-project to project, top-level project to its Area); a task outside any project points `up:` straight at an Area. **`area:`** names the top-level Area (Work, Personal, Learning) directly, as a one-item list; *New task* copies it from the project you pick, and templates copy it from the parent. Bases read `area:` and fall back to walking `up:` for notes without it, so tasks made another way still group correctly. Lint flags an `area:` that disagrees with the `up:` chain. TaskNotes' `contexts` field says `personal` or `work`; *New task* asks for it.
+- **Area:** `up:` always points one level up (task to project, sub-project to project, top-level project to its Area); a task outside any project points `up:` straight at an Area. **`area:`** names the top-level Area (Work, Personal, Learning) directly, as a one-item list; *New task* copies it from the project you pick, and the project template from the parent project or Area; lint proposes it on meetings and work sessions. Bases read `area:` and fall back to walking `up:` for notes without it, so tasks made another way still group correctly. Lint flags an `area:` that disagrees with the `up:` chain. TaskNotes' `contexts` field says `personal` or `work`; *New task* asks for it.
 - **`origin:`** the note the task was created in (a daily, meeting or work-session note), as a single link. Written by the *New task* command; tasks made another way have none. It records where the task came from; `up:` records what it belongs to.
 - **`archived` tag:** archiving a task (a TaskNotes action, separate from `done`) adds the plugin's `archived` tag and moves the note to `Archive/Tasks/<year>/`. It is a plugin convention, not a vault tag namespace.
 
@@ -277,7 +277,7 @@ Every frontmatter field the template uses. **Type** is the Obsidian property typ
 | `resource` | text | source, entity | Canonical URL of the thing; OKF `resource` | template prompt, AI |
 | `author` | text | source | Who wrote or said it | you, AI at ingest |
 | `status` | text | project, area, task | `backlog`, `active`, `waiting`, `done`, `dropped` | selector, TaskNotes |
-| `area` | multitext | project, task, meeting, work session | The top-level Area (Work, Personal or Learning), one link in a list | copied from the parent at creation |
+| `area` | multitext | project, task, meeting, work session | The top-level Area (Work, Personal or Learning), one link in a list | New task and the project template copy it from the parent; lint proposes it on other notes |
 | `ai` | text | notes the AI wrote | Review state: `pending`, `approved`, `collaborative`, `checked` | AI sets, you change |
 | `details` | multitext | meeting | Meeting minutes points | you, AI |
 | `actions` | multitext | meeting | Actions agreed | you, AI |

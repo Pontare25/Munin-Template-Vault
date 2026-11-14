@@ -38,7 +38,7 @@ Journal notes carry `date`, the first day of their period. Every other date is `
 - **`topics:`** links to Topic pages in `Atlas/Topics/`. When an ingest needs a topic that does not exist, create a stub (one-line definition, empty compass).
 - **`people:`** links to person notes, on any type.
 - **The compass:** `up:` (the broader theme above it), `related:` (similar), `down:` (what follows from it), `opposes:` (what it is in tension with). Say why when a link is not obvious.
-- **`area:`** on projects, tasks, meetings and work sessions: the top-level Area (Work, Personal, Learning), copied from the parent when the note is made.
+- **`area:`** on projects, tasks, meetings and work sessions: the top-level Area (Work, Personal, Learning). New task and the project template copy it from the parent; lint proposes it elsewhere.
 - **Relationship fields are always YAML lists, even with one value:** `up`, `related`, `down`, `opposes`, `people`, `skills`, `interests`, `area`. An inline value breaks every Base filter on that field.
 
 | Type | `up:` points at |
@@ -52,7 +52,7 @@ Journal notes carry `date`, the first day of their period. Every other date is `
 
 ## Status on efforts
 
-Projects, areas and tasks carry `status:`: `backlog`, `active`, `waiting`, `done`, `dropped`. Areas use only `active`, `backlog` and `dropped`. `backlog`, `active` and `waiting` are open. Set it with the note's status selector. Closed efforts move to `Archive/` at the monthly review, through Obsidian.
+Projects, areas and tasks carry `status:`: `backlog`, `active`, `waiting`, `done`, `dropped`. Areas use only `active`, `backlog` and `dropped`. `backlog`, `active` and `waiting` are open. Closed efforts move to `Archive/` at the monthly review, through Obsidian.
 
 ## AI provenance
 
