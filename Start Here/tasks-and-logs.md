@@ -199,8 +199,6 @@ Some log kinds are worth querying as a class across the whole vault. Give those 
 
 The marker and the tag do different jobs: the **marker** sets the family and the icon; the **tag** sets the semantic class for cross-cutting queries. They are orthogonal, which is why decision and risk draw from different markers but share the `#log/` namespace. Query all decisions with `#log/decision`, everything typed with `#log/*`.
 
-To keep these cheap to write, two commands insert the whole prefix for you: **Log decision** drops `- [b] #log/decision` on the line, **Log risk** drops `- [c] #log/risk`, cursor left ready for the text. See [[Hotkeys]].
-
 Major decisions can be promoted to their own `type: decision` note (context, rationale, date), ADR-style: the same capture-cheap, promote-what-matters move as the rest of the vault.
 
 ## The linking rule (why any of this rolls up)
@@ -241,8 +239,6 @@ The project and person templates show the plain log rollup above (always visible
 - **Marker toggles**: show or hide each log marker (`[b]` `[i]` `[p]` `[c]` `[*]`), plus an `x` toggle for task reference lines. The `x` toggle is off by default; turn it on to see the tasks captured about this note in the timeline.
 - **Text search**: matches the whole line, including any `#log/` tag, so typing `decision` pulls up every `#log/decision` item.
 - **Date range**, a **Limited folder search** switch (only `Calendar/` notes), sort order, **Reset filters**, and a **Copy results** button (Markdown to clipboard; task reference lines are copied as `#task <title>`). All settings persist per note.
-
-The weekly note keeps its own date-scoped decisions query for the "what got decided this week" view.
 
 The widget lives at `System/Templates/Templater/Sub-templates/Dataview queries/Advanced log template.md` and is pulled into the project and person templates with `tp.file.include`.
 

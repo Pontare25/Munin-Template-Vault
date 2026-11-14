@@ -43,7 +43,7 @@ summary:
 > [!todo]+ Still open (due by end of quarter)
 > ![[Tasks.base#Period due]]
 
-### Logs & decisions this quarter
+### Logs this quarter
 > [!note]- All logs this quarter (grouped by month)
 > ```dataview
 > TASK
@@ -53,15 +53,6 @@ summary:
 > GROUP BY dateformat(file.day, "yyyy-MM") AS "Month"
 > SORT file.day ASC
 > ```
-
-**Decisions**
-```dataview
-TASK
-FROM "Calendar"
-WHERE file.day >= date("<% moment(tp.file.title, "YYYY-[Q]Q").startOf("quarter").format("YYYY-MM-DD") %>") AND file.day <= date("<% moment(tp.file.title, "YYYY-[Q]Q").endOf("quarter").format("YYYY-MM-DD") %>")
-WHERE contains(text, "#log/decision")
-SORT file.day ASC
-```
 
 ### Meetings & sessions this quarter
 ![[Calendar.base#Quarterly rollup]]

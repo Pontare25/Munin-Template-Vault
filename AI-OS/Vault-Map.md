@@ -53,10 +53,9 @@ Templates live in `System/Templates/` (paths below are relative to it). Pick by 
 | Project | `Templater/Effort-templates/project-template.md` | `Efforts/Projects/` |
 | Task note body | `Templater/Effort-templates/task-note-template.md` (used by TaskNotes) | `Efforts/TaskNotes/Tasks/` |
 | Log bullet | `Templater/Commands/log-bullet.md` (command) | At the cursor |
-| Decision log line | `Templater/Commands/log-decision.md` (command) | At the cursor |
-| Risk log line | `Templater/Commands/log-risk.md` (command) | At the cursor |
 | New task | `Templater/Commands/new-task.md` (command) | A task note plus a reference line at the cursor |
 | Promoted note | `Templater/Commands/promote-note.md` (command) | The chosen type's folder |
+| Command icons | `Templater/Startup/command-icons.md` (runs at startup) | Icons on the phone toolbar buttons |
 | Advanced log widget | `Templater/Sub-templates/Dataview queries/Advanced log template.md` | Included in project and person notes |
 
 Organizations have no template yet; use the frontmatter pattern in [[note-schema-reference]].

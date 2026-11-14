@@ -21,7 +21,7 @@ The Monthly, Quarterly and Yearly folders appear the first time the Journals plu
 - Periodic notes: `type: daily`, `weekly`, `monthly`, `quarterly`, `yearly`; each altitude rolls up the one below.
 - Event notes: `type: meeting` and `type: work-session`, linked to the people and projects they touch.
 - Anything time-bound: what happened, what was said, what you thought that day.
-- Logs use the `#log/*` taxonomy (see [[tasks-and-logs]]); a log line worth remembering as a decision is tagged `#log/decision` and the weekly/monthly/quarterly/yearly notes roll those up automatically.
+- Logs use the `#log/*` taxonomy (see [[tasks-and-logs]]); a log line worth finding again as a decision is tagged `#log/decision`, so a search for it pulls every decision up.
 
 ## What does not belong here
 
