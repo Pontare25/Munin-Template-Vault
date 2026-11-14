@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.3.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.2.0...v3.3.0) (2026-11-14)
+
+
+### Features
+
+* daily review sweeps Fleeting and Brain dump, develops fleeting notes ([f1c234a](https://github.com/Pontare25/Munin-Template-Vault/commit/f1c234a2ce0a9998e0b48ea6a95be096ce8cc118)), closes [#167](https://github.com/Pontare25/Munin-Template-Vault/issues/167)
+* ingest dedup, Citations, Tensions and PDFs; query files answers; lint cadence and incremental mode ([a494d51](https://github.com/Pontare25/Munin-Template-Vault/commit/a494d518ff50635c342d4a8cd98ceb770b9470d6)), closes [#167](https://github.com/Pontare25/Munin-Template-Vault/issues/167)
+* onboarding discovers before asking and creates files only with real data ([15b909b](https://github.com/Pontare25/Munin-Template-Vault/commit/15b909b7f03ff277a955b992e1fadf131cb199a9)), closes [#167](https://github.com/Pontare25/Munin-Template-Vault/issues/167)
+* Phase 4 workflows (weekly, monthly, project, meeting, merge SOPs; rhythm guide) ([f5ad446](https://github.com/Pontare25/Munin-Template-Vault/commit/f5ad4464ab6352c806c7d9cb306ce5d17cf0c02b))
+* stale, no-open-task and stub views, AoR checklist, daily Due strip ([aaf71f1](https://github.com/Pontare25/Munin-Template-Vault/commit/aaf71f1e427884fca19e105933e302ee4057823b)), closes [#167](https://github.com/Pontare25/Munin-Template-Vault/issues/167)
+* weekly, monthly, project, meeting and merge SOPs with routing rows ([d462a92](https://github.com/Pontare25/Munin-Template-Vault/commit/d462a92d427497335bb31a43ad27becf11648bab)), closes [#167](https://github.com/Pontare25/Munin-Template-Vault/issues/167)
+
+
+### Bug Fixes
+
+* post-build review fixes for Phase 4 ([d1a2823](https://github.com/Pontare25/Munin-Template-Vault/commit/d1a282387f4ac6c1120f651915d742e027c6a114)), closes [#167](https://github.com/Pontare25/Munin-Template-Vault/issues/167)
+
+
+### Documentation
+
+* rhythm guide replaces the daily-notes guide; 3.3.0 upgrade notes ([aff8719](https://github.com/Pontare25/Munin-Template-Vault/commit/aff87198b3ef9bc7ae78e3b0c4402ef81f529f23)), closes [#167](https://github.com/Pontare25/Munin-Template-Vault/issues/167)
+
 ## [3.2.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.1.0...v3.2.0) (2026-11-14)
 
 
