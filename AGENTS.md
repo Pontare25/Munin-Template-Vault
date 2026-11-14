@@ -21,14 +21,14 @@ Read it from frontmatter, never from a copied list. Active projects: notes in `E
 
 ## 4. Safety tiers
 
-- **Free:** read anything; create and edit notes where a SOP directs it (Atlas, `Raw/Sources/`, Calendar and task notes, `index.md` lines); write `log.md`, `Atlas/log.md`, `state.md` and `memory.md`; set `date_modified` and the AI marker on notes you touched.
-- **Ask first:** edit or delete text the user wrote; change system files (SOPs, templates, Bases, this file, `.obsidian/`); any change touching more than ten notes (one approval per batch; suggest a git commit or a copy first).
+- **Free:** read anything; create and edit notes where a SOP directs it (Atlas, `Raw/Sources/`, Calendar and task notes, `index.md` lines); write `log.md`, `Atlas/log.md`, `state.md` and `memory.md`; set `date_modified` and `ai:` on notes you touched.
+- **Ask first:** edit or delete text the user wrote; change system files (SOPs, schemas, templates, Bases, this file, `.obsidian/`) or add a field; any change touching more than ten notes (one approval per batch; suggest a git commit or a copy first).
 - **Never:** hard-delete (use Obsidian's trash); move or rename a note except through Obsidian (the app, its CLI, or by asking the user to drag it), because file-system moves break links; write personal data into files the user may publish.
 
 ## 5. Writing and memory
 
 - Before writing a note, read the schema core, `AI-OS/Schemas/note-schema.md`. Open `AI-OS/Vault-Map.md` only for filing questions the schema does not answer.
-- Mark what you write with `%% #AI-Assisted %%` at the top of the note or section.
+- Set `ai: pending` on notes you write; inside a note the user wrote, put `%% #AI-Assisted %%` above your section.
 - After vault work, append an entry to `AI-OS/log.md` (format in that file) and update `AI-OS/state.md`.
 - Offer to file a valuable answer as an Atlas note.
 - **Capture:** when the user corrects or praises how you work, or answers a question about how to work, append one line to the `memory.md` Inbox before your next action: `- YYYY-MM-DD | pos or neg | context | feedback`.

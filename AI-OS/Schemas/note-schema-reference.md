@@ -8,7 +8,7 @@ Detail behind [[note-schema]], the core every note follows. Read the core first;
 
 Every date in frontmatter follows one naming rule, so date fields are predictable, sit together in the properties panel, and never leave a query guessing between near-synonyms:
 
-- A journal note's own anchor date is a bare **`date`** (daily, weekly, monthly, quarterly, yearly). The Journals plugin and the Calendar rollups read it.
+- A journal note's own anchor date is a bare **`date`** (daily, weekly, monthly, quarterly, yearly). The Journals plugin and the Calendar rollups read it. The plugin also reads **`journal:`** (`daily` to `yearly`) to know which journal a note belongs to; keep it.
 - Every other date property is **`date_<what>`**, in snake_case. Snake_case names work unbracketed in Bases, Dataview, and scripts (`note.date_due`); a hyphenated name would be read as subtraction.
 - **One exception: `birthday`** on person notes keeps its everyday name.
 
@@ -138,7 +138,7 @@ status: active   # backlog | active | waiting | done | dropped
 - **Single lowercase words.** Values with spaces break the TaskNotes status trigger and invite filter typos. Write `dropped`, never `cancelled`; `open`, `in progress` and `test` are retired.
 - **Set it with the selector.** Project and area notes carry a status selector near the top of the body (a Meta Bind field bound to `status`) that offers only the values sanctioned for that type.
 
-Efforts change status, not folder. `done` and `dropped` notes stay where they are as the record of what happened.
+Status is the truth; the folder follows it. At the monthly review, projects, learning projects and Areas that are `done` or `dropped` move to a mirrored folder under `Archive/` (`Archive/Projects/`, `Archive/Learning/`, `Archive/Areas/`), always through Obsidian so links survive. Calendar, Atlas, fleeting and source notes never move there. `Archive/` is in Obsidian's Excluded files, so it leaves search, graph and quick switcher while links and the Archive views still work. There is no `#archived` tag: status already says it.
 
 Projects also carry three optional date fields (see [Date properties](#date-properties)): **`date_start:`** when work began, **`date_due:`** the target date, and **`date_end:`** when the project actually closed. A plain `YYYY-MM-DD` is enough; add a time only when it matters. Fill what you know; the project template seeds `date_start` with today.
 
@@ -165,9 +165,9 @@ date_modified: 2026-11-03T15:15:40.530+01:00
 
 - **`title:`** the task's clean title. The filename adds a prefix (`task - <title>.md`), so the clean title lives here.
 - **`date_created:` and `date_modified:`** are filled and kept current by TaskNotes, as full ISO timestamps with seconds and time zone.
-- **Area:** a task has no Area field. `up:` always points one level up (task to project, sub-project to project, top-level project to its Area), and the task's Area is found by following `up:`. A task outside any project points `up:` straight at an Area. TaskNotes' `contexts` field says `personal` or `work`, nothing else; *New task* asks for it.
+- **Area:** `up:` always points one level up (task to project, sub-project to project, top-level project to its Area); a task outside any project points `up:` straight at an Area. **`area:`** names the top-level Area (Work, Personal, Learning) directly, as a one-item list; *New task* copies it from the project you pick, and templates copy it from the parent. Bases read `area:` and fall back to walking `up:` for notes without it, so tasks made another way still group correctly. Lint flags an `area:` that disagrees with the `up:` chain. TaskNotes' `contexts` field says `personal` or `work`; *New task* asks for it.
 - **`origin:`** the note the task was created in (a daily, meeting or work-session note), as a single link. Written by the *New task* command; tasks made another way have none. It records where the task came from; `up:` records what it belongs to.
-- **`archived` tag:** archiving a task (a TaskNotes action, separate from `done`) adds the plugin's `archived` tag and moves the note to `Efforts/TaskNotes/Archive/<year>/<month>/`. It is a plugin convention, not a vault tag namespace.
+- **`archived` tag:** archiving a task (a TaskNotes action, separate from `done`) adds the plugin's `archived` tag and moves the note to `Archive/Tasks/<year>/`. It is a plugin convention, not a vault tag namespace.
 
 ## People and organizations
 
@@ -205,13 +205,14 @@ Person notes may also carry **`skills:`** and **`interests:`**: lists of wikilin
 
 ## AI provenance
 
-When the AI writes a note or a section, it marks the top of what it wrote with an Obsidian comment, invisible in reading mode:
+A note the AI writes carries **`ai:`**, its review state, set with the selector on note, topic and framework notes:
 
-```markdown
-%% #AI-Assisted %%
-```
+- `pending`: the AI wrote it and nobody has looked yet (what the AI sets).
+- `approved`: the AI wrote it and you approved it.
+- `collaborative`: written together.
+- `checked`: you wrote it and the AI checked it.
 
-Optional refinement if you want more nuance: `%% #AI-Assisted/Drafted %%` (AI wrote, human approved), `%% #AI-Assisted/Collaborative %%` (written together), `%% #AI-Assisted/Reviewed %%` (human wrote, AI checked). The plain marker is enough for most vaults.
+`ai:` is the one status-like field outside Efforts. When the AI adds a section inside a note you wrote, it puts `%% #AI-Assisted %%` above that section instead of setting the field. Vaults before 3.2.0 marked whole notes with that comment; the upgrade turns a comment on a note's first body line into `ai: pending` (`/Drafted` becomes `approved`, `/Collaborative` becomes `collaborative`, `/Reviewed` becomes `checked`).
 
 ## OKF alignment
 
@@ -239,5 +240,54 @@ When a note makes claims backed by external sources, list them under a `# Citati
 ## What the schema deliberately leaves out
 
 - No tags beyond `#example`, which marks worked-example notes in the examples repo and never appears in the template itself. Classification is the `type:` field, never a tag.
-- No status fields outside Efforts.
-- No mandatory fields beyond `type:` and `date_created:`. Everything else, `summary:` included, earns its place by being useful.
+- No status fields outside Efforts, except `ai:`.
+- No mandatory fields beyond `type:`, `date_created:` and the `up:` rules in [[note-schema]]. Everything else, `summary:` included, earns its place by being useful.
+
+## Field registry
+
+Every frontmatter field the template uses. **Type** is the Obsidian property type set in `.obsidian/types.json`; **Written by** says who fills it. A field not in this table is not part of the schema: adding one follows the rule below.
+
+| Field | Type | On | Meaning | Written by |
+|---|---|---|---|---|
+| `type` | text | every note | What kind of note it is ([[note-schema]] type table) | template |
+| `date_created` | datetime | every note | When the note was made | template, TaskNotes |
+| `date_modified` | datetime | every note | Last content change | AI on edit, TaskNotes |
+| `summary` | text | every note outside `Calendar/` (recommended) | One line on what the note holds; OKF `description` | you, AI |
+| `aliases` | aliases | person, project, any | Other names the note answers to | template, you |
+| `cssclasses` | multitext | dashboards | Obsidian layout classes | shipped notes |
+| `tags` | tags | none by default | Only `#example`, in the examples repo | you |
+| `journal` | text | journal notes | Which Journals plugin journal owns the note (`daily` to `yearly`); the plugin finds its notes by it | Journals template |
+| `date` | date | journal notes | First day of the period the note covers | Journals template |
+| `date_start` | datetime | project, meeting, work session | When it started or starts | template |
+| `date_end` | datetime | project | When it closed | you, AI at close |
+| `date_due` | datetime | project, task | Deadline; on a waiting task, the chase date | you, TaskNotes |
+| `date_scheduled` | datetime | task | Day you plan to work on it | TaskNotes |
+| `date_completed` | date | task | Day it reached done or dropped | TaskNotes |
+| `date_published` | date | source | When the source was published | you, AI at ingest |
+| `birthday` | date | person | Birthday | you |
+| `up` | multitext | every note except fleeting, journal, dashboard, sop | The broader thing above it ([[note-schema]] compass) | template prompt, you |
+| `related` | multitext | any | Similar notes | you, AI |
+| `down` | multitext | topic | What follows from it | you, AI |
+| `opposes` | multitext | topic | What it is in tension with | you, AI |
+| `topics` | multitext | note, source | Topic pages it is about | you, AI |
+| `people` | multitext | any | Person notes involved | you |
+| `skills` | multitext | person | Topic links for competencies | you |
+| `interests` | multitext | person | Topic links for hobbies | you |
+| `location` | text | person | Where they are based | you |
+| `resource` | text | source, entity | Canonical URL of the thing; OKF `resource` | template prompt, AI |
+| `author` | text | source | Who wrote or said it | you, AI at ingest |
+| `status` | text | project, area, task | `backlog`, `active`, `waiting`, `done`, `dropped` | selector, TaskNotes |
+| `area` | multitext | project, task, meeting, work session | The top-level Area (Work, Personal or Learning), one link in a list | copied from the parent at creation |
+| `ai` | text | notes the AI wrote | Review state: `pending`, `approved`, `collaborative`, `checked` | AI sets, you change |
+| `details` | multitext | meeting | Meeting minutes points | you, AI |
+| `actions` | multitext | meeting | Actions agreed | you, AI |
+| `version` | number | sop | SOP version | maintainer |
+| `title` | text | task | Clean task title | TaskNotes |
+| `priority` | text | task | Manual flag: `none`, `low`, `normal`, `high` | TaskNotes |
+| `assignees` | multitext | task | People or AI agents doing it | TaskNotes |
+| `contexts` | multitext | task | `personal` or `work` | New task, TaskNotes |
+| `origin` | text | task | Note the task was captured in | New task |
+
+TaskNotes also writes its own bookkeeping keys on task notes (recurrence, time tracking, `blockedBy`, `archived` tag); they belong to the plugin and are not listed here.
+
+**Changing the schema.** A new field or a new `type:` value needs the user's sign-off, and the same change updates this registry, [[note-schema]] when the rule is core, and `.obsidian/types.json`. The AI proposes; it never adds a field on its own. The maintainer check `.github/scripts/check-templates.mjs` fails when a shipped template writes a field missing here or in `types.json`.
