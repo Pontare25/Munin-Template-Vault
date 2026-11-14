@@ -38,6 +38,10 @@ After changes land on `main`, release-please opens (or updates) a release PR col
 
 A feature is not "done" until its onboarding exists. **Doc-on-ship:** whenever a feature ships (a template, field, workflow, or plugin behavior), the guide line or section that teaches a new user how to use it ships in the same change. No feature merges ahead of its documentation. This keeps onboarding self-maintaining instead of accumulating as rewrite debt.
 
+## Feedback from use
+
+You do not need to write code to improve the template. If a SOP, template or guide got in your way, or worked better than expected, open a **Feedback from use** issue (New issue on the repo's Issues page). Your AI can draft it: the monthly [optimizer](AI-OS/SOPs/optimizer.md) proposes a draft when a Procedure note in your `AI-OS/memory.md` would help every user. Read the draft before posting; issues are public, so leave out names, clients and other personal details. Maintainers read these when planning the next release.
+
 ## Checks
 
-PRs run two checks (`.github/workflows/lint.yml`): markdown lint (rules in `.markdownlint.jsonc`) and a broken-wikilink check (`.github/scripts/check-wikilinks.mjs`). Run the wikilink check locally with `node .github/scripts/check-wikilinks.mjs` from the repo root.
+PRs run five checks (`.github/workflows/lint.yml`): markdown lint (rules in `.markdownlint.jsonc`), a broken-wikilink check, an OKF type check, a template check and an em-dash check (scripts in `.github/scripts/`). Run them locally from the repo root, for example `node .github/scripts/check-wikilinks.mjs`.

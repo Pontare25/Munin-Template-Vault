@@ -1,0 +1,50 @@
+name: Feedback from use
+description: Tell us what worked or got in the way while you used the template day to day.
+title: "Feedback: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing how the template works for you. Your AI can draft this from the Procedure notes in `AI-OS/memory.md` (the optimizer offers it), but read the draft before you post: this page is public, so leave out names, clients and anything else personal.
+  - type: dropdown
+    id: part
+    attributes:
+      label: Which part of the template?
+      options:
+        - A SOP (AI procedure)
+        - A template or Base
+        - A Start Here guide
+        - AGENTS.md, routing or the schema
+        - Something else
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: File or SOP name
+      placeholder: "for example weekly-review, or Start Here/rhythm.md"
+  - type: textarea
+    id: doing
+    attributes:
+      label: What were you doing?
+      description: The task or request, in a sentence or two.
+    validations:
+      required: true
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: What would make it better?
+      description: Optional. A wording change, a missing step, a step to drop.
+  - type: input
+    id: version
+    attributes:
+      label: Template version
+      description: The first line of AI-OS/state.md.
+      placeholder: "3.4.0"
