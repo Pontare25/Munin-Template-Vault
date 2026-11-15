@@ -3,7 +3,10 @@
 // palette). Asks Done or Dropped, sets status and date_end to today, then jumps to the
 // Retro section so you can write what worked and what to change. The note stays where
 // it is; the monthly review moves closed efforts to Archive/ through Obsidian.
-const file = app.workspace.getActiveFile();
+// The button runs this file through Meta Bind (runTemplaterFile), so tp.config.target_file
+// is the note that holds the button; that works in Reading view and on mobile, where a
+// Templater insert command needs an open editor and a missing command fails silently.
+const file = tp.config.target_file ?? app.workspace.getActiveFile();
 const fm = file ? app.metadataCache.getFileCache(file)?.frontmatter : null;
 if (!file || fm?.type !== "project") {
   new Notice("Close project: open a project note first.");
@@ -14,7 +17,7 @@ if (!file || fm?.type !== "project") {
       f.status = status;
       f.date_end = tp.date.now("YYYY-MM-DD");
     });
-    const editor = app.workspace.activeEditor?.editor;
+    const editor = app.workspace.getActiveFile()?.path === file.path ? app.workspace.activeEditor?.editor : null;
     if (editor) {
       const at = editor.getValue().split("\n").findIndex(l => /^## Retro\s*$/.test(l));
       if (at >= 0) { editor.setCursor({ line: at, ch: 0 }); editor.scrollIntoView({ from: { line: at, ch: 0 }, to: { line: at, ch: 0 } }, true); }
