@@ -33,21 +33,17 @@ const notesOf = (type, statuses) => app.vault.getMarkdownFiles()
 const openProjects = notesOf("project", ["backlog", "active", "waiting"]);
 let root = "Efforts/Projects/", ups = [], related = [];
 if (kind === "Learning") {
-  // Learning: up: is the project (or projects) it serves; on its own, Personal or
-  // Work. [[Learning]] goes in related:, so the Learning view finds it, and it shows
-  // on each project it serves under Sub projects.
+  // Learning: up: is the project it serves; on its own, Personal or Work.
+  // [[Learning]] goes in related:, so the Learning view finds it, and it shows on
+  // the project it serves under Sub projects.
   root = "Efforts/Learning/";
   related = ["Learning"];
-  for (;;) {
-    const left = openProjects.filter(f => !ups.includes(f.basename));
-    const none = ups.length ? "(done)" : "(not part of a project)";
-    const pick = await tp.system.suggester(
-      [none].concat(left.map(f => f.basename)), [""].concat(left.map(f => f.basename)), false,
-      ups.length ? "Part of another project too? Pick it, or done." : "Is this learning part of a project? Pick it, or none."
-    );
-    if (!pick) break;
-    ups.push(pick);
-  }
+  const names = openProjects.map(f => f.basename);
+  const pick = await tp.system.suggester(
+    ["(not part of a project)"].concat(names), [""].concat(names), false,
+    "Is this learning part of a project? Pick it, or none."
+  );
+  if (pick) ups = [pick];
   if (!ups.length) {
     ups = [(await tp.system.suggester(["Personal", "Work"], ["Personal", "Work"], false,
       "Personal or Work learning?")) || "Personal"];
