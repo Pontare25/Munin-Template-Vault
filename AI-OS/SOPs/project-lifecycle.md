@@ -12,7 +12,7 @@ Three moments in a project's life: start, the next action check and close. Run t
 
 ## Start
 
-1. **Create the note from the project template.** The template asks Work and personal or Learning, then the parent project or Area. Ask the human to run it (`Ctrl+N`, name the note, click **Promote note**, choose project), or create the note through Obsidian with that template. Do not write the project note by hand: the template files it in the right folder.
+1. **Create the note from the project template.** The template asks Work, Personal or Learning, then where the project sits. Ask the human to run it (`Ctrl+N`, name the note, click **Promote note**, choose project), or create the note through Obsidian with that template. Do not write the project note by hand: the template files it in the right folder.
 2. **Confirm `up:` and `area:`.** `up:` is the parent project or the Area; `area:` is the top-level Area as a one-item list. Fix a missing one with the human's say-so, using [[note-schema]].
 3. **Set a Goal.** Ask the human for one or two sentences on what done looks like, and write them under `## Goal`. If the human wrote text there already, leave it.
 4. **Create the first next-action task.** Ask for the one concrete step that starts the work. Create a task note as the New task command does: `type: task`, `title`, `status: backlog`, `contexts` (ask: personal or work), `up:` the project, `origin:` the project, and `area:` copied from the project. Field rules are in [[note-schema-reference]]. File it as `Efforts/TaskNotes/Tasks/task - <title>.md`.

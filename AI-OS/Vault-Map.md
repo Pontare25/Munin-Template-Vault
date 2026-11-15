@@ -88,7 +88,7 @@ Bases read frontmatter fields, which is one more reason the schema matters: note
 | `System/Bases/Meetings.base` | Meetings and work sessions per project; meetings per person | Project and person notes |
 | `System/Bases/Sessions.base` | Work sessions per project (project notes made before 3.1.0) | Older project notes |
 | `System/Bases/Notes.base` | Child and related notes; AI notes awaiting review | Project and person notes; Inbox dashboard |
-| `System/Bases/Projects.base` | Sub projects, Learning, No open task, Related learning, Archive | Project notes, Learning Area |
+| `System/Bases/Projects.base` | Sub projects, Learning, No open task, Archive | Project notes, Learning Area |
 | `System/Bases/People.base` | All people | Open it directly |
 
 The TaskNotes plugin adds seven view Bases of its own in `Efforts/TaskNotes/Views/` (tasks list, kanban, calendar, mini calendar, agenda, relationships, pomodoro stats), generated from its settings.
