@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.3.0...v3.4.0) (2026-11-15)
+
+
+### Features
+
+* Phase 5 loops (optimizer SOP, date_modified discipline, feedback form) ([a57838d](https://github.com/Pontare25/Munin-Template-Vault/commit/a57838d5ba91b5cfd027963d20dcdd7071afbf7a))
+
 ## [3.3.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.2.0...v3.3.0) (2026-11-14)
 
 
