@@ -17,7 +17,7 @@ views:
     filters:
       and:
         - '!file.path.startsWith("Archive/")'
-        - list(related).contains(link("Learning")) || list(area).contains(link("Learning")) || file.path.startsWith("Efforts/Learning/")
+        - list(related).contains(link("Learning")) || file.path.startsWith("Efforts/Learning/")
     order:
       - file.name
       - status
@@ -33,7 +33,7 @@ views:
     order:
       - file.name
       - status
-      - area
+      - up
       - summary
   - type: kanban
     name: Sub projects

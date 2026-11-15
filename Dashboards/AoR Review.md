@@ -34,6 +34,11 @@ for (const t of tasks) {
     if (!p) break;
     if (p.type === "area") area = p;
   }
+  // No Area on the up: chain: fall back to the task's context (a top-level Area, lowercase).
+  if (!area) {
+    const ctx = String([].concat(t.contexts ?? [])[0] ?? "").toLowerCase();
+    area = ctx ? dv.pages('"Efforts/Areas"').where(a => a.type === "area" && a.file.name.toLowerCase() === ctx).first() : null;
+  }
   if (!area) continue;
   const c = counts.get(area.file.path) ?? { link: area.file.link, overdue: 0, noDue: 0 };
   const due = t.date_due;

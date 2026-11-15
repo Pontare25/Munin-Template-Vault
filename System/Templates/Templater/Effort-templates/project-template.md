@@ -5,8 +5,7 @@ const kind = (await tp.system.suggester(
   ["Work", "Personal", "Learning"], ["Work", "Personal", "Learning"], false,
   "Work, Personal or Learning?"
 )) || "Work";
-// Top-level Area of a note: use its area: when set, else walk up: until an Area
-// note that has no parent Area.
+// Top-level Area of a note: walk up: until an Area note that has no parent Area.
 const clean = (v) => typeof v === "string" ? v.replace(/^\[\[/, "").replace(/\]\]$/, "").split("|")[0] : "";
 const fmOf = (name) => {
   const f = name ? app.metadataCache.getFirstLinkpathDest(name, "") : null;
@@ -16,8 +15,6 @@ const topArea = (name) => {
   for (let i = 0; i < 6 && name; i++) {
     const fm = fmOf(name);
     if (!fm) return "";
-    const own = clean([].concat(fm.area ?? [])[0]);
-    if (own) return own;
     const up = clean([].concat(fm.up ?? [])[0]);
     if (fm.type === "area" && !up) return name;
     name = up;
@@ -73,7 +70,6 @@ if (kind === "Learning") {
   // view matches on up:).
   if (parentFile) root = parentFile.parent.path + "/";
 }
-const areas = [...new Set(ups.map(topArea).filter(Boolean))];
 const asList = (names) => names.map(n => "\n  - \"[[" + n + "]]\"").join("");
 const dest = root + tp.file.title;
 await tp.file.move(dest + "/" + tp.file.title);
@@ -84,12 +80,14 @@ status: active
 date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
 date_modified:
 up:<% asList(ups) %>
-area:<% asList(areas) %>
 related:<% asList(related) %>
 people:
 date_start: <% tp.date.now("YYYY-MM-DD") %>
 date_due:
 date_end:
+retro_worked:
+retro_change:
+retro_lessons:
 aliases:
   - <% tp.file.title %>
 summary:
@@ -146,16 +144,24 @@ LIMIT 1
 
 ## Retro
 
-%% Fill in when you close the project with the button below. Lessons worth keeping become Atlas notes. %%
+%% When the project ends: set Status at the top to done or dropped, set the end date, and fill the three lists. Lessons worth keeping become Atlas notes. %%
 
-- What worked:
-- What to change next time:
-- Lessons to keep:
+Ended: `INPUT[datePicker:date_end]`
 
-```meta-bind-button
-label: Close project
-style: default
-actions:
-  - type: runTemplaterFile
-    templateFile: System/Templates/Templater/Commands/close-project.md
+### What worked
+
+```meta-bind
+INPUT[list:retro_worked]
+```
+
+### What to change next time
+
+```meta-bind
+INPUT[list:retro_change]
+```
+
+### Lessons to keep
+
+```meta-bind
+INPUT[list:retro_lessons]
 ```
