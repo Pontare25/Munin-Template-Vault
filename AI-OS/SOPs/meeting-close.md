@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 1
+version: 2
 summary: Turn a meeting note's action items into task notes, record decisions with their reason, and link the people
 ---
 
@@ -12,18 +12,17 @@ Close a meeting note so nothing agreed in the room stays as loose text. Each ite
 
 ## Steps
 
-1. **Read the meeting note.** Read `up:`, `area:`, `people:`, `summary:`, `details:` and `actions:`, and the Notes section. If `actions:` is empty or every item is a link to a task note, skip steps 2 to 4 and go to the decisions (step 5); if the decisions are also recorded, the meeting is already closed: say so and stop.
+1. **Read the meeting note.** Read `up:`, `people:`, `summary:`, `details:` and `actions:`, and the Notes section. If `actions:` is empty or every item is a link to a task note, skip steps 2 to 4 and go to the decisions (step 5); if the decisions are also recorded, the meeting is already closed: say so and stop.
 2. **Sort the actions.** For each plain-text item in `actions:`, ask the human: is this a task? Batch the questions in one round, recommended answer first. Use Notes and `details:` to suggest who owns it and any due date.
 3. **Create a task note for each yes.** File it as `Efforts/TaskNotes/Tasks/task - <title>.md`, the way the New task command does (keys in [[note-schema-reference]], Tasks section):
    - `type: task`, `title:`, `status: backlog`, `priority: normal`
-   - `contexts:` personal or work; take it from the project's `area:`, or ask
+   - `contexts:` the top-level Area the project's `up:` chain reaches, lowercase; ask if there is no project
    - `up:` the project the meeting links in its `up:` (ask if the meeting has none)
    - `origin:` the meeting note
-   - `area:` copied from that project (if it has none, the top-level Area its `up:` chain reaches)
    - `assignees:` the person, only when someone other than the human owns it
    - `date_due:` only when the meeting stated a date
    If more than ten tasks result, ask for one batch approval first.
-4. **Rewrite `actions:`.** Replace each line that became a task with the quoted task wikilink, for example `"[[task - Send the timeline|Send the timeline]]"`. Move each line that is not a task into `details:`. Edit only the `actions:` and `details:` lines of the meeting note, with the human's approval, because the human wrote them.
+4. **Rewrite `actions:`.** Replace each line that became a task with the quoted task wikilink, for example `"[[task - Send the timeline|Send the timeline]]"`. Move each line that is not a task into `details:`. Edit only the `actions:` and `details:` lines of the meeting note, with the human's approval, because the human wrote them. Set the meeting note's `date_modified`.
 5. **Record the decisions.** List each decision the meeting made (look in Notes and `details:`). For each, write one line in `details:`: `Decision: X. Why: Y. Trade-off: Z.` If the reason or trade-off is missing, ask the human; do not guess. Then offer a line in the meeting day's daily note under Logs: `- [b] #log/decision <the decision> [[meeting note]]`. Add it only on a yes. The convention is in [[tasks-and-logs]].
 6. **Link the people.** Make sure each person named in the notes is in `people:` and linked in `details:`. Create no new person note without asking; offer [[new-note]] for a person who matters.
 7. **Log it** in [[AI-OS/log|log]]: `## [YYYY-MM-DD] meeting-close | <meeting note>`, with one bullet per task, decision and moved item.

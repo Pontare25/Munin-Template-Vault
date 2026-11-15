@@ -6,7 +6,7 @@ The vault stays useful when a few short routines run on a schedule: a daily swee
 |---|---|---|---|
 | Every day | Write into the daily note; sweep captures | "review my daily note" | 5 to 10 minutes |
 | Every week | Weekly review | "do my weekly review" | 30 minutes |
-| Every month | Monthly review, Areas, archive | "do my monthly review" | 45 minutes |
+| Every month | Monthly review, Areas, archive, optimizer | "do my monthly review" | 60 minutes |
 | When it happens | Start or close a project; close a meeting; ingest a source; merge notes | "start a project", "close the meeting", "ingest this", "merge these notes" | minutes |
 
 ## Daily: write into the day
@@ -43,6 +43,10 @@ The weekly review clears what slipped through the week: overdue and waiting task
 The monthly review looks one level up: is every active Area moving, are your priorities drifting, and which closed projects move to `Archive/`. The [[AoR Review]] dashboard is embedded in the monthly note.
 
 ![[monthly-review#Manual checklist (without an AI)]]
+
+The monthly review includes the optimizer: a check of the AI's own setup. It reports drift in the rules and files the AI reads, and four numbers that show whether your feedback reaches the AI. It changes nothing on its own.
+
+![[optimizer#Manual checklist (without an AI)]]
 
 ## When it happens
 

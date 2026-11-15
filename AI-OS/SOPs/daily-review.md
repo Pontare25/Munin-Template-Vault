@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 3
+version: 4
 summary: Sort the daily note, Raw/Inbox and Fleeting captures into sources, notes, tasks and entity links, and report overdue and waiting tasks
 ---
 
@@ -18,13 +18,13 @@ Sweep the daily note, the inbox and the fleeting notes so capture stays effortle
 4. **Walk every item** in the Brain dump section, the inbox and `Fleeting/`. For each one, classify:
    - **Source material** (link, article, quote worth keeping): move it to `Raw/Sources/` as a `type: source` note, then run [[ingest]] on it (ask first if there are more than a couple).
    - **Fleeting idea:** promote to an atomic note in `Atlas/Notes/` via [[new-note]] if it holds up; otherwise keep it in `Fleeting/` to mature, or drop it with the human's blessing.
-   - **Task:** create a task note in `Efforts/TaskNotes/Tasks/` named `task - <title>.md`, with the keys from the Tasks section of [[note-schema-reference]]: `type: task`, `title: <title>`, `status: backlog`, `contexts:` `personal` or `work`, `up:` the effort it belongs to (its project, or an Area for a task outside any project), `area:` the top-level Area that chain reaches, and `origin:` the daily note. Give it the body of `System/Templates/Templater/Effort-templates/task-note-template.md`. Then replace the capture in the daily note with the reference line `- [t] [[task - <title>|<title>]]`, the same line the *New task* command (Ctrl+Alt+T) writes.
+   - **Task:** create a task note in `Efforts/TaskNotes/Tasks/` named `task - <title>.md`, with the keys from the Tasks section of [[note-schema-reference]]: `type: task`, `title: <title>`, `status: backlog`, `up:` the effort it belongs to (its project, or an Area for a task outside any project), `contexts:` the top-level Area that chain reaches, lowercase, and `origin:` the daily note. Give it the body of `System/Templates/Templater/Effort-templates/task-note-template.md`. Then replace the capture in the daily note with the reference line `- [t] [[task - <title>|<title>]]`, the same line the *New task* command (Ctrl+Alt+T) writes.
    - **Mention of a person, organization, or meeting:** link the existing entity page, or create one if they matter (pattern in [[note-schema-reference]]).
 5. **Promote logs worth keeping.** Read the day's `[i]` lines and `#log/decision` lines. For each one that states something lasting, propose an Atlas note via [[new-note]] and ask before creating it. A decision keeps its form: `Decision: X. Why: Y. Trade-off: Z.`
 6. **Ask about parents.** When a new note's `up:` is unclear, ask the human which note it belongs under. Never guess.
 7. **Report overdue and waiting tasks.** Read them from frontmatter, the same rule as the Tasks.base views "Overdue" and "Waiting". Overdue: `type: task`, `date_due` before today, `status` not `done` or `dropped`. Waiting: `status: waiting`. List each with its due date and project. Do not change them.
 8. **Update indexes:** for every note this review created in `Atlas/` (entity pages included), append its one-line entry to that folder's `index.md`.
-9. **Leave the daily note readable:** replace processed dumps with wikilinks to where the content went, so the day still tells its story.
+9. **Leave the daily note readable:** replace processed dumps with wikilinks to where the content went, so the day still tells its story. Set `date_modified` on every note you edit.
 10. **Log it:** one [[log]] entry (`## [YYYY-MM-DD] daily-review | YYYY-MM-DD`) with bullets for what was promoted, filed, or dropped.
 11. **Report** anything you were unsure about instead of guessing.
 

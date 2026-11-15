@@ -19,7 +19,7 @@ views:
     filters:
       and:
         - up.contains(link(this.file))
-        - '!type.containsAny("project", "meeting", "work-session")'
+        - '!type.containsAny("project", "task", "meeting", "work-session")'
     order:
       - file.name
       - summary

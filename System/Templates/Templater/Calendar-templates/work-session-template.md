@@ -11,7 +11,6 @@ date_created: <% tp.date.now("YYYY-MM-DDTHH:mm") %>
 date_modified:
 date_start: <% m.format("YYYY-MM-DDTHH:mm") %>
 up:
-area:
 people:
 related:
 tags:

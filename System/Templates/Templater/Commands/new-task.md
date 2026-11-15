@@ -1,5 +1,5 @@
 <%*
-// New task (Ctrl+Alt+T): ask for the context (personal or work), then open TaskNotes'
+// New task (Ctrl+Alt+T): ask for the context (a top-level Area, lowercase), then open TaskNotes'
 // own "Create new inline task" window with that context filled in; after you save, the
 // link TaskNotes inserts becomes a task reference line:
 //   "- [t] [[task - <title>|<title>]]"
@@ -14,8 +14,9 @@
 // tasks on the task card.
 // origin: is set to the note you are in (where the task was created).
 // up: is never inferred from the note you are in (most tasks start in daily and
-// meeting notes); set the project yourself in the dialog. area: is then copied
-// from that project (its top-level Area), so Area filters work outside Bases.
+// meeting notes); set the project yourself in the dialog. With no project, up: points
+// at the Area of the context. With a project, up: wins: contexts is set to the
+// project's top-level Area. There is no stored area: field; Bases walk up:.
 // How: TaskNotes has no creation callback API, so this command shadows the plugin's
 // handleInlineTaskCreated for one call and removes the shadow afterwards (also when the
 // window is cancelled). TaskNotes' own command (left unbound in this vault) is never changed.
@@ -38,7 +39,18 @@ if (!tn || !editor || !host || typeof tn.createInlineTask !== "function") {
   } else {
     // Context first: TaskNotes reads its default context when the window opens, so set it
     // for this one window and put the setting back right after. Escape cancels the task.
-    const context = await tp.system.suggester(["Personal", "Work"], ["personal", "work"], false, "Context for this task?");
+    // Contexts are the top-level Areas (type: area, no up:), lowercase. Learning is
+    // not a context: learning projects carry it in related:.
+    const topAreas = app.vault.getMarkdownFiles()
+      .filter(f => f.path.startsWith("Efforts/Areas/"))
+      .filter(f => {
+        const fm = app.metadataCache.getFileCache(f)?.frontmatter;
+        return fm?.type === "area" && fm?.status !== "dropped" && ![].concat(fm?.up ?? []).filter(Boolean).length;
+      })
+      .map(f => f.basename)
+      .filter(n => n !== "Learning")
+      .sort((a, b) => a.localeCompare(b));
+    const context = await tp.system.suggester(topAreas, topAreas.map(n => n.toLowerCase()), false, "Context for this task?");
     if (!context) return;
     // Drop a stale shadow left by an earlier run, then install this run's shadow.
     // restore() removes only this run's shadow, so this run's cancel timer never
@@ -72,17 +84,20 @@ if (!tn || !editor || !host || typeof tn.createInlineTask !== "function") {
         ed.setCursor({ line: at, ch: ed.getLine(at).length });
         // origin: the note the task was created in (daily, meeting, ...)
         const file = app.vault.getAbstractFileByPath(task.path);
-        // contexts: the one picked above, if the window left it empty
-        // area: the top-level Area of the project picked in the window (its own
-        // area:, else walk up: to an Area with no parent Area)
-        const clean = (v) => typeof v === "string" ? v.replace(/^\[\[/, "").replace(/\]\]$/, "").split("|")[0] : "";
+        // up: and contexts: up: wins. With a project picked in the window, contexts
+        // becomes that project's top-level Area (walk up: to an Area with no parent
+        // Area). With no project, up: points at the Area named by the context.
+        const clean = (v) => {
+          if (typeof v !== "string") return "";
+          const md = v.match(/^\[[^\]]*\]\((.*)\)$/);
+          if (md) return decodeURIComponent(md[1]).replace(/\.md$/, "");
+          return v.replace(/^\[\[/, "").replace(/\]\]$/, "").split("|")[0];
+        };
         const topArea = (name) => {
           for (let i = 0; i < 6 && name; i++) {
             const f = app.metadataCache.getFirstLinkpathDest(name, "");
             const pfm = f ? app.metadataCache.getFileCache(f)?.frontmatter : null;
             if (!pfm) return "";
-            const own = clean([].concat(pfm.area ?? [])[0]);
-            if (own) return own;
             const up = clean([].concat(pfm.up ?? [])[0]);
             if (pfm.type === "area" && !up) return f.basename;
             name = up;
@@ -91,9 +106,16 @@ if (!tn || !editor || !host || typeof tn.createInlineTask !== "function") {
         };
         if (file) app.fileManager.processFrontMatter(file, (fm) => {
           fm.origin = "[[" + host.basename + "]]";
-          if (!fm.contexts || (Array.isArray(fm.contexts) && fm.contexts.length === 0)) fm.contexts = [context];
-          const area = topArea(clean([].concat(fm.up ?? [])[0]));
-          if (area && !fm.area) fm.area = ["[[" + area + "]]"];
+          const ctx = String([].concat(fm.contexts ?? [])[0] || context).toLowerCase();
+          const upName = clean([].concat(fm.up ?? []).filter(Boolean)[0]);
+          if (upName) {
+            const area = topArea(upName);
+            fm.contexts = [area ? area.toLowerCase() : ctx];
+          } else {
+            const areaName = topAreas.find(n => n.toLowerCase() === ctx);
+            fm.contexts = [ctx];
+            if (areaName) fm.up = ["[[" + areaName + "]]"];
+          }
         });
       } catch (e) {
         console.error("New task:", e);

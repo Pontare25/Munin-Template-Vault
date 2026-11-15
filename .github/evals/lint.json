@@ -27,7 +27,11 @@
     },
     {
       "id": "log-entry-written",
-      "check": "After fixes are applied, the agent adds one log entry in the form '## [YYYY-MM-DD] lint | N findings, M fixed'."
+      "check": "After fixes are applied, the agent adds one log entry in the form '## [YYYY-MM-DD] lint | N findings, M fixed', with a bullet of per-category counts using the category names from the scan."
+    },
+    {
+      "id": "recurring-flagged",
+      "check": "When a category was non-zero in the two previous lint entries in log.md and is non-zero again, the report names it as recurring and proposes fixing its cause."
     }
   ]
 }

@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 2
+version: 3
 summary: Create one note by hand in the right folder, with minimum frontmatter, links and an index line
 ---
 
@@ -18,7 +18,7 @@ Create a single note by hand (as opposed to ingest, which creates notes in bulk 
 4. **Name the note well:** nouns over sentences, specific over generic, no dates in knowledge-note titles (dates belong to Calendar notes).
 5. **Fill the minimum frontmatter** for the type (see the compass table in [[note-schema]]). At minimum: `type:`, `date_created:`, and `up:` for knowledge notes, plus a one-line `summary:` so indexes and retrieval can pick the note without opening it.
 6. **Write the body.** One idea per atomic note. Set `ai: pending` on notes you write; inside a note the user wrote, put `%% #AI-Assisted %%` above your section.
-7. **Link it in:** make sure at least one existing note links to the new note or is linked from it. Orphan notes are lint findings waiting to happen.
+7. **Link it in:** make sure at least one existing note links to the new note or is linked from it. Orphan notes are lint findings waiting to happen. Set `date_modified` on the note you link from.
 8. **Update the folder `index.md`** with one line for the new note.
 9. **Log it** in [[AI-OS/log|log]] if the note was created as part of a work session (a single quick note for the human does not need its own log entry).
 10. **Record it in the bundle changelog.** If the note lives in `Atlas/`, append a `**Creation**` line under today's date in [[Atlas/log]] (OKF §7).

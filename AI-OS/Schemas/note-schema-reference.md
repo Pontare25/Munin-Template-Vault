@@ -165,7 +165,7 @@ date_modified: 2026-11-03T15:15:40.530+01:00
 
 - **`title:`** the task's clean title. The filename adds a prefix (`task - <title>.md`), so the clean title lives here.
 - **`date_created:` and `date_modified:`** are filled and kept current by TaskNotes, as full ISO timestamps with seconds and time zone.
-- **Area:** `up:` always points one level up (task to project, sub-project to project, top-level project to its Area); a task outside any project points `up:` straight at an Area. **`area:`** names the top-level Area (Work, Personal, Learning) directly, as a one-item list; *New task* copies it from the project you pick, and the project template from the parent project or Area; lint proposes it on meetings and work sessions. Bases read `area:` and fall back to walking `up:` for notes without it, so tasks made another way still group correctly. Lint flags an `area:` that disagrees with the `up:` chain. TaskNotes' `contexts` field says `personal` or `work`; *New task* asks for it.
+- **Area:** `up:` always points one level up (task to project, sub-project to project, top-level project to its Area); a task outside any project points `up:` straight at an Area. The Area is never stored: Bases, Dataview and lint find it by walking `up:` to an Area with no parent Area (3.4.0 retired the stored `area:` field). **`contexts:`** on a task is that top-level Area in lowercase (`personal`, `work`, or your own Area). *New task* asks for it; with no project it points `up:` at that Area, and with a project it sets `contexts:` from the project's Area. When `up:` and `contexts:` disagree, `up:` wins and lint proposes the fix. Learning is not a context: learning projects carry `[[Learning]]` in `related:`.
 - **`origin:`** the note the task was created in (a daily, meeting or work-session note), as a single link. Written by the *New task* command; tasks made another way have none. It records where the task came from; `up:` records what it belongs to.
 - **`archived` tag:** archiving a task (a TaskNotes action, separate from `done`) adds the plugin's `archived` tag and moves the note to `Archive/Tasks/<year>/`. It is a plugin convention, not a vault tag namespace.
 
@@ -267,7 +267,10 @@ Every frontmatter field the template uses. **Type** is the Obsidian property typ
 | `journal` | text | journal notes | Which Journals plugin journal owns the note (`daily` to `yearly`); the plugin finds its notes by it | Journals template |
 | `date` | date | journal notes | First day of the period the note covers | Journals template |
 | `date_start` | datetime | project, meeting, work session | When it started or starts | template |
-| `date_end` | datetime | project | When it closed | you, AI at close |
+| `date_end` | datetime | project | When it closed | you (Retro date field), AI at close |
+| `retro_worked` | multitext | project | Retro: what worked | you (Retro list), AI at close |
+| `retro_change` | multitext | project | Retro: what to change next time | you (Retro list), AI at close |
+| `retro_lessons` | multitext | project | Retro: lessons to keep; candidates for Atlas notes | you (Retro list), AI at close |
 | `date_due` | datetime | project, task | Deadline; on a waiting task, the chase date | you, TaskNotes |
 | `date_scheduled` | datetime | task | Day you plan to work on it | TaskNotes |
 | `date_completed` | date | task | Day it reached done or dropped | TaskNotes |
@@ -285,7 +288,6 @@ Every frontmatter field the template uses. **Type** is the Obsidian property typ
 | `resource` | text | source, entity | Canonical URL of the thing; OKF `resource` | template prompt, AI |
 | `author` | text | source | Who wrote or said it | you, AI at ingest |
 | `status` | text | project, area, task | `backlog`, `active`, `waiting`, `done`, `dropped` | selector, TaskNotes |
-| `area` | multitext | project, task, meeting, work session | The top-level Area (Work, Personal or Learning), one link in a list | New task and the project template copy it from the parent; lint proposes it on other notes |
 | `ai` | text | knowledge notes the AI wrote (not tasks or Calendar notes) | Review state: `pending`, `approved`, `collaborative`, `checked` | AI sets, you change |
 | `details` | multitext | meeting | Meeting minutes points | you, AI |
 | `actions` | multitext | meeting | Actions agreed | you, AI |
@@ -293,7 +295,7 @@ Every frontmatter field the template uses. **Type** is the Obsidian property typ
 | `title` | text | task | Clean task title | TaskNotes |
 | `priority` | text | task | Manual flag: `none`, `low`, `normal`, `high` | TaskNotes |
 | `assignees` | multitext | task | People or AI agents doing it | TaskNotes |
-| `contexts` | multitext | task | `personal` or `work` | New task, TaskNotes |
+| `contexts` | multitext | task | The top-level Area in lowercase (`personal`, `work`) | New task, TaskNotes |
 | `origin` | text | task | Note the task was captured in | New task |
 
 TaskNotes also writes its own bookkeeping keys on task notes (recurrence, time tracking, `blockedBy`, `archived` tag); they belong to the plugin and are not listed here.
