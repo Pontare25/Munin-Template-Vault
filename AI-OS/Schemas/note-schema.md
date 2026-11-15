@@ -38,8 +38,8 @@ Journal notes carry `date`, the first day of their period. Every other date is `
 - **`topics:`** links to Topic pages in `Atlas/Topics/`. When an ingest needs a topic that does not exist, create a stub (one-line definition, empty compass).
 - **`people:`** links to person notes, on any type.
 - **The compass:** `up:` (the broader theme above it), `related:` (similar), `down:` (what follows from it), `opposes:` (what it is in tension with). Say why when a link is not obvious.
-- **`area:`** on projects, tasks, meetings and work sessions: the top-level Area (Work, Personal, Learning). New task and the project template copy it from the parent; lint proposes it elsewhere.
-- **Relationship fields are always YAML lists, even with one value:** `up`, `related`, `down`, `opposes`, `people`, `skills`, `interests`, `area`. An inline value breaks every Base filter on that field.
+- **Area is never stored.** A note's Area is the top of its `up:` chain. Tasks carry `contexts:`, that Area in lowercase; `up:` wins when they disagree.
+- **Relationship fields are always YAML lists, even with one value:** `up`, `related`, `down`, `opposes`, `people`, `skills`, `interests`. An inline value breaks every Base filter on that field.
 
 | Type | `up:` points at |
 |---|---|

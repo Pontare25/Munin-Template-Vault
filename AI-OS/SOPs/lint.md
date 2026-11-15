@@ -21,12 +21,12 @@ Periodic health check of the knowledge graph. Lint finds problems and proposes f
    - **Missing topic pages:** subjects referenced in `topics:` fields with no page in `Atlas/Topics/`.
    - **Schema drift:** notes missing required frontmatter for their type (see [[note-schema]]), or a tag used to classify a note instead of `type:` (the user's own tags are fine). Every `Atlas/` note needs a non-empty `type:` (OKF conformance). Also check the user's notes for these; all are warnings, never auto-applied, and a batch over ten needs approval first.
      - `up:` missing where the core's `up:` table says required (note, framework, source, person, organization). Projects and tasks without `up:` count as one line.
-     - A relationship field written as a scalar, not a YAML list: `up`, `related`, `down`, `opposes`, `people`, `skills`, `interests`, `topics`, `area`.
+     - A relationship field written as a scalar, not a YAML list: `up`, `related`, `down`, `opposes`, `people`, `skills`, `interests`, `topics`.
      - `type:` that disagrees with the folder per the core type table. `Archive/` and `Raw/Inbox/` are exempt.
      - `topics:` entries that do not resolve to a note in `Atlas/Topics/`.
      - Markdown links `[text](note.md)` to vault notes; propose wikilinks.
      - Retired forms: `status: simmering`; a whole-note `%% #AI-Assisted %%` comment on the first body line (propose `ai: pending`); `[x] #task` reference lines.
-     - `area:` missing or different from the top-level Area found by walking `up:` (projects, tasks, meetings, work sessions); propose the walked value.
+     - Task `contexts:` that differs from the top-level Area its `up:` chain reaches (propose it), or an open task with neither; any retired `area:` key.
      - A field missing from the field registry in [[note-schema-reference]]; propose registering or removing it.
    - **Stale index lines:** folder `index.md` listings referencing notes that moved or no longer exist, or missing recent notes. Propose the missing line for notes the human made by hand.
    - **Missing maps:** a topic with 10 or more notes and no MOC; propose one (the human owns `Atlas/MOCs/`).

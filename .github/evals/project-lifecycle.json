@@ -15,11 +15,11 @@
     },
     {
       "id": "up-area-confirmed",
-      "check": "The agent confirms the project has up: set to a parent project or Area and area: set as a one-item list, and fixes a missing one only with the human's say-so."
+      "check": "The agent confirms the project has up: set to a parent project or Area and no stored area:, and fixes a missing one only with the human's say-so."
     },
     {
       "id": "first-task-fields",
-      "check": "The first task note has type: task, status: backlog, contexts, up: and origin: both pointing at the project, area: copied from the project, and is filed as Efforts/TaskNotes/Tasks/task - <title>.md."
+      "check": "The first task note has type: task, status: backlog, contexts, up: and origin: both pointing at the project, contexts: the project's top-level Area in lowercase, and is filed as Efforts/TaskNotes/Tasks/task - <title>.md."
     },
     {
       "id": "vague-goal-challenged",

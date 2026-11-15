@@ -53,7 +53,7 @@ You can fill fields from the title box by typing a trigger character and picking
 | `+` | Projects (the task's `up:`) | projects and Areas with status `backlog`, `active` or `waiting` |
 | `*` | Status | the five statuses |
 
-**Contexts** says whether a task is `personal` or `work`. `Ctrl+Alt+T` asks for it before the window opens and fills it in; keep to those two values. The **Tags** field is not used: leave it empty. A task's Area comes from its project (see below), not from a context or a tag.
+**Contexts** names the task's top-level Area in lowercase: `personal`, `work`, or an Area you added. `Ctrl+Alt+T` asks for it before the window opens and fills it in. The **Tags** field is not used: leave it empty. When the task has a project, its Area comes from the project (see below) and the context is set to match.
 
 ## What a task note holds
 
@@ -102,7 +102,7 @@ The picker lists notes in `Efforts/Projects` and `Efforts/Areas` whose status is
 
 `up:` is **never** filled in for you on capture. Most tasks start in daily and meeting notes, and the note you are in says nothing reliable about what the task belongs to, so set it yourself in the window. A meeting's own `up:` does not pass on to the task notes captured in it. The exception: the **New** button on a project's task board creates a task with `up:` already set to that project.
 
-You never set an Area on a task. The vault finds a task's Area by following `up:` (task, project, parent project, Area), so a task under a sub-project still lands on its Area's board, and on the task boards, the [[Tasks]] dashboard and the [[AoR Review]] dashboard a sub-Area rolls up to its root Area.
+With no project, `Ctrl+Alt+T` points `up:` at the Area you picked as context. Otherwise you never set an Area on a task. The vault finds a task's Area by following `up:` (task, project, parent project, Area), so a task under a sub-project still lands on its Area's board, and on the task boards, the [[Tasks]] dashboard and the [[AoR Review]] dashboard a sub-Area rolls up to its root Area.
 
 ## Assign a task
 

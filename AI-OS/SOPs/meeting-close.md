@@ -12,14 +12,13 @@ Close a meeting note so nothing agreed in the room stays as loose text. Each ite
 
 ## Steps
 
-1. **Read the meeting note.** Read `up:`, `area:`, `people:`, `summary:`, `details:` and `actions:`, and the Notes section. If `actions:` is empty or every item is a link to a task note, skip steps 2 to 4 and go to the decisions (step 5); if the decisions are also recorded, the meeting is already closed: say so and stop.
+1. **Read the meeting note.** Read `up:`, `people:`, `summary:`, `details:` and `actions:`, and the Notes section. If `actions:` is empty or every item is a link to a task note, skip steps 2 to 4 and go to the decisions (step 5); if the decisions are also recorded, the meeting is already closed: say so and stop.
 2. **Sort the actions.** For each plain-text item in `actions:`, ask the human: is this a task? Batch the questions in one round, recommended answer first. Use Notes and `details:` to suggest who owns it and any due date.
 3. **Create a task note for each yes.** File it as `Efforts/TaskNotes/Tasks/task - <title>.md`, the way the New task command does (keys in [[note-schema-reference]], Tasks section):
    - `type: task`, `title:`, `status: backlog`, `priority: normal`
-   - `contexts:` personal or work; take it from the project's `area:`, or ask
+   - `contexts:` the top-level Area the project's `up:` chain reaches, lowercase; ask if there is no project
    - `up:` the project the meeting links in its `up:` (ask if the meeting has none)
    - `origin:` the meeting note
-   - `area:` copied from that project (if it has none, the top-level Area its `up:` chain reaches)
    - `assignees:` the person, only when someone other than the human owns it
    - `date_due:` only when the meeting stated a date
    If more than ten tasks result, ask for one batch approval first.

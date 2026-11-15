@@ -19,7 +19,7 @@
     },
     {
       "id": "task-fields-complete",
-      "check": "Each new task note has type: task, status: backlog, up: the meeting's project (or an Area), origin: the meeting note, and area: copied from that project."
+      "check": "Each new task note has type: task, status: backlog, up: the meeting's project (or an Area), origin: the meeting note, and contexts: the project's top-level Area in lowercase."
     },
     {
       "id": "task-file-path",

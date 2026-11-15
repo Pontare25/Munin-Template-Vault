@@ -57,7 +57,6 @@ Templates live in `System/Templates/` (paths below are relative to it). Pick by 
 | Log bullet | `Templater/Commands/log-bullet.md` (command) | At the cursor |
 | New task | `Templater/Commands/new-task.md` (command) | A task note plus a reference line at the cursor |
 | Promoted note | `Templater/Commands/promote-note.md` (command) | The chosen type's folder |
-| Close project | `Templater/Commands/close-project.md` (command, Close project button) | Sets status and `date_end` on the open project |
 | Command icons | `Templater/Startup/command-icons.md` (runs at startup) | Icons on the phone toolbar buttons |
 | Advanced log widget | `Templater/Sub-templates/Dataview queries/Advanced log template.md` | Included in project and person notes |
 

@@ -13,9 +13,9 @@ Three moments in a project's life: start, the next action check and close. Run t
 ## Start
 
 1. **Create the note from the project template.** The template asks Work, Personal or Learning, then where the project sits. Ask the human to run it (`Ctrl+N`, name the note, click **Promote note**, choose project), or create the note through Obsidian with that template. Do not write the project note by hand: the template files it in the right folder.
-2. **Confirm `up:` and `area:`.** `up:` is the parent project or the Area; `area:` is the top-level Area as a one-item list. Fix a missing one with the human's say-so, using [[note-schema]].
+2. **Confirm `up:`.** It is the parent project or the Area. Fix a missing one with the human's say-so, using [[note-schema]].
 3. **Set a Goal.** Ask the human for one or two sentences on what done looks like, and write them under `## Goal`. If the human wrote text there already, leave it.
-4. **Create the first next-action task.** Ask for the one concrete step that starts the work. Create a task note as the New task command does: `type: task`, `title`, `status: backlog`, `contexts` (ask: personal or work), `up:` the project, `origin:` the project, and `area:` copied from the project. Field rules are in [[note-schema-reference]]. File it as `Efforts/TaskNotes/Tasks/task - <title>.md`.
+4. **Create the first next-action task.** Ask for the one concrete step that starts the work. Create a task note as the New task command does: `type: task`, `title`, `status: backlog`, `contexts` (the project's top-level Area, lowercase), `up:` the project, and `origin:` the project. Field rules are in [[note-schema-reference]]. File it as `Efforts/TaskNotes/Tasks/task - <title>.md`.
 
 ## Next action check
 
@@ -26,10 +26,10 @@ Run this any time, and from [[weekly-review]]. A project that is `active` or `wa
 
 ## Close
 
-1. **Close the project.** Ask the human to run the **Close project** command on the project note. It asks Done or Dropped, sets `status:` and `date_end:` to today, and jumps to `## Retro`. If you cannot run it, set the same two fields yourself, with the human's approval.
-2. **Fill the Retro.** Ask what worked and what to change, and write both under `## Retro`. Mark your section `%% #AI-Assisted %%` if the human wrote text there. Set `date_modified` on the project note.
+1. **Close the project.** Ask the human to set Status to done or dropped at the top of the note and the end date under `## Retro`. If they cannot, set `status:` and `date_end:` yourself, with their approval.
+2. **Fill the Retro.** Ask what worked, what to change and which lessons to keep; add them to the Retro lists `retro_worked:`, `retro_change:` and `retro_lessons:`. Set `date_modified` on the project note.
 3. **Propose lessons for the Atlas.** Read the Retro and the project's `## Log` for lessons that outlast the project: a method that worked, a decision with its reason, a mistake not to repeat. Show the list. For each one the human approves, create the note by [[new-note]].
-4. **Settle the open tasks.** List the project's open tasks and ask per batch: drop, move to another project (change `up:` and `area:`), or keep as they are. Closing a project does not touch its tasks without this answer.
+4. **Settle the open tasks.** List the project's open tasks and ask per batch: drop, move to another project (change `up:`), or keep as they are. Closing a project does not touch its tasks without this answer.
 5. **Leave the note where it is.** It moves to `Archive/` at the next [[monthly-review]], through Obsidian, with a batch approval.
 6. **Log it** in [[AI-OS/log|log]].
 
@@ -45,9 +45,9 @@ A started project with a goal and a first task; a list of stuck projects each wi
 
 ## Manual checklist (without an AI)
 
-1. Start: promote a fleeting note to a project, check `up:` and `area:`, write the Goal, add the first task with `Ctrl+Alt+T` and pick the project.
+1. Start: promote a fleeting note to a project, check `up:`, write the Goal, add the first task with `Ctrl+Alt+T` and pick the project.
 2. Check: open `System/Bases/Projects.base`, view **No open task**, add a task or change the status of each project listed.
-3. Close: run **Close project** on the note, write the Retro, copy lasting lessons into Atlas notes, then drop, move or keep each open task.
+3. Close: set Status and the end date, fill the Retro lists, copy lasting lessons into Atlas notes, then drop, move or keep each open task.
 4. The note stays in place until the monthly review moves it to `Archive/`.
 
 <!-- Maintainer lessons: template maintainers only. Your notes about this SOP go in AI-OS/memory.md, Procedure notes. -->
