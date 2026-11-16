@@ -10,6 +10,7 @@ The schema layer: everything the AI needs to operate this vault. Where `Atlas/` 
 | `routing.md` | How the AI matches a request to the right handler: the SOP trigger index and the routing procedure |
 | `Vault-Map.md` | Navigation manual: what goes where and why |
 | `SOPs/` | Step-by-step procedures: [[ingest]], [[new-note]], [[query]], [[merge-notes]], [[daily-review]], [[weekly-review]], [[monthly-review]], [[project-lifecycle]], [[meeting-close]], [[lint]], [[optimizer]], [[upgrade-vault]], [[onboarding]] |
+| `Agents/` | Role files: who runs which SOPs, where each may write, when it is done. Shared rules and handoffs in its README; the roles table is in `AGENTS.md` |
 | `Standards/sop-format.md` | How every SOP is written: frontmatter, sections, the 800-word cap, a manual checklist. Read before creating or editing a SOP |
 | `Schemas/note-schema.md` | The note format, core rules: types, required fields, the idea compass. Read before writing a note |
 | `Schemas/note-schema-reference.md` | Every field in detail, with examples: dates, meetings, tasks, people, OKF mapping |
@@ -46,7 +47,7 @@ Every file the template ships has an ownership class. It decides what an upgrade
 |---|---|
 | user | `AI-OS/Me.md`, `AI-OS/state.md` (an upgrade sets its first line), `AI-OS/memory.md`, `AI-OS/log.md`, `Atlas/log.md`, `Efforts/Areas/Personal.md`, `Efforts/Areas/Work.md`, `Efforts/Areas/Learning.md`, `Archive/**` except its README, `Atlas/Entities/Agents/Claude tasks.md` (starter notes, yours once filled), `.github/**` and `CONTRIBUTING.md` (template maintainer files) |
 | merge | `AI-OS/routing.md` (your rows live under My SOPs), `AI-OS/README.md`, every folder `README.md` except the root one, every `index.md` in `Atlas/`, `System/Templates/**`, `System/Bases/**`, `Efforts/Efforts.base`, `Atlas/Topics/Topics.base`, `.obsidian/*.json`, `.obsidian/plugins/*/data.json`, `.gitignore` |
-| system | Everything else the template ships: root files (`README.md`, `START-HERE.md`, `UPGRADING.md`, `CHANGELOG.md`, `AGENTS.md`, `CLAUDE.md`, `LICENSE`, `.gitattributes`, `.markdownlint*.jsonc`), `AI-OS/Vault-Map.md`, `AI-OS/Schemas/**`, the shipped `AI-OS/SOPs/*.md`, `Start Here/**`, `Dashboards/*.md` and `System/OKF/**` (except their README), `Efforts/TaskNotes/Views/*.base` (TaskNotes regenerates them), `.gitkeep` files, `.obsidian/snippets/**`, `.obsidian/themes/**`, and plugin code (`.obsidian/plugins/*/main.js`, `manifest.json`, `styles.css`) |
+| system | Everything else the template ships: root files (`README.md`, `START-HERE.md`, `UPGRADING.md`, `CHANGELOG.md`, `AGENTS.md`, `CLAUDE.md`, `LICENSE`, `.gitattributes`, `.markdownlint*.jsonc`), `AI-OS/Vault-Map.md`, `AI-OS/Schemas/**`, the shipped `AI-OS/SOPs/*.md`, `AI-OS/Agents/**`, `.claude/agents/**`, `Start Here/**`, `Dashboards/*.md` and `System/OKF/**` (except their README), `Efforts/TaskNotes/Views/*.base` (TaskNotes regenerates them), `.gitkeep` files, `.obsidian/snippets/**`, `.obsidian/themes/**`, and plugin code (`.obsidian/plugins/*/main.js`, `manifest.json`, `styles.css`) |
 | user | Any file the template does not ship: your notes, your own SOPs and skills, attachments |
 
 Plugin code is never downgraded: an upgrade copies a plugin only when the vault lacks it or has an older version (compare `manifest.json`). Close Obsidian before an upgrade writes to `.obsidian/`.

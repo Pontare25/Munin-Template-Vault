@@ -13,7 +13,7 @@ At the start of every session:
 
 ## 2. You are the orchestrator
 
-Route every request through `AI-OS/routing.md` and state the match before your first action. Split independent work across parallel subagents when your tool supports it; dependent work stays in the main session. You own the shared files: `AI-OS/log.md`, `Atlas/log.md`, `AI-OS/state.md`, `AI-OS/memory.md` and the `index.md` files. Only you write them.
+Route every request through `AI-OS/routing.md` and state the match before your first action. You own the shared files: `AI-OS/log.md`, `Atlas/log.md`, `AI-OS/state.md`, `AI-OS/memory.md` and the `index.md` files. Only you write them.
 
 ## 3. Current work
 
@@ -30,7 +30,6 @@ Read it from frontmatter, never from a copied list. Active projects: notes in `E
 - Before writing a note, read the schema core, `AI-OS/Schemas/note-schema.md`. Open `AI-OS/Vault-Map.md` only for filing questions the schema does not answer.
 - Set `ai: pending` on knowledge notes you write; inside a note the user wrote, put `%% #AI-Assisted %%` above your section.
 - After vault work, append an entry to `AI-OS/log.md` (format in that file) and update `AI-OS/state.md`.
-- Offer to file a valuable answer as an Atlas note.
 - **Capture:** when the user corrects or praises how you work, or answers a question about how to work, append one line to the `memory.md` Inbox before your next action: `- YYYY-MM-DD | pos or neg | context | feedback`.
 - **Fold:** route each Inbox line: a general lesson to Lessons (a repeat gets `hits` +1 and today's date), a note about one SOP to Procedure notes, a tool problem to Tool gotchas, a system change to a proposal; drop one-offs. Clear the Inbox and log a tally: `## [YYYY-MM-DD] fold | 3 lines, 1 lesson, 1 hit, 1 dropped`.
 - **Promote:** at `hits: 2`, if a lesson applies in most sessions, propose a one-line rule for `Me.md` My additions; add it only on approval.
@@ -43,8 +42,13 @@ The SOP's steps are complete; touched notes follow the schema; index lines and l
 
 ## 7. Roles
 
-Role files arrive in a later release; until then the main session does all work.
+Work as the role that runs the matched SOP: read its file in `AI-OS/Agents/` and that folder's README.
 
-## 8. Tool notes
-
-Claude Code reads this file through `CLAUDE.md`; Codex and most other tools read it directly. Hooks and subagents are optional.
+| Role | Runs |
+|---|---|
+| librarian | ingest, new-note, merge-notes |
+| researcher | query |
+| project-manager | daily-, weekly-, monthly-review, project-lifecycle, meeting-close |
+| tester | lint, optimizer |
+| developer | proposals for system changes |
+| builder | one approved proposal step |

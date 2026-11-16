@@ -1,6 +1,6 @@
 {
   "sop": "lint",
-  "version": 1,
+  "version": 2,
   "prompts": [
     "Lint the vault.",
     "Check the graph for orphans and broken links, and fix whatever you find.",
@@ -27,7 +27,7 @@
     },
     {
       "id": "log-entry-written",
-      "check": "After fixes are applied, the agent adds one log entry in the form '## [YYYY-MM-DD] lint | N findings, M fixed', with a bullet of per-category counts using the category names from the scan."
+      "check": "After fixes are applied, and also when the human picks no fixes or none yet, the agent adds one log entry in the form '## [YYYY-MM-DD] lint | N findings, M fixed', with a bullet of per-category counts using the category names from the scan."
     },
     {
       "id": "recurring-flagged",
