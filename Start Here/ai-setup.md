@@ -19,7 +19,7 @@ Before acting on a request, the AI routes it. It checks the trigger index in `AI
 
 ## Roles
 
-Each SOP belongs to a role: the librarian files knowledge, the researcher answers with citations, the project manager runs reviews, projects and meetings, the tester checks and audits, the developer proposes changes to the system, and the builder carries out an approved proposal. A role file in `AI-OS/Agents/` says where that role may write, what it must not do, and when it is done; the table in `AGENTS.md` says which role runs which SOP. The AI works as that role for the task and ends with a short report: what changed, what it checked, what it could not check, and what waits on you. In Claude Code, the files in `.claude/agents/` also let the main session hand a task to a role as a separate helper. You never have to name a role yourself.
+Most SOPs belong to a role: the librarian files knowledge, the researcher answers with citations, the project manager runs reviews, projects and meetings, the tester checks and audits, the developer proposes changes to the system, and the builder carries out an approved proposal. A role file in `AI-OS/Agents/` says where that role may write, what it must not do, and when it is done; the table in `AGENTS.md` says which role runs which SOP. The AI works as that role for the task and ends with a short report: what changed, what it checked, what it could not check, and what waits on you. In Claude Code, the files in `.claude/agents/` also let the main session hand a task to a role as a separate helper. You never have to name a role yourself.
 
 ## The loop
 

@@ -6,7 +6,8 @@
     "Audit the AI setup and fix whatever is wrong.",
     "Kör optimeraren och berätta hur feedback-loopen mår.",
     "Run the optimizer. My weekly-review SOP feels long, and I think routing has a row for a procedure I deleted.",
-    "Optimizer, please. This is the first time it has ever run in this vault."
+    "Optimizer, please. This is the first time it has ever run in this vault.",
+    "Run the optimizer. (Plant before running: delete .claude/agents/builder.md.)"
   ],
   "assertions": [
     {

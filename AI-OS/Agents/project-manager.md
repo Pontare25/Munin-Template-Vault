@@ -2,7 +2,7 @@
 name: project-manager
 description: Runs the rhythm of reviews, projects and meetings. Use for "daily review", "weekly review", "monthly review", "start or close a project", "close the meeting".
 model_tier: mid
-writes: [Calendar/, Efforts/]
+writes: [Calendar/, Efforts/, Atlas/Entities/, Raw/Sources/, Archive/]
 runs: [daily-review, weekly-review, monthly-review, project-lifecycle, meeting-close]
 hands_off_to: [tester]
 ---

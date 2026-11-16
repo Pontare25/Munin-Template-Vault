@@ -6,7 +6,7 @@ How the AI picks the handler for a request before acting. Routing is the first m
 
 For every request, in order:
 
-1. **Match a SOP.** Check the trigger index below, including My SOPs. On a match, open that SOP in `AI-OS/SOPs/` and read it in full before touching the vault. Work as the role that runs it (`AGENTS.md` section 7).
+1. **Match a SOP.** Check the trigger index below, including My SOPs. On a match, open that SOP in `AI-OS/SOPs/` and read it in full before touching the vault. Work as the role that runs it (`AGENTS.md` section 7; no row: the main session).
 2. **Fall through to a skill.** If no SOP matches, look for a matching skill in `AI-OS/Skills/` (its README lists what is installed and how to load one). Load the skill and follow it.
 3. **Consider a subagent.** Split independent work across parallel subagents, each given its role, when your tool supports it; the main session owns shared files. A single, dependent task stays on the main thread.
 4. **No match anywhere:** follow the No match section below. Never freestyle a vault operation.

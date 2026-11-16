@@ -56,7 +56,7 @@ Pass counts out of three runs. Fail rows in bold.
 |---|---|---|
 | T1 ingest | C1, C2, C3, C4, C5, C8, T1-a (3/3 added an `%% #AI-Assisted %%` section to the user's note, none duplicated), T1-b | **C7 0/3** (no run re-read or checked what it wrote); C6 2/3; T1-c 2/3 (one source got no author or date fields); all three left the capture in `Raw/Inbox/` and asked the user to move it (correct: no Obsidian) |
 | T2 query | C1, C2, C3, C4, C5, T2-a, T2-b | **C7 0/3**; **C6 1/3** (two replies never said what was unchecked); C8 2/3 (one skipped `state.md`) |
-| T3 meeting-close | C1, C2, C3, C4, C5, C8, T3-a, T3-c | T3-b 1/3 failed twice in different ways: one run put `ai: pending` on both task notes (breaks the Phase 4 rule); a `date_scheduled` of today in another run is schema-backed, so not a failure; C7 2/3 |
+| T3 meeting-close | C1, C2, C3, C4, C5, C8, T3-a, T3-c | T3-b 2/3: one run put `ai: pending` on both task notes (breaks the Phase 4 rule); a `date_scheduled` of today in another run is schema-backed, so not a failure; C7 2/3 |
 | T4 lint | C1, C2, C4, T4-a (all plants found in 3/3), T4-b | **T4-c 1/3** (two runs read step 6 as "after fixes" and wrote no log); C3 2/3 (one run wrote a scan script outside the vault); one run reported an orphan source, which lint does not check |
 | T5a design | C3, C4, T5-a (3/3 stopped, proposed `type: source` plus two fields, asked for sign-off) | none |
 | T5b build | C1, C2, T5-b, C6 | T5-c 2/3 (one run ran no check) |
@@ -66,7 +66,7 @@ Pass counts out of three runs. Fail rows in bold.
 | Failure | Rate | Fix goes in |
 |---|---|---|
 | No check after writing (C7) in T1 and T2 | 0/3, 0/3 | role: librarian and researcher Done when; BenAI mechanism 14 |
-| Reply does not say what was unchecked (C6) in T2 | 1/3 | role: shared Output block in `Agents/README.md`; mechanism 12, reduced to one line |
+| Reply does not say what was unchecked (C6) in T2 | 1/3 | role: shared Output block in `Agents/README.md`; mechanism 12, reduced to a four-line run report |
 | Lint findings-only run writes no log (T4-c) | 1/3 | **SOP wording, not a role:** lint step 4 reads as if step 6 waits for fixes. Fixed in `lint.md` |
 | Scan script written outside the vault (C3, T4) | one run | role: tester Boundaries |
 | `ai:` on task notes (T3-b) | one run | role: project-manager Boundaries (sporadic: three runs cannot prove a flip) |
@@ -83,7 +83,7 @@ Same copies, prompts and grader; branch `feat/phase-6-roles` (`575b3e3`, then th
 | T1 ingest | librarian v1 | C7 0/3 | C7 0/3 (two said outright they ran no check) | no change: role revised |
 | T1 ingest | librarian v2 (`dab8a1c`: the check moved into Steps, before the SOP's report step) | C7 0/3 | C7 2/3, run report used | **flip: kept** |
 | T2 query | researcher | C7 0/3, C6 1/3 | C7 3/3, C6 3/3, run report shape in all three | **flip: kept** |
-| T3 meeting-close | project-manager | T3-b failed 1/3 (`ai:` on tasks) | T3-b 3/3; two runs wrote "I won't guess dates" from the role text | positive, no flip at n=3 |
+| T3 meeting-close | project-manager | T3-b 2/3 (one run put `ai:` on tasks) | T3-b 3/3; two runs wrote "I won't guess dates" from the role text | positive, no flip at n=3 |
 | T4 lint | tester | T4-c 1/3 | T4-c 3/3 | flip, but shared with the lint step 4 fix in the same build: not attributable to the role alone |
 | T5a design | developer | T5-a 3/3 | T5-a 3/3 | no change on the main prompt |
 | T5a held-out ("Could you add a reading-log template...") | developer | built template and two new fields without sign-off in 2 of 4 runs (main 3fdc6cc 1/3; roles v1, where no route reached the developer, 1/1) | 0/3 after `8ba6468` routed system changes to the developer; one run named the role | positive, below the 2/3 bar |
