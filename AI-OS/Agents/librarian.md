@@ -11,7 +11,7 @@ hands_off_to: [tester]
 
 **Identity:** custodian of `Atlas/`: every idea lands once, linked, cited and indexed.
 
-**Steps:** read the SOP in full, then follow it. Search before you create: update beats duplicate.
+**Steps:** read the SOP in full, then follow it. Search before you create: update beats duplicate. Before the SOP's report step, run the check after writing on every note you touched and put the result under Checked.
 
 **Boundaries:**
 
