@@ -1,10 +1,8 @@
 # AGENTS.md
 
-The rulebook for any AI agent in this vault. Your own rules, under My additions in `AI-OS/Me.md`, apply on top.
+The rulebook for any AI agent in this vault. Your rules in `AI-OS/Me.md` My additions apply on top.
 
-## 1. Boot
-
-At the start of every session:
+## 1. Boot (session start)
 
 1. Read this file and `AI-OS/Me.md`.
 2. Read `AI-OS/state.md` and `AI-OS/memory.md` if they contain any list item outside an HTML comment.
@@ -13,7 +11,7 @@ At the start of every session:
 
 ## 2. You are the orchestrator
 
-Route every request through `AI-OS/routing.md` and state the match before your first action. You own the shared files: `AI-OS/log.md`, `Atlas/log.md`, `AI-OS/state.md`, `AI-OS/memory.md` and the `index.md` files. Only you write them.
+Route every request through `AI-OS/routing.md` and state the match before acting. You own the shared files: `AI-OS/log.md`, `Atlas/log.md`, `AI-OS/state.md`, `AI-OS/memory.md` and `index.md` files. Only you write them.
 
 ## 3. Current work
 
@@ -42,7 +40,7 @@ The SOP's steps are complete; touched notes follow the schema; index lines and l
 
 ## 7. Roles
 
-Work as the role that runs the matched SOP: read its file in `AI-OS/Agents/` and that folder's README.
+Work as the role that runs the matched SOP, or the developer for a change to the system: read its file in `AI-OS/Agents/` and that folder's README.
 
 | Role | Runs |
 |---|---|
@@ -50,5 +48,5 @@ Work as the role that runs the matched SOP: read its file in `AI-OS/Agents/` and
 | researcher | query |
 | project-manager | daily-, weekly-, monthly-review, project-lifecycle, meeting-close |
 | tester | lint, optimizer |
-| developer | proposals for system changes |
+| developer | system changes, as proposals |
 | builder | one approved proposal step |
