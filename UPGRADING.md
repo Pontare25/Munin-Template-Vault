@@ -25,6 +25,16 @@ Each section uses the same four parts: **What changed**, **What you do**, **What
 
 **What the SOP does:** Copies the system files (`AGENTS.md`, `AI-OS/Agents/`, `.claude/agents/`, `AI-OS/SOPs/optimizer.md`, `AI-OS/SOPs/lint.md`, `Start Here/ai-setup.md`) and shows the merge files for you to choose: `AI-OS/routing.md` (the role sentence in steps 1 and 3; your My SOPs section stays) and `AI-OS/README.md` (the Agents row and the ownership table). No note-level steps.
 
+## 3.4.1
+
+**What changed:** Fixes from live testing. The AoR Review's Open tasks column now counts tasks on an Area's projects and sub-projects, not only tasks linked straight to the Area. The Due strip at the top of the daily note is gone. New note, framework and source notes no longer ask for a topic: `up:` stays in the note, empty, and is optional; the Notes.base view "No up" lists those notes, most linked first. A new organization asks one question, a new top-level organization or part of an existing one, and no longer offers Areas; it has no `people:` field, and its People section lists everyone whose `up:` points at it (People.base view "People here"). A person's `up:` is their organization, or an Area for a private contact. Parent prompts no longer list template files.
+
+**What you do:** Approve the SOP's preview and the optional note steps. Daily notes you already have keep their Due strip; it shows only on today's note, so it disappears from view after today.
+
+**What the SOP does:** Copies the system files (`AI-OS/Schemas/`, `AI-OS/SOPs/lint.md`, `AI-OS/Vault-Map.md`, `Dashboards/AoR Review.md`, `Start Here/rhythm.md`) and shows the merge files for you to choose: the daily, note, framework, source, organization and person templates, `System/Bases/AoR Review.base`, `Notes.base` and `People.base`. Then, with your approval:
+
+1. **Organization notes:** offers to remove an empty `people:` key and to add the People section with the "People here" view. A filled `people:` key is shown to you first: move those people's `up:` to the organization, or keep the key.
+
 **Removed files:** none.
 
 ## 3.4.0
