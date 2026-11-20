@@ -1,3 +1,11 @@
+formulas:
+  linked_from: file.backlinks.length
+  links_out: file.links.length
+properties:
+  formula.linked_from:
+    displayName: Linked from
+  formula.links_out:
+    displayName: Links out
 views:
   - type: table
     name: All notes
@@ -42,3 +50,20 @@ views:
     columnSize:
       file.name: 184
       note.summary: 811
+  - type: table
+    name: No up
+    filters:
+      and:
+        - '["note", "framework", "source"].contains(type)'
+        - up.isEmpty()
+    order:
+      - file.name
+      - type
+      - formula.linked_from
+      - formula.links_out
+      - date_created
+    sort:
+      - property: formula.linked_from
+        direction: DESC
+      - property: formula.links_out
+        direction: DESC

@@ -6,7 +6,12 @@ filters:
 formulas:
   active_projects: file.backlinks.filter(value.asFile().properties.type == "project" && (value.asFile().properties.status == "active" || value.asFile().properties.status == "waiting")).length
   overdue_projects: file.backlinks.filter(value.asFile().properties.type == "project" && value.asFile().properties.status != "done" && value.asFile().properties.status != "dropped" && value.asFile().properties.date_due && date(value.asFile().properties.date_due) < today()).length
-  open_tasks: file.backlinks.filter(value.asFile().properties.type == "task" && value.asFile().properties.status != "done" && value.asFile().properties.status != "dropped").length
+  tasks_on_area: file.backlinks.filter(value.asFile().properties.type == "task" && value.asFile().properties.status != "done" && value.asFile().properties.status != "dropped").length
+  area_projects: file.backlinks.filter(value.asFile().properties.type == "project").map(value.asFile())
+  tasks_on_projects: formula.area_projects.map(value.backlinks).flat().filter(value.asFile().properties.type == "task" && value.asFile().properties.status != "done" && value.asFile().properties.status != "dropped").length
+  sub_projects: formula.area_projects.map(value.backlinks).flat().filter(value.asFile().properties.type == "project").map(value.asFile())
+  tasks_on_sub_projects: formula.sub_projects.map(value.backlinks).flat().filter(value.asFile().properties.type == "task" && value.asFile().properties.status != "done" && value.asFile().properties.status != "dropped").length
+  open_tasks: formula.tasks_on_area + formula.tasks_on_projects + formula.tasks_on_sub_projects
   flag: if(formula.active_projects == 0 && formula.open_tasks == 0, "🔴", if(formula.overdue_projects > 0, "🔴", "🟢"))
 properties:
   formula.active_projects:

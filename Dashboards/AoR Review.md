@@ -9,7 +9,7 @@ Every active Area you're responsible for, in one sweep (an Area in `backlog` is 
 
 ## Project health
 
-Per Area: active projects, open tasks, and projects past their due date. 🔴 = no active project and no open task, **or** a project past due · 🟢 = clear.
+Per Area: active projects, open tasks, and projects past their due date. Open tasks counts the tasks that link to the Area, to its projects and to their sub-projects. 🔴 = no active project and no open task, **or** a project past due · 🟢 = clear.
 
 ![[AoR Review.base]]
 

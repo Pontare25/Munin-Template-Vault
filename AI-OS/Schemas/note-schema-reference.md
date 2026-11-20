@@ -95,8 +95,8 @@ How much compass a note needs depends on its type:
 | Type | Required | Encouraged |
 |---|---|---|
 | `topic` | All four compass keys | |
-| `note` | `up:` + `date_created:` | `topics:`, `related:`, `down:`, `opposes:` |
-| `source` | `up:` + `topics:` | `related:` |
+| `note` | `date_created:` | `up:`, `topics:`, `related:`, `down:`, `opposes:` |
+| `source` | `topics:` | `up:`, `related:` |
 | `moc` | `date_created:` | `up:` when the map sits inside a larger map (top-level maps have no up) |
 | everything else | `up:` + `date_created:` | whatever earns its place |
 
