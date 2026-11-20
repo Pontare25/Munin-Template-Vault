@@ -1,5 +1,20 @@
 # Changelog
 
+## [3.4.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.4.0...v3.4.1) (2026-11-20)
+
+
+### Bug Fixes
+
+* organization template asks for a parent organization, lists its people ([b221f19](https://github.com/Pontare25/Munin-Template-Vault/commit/b221f19deee6554ff0950e275b68e2800b51de71))
+* organization template asks for a parent organization, lists its people ([4ae283e](https://github.com/Pontare25/Munin-Template-Vault/commit/4ae283e6a120ab0a81b99111b0e7b3dc2e801caf)), closes [#210](https://github.com/Pontare25/Munin-Template-Vault/issues/210)
+* Phase 4 check fixes (AoR count, Due strip, topic prompt) ([0e0a7a2](https://github.com/Pontare25/Munin-Template-Vault/commit/0e0a7a2e0de6ed75bac845880142e2b68b931eae))
+* Phase 4 check fixes (AoR count, Due strip, topic prompt) ([05dfc2c](https://github.com/Pontare25/Munin-Template-Vault/commit/05dfc2cc35b60382fd162a1708a38040fecc1a99)), closes [#210](https://github.com/Pontare25/Munin-Template-Vault/issues/210)
+
+
+### Documentation
+
+* UPGRADING section for 3.4.1 ([cd424c1](https://github.com/Pontare25/Munin-Template-Vault/commit/cd424c192f49f7b936e171753ea9cfe870f0f6ad))
+
 ## [3.4.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.3.0...v3.4.0) (2026-11-15)
 
 
