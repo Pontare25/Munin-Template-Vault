@@ -2,7 +2,7 @@
 // Parent prompt: list notes of the allowed types (by frontmatter type), sorted by name.
 const upTypes = ["area", "organization"];
 const upNames = app.vault.getMarkdownFiles()
-  .filter(f => upTypes.includes(app.metadataCache.getFileCache(f)?.frontmatter?.type))
+  .filter(f => !f.path.startsWith("System/Templates/") && upTypes.includes(app.metadataCache.getFileCache(f)?.frontmatter?.type))
   .map(f => f.basename)
   .sort((a, b) => a.localeCompare(b));
 const upPick = (await tp.system.suggester(
