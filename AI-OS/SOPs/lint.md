@@ -20,7 +20,7 @@ Periodic health check of the knowledge graph. Lint finds problems and proposes f
    - **Orphans:** notes in `Atlas/` with no inbound links and no `topics:` pointing at them.
    - **Missing topic pages:** subjects referenced in `topics:` fields with no page in `Atlas/Topics/`.
    - **Schema drift:** notes missing required frontmatter for their type (see [[note-schema]]), or a tag used to classify a note instead of `type:` (the user's own tags are fine). Every `Atlas/` note needs a non-empty `type:` (OKF conformance). Also check the user's notes for these; all are warnings, never auto-applied, and a batch over ten needs approval first.
-     - `up:` missing where the core's `up:` table says required (person, organization). Projects and tasks without `up:` count as one line. Notes, frameworks and sources without `up:` are not drift: report their count as one line that points at the Notes.base view "No up".
+     - `up:` missing where the core's `up:` table says required (person). Projects and tasks without `up:` count as one line. Notes, frameworks and sources without `up:` are not drift: report their count as one line that points at the Notes.base view "No up".
      - A relationship field written as a scalar, not a YAML list: `up`, `related`, `down`, `opposes`, `people`, `skills`, `interests`, `topics`.
      - `type:` that disagrees with the folder per the core type table. `Archive/` and `Raw/Inbox/` are exempt.
      - `topics:` entries that do not resolve to a note in `Atlas/Topics/`.

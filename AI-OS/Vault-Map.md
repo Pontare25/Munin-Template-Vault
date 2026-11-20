@@ -60,8 +60,6 @@ Templates live in `System/Templates/` (paths below are relative to it). Pick by 
 | Command icons | `Templater/Startup/command-icons.md` (runs at startup) | Icons on the phone toolbar buttons |
 | Advanced log widget | `Templater/Sub-templates/Dataview queries/Advanced log template.md` | Included in project and person notes |
 
-Organizations have no template yet; use the frontmatter pattern in [[note-schema-reference]].
-
 ## Folder indexes
 
 Every top folder has a `README.md` stating its purpose and holding an index: one line per note, appended by the SOPs. Inside `Atlas/`, the root and each subfolder use an `index.md` instead (the OKF convention).
@@ -88,7 +86,7 @@ Bases read frontmatter fields, which is one more reason the schema matters: note
 | `System/Bases/Sessions.base` | Work sessions per project (project notes made before 3.1.0) | Older project notes |
 | `System/Bases/Notes.base` | Child and related notes; AI notes awaiting review; knowledge notes with no `up:` | Project and person notes; Inbox dashboard |
 | `System/Bases/Projects.base` | Sub projects, Learning, No open task, Archive | Project notes, Learning Area |
-| `System/Bases/People.base` | All people | Open it directly |
+| `System/Bases/People.base` | All people; the people of an organization | Open it directly; organization notes |
 
 The TaskNotes plugin adds seven view Bases of its own in `Efforts/TaskNotes/Views/` (tasks list, kanban, calendar, mini calendar, agenda, relationships, pomodoro stats), generated from its settings.
 

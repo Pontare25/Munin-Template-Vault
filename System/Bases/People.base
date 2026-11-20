@@ -40,6 +40,18 @@ views:
       note.summary: 460
       note.skills: 200
       note.interests: 200
+  - type: table
+    name: People here
+    filters:
+      and:
+        - up.contains(link(this.file))
+    order:
+      - file.name
+      - summary
+      - location
+    sort:
+      - property: file.name
+        direction: ASC
   - type: cards
     name: Cards
     order:

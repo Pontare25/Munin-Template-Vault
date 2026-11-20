@@ -171,7 +171,7 @@ date_modified: 2026-11-03T15:15:40.530+01:00
 
 ## People and organizations
 
-People use the person template, which files them in `Atlas/Entities/People/`. Organizations have no template yet; use this pattern directly and file them in `Atlas/Entities/Organizations/`:
+People use the person template (`Atlas/Entities/People/`), organizations the organization template (`Atlas/Entities/Organizations/`). A person's `up:` is the organization they belong to now, or an Area for a private contact; earlier employers go in `related:`. An organization's `up:` is the organization it is part of; a top-level organization has none. The organization note lists its people from `up:` (People.base view "People here"), so it needs no `people:` field.
 
 ```yaml
 ---
@@ -179,9 +179,9 @@ type: person
 date_created: 2026-01-15T09:30
 summary: Who they are, in one line
 up:
-  - "[[Topic they matter to]]"
-related:
   - "[[Their Organization]]"
+related:
+  - "[[Earlier employer]]"
 skills:
   - "[[Python]]"
 interests:
@@ -195,9 +195,9 @@ type: organization
 date_created: 2026-01-15T09:30
 summary: What they are, in one line
 up:
-  - "[[Industry or Topic]]"
+  - "[[Parent organization]]"
 related:
-  - "[[Person you know there]]"
+  - "[[Partner organization]]"
 ---
 ```
 

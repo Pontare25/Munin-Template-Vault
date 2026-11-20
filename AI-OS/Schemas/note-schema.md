@@ -1,6 +1,6 @@
 # Note Schema
 
-Core rules; read this before writing a note. **Links for things, fields for kinds and structure.** Detail, examples and the field registry live in [[note-schema-reference]].
+Read before writing a note. **Links for things, fields for kinds and structure.** Detail, examples and the field registry live in [[note-schema-reference]].
 
 ## Required on every note
 
@@ -43,12 +43,11 @@ Journal notes carry `date`, the first day of their period. Every other date is `
 
 | Type | `up:` points at |
 |---|---|
-| `note`, `framework` | a topic, when you know it (optional; the Notes.base view "No up" lists the empty ones) |
-| `source` | the topic it informs, when you know it (optional), plus `topics:` |
-| `person`, `organization` | an Area or the organization (required) |
+| `note`, `framework`, `source` | a topic, optional (Notes.base "No up" lists the empty ones); sources also get `topics:` |
+| `person` | their organization, or an Area (required) |
 | `project`, `task` | its project, or its Area |
-| `topic`, `moc`, `area` | a broader one, when there is one |
-| everything else | nothing required |
+| `organization`, `topic`, `moc`, `area` | a broader one, when there is one |
+| everything else | nothing |
 
 ## Status on efforts
 
