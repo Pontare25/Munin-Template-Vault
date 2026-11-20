@@ -17,6 +17,18 @@ Which files an upgrade replaces, merges or leaves alone is set by the ownership 
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
 
+## 3.4.1
+
+**What changed:** Fixes from live testing. The AoR Review's Open tasks column now counts tasks on an Area's projects and sub-projects, not only tasks linked straight to the Area. The Due strip at the top of the daily note is gone. New note, framework and source notes no longer ask for a topic: `up:` stays in the note, empty, and is optional; the Notes.base view "No up" lists those notes, most linked first. A new organization asks one question, a new top-level organization or part of an existing one, and no longer offers Areas; it has no `people:` field, and its People section lists everyone whose `up:` points at it (People.base view "People here"). A person's `up:` is their organization, or an Area for a private contact. Parent prompts no longer list template files.
+
+**What you do:** Approve the SOP's preview and the optional note steps. Daily notes you already have keep their Due strip; it shows only on today's note, so it disappears from view after today.
+
+**What the SOP does:** Copies the system files (`AI-OS/Schemas/`, `AI-OS/SOPs/lint.md`, `AI-OS/Vault-Map.md`, `Dashboards/AoR Review.md`, `Start Here/rhythm.md`) and shows the merge files for you to choose: the daily, note, framework, source, organization and person templates, `System/Bases/AoR Review.base`, `Notes.base` and `People.base`. Then, with your approval:
+
+1. **Organization notes:** offers to remove an empty `people:` key and to add the People section with the "People here" view. A filled `people:` key is shown to you first: move those people's `up:` to the organization, or keep the key.
+
+**Removed files:** none.
+
 ## 3.4.0
 
 **What changed:** New [[optimizer]] SOP: once a month (the [[monthly-review]] runs it, or say "run the optimizer") the AI audits its own setup. It checks that template fields match the field registry, that the files it reads every session stay within their word caps, that every routing row points at a real SOP, and that lessons in `memory.md` are not already covered by a rule. It reports four numbers that show whether your feedback reaches the AI: feedback lines captured, lessons promoted, rules added, lint findings that keep coming back. It reads and proposes; it changes nothing on its own. Every SOP that edits a note now sets `date_modified`, so staleness checks can trust it. Lint's log entry counts findings per category. The template's GitHub repo has a "Feedback from use" issue form, and the optimizer can draft one from your procedure notes. `Start Here/rhythm.md` embeds the optimizer checklist under Monthly.
