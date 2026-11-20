@@ -43,8 +43,8 @@ Journal notes carry `date`, the first day of their period. Every other date is `
 
 | Type | `up:` points at |
 |---|---|
-| `note`, `framework` | a topic (required) |
-| `source` | the topic it informs (required), plus `topics:` |
+| `note`, `framework` | a topic, when you know it (optional; the Notes.base view "No up" lists the empty ones) |
+| `source` | the topic it informs, when you know it (optional), plus `topics:` |
 | `person`, `organization` | an Area or the organization (required) |
 | `project`, `task` | its project, or its Area |
 | `topic`, `moc`, `area` | a broader one, when there is one |
