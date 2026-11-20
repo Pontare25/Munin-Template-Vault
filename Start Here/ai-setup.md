@@ -17,6 +17,10 @@ Open the tool with the vault folder as its working folder. `CLAUDE.md` is one li
 
 Before acting on a request, the AI routes it. It checks the trigger index in `AI-OS/routing.md`, which maps the kind of thing you asked for to the SOP (standard procedure in `AI-OS/SOPs/`) that handles it, reads that SOP, and tells you which one it picked. If nothing matches, it says so instead of winging it and offers to write a new SOP, so each recurring request you make becomes a procedure that just works next time. Routing rules and SOPs are plain notes: read and edit them like anything else.
 
+## Roles
+
+Most SOPs belong to a role: the librarian files knowledge, the researcher answers with citations, the project manager runs reviews, projects and meetings, the tester checks and audits, the developer proposes changes to the system, and the builder carries out an approved proposal. A role file in `AI-OS/Agents/` says where that role may write, what it must not do, and when it is done; the table in `AGENTS.md` says which role runs which SOP. The AI works as that role for the task and ends with a short report: what changed, what it checked, what it could not check, and what waits on you. In Claude Code, the files in `.claude/agents/` also let the main session hand a task to a role as a separate helper. You never have to name a role yourself.
+
 ## The loop
 
 Four operations, repeated:

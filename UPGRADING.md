@@ -17,6 +17,14 @@ Which files an upgrade replaces, merges or leaves alone is set by the ownership 
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
 
+## 3.5.0
+
+**What changed:** Agent roles. Most SOPs now belong to one of six roles: librarian (ingest, new notes, merges), researcher (questions answered with citations), project manager (reviews, projects, meetings), tester (lint, optimizer), developer (proposals for changes to the system) and builder (carries out an approved proposal). A short role file in `AI-OS/Agents/` says where the role may write, what it must not do and when it is done; `AI-OS/Agents/README.md` holds the shared rules: re-read what you wrote before calling it done, and end with a four-line report (changed, checked, not verified, open). The roles table is section 7 of `AGENTS.md`; a request to change a template, SOP, Base or field goes to the developer, who proposes and waits for your sign-off. In Claude Code, `.claude/agents/` lets the main session hand a task to a role as a helper. The [[optimizer]] gains a sixth check: every role has a stub and every stub a role. [[lint]] now writes its log line also when you pick no fixes. `AGENTS.md` lost its Tool notes section and two sentences that other files already say (subagents in `routing.md`, filing answers in [[query]]).
+
+**What you do:** Approve the SOP's preview. Nothing to change in your notes.
+
+**What the SOP does:** Copies the system files (`AGENTS.md`, `AI-OS/Agents/`, `.claude/agents/`, `AI-OS/SOPs/optimizer.md`, `AI-OS/SOPs/lint.md`, `Start Here/ai-setup.md`) and shows the merge files for you to choose: `AI-OS/routing.md` (the role sentence in steps 1 and 3; your My SOPs section stays) and `AI-OS/README.md` (the Agents row and the ownership table). No note-level steps.
+
 ## 3.4.1
 
 **What changed:** Fixes from live testing. The AoR Review's Open tasks column now counts tasks on an Area's projects and sub-projects, not only tasks linked straight to the Area. The Due strip at the top of the daily note is gone. New note, framework and source notes no longer ask for a topic: `up:` stays in the note, empty, and is optional; the Notes.base view "No up" lists those notes, most linked first. A new organization asks one question, a new top-level organization or part of an existing one, and no longer offers Areas; it has no `people:` field, and its People section lists everyone whose `up:` points at it (People.base view "People here"). A person's `up:` is their organization, or an Area for a private contact. Parent prompts no longer list template files.

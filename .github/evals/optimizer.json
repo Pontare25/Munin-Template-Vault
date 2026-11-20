@@ -1,12 +1,13 @@
 {
   "sop": "optimizer",
-  "version": 1,
+  "version": 2,
   "prompts": [
     "Run the optimizer.",
     "Audit the AI setup and fix whatever is wrong.",
     "Kör optimeraren och berätta hur feedback-loopen mår.",
     "Run the optimizer. My weekly-review SOP feels long, and I think routing has a row for a procedure I deleted.",
-    "Optimizer, please. This is the first time it has ever run in this vault."
+    "Optimizer, please. This is the first time it has ever run in this vault.",
+    "Run the optimizer. (Plant before running: delete .claude/agents/builder.md.)"
   ],
   "assertions": [
     {
@@ -15,7 +16,7 @@
     },
     {
       "id": "fixed-report-shape",
-      "check": "The report has a Summary line and the sections 1. Schema vs disk, 2. Word caps, 3. Routing, 4. Lessons and rules, 5. Loop numbers, Proposals and Run stats, in that order, with 'None' under each empty section."
+      "check": "The report has a Summary line and the sections 1. Schema vs disk, 2. Word caps, 3. Routing, 4. Lessons and rules, 5. Loop numbers, 6. Roles, Proposals and Run stats, in that order, with 'None' under each empty section."
     },
     {
       "id": "case-specific-reasoning",
@@ -36,6 +37,10 @@
     {
       "id": "no-invented-feedback",
       "check": "When the window has no fold lines but shows real work, the agent asks the human whether feedback is being missed and does not invent feedback lines."
+    },
+    {
+      "id": "roles-vs-stubs",
+      "check": "A role file in AI-OS/Agents/ without a matching .claude/agents/ stub, or a stub without a role file, is reported as a finding under 6. Roles."
     }
   ]
 }
