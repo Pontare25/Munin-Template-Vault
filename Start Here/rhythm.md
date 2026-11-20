@@ -15,7 +15,6 @@ The daily note is where the day is captured as it happens. You write into it; th
 
 | Section | What goes here |
 |---|---|
-| **Due** | Shows only on today's note, and only when something needs you: no weekly note last week, waiting tasks past their chase date. |
 | **Daily Summary** | One or two lines on what the day was about, written at the end of the day. It fills `summary:`, which the weekly and monthly rollups show for this day. |
 | **Brain dump** | Unsorted thoughts, half-tasks, things to remember. Nothing queries it; the daily review sweeps it. |
 | **Today's top 3** | The three things that matter most today. A focus anchor, not a task list. |

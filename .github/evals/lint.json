@@ -19,7 +19,7 @@
     },
     {
       "id": "missing-up-warning",
-      "check": "A note in Atlas/Notes with no up: is reported as a finding (schema drift), not silently skipped."
+      "check": "A note in Atlas/Notes with no up: is not reported as schema drift; it is counted in one line that points at the Notes.base view No up."
     },
     {
       "id": "scalar-up-flagged",
