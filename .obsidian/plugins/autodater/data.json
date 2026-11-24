@@ -4,6 +4,11 @@
   "dateFormat": "date",
   "customDateFormat": "YYYY-MM-DD HH:mm",
   "excludedFolders": [
-    "System/Templates"
+    "Start Here",
+    "AI-OS",
+    "System",
+    "Dashboards",
+    "Efforts/TaskNotes",
+    "Archive"
   ]
 }
