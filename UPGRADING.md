@@ -17,6 +17,18 @@ Which files an upgrade replaces, merges or leaves alone is set by the ownership 
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
 
+## Unreleased
+
+**What changed:** The Advanced log widget on project and person notes now loads from one shared script, `System/Scripts/advanced-log.js`. `Advanced log template.md` holds only a three-line `dataviewjs` block, `await dv.view("System/Scripts/advanced-log")`, so a later fix to the script reaches every note on its next render. Before, each note carried its own pasted copy of the widget, and copies made from older templates kept their old behavior. The widget now groups logs under one heading per day (the note's `date`, else `date_start`, else the date in its filename), with that day's daily note, work sessions and meetings beneath it in time order. A note is labelled by its `title:` if it has one, else by its filename without the leading date. **Copy results** writes `## day` and `### note` headings. An End date alone now means "up to that date", not "only that day". It only scans notes that link the host note, so it is faster in large vaults.
+
+**What you do:** Approve the SOP's preview and the note-level step. Saved filters stay as they were, but a saved End date alone now shows everything up to that date.
+
+**What the SOP does:** Copies `System/Scripts/advanced-log.js` and `Start Here/tasks-and-logs.md`, and shows the merge file `System/Templates/Templater/Sub-templates/Dataview queries/Advanced log template.md` for you to choose. Then, with your approval:
+
+1. **Project and person notes:** finds every `dataviewjs` block that contains `advanced-log-search` and replaces that block, and only that block, with `await dv.view("System/Scripts/advanced-log")` inside a `dataviewjs` fence. Other `dataviewjs` blocks in the note (such as the Promote button) stay. Back up first: the old block is gone after the swap.
+
+**Removed files:** none.
+
 ## 3.5.0
 
 **What changed:** Agent roles. Most SOPs now belong to one of six roles: librarian (ingest, new notes, merges), researcher (questions answered with citations), project manager (reviews, projects, meetings), tester (lint, optimizer), developer (proposals for changes to the system) and builder (carries out an approved proposal). A short role file in `AI-OS/Agents/` says where the role may write, what it must not do and when it is done; `AI-OS/Agents/README.md` holds the shared rules: re-read what you wrote before calling it done, and end with a four-line report (changed, checked, not verified, open). The roles table is section 7 of `AGENTS.md`; a request to change a template, SOP, Base or field goes to the developer, who proposes and waits for your sign-off. In Claude Code, `.claude/agents/` lets the main session hand a task to a role as a helper. The [[optimizer]] gains a sixth check: every role has a stub and every stub a role. [[lint]] now writes its log line also when you pick no fixes. `AGENTS.md` lost its Tool notes section and two sentences that other files already say (subagents in `routing.md`, filing answers in [[query]]).
