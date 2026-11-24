@@ -17,7 +17,7 @@ Shortcuts are written for Windows and Linux. On a Mac, read Ctrl as Cmd and Alt 
 1. Obsidian asks whether you trust the author of this vault. Choose **Trust author and enable plugins**.
 2. Open Settings, Community plugins.
 
-**You should see:** nine installed plugins, all switched on. Five are required: Templater, Journals, Dataview, Meta Bind and TaskNotes. Four are helpers: Omnisearch, Text Extractor, Tag Wrangler and Minimal Theme Settings.
+**You should see:** ten installed plugins, all switched on. Five are required: Templater, Journals, Dataview, Meta Bind and TaskNotes. Five are helpers: Omnisearch, Text Extractor, Tag Wrangler, Minimal Theme Settings and AutoDater.
 
 **If not:** if the page shows Restricted mode with a **Turn on community plugins** button, click it; then switch on any plugin that is still off.
 

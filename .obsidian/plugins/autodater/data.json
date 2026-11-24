@@ -1,0 +1,9 @@
+{
+  "createdProperty": "date_created",
+  "updatedProperty": "date_modified",
+  "dateFormat": "date",
+  "customDateFormat": "YYYY-MM-DD HH:mm",
+  "excludedFolders": [
+    "System/Templates"
+  ]
+}
