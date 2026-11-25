@@ -1,6 +1,3 @@
----
-date_modified: 2026-11-25
----
 # Upgrading
 
 How to move a vault made from this template to a newer release. Each version below has one section: what changed, what you do, and what the [[upgrade-vault]] SOP does for you.
@@ -19,6 +16,16 @@ Before you start:
 Which files an upgrade replaces, merges or leaves alone is set by the ownership table in `AI-OS/README.md`. Vaults older than 2.0.0 are not supported by the SOP: upgrade them by hand using the 2.0.0 breaking changes in `CHANGELOG.md`.
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
+
+## Unreleased
+
+**What changed:** AutoDater no longer stamps `date_created` and `date_modified` on the files the template ships outside its excluded folders: the root documents (`README.md`, `UPGRADING.md`, `CHANGELOG.md`, `CONTRIBUTING.md`, `AGENTS.md`, `CLAUDE.md`, `START-HERE.md`), the folder READMEs in `Calendar/`, `Efforts/`, `Fleeting/`, `Raw/` and `Raw/Inbox/`, and the Atlas `index.md` and `log.md` files. AutoDater's excluded list matches an exact file path as well as a folder. Your own notes, the Area notes included, keep their dates.
+
+**What you do:** Approve the SOP's preview. If one of those files already has a stamp, you may delete the `date_created` and `date_modified` lines; nothing reads them.
+
+**What the SOP does:** Shows `.obsidian/plugins/autodater/data.json` as a merge file: it adds the new paths to `excludedFolders` and keeps any folders you added yourself. No note-level steps.
+
+**Removed files:** none.
 
 ## 3.5.0
 
