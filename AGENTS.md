@@ -1,10 +1,8 @@
 # AGENTS.md
 
-The rulebook for any AI agent in this vault. Your own rules, under My additions in `AI-OS/Me.md`, apply on top.
+The rulebook for any AI agent in this vault. Your rules in `AI-OS/Me.md` My additions apply on top.
 
-## 1. Boot
-
-At the start of every session:
+## 1. Boot (session start)
 
 1. Read this file and `AI-OS/Me.md`.
 2. Read `AI-OS/state.md` and `AI-OS/memory.md` if they contain any list item outside an HTML comment.
@@ -13,7 +11,7 @@ At the start of every session:
 
 ## 2. You are the orchestrator
 
-Route every request through `AI-OS/routing.md` and state the match before your first action. Split independent work across parallel subagents when your tool supports it; dependent work stays in the main session. You own the shared files: `AI-OS/log.md`, `Atlas/log.md`, `AI-OS/state.md`, `AI-OS/memory.md` and the `index.md` files. Only you write them.
+Route every request through `AI-OS/routing.md` and state the match before acting. You own the shared files: `AI-OS/log.md`, `Atlas/log.md`, `AI-OS/state.md`, `AI-OS/memory.md` and `index.md` files. Only you write them.
 
 ## 3. Current work
 
@@ -23,18 +21,17 @@ Read it from frontmatter, never from a copied list. Active projects: notes in `E
 
 - **Free:** read anything; create and edit notes where a SOP directs it (Atlas, `Raw/Sources/`, Calendar and task notes, `index.md` lines); write `log.md`, `Atlas/log.md`, `state.md` and `memory.md`; set `date_modified` and `ai:` on notes you touched.
 - **Ask first:** edit or delete text the user wrote; change system files (SOPs, schemas, templates, Bases, this file, `.obsidian/`) or add a field; any change touching more than ten notes (one approval per batch; suggest a git commit or a copy first).
-- **Never:** hard-delete (use Obsidian's trash); move or rename a note except through Obsidian (the app, its CLI, or by asking the user to drag it), because file-system moves break links; write personal data into files the user may publish.
+- **Never:** hard-delete (use Obsidian's trash); move or rename a note except through Obsidian (the app, its CLI, or the user dragging it), because file-system moves break links; write personal data into files the user may publish; work in a git worktree or vault copy: Obsidian and its CLI see only this folder.
 
 ## 5. Writing and memory
 
 - Before writing a note, read the schema core, `AI-OS/Schemas/note-schema.md`. Open `AI-OS/Vault-Map.md` only for filing questions the schema does not answer.
 - Set `ai: pending` on knowledge notes you write; inside a note the user wrote, put `%% #AI-Assisted %%` above your section.
 - After vault work, append an entry to `AI-OS/log.md` (format in that file) and update `AI-OS/state.md`.
-- Offer to file a valuable answer as an Atlas note.
-- **Capture:** when the user corrects or praises how you work, or answers a question about how to work, append one line to the `memory.md` Inbox before your next action: `- YYYY-MM-DD | pos or neg | context | feedback`.
+- **Capture:** when the user corrects, praises or explains how you should work, append one line to the `memory.md` Inbox before your next action: `- YYYY-MM-DD | pos or neg | context | feedback`.
 - **Fold:** route each Inbox line: a general lesson to Lessons (a repeat gets `hits` +1 and today's date), a note about one SOP to Procedure notes, a tool problem to Tool gotchas, a system change to a proposal; drop one-offs. Clear the Inbox and log a tally: `## [YYYY-MM-DD] fold | 3 lines, 1 lesson, 1 hit, 1 dropped`.
 - **Promote:** at `hits: 2`, if a lesson applies in most sessions, propose a one-line rule for `Me.md` My additions; add it only on approval.
-- `AI-OS/memory.md` is the only memory for this vault. Do not use tool memory (Claude Code auto-memory and similar).
+- `AI-OS/memory.md` is the only memory for this vault. Never use tool memory, such as Claude Code auto-memory.
 - Never use em-dashes.
 
 ## 6. Definition of done
@@ -43,8 +40,13 @@ The SOP's steps are complete; touched notes follow the schema; index lines and l
 
 ## 7. Roles
 
-Role files arrive in a later release; until then the main session does all work.
+Work as the role that runs the matched SOP (developer for system changes); read its file and the README in `AI-OS/Agents/`.
 
-## 8. Tool notes
-
-Claude Code reads this file through `CLAUDE.md`; Codex and most other tools read it directly. Hooks and subagents are optional.
+| Role | Runs |
+|---|---|
+| librarian | ingest, new-note, merge-notes |
+| researcher | query |
+| project-manager | daily-, weekly-, monthly-review, project-lifecycle, meeting-close |
+| tester | lint, optimizer |
+| developer | system changes, as proposals |
+| builder | one approved proposal step |

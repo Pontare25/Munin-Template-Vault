@@ -28,6 +28,7 @@ Read before writing a note. **Links for things, fields for kinds and structure.*
 
 - **`date_created:`** ISO `YYYY-MM-DDTHH:mm`. Templates fill it.
 - **`summary:`** recommended outside `Calendar/`: one line on what the note holds; indexes and Bases use it.
+- **No colon inside a text value**, quoted or not (`summary:`, `title:`, `details:`, list items). An unquoted `a: b` breaks the YAML and Obsidian drops the note's properties. Rephrase with a comma, semicolon or a new sentence. Dates, times and URLs are not text values and keep their colons.
 
 ## Dates
 

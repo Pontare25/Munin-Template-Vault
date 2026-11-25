@@ -59,7 +59,7 @@ More useful is the local graph which shows connections to and from the currently
 
 ## Templates (Templater)
 
-Templater powers the note templates. It is one of five community plugins the vault depends on, together with Journals (daily and other period notes), Dataview (log rollups and queries), Meta Bind (the buttons and inline fields) and TaskNotes (task notes). When you create a note from a template (via the Templater icon or hotkey), it fills in dates and prompts for values automatically. Template selection table lives in [[Vault-Map]]. The vault also bundles optional helpers, already installed: Omnisearch (fast full-text search), Text Extractor (OCR and text extraction from PDFs and images), Tag Wrangler (rename and merge tags) and Minimal Theme Settings (options for the Minimal theme).
+Templater powers the note templates. It is one of five community plugins the vault depends on, together with Journals (daily and other period notes), Dataview (log rollups and queries), Meta Bind (the buttons and inline fields) and TaskNotes (task notes). When you create a note from a template (via the Templater icon or hotkey), it fills in dates and prompts for values automatically. Template selection table lives in [[Vault-Map]]. The vault also bundles optional helpers, already installed: Omnisearch (fast full-text search), Text Extractor (OCR and text extraction from PDFs and images), Tag Wrangler (rename and merge tags), Minimal Theme Settings (options for the Minimal theme) and AutoDater (fills `date_created` and `date_modified` when you edit a note).
 
 ## Search
 

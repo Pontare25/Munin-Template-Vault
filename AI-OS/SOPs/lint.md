@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 4
+version: 6
 summary: Scan the knowledge graph for broken links, orphans, schema drift, stale notes and indexes, and propose fixes
 ---
 
@@ -21,6 +21,7 @@ Periodic health check of the knowledge graph. Lint finds problems and proposes f
    - **Missing topic pages:** subjects referenced in `topics:` fields with no page in `Atlas/Topics/`.
    - **Schema drift:** notes missing required frontmatter for their type (see [[note-schema]]), or a tag used to classify a note instead of `type:` (the user's own tags are fine). Every `Atlas/` note needs a non-empty `type:` (OKF conformance). Also check the user's notes for these; all are warnings, never auto-applied, and a batch over ten needs approval first.
      - `up:` missing where the core's `up:` table says required (person). Projects and tasks without `up:` count as one line. Notes, frameworks and sources without `up:` are not drift: report their count as one line that points at the Notes.base view "No up".
+     - A colon inside a text value (`summary: Excel: dashboards`); it breaks the note's properties. Propose a rephrase per [[note-schema]].
      - A relationship field written as a scalar, not a YAML list: `up`, `related`, `down`, `opposes`, `people`, `skills`, `interests`, `topics`.
      - `type:` that disagrees with the folder per the core type table. `Archive/` and `Raw/Inbox/` are exempt.
      - `topics:` entries that do not resolve to a note in `Atlas/Topics/`.
@@ -30,11 +31,11 @@ Periodic health check of the knowledge graph. Lint finds problems and proposes f
      - A field missing from the field registry in [[note-schema-reference]]; propose registering or removing it.
    - **Stale index lines:** folder `index.md` listings referencing notes that moved or no longer exist, or missing recent notes. Propose the missing line for notes the human made by hand.
    - **Missing maps:** a topic with 10 or more notes and no MOC; propose one (the human owns `Atlas/MOCs/`).
-   - **Stubs:** topics with an empty compass and 3 or more notes linking in are the "Stubs" view in `Topics.base`. Propose compass fill-in; do not guess.
+   - **Stubs:** topics with an empty compass and 3 or more notes linking in (the "Stubs" view in `Topics.base`). Propose compass fill-in.
    - **Oversized indexes:** a folder `index.md` past roughly 100 lines. Propose a Base as the index (AI-OS README growth path).
    - **Contradictions and stale claims:** conflicting notes with no `opposes:` link; claims that time has overtaken. A note is stale when its `date_modified` is older than the newest source linking its topic. Flag it, never rewrite it.
 3. **Write the report:** group findings by category, one line each (`path: problem`). State counts. Propose a fix per finding. A category also non-zero in the previous two bulleted lint entries is recurring: say so and propose fixing its cause.
-4. **Wait for approval.** The human picks which fixes to apply (all, some, none).
+4. **Wait for approval.** The human picks which fixes to apply (all, some, none); none or not now: go to step 6.
 5. **Apply approved fixes** only, and set `date_modified` on each note you change. For contradictions, prefer linking both notes via `opposes:` over deleting either.
 6. **Log it** on every run: one [[AI-OS/log|log]] entry (`## [YYYY-MM-DD] lint | N findings, M fixed`, plus the queue line in incremental mode), with one bullet of per-category counts using the step 2 names, non-zero only or "none" (`- broken links 2, schema drift 3`). A no-change entry (step 1) has no bullet; recurrence counting skips it.
 

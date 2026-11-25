@@ -40,10 +40,10 @@ flowchart LR
 
 ## Plugins
 
-The vault bundles nine community plugins, already installed (the list is `.obsidian/community-plugins.json`). Turn on community plugins when Obsidian asks and all nine start.
+The vault bundles ten community plugins, already installed (the list is `.obsidian/community-plugins.json`). Turn on community plugins when Obsidian asks and all ten start.
 
 - **Required (five):** Templater (note templates and commands), Journals (daily and other period notes), Dataview (rollups and the Promote button), Meta Bind (inline fields such as the Daily Summary box and status selectors), TaskNotes (task notes and task views).
-- **Helpers (four):** Omnisearch (fast full-text search), Text Extractor (text from PDFs and images), Tag Wrangler (rename and merge tags), Minimal Theme Settings (options for the Minimal theme).
+- **Helpers (five):** Omnisearch (fast full-text search), Text Extractor (text from PDFs and images), Tag Wrangler (rename and merge tags), Minimal Theme Settings (options for the Minimal theme), AutoDater (fills `date_created` and `date_modified` when you edit a note).
 
 ## Quickstart
 

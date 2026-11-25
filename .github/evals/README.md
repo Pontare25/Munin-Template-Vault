@@ -28,4 +28,4 @@ Re-run after any change to the SOP and compare with the last recorded rate.
 
 ## Role baselines
 
-Baselines per role arrive in Phase 6. Until then, `lint.json` serves as the worked example of the format.
+[roles-baseline.md](roles-baseline.md) holds the five tasks, assertions and results that decided which roles ship. Re-run it after any change to a role file or `AGENTS.md` section 7, both arms, three runs each.

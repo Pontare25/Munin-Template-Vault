@@ -1,0 +1,14 @@
+{
+  "createdProperty": "date_created",
+  "updatedProperty": "date_modified",
+  "dateFormat": "date",
+  "customDateFormat": "YYYY-MM-DD HH:mm",
+  "excludedFolders": [
+    "Start Here",
+    "AI-OS",
+    "System",
+    "Dashboards",
+    "Efforts/TaskNotes",
+    "Archive"
+  ]
+}

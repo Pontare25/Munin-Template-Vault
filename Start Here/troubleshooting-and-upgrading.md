@@ -10,7 +10,7 @@ The community plugins are off. Obsidian starts a vault it does not trust in **Re
 
 1. Open Settings, Community plugins.
 2. If you see **Turn on community plugins**, click it.
-3. Check that all nine plugins are switched on. The five the vault needs are Templater, Journals, Dataview, Meta Bind and TaskNotes.
+3. Check that all ten plugins are switched on. The five the vault needs are Templater, Journals, Dataview, Meta Bind and TaskNotes.
 
 ### New notes in `Fleeting/` are blank
 

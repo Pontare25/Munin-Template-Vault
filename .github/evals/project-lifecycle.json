@@ -1,8 +1,9 @@
 {
   "sop": "project-lifecycle",
-  "version": 1,
+  "version": 2,
   "prompts": [
     "Start a project for redoing my home office.",
+    "Create a new project called Client After Work Spring 2027. It is a Work project under Work.",
     "Close the project Website Relaunch and do the retro.",
     "Jag vill avsluta projektet Kundportalen och göra en retro.",
     "Some of my projects have gone quiet and I do not know what to do next on them.",
@@ -19,7 +20,19 @@
     },
     {
       "id": "first-task-fields",
-      "check": "The first task note has type: task, status: backlog, contexts, up: and origin: both pointing at the project, contexts: the project's top-level Area in lowercase, and is filed as Efforts/TaskNotes/Tasks/task - <title>.md."
+      "check": "The first task note has type: task, status: backlog, up: the project, origin: the daily, meeting or work-session note the project was started in (never the project), contexts: the project's top-level Area in lowercase, and is filed as Efforts/TaskNotes/Tasks/task - <title>.md."
+    },
+    {
+      "id": "start-logged-with-task-subbullet",
+      "check": "On start, the agent logs a '- [b]' line naming the project in the note the project was started in, with the first task on its own tab-indented '- [t] [[task - <title>|<title>]]' sub-bullet, not inside the [b] line."
+    },
+    {
+      "id": "active-file-confirmed",
+      "check": "Before running a command that acts on the active note (such as Promote note), the agent confirms the intended note is the active file; it never promotes a daily or other unrelated note."
+    },
+    {
+      "id": "summary-filled",
+      "check": "On start, the project note's summary: holds one line drawn from the Goal, with no colon in it."
     },
     {
       "id": "vague-goal-challenged",

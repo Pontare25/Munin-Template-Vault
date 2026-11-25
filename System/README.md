@@ -7,6 +7,7 @@ Vault plumbing: files that make the vault work but are not knowledge themselves.
 | Folder | Holds |
 |---|---|
 | `Templates/` | Templates for every note type, plus Templater commands |
+| `Scripts/` | Shared `dv.view` scripts, such as the Advanced log widget |
 | `Bases/` | Shared Bases: tasks, inbox, fleeting, meetings, journals and more |
 | `Attachments/` | Images and other media, kept out of the note folders (created on first use) |
 | `OKF/` | Notes on Open Knowledge Format conformance |

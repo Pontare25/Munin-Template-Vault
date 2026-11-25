@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 4
+version: 5
 summary: Turn one capture in Raw into atomic notes, entity pages and topic links in Atlas
 ---
 
@@ -12,14 +12,14 @@ Turn a capture in `Raw/` into compounding knowledge in `Atlas/`. This is the cor
 
 ## Steps
 
-1. **Read the capture in full.** A bare URL: fetch it if your tool can, otherwise ask the human to paste it. Content pasted into chat with no file in `Raw/`: create a source note in `Raw/Sources/` first, so the capture has a home. A PDF or other binary: follow "PDFs and other binaries" in [[note-schema-reference]]; the extracted text is what you ingest.
+1. **Read the capture in full.** A bare URL: fetch it if your tool can. If the fetch fails (blocked, bot check, login, empty page), stop for that capture: ask the human to paste the text, or to download the file into `Raw/Inbox/`, and leave the capture where it is. Content pasted into chat with no file in `Raw/`: create a source note in `Raw/Sources/` first, so the capture has a home. A file outside the vault: copy it into `Raw/Inbox/` through Obsidian first (the Text Extractor plugin only reads vault files), then treat it as a capture. A PDF or other binary: follow "PDFs and other binaries" in [[note-schema-reference]]; the extracted text is what you ingest. A PDF with no text layer is a scan, not a failure: run Text Extractor's OCR on it before saying it cannot be read.
 2. **Extract candidates.** List what the source contains: ideas worth keeping (future atomic notes), people and organizations, named frameworks, and which subjects it touches (future `topics:` assignments).
 3. **Check what already exists.** For every candidate, search `Atlas/` before creating anything: folder `index.md` listings, `aliases:`, the topic's backlinks, and two synonyms of the idea. **Update beats duplicate:** if a note says the same thing, add to it and cite the new source. If two notes already say it, hand them to [[merge-notes]].
 4. **Create or update atomic notes** in `Atlas/Notes/`, one idea per note (set `date_modified` on every note you update), following [[note-schema]] minimums (`type: note`, `up:`, `date_created:`) plus a one-line `summary:`. Set `ai: pending` on notes you write; inside a note the user wrote, put `%% #AI-Assisted %%` above your section. End each note with a `# Citations` list that links the source note. A claim that conflicts with an existing note goes under `## Tensions`, each claim with its source (see [[note-schema-reference]]).
 5. **Create or update entity pages** in `Atlas/Entities/` for people and organizations that matter to the human. For cited authors and researchers whose work the source leans on, create a stub entity page (one line plus the [[note-schema-reference]] entity pattern) rather than skipping them: stubs grow the same way topic stubs do. Skip only names that are true passing mentions.
 6. **Assign `topics:`.** For each topic that does not exist yet, create a stub in `Atlas/Topics/`: one-line definition plus an empty compass skeleton (`up:`, `related:`, `down:`, `opposes:`).
 7. **Fill compass keys where you can.** On new notes, at least `up:`. On touched topics, add obvious compass entries; leave uncertain directions empty rather than guessing.
-8. **Enrich the capture itself.** Add a short summary and links to the notes you created to the source note, so the source records where its content went. Move it from `Inbox/` to `Sources/` if needed, through Obsidian only.
+8. **Enrich the capture itself.** Add a short summary and links to the notes you created to the source note, so the source records where its content went. Move it from `Inbox/` to `Sources/` if needed, through Obsidian only, and only when its content is in the note: a capture you could not read stays in `Inbox/`.
 9. **Update indexes and maps.** Append one line per new note to the `index.md` of the folder it landed in. If the new notes or topics belong to an existing MOC in `Atlas/MOCs/`, add links to that map too (add only; do not restructure a MOC without asking).
 10. **Log it.** Append an entry to [[AI-OS/log|log]] (`## [YYYY-MM-DD] ingest | Source title`, with bullets for notes created or updated). Also append `**Creation**`/`**Update**` lines to [[Atlas/log]] for the Atlas concepts you created or changed (OKF §7 bundle changelog).
 11. **Report.** Tell the human what was created, what was updated, and anything you chose not to extract and why.

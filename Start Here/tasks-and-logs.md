@@ -238,9 +238,10 @@ Project and person notes show their logs in a collapsible **Advanced log** brows
 
 - **Marker toggles**: show or hide each log marker (`[b]` `[i]` `[p]` `[c]` `[*]`), plus a `t` toggle for task reference lines. The `t` toggle is off by default; turn it on to see the tasks captured about this note in the timeline.
 - **Text search**: matches the whole line, including any `#log/` tag, so typing `decision` pulls up every `#log/decision` item.
-- **Date range**, a **Limited folder search** switch (only `Calendar/` notes), sort order, **Reset filters**, and a **Copy results** button (Markdown to clipboard; task reference lines are copied as `#task <title>`). All settings persist per note.
+- **Grouped by day**: one heading per date (the note's `date`, else `date_start`, else the date in its filename), with the daily note, work sessions and meetings of that day beneath it in time order. A note is shown by its `title:` if it has one, else by its filename without the leading date.
+- **Date range** (an End date alone means "up to that date"), a **Limited folder search** switch (only `Calendar/` notes), sort order, **Reset filters**, and a **Copy results** button (Markdown to clipboard; task reference lines are copied as `#task <title>`). All settings persist per note.
 
-The widget lives at `System/Templates/Templater/Sub-templates/Dataview queries/Advanced log template.md` and is pulled into the project and person templates with `tp.file.include`.
+The widget code lives in one file, `System/Scripts/advanced-log.js`. Each note holds only a short `dataviewjs` block that loads it with `await dv.view("System/Scripts/advanced-log")`, so a change to the script reaches every note on its next render. That block comes from `System/Templates/Templater/Sub-templates/Dataview queries/Advanced log template.md`, which the project and person templates pull in with `tp.file.include`.
 
 ## See also
 
