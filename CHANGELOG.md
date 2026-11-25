@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.5.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.5.0...v3.5.1) (2026-11-25)
+
+
+### Bug Fixes
+
+* **plugins:** AutoDater skips the files the template ships outside its excluded folders ([#251](https://github.com/Pontare25/Munin-Template-Vault/issues/251)) ([249890a](https://github.com/Pontare25/Munin-Template-Vault/commit/249890ab0672678e9b1a693977be90273f75465f))
+
 ## [3.5.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.4.1...v3.5.0) (2026-11-25)
 
 
