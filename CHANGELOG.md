@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.5.1...v3.6.0) (2026-11-25)
+
+
+### Features
+
+* **advanced-log:** search and marker toggles match nested sub-logs ([#253](https://github.com/Pontare25/Munin-Template-Vault/issues/253)) ([13897be](https://github.com/Pontare25/Munin-Template-Vault/commit/13897be135e7c46efea0a9e04a1da4c61217eca0))
+
 ## [3.5.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.5.0...v3.5.1) (2026-11-25)
 
 
