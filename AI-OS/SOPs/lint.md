@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 5
+version: 6
 summary: Scan the knowledge graph for broken links, orphans, schema drift, stale notes and indexes, and propose fixes
 ---
 
@@ -21,6 +21,7 @@ Periodic health check of the knowledge graph. Lint finds problems and proposes f
    - **Missing topic pages:** subjects referenced in `topics:` fields with no page in `Atlas/Topics/`.
    - **Schema drift:** notes missing required frontmatter for their type (see [[note-schema]]), or a tag used to classify a note instead of `type:` (the user's own tags are fine). Every `Atlas/` note needs a non-empty `type:` (OKF conformance). Also check the user's notes for these; all are warnings, never auto-applied, and a batch over ten needs approval first.
      - `up:` missing where the core's `up:` table says required (person). Projects and tasks without `up:` count as one line. Notes, frameworks and sources without `up:` are not drift: report their count as one line that points at the Notes.base view "No up".
+     - A colon inside a text value (`summary: Excel: dashboards`); it breaks the note's properties. Propose a rephrase per [[note-schema]].
      - A relationship field written as a scalar, not a YAML list: `up`, `related`, `down`, `opposes`, `people`, `skills`, `interests`, `topics`.
      - `type:` that disagrees with the folder per the core type table. `Archive/` and `Raw/Inbox/` are exempt.
      - `topics:` entries that do not resolve to a note in `Atlas/Topics/`.

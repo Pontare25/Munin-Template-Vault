@@ -1,6 +1,6 @@
 ---
 type: sop
-version: 2
+version: 3
 summary: Start a project with a goal and a first next action, check that no project is stuck, and close it with a retro
 ---
 
@@ -12,10 +12,11 @@ Three moments in a project's life: start, the next action check and close. Run t
 
 ## Start
 
-1. **Create the note from the project template.** The template asks Work, Personal or Learning, then where the project sits. Ask the human to run it (`Ctrl+N`, name the note, click **Promote note**, choose project), or create the note through Obsidian with that template. Do not write the project note by hand: the template files it in the right folder.
+1. **Create the note from the project template.** The template asks Work, Personal or Learning, then where the project sits. Ask the human to run it (`Ctrl+N`, name the note, click **Promote note**, choose project), or create the note through Obsidian with that template. Do not write the project note by hand: the template files it in the right folder. A command such as **Promote note** acts on the active note, so before you run one, open the new note and confirm it is the active file (`obsidian eval` on `app.workspace.getActiveFile().path`). Never run an active-file command blind. If the human already gave the name, kind or placement in chat, tell them which answers the pop-ups will ask for so they can click through.
 2. **Confirm `up:`.** It is the parent project or the Area. Fix a missing one with the human's say-so, using [[note-schema]].
-3. **Set a Goal.** Ask the human for one or two sentences on what done looks like, and write them under `## Goal`. If the human wrote text there already, leave it.
-4. **Create the first next-action task.** Ask for the one concrete step that starts the work. Create a task note as the New task command does: `type: task`, `title`, `status: backlog`, `contexts` (the project's top-level Area, lowercase), `up:` the project, and `origin:` the project. Field rules are in [[note-schema-reference]]. File it as `Efforts/TaskNotes/Tasks/task - <title>.md`.
+3. **Set a Goal and a summary.** Ask the human for one or two sentences on what done looks like, and write them under `## Goal`. If the human wrote text there already, leave it. Fill `summary:` with one line drawn from the Goal (no colons, per [[note-schema]]).
+4. **Create the first next-action task.** Ask for the one concrete step that starts the work. Create a task note as the New task command does: `type: task`, `title`, `status: backlog`, `contexts` (the project's top-level Area, lowercase), `up:` the project, and `origin:` the note the task was created in, the daily, meeting or work-session note where the human started the project (the note step 5 logs in), never the project itself. Field rules are in [[note-schema-reference]]. File it as `Efforts/TaskNotes/Tasks/task - <title>.md`.
+5. **Log the start** in that same daily, meeting or work-session note: a `- [b]` line naming the project as a wikilink, with the first task on its own tab-indented sub-bullet beneath it, `- [t] [[task - <title>|<title>]]`. Never write the task into the `[b]` line itself. Set `date_modified` on the note.
 
 ## Next action check
 
@@ -45,7 +46,7 @@ A started project with a goal and a first task; a list of stuck projects each wi
 
 ## Manual checklist (without an AI)
 
-1. Start: promote a fleeting note to a project, check `up:`, write the Goal, add the first task with `Ctrl+Alt+T` and pick the project.
+1. Start: promote a fleeting note to a project, check `up:`, write the Goal and a one-line summary. In today's daily note (or the meeting or work-session note you are in), write a `- [b]` line with the project link, then on a tab-indented line below it add the first task with `Ctrl+Alt+T` and pick the project. The task's `origin:` becomes that note.
 2. Check: open `System/Bases/Projects.base`, view **No open task**, add a task or change the status of each project listed.
 3. Close: set Status and the end date, fill the Retro lists, copy lasting lessons into Atlas notes, then drop, move or keep each open task.
 4. The note stays in place until the monthly review moves it to `Archive/`.
