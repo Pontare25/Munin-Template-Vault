@@ -9,6 +9,25 @@
     "System",
     "Dashboards",
     "Efforts/TaskNotes",
-    "Archive"
+    "Archive",
+    "README.md",
+    "UPGRADING.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "START-HERE.md",
+    "Calendar/README.md",
+    "Efforts/README.md",
+    "Fleeting/README.md",
+    "Raw/README.md",
+    "Raw/Inbox/README.md",
+    "Atlas/index.md",
+    "Atlas/log.md",
+    "Atlas/Entities/index.md",
+    "Atlas/Frameworks/index.md",
+    "Atlas/MOCs/index.md",
+    "Atlas/Notes/index.md",
+    "Atlas/Topics/index.md"
   ]
 }
