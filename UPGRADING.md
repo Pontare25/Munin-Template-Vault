@@ -1,3 +1,6 @@
+---
+date_modified: 2026-11-25
+---
 # Upgrading
 
 How to move a vault made from this template to a newer release. Each version below has one section: what changed, what you do, and what the [[upgrade-vault]] SOP does for you.
@@ -17,25 +20,23 @@ Which files an upgrade replaces, merges or leaves alone is set by the ownership 
 
 Each section uses the same four parts: **What changed**, **What you do**, **What the SOP does**, **Removed files**.
 
-## Unreleased
-
-**What changed:** The Advanced log widget on project and person notes now loads from one shared script, `System/Scripts/advanced-log.js`. `Advanced log template.md` holds only a three-line `dataviewjs` block, `await dv.view("System/Scripts/advanced-log")`, so a later fix to the script reaches every note on its next render. Before, each note carried its own pasted copy of the widget, and copies made from older templates kept their old behavior. The widget now groups logs under one heading per day (the note's `date`, else `date_start`, else the date in its filename), with that day's daily note, work sessions and meetings beneath it in time order. A note is labelled by its `title:` if it has one, else by its filename without the leading date. **Copy results** writes `## day` and `### note` headings. An End date alone now means "up to that date", not "only that day". It only scans notes that link the host note, so it is faster in large vaults. The vault also bundles a tenth community plugin, AutoDater, which fills `date_created` and `date_modified` when you edit a note (it skips the folders the template ships or manages itself: `System`, `AI-OS`, `Start Here`, `Dashboards`, `Efforts/TaskNotes`, where TaskNotes writes `date_modified`, and `Archive`). Fixes from agent testing: the note schema forbids a colon inside a text value such as `summary:` (an unquoted one breaks the note's properties), [[lint]] reports it and CI checks shipped files for it. [[project-lifecycle]] gives the first task `origin:` the daily, meeting or work-session note the project was started in (not the project), logs the start there with the task on its own `- [t]` sub-bullet, fills `summary:`, and confirms the active note before running Promote. [[daily-review]] and [[ingest]] no longer file a source they could not read; a file outside the vault is copied into `Raw/Inbox/` first; an `[i]` line that changes a fact about an existing note (a new project member) gets a proposed edit to that note.
-
-**What you do:** Approve the SOP's preview and the note-level step. After the upgrade, switch AutoDater on in Settings, Community plugins, if Obsidian left it off. Saved filters stay as they were, but a saved End date alone now shows everything up to that date.
-
-**What the SOP does:** Copies `System/Scripts/advanced-log.js`, the AutoDater plugin code (`.obsidian/plugins/autodater/main.js`, `manifest.json`, `styles.css`), `README.md`, `AI-OS/Schemas/note-schema.md`, the SOPs `lint.md`, `project-lifecycle.md`, `daily-review.md` and `ingest.md`, and `Start Here/` (`tasks-and-logs.md`, `first-hour.md`, `obsidian-basics.md`, `troubleshooting-and-upgrading.md`), and shows the merge files for you to choose: `System/Templates/Templater/Sub-templates/Dataview queries/Advanced log template.md`, `.obsidian/community-plugins.json` (adds `autodater`) and `.obsidian/plugins/autodater/data.json`. Then, with your approval:
-
-1. **Project and person notes:** finds every `dataviewjs` block that contains `advanced-log-search` and replaces that block, and only that block, with `await dv.view("System/Scripts/advanced-log")` inside a `dataviewjs` fence. Other `dataviewjs` blocks in the note (such as the Promote button) stay. Back up first: the old block is gone after the swap.
-
-**Removed files:** none.
-
 ## 3.5.0
 
 **What changed:** Agent roles. Most SOPs now belong to one of six roles: librarian (ingest, new notes, merges), researcher (questions answered with citations), project manager (reviews, projects, meetings), tester (lint, optimizer), developer (proposals for changes to the system) and builder (carries out an approved proposal). A short role file in `AI-OS/Agents/` says where the role may write, what it must not do and when it is done; `AI-OS/Agents/README.md` holds the shared rules: re-read what you wrote before calling it done, and end with a four-line report (changed, checked, not verified, open). The roles table is section 7 of `AGENTS.md`; a request to change a template, SOP, Base or field goes to the developer, who proposes and waits for your sign-off. In Claude Code, `.claude/agents/` lets the main session hand a task to a role as a helper. The [[optimizer]] gains a sixth check: every role has a stub and every stub a role. [[lint]] now writes its log line also when you pick no fixes. `AGENTS.md` lost its Tool notes section and two sentences that other files already say (subagents in `routing.md`, filing answers in [[query]]).
 
-**What you do:** Approve the SOP's preview. Nothing to change in your notes.
+The Advanced log widget on project and person notes now loads from one shared script, `System/Scripts/advanced-log.js`. `Advanced log template.md` holds only a three-line `dataviewjs` block, `await dv.view("System/Scripts/advanced-log")`, so a later fix to the script reaches every note on its next render. Before, each note carried its own pasted copy of the widget, and copies made from older templates kept their old behavior. The widget now groups logs under one heading per day (the note's `date`, else `date_start`, else the date in its filename), with that day's daily note, work sessions and meetings beneath it in time order. A note is labelled by its `title:` if it has one, else by its filename without the leading date. **Copy results** writes `## day` and `### note` headings. An End date alone now means "up to that date", not "only that day". It only scans notes that link the host note, so it is faster in large vaults.
 
-**What the SOP does:** Copies the system files (`AGENTS.md`, `AI-OS/Agents/`, `.claude/agents/`, `AI-OS/SOPs/optimizer.md`, `AI-OS/SOPs/lint.md`, `Start Here/ai-setup.md`) and shows the merge files for you to choose: `AI-OS/routing.md` (the role sentence in steps 1 and 3; your My SOPs section stays) and `AI-OS/README.md` (the Agents row and the ownership table). No note-level steps.
+The vault also bundles a tenth community plugin, AutoDater, which fills `date_created` and `date_modified` when you edit a note (it skips the folders the template ships or manages itself: `System`, `AI-OS`, `Start Here`, `Dashboards`, `Efforts/TaskNotes`, where TaskNotes writes `date_modified`, and `Archive`).
+
+Fixes from agent testing: the note schema forbids a colon inside a text value such as `summary:` (an unquoted one breaks the note's properties), [[lint]] reports it and CI checks shipped files for it. [[project-lifecycle]] gives the first task `origin:` the daily, meeting or work-session note the project was started in (not the project), logs the start there with the task on its own `- [t]` sub-bullet, fills `summary:`, and confirms the active note before running Promote. [[daily-review]] and [[ingest]] no longer file a source they could not read; a file outside the vault is copied into `Raw/Inbox/` first; an `[i]` line that changes a fact about an existing note (a new project member) gets a proposed edit to that note.
+
+**What you do:** Approve the SOP's preview and the note-level step. After the upgrade, switch AutoDater on in Settings, Community plugins, if Obsidian left it off. Saved Advanced log filters stay as they were, but a saved End date alone now shows everything up to that date.
+
+**What the SOP does:** Copies the system files (`AGENTS.md`, `AI-OS/Agents/`, `.claude/agents/`, `AI-OS/Schemas/note-schema.md`, the SOPs `optimizer.md`, `lint.md`, `project-lifecycle.md`, `daily-review.md` and `ingest.md`, `System/Scripts/advanced-log.js`, the AutoDater plugin code (`.obsidian/plugins/autodater/main.js`, `manifest.json`, `styles.css`), `README.md` and `Start Here/` (`ai-setup.md`, `tasks-and-logs.md`, `first-hour.md`, `obsidian-basics.md`, `troubleshooting-and-upgrading.md`)) and shows the merge files for you to choose: `AI-OS/routing.md` (the role sentence in steps 1 and 3; your My SOPs section stays), `AI-OS/README.md` (the Agents row and the ownership table), `System/Templates/Templater/Sub-templates/Dataview queries/Advanced log template.md`, `.obsidian/community-plugins.json` (adds `autodater`) and `.obsidian/plugins/autodater/data.json`. Then, with your approval:
+
+1. **Project and person notes:** finds every `dataviewjs` block that contains `advanced-log-search` and replaces that block, and only that block, with `await dv.view("System/Scripts/advanced-log")` inside a `dataviewjs` fence. Other `dataviewjs` blocks in the note (such as the Promote button) stay. Back up first: the old block is gone after the swap.
+
+**Removed files:** none.
 
 ## 3.4.1
 
