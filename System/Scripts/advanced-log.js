@@ -72,6 +72,11 @@ const linksTask = task => (task.outlinks ?? []).some(l => {
 });
 const isTaskRef = task => task.status === "t" && ((task.tags ?? []).includes("#task") || linksTask(task));
 
+// The line plus its nested sub-logs (log-marker children, at any depth). Search and the
+// marker toggles match on all of them; plain "- " detail bullets are left out.
+const isSubLog = c => c.task && STATUSES.includes(c.status) && (c.status !== "t" || isTaskRef(c));
+const logTree  = task => [task, ...(task.children ?? []).filter(isSubLog).flatMap(logTree)];
+
 // Results minus those nested under another result of the same note; the parent's
 // bullets already include them (same as the rendered list).
 function topLevel(tasks) {
@@ -113,7 +118,8 @@ function buildCache() {
     for (const task of page.file?.tasks ?? []) {
       if (!pageUp && !dv.func.contains(task.outlinks, curLink)) continue;
       if (task.status === "t" && !isTaskRef(task)) continue;  // a [t] line without a task link is not a log
-      rows.push({ task, status: task.status, lo: (task.text ?? "").toLowerCase() });
+      const tree = logTree(task);
+      rows.push({ task, statuses: tree.map(t => t.status), lo: tree.map(t => t.text ?? "").join("\n").toLowerCase() });
     }
     if (!rows.length) continue;
     // The day is already the header, so drop the filename's leading date.
@@ -151,7 +157,7 @@ function render() {
   for (const { day, notes } of days) {
     if (!dateMatch(day, s0, e0)) continue;
     const shown = notes.map(n => ({ ...n, tasks: n.rows.filter(r =>
-      active.has(r.status) && (!needle || r.lo.includes(needle))).map(r => r.task) }))
+      r.statuses.some(s => active.has(s)) &&(!needle || r.lo.includes(needle))).map(r => r.task) }))
       .filter(n => n.tasks.length);
     if (!shown.length) continue;
 
