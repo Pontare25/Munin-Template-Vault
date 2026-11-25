@@ -1,5 +1,28 @@
 # Changelog
 
+## [3.5.0](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.4.1...v3.5.0) (2026-11-25)
+
+
+### Features
+
+* **advanced-log:** load the widget from one shared dv.view script ([ebed26a](https://github.com/Pontare25/Munin-Template-Vault/commit/ebed26ac805ec70327743d1b25575eebaf3e0323))
+* agent roles with role files, roles table and stubs ([ebed26a](https://github.com/Pontare25/Munin-Template-Vault/commit/ebed26ac805ec70327743d1b25575eebaf3e0323))
+* **plugins:** bundle AutoDater for date_created and date_modified ([ebed26a](https://github.com/Pontare25/Munin-Template-Vault/commit/ebed26ac805ec70327743d1b25575eebaf3e0323))
+
+
+### Bug Fixes
+
+* librarian runs the check after writing before reporting ([ebed26a](https://github.com/Pontare25/Munin-Template-Vault/commit/ebed26ac805ec70327743d1b25575eebaf3e0323))
+* **plugins:** AutoDater skips system and plugin-managed folders ([ebed26a](https://github.com/Pontare25/Munin-Template-Vault/commit/ebed26ac805ec70327743d1b25575eebaf3e0323))
+* role scopes, shared files and ownership after review ([ebed26a](https://github.com/Pontare25/Munin-Template-Vault/commit/ebed26ac805ec70327743d1b25575eebaf3e0323))
+* route system changes to the developer role ([ebed26a](https://github.com/Pontare25/Munin-Template-Vault/commit/ebed26ac805ec70327743d1b25575eebaf3e0323))
+* **sops:** project start, source filing and frontmatter colons from agent testing ([ebed26a](https://github.com/Pontare25/Munin-Template-Vault/commit/ebed26ac805ec70327743d1b25575eebaf3e0323))
+
+
+### Documentation
+
+* **upgrading:** fold Unreleased into the 3.5.0 section ([#250](https://github.com/Pontare25/Munin-Template-Vault/issues/250)) ([bb2ec9e](https://github.com/Pontare25/Munin-Template-Vault/commit/bb2ec9e1b79bcf75d3814a47b45fa8db369519f3))
+
 ## [3.4.1](https://github.com/Pontare25/Munin-Template-Vault/compare/v3.4.0...v3.4.1) (2026-11-20)
 
 
